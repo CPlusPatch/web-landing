@@ -41,7 +41,7 @@ const footerNavigation = {
 </script>
 
 <template>
-	<footer class="bg-dark-400" aria-labelledby="footer-heading">
+	<footer class="bg-dark-400 z-1" aria-labelledby="footer-heading">
 		<h2 id="footer-heading" class="sr-only">Footer</h2>
 		<div
 			class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
@@ -52,8 +52,9 @@ const footerNavigation = {
 						src="/images/icons/logo.svg"
 						alt="Company name" />
 					<p class="text-sm leading-6 text-gray-300">
-						Constructing sites, apps and communities through open
-						standards
+						This was a triumph<br />
+						I'm making a note here<br />
+						Huge success
 					</p>
 					<div class="flex space-x-6">
 						<a
@@ -74,7 +75,7 @@ const footerNavigation = {
 						<div>
 							<h3
 								class="text-sm font-semibold leading-6 text-white">
-								Services
+								Projects
 							</h3>
 							<ul role="list" class="mt-6 space-y-4">
 								<li

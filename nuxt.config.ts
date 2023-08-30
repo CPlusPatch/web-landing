@@ -20,32 +20,6 @@ export default defineNuxtConfig({
 			htmlAttrs: { lang: "en-us" },
 		},
 	},
-	i18n: {
-		vueI18n: "./i18n.config.ts",
-		baseUrl: "https://join-mastodon.de",
-		strategy: "prefix_and_default",
-		defaultLocale: "en",
-		trailingSlash: true,
-		detectBrowserLanguage: {
-			alwaysRedirect: true,
-			fallbackLocale: "en",
-			redirectOn: "root",
-		},
-		locales: [
-			{
-				code: "en",
-				iso: "en-US",
-			},
-			{
-				code: "fr",
-				iso: "fr-FR",
-			},
-			{
-				code: "de",
-				iso: "de-DE",
-			},
-		],
-	},
 	nitro: {
 		compressPublicAssets: true,
 		routeRules: {
@@ -60,11 +34,11 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {
-			siteName: "Mastodon.de",
-			siteUrl: "https://join-mastodon.de",
+			siteName: "CPlusPatch Web",
+			siteUrl: "https://cpluspatch.com",
 			siteDescription:
-				"Join Mastodon.de, a free and open-source social network.",
-			language: "en-US", // prefer more explicit language codes like `en-AU` over `en`,
+				"Website for CPlusPatch, a young developer who loves to make things.",
+			language: "en-US",
 			titleSeparator: "·",
 			trailingSlash: true,
 		},

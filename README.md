@@ -1,1 +1,1 @@
-# JoinMastodon
+# Web Landing

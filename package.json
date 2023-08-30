@@ -1,5 +1,5 @@
 {
-  "name": "joinmastodon",
+  "name": "web-landing",
   "private": true,
   "type": "module",
   "scripts": {

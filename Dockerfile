@@ -20,10 +20,10 @@ COPY --from=builder /app/.output/ /app
 COPY --from=builder /app/nuxt.config.ts /nuxt.config.ts
 
 LABEL org.opencontainers.image.authors "Gaspard Wierzbinski (https://cpluspatch.com)"
-LABEL org.opencontainers.image.source "https://github.com/Uden-AI/joinmastodon"
-LABEL org.opencontainers.image.vendor "Uden AI"
+LABEL org.opencontainers.image.source "https://github.com/CPlusPatch/web-landing"
+LABEL org.opencontainers.image.vendor "CPlusPatch"
 LABEL org.opencontainers.image.licenses "GPL-3.0"
-LABEL org.opencontainers.image.title "Join-Mastodon.de"
-LABEL org.opencontainers.image.description ""
+LABEL org.opencontainers.image.title "Web Landing"
+LABEL org.opencontainers.image.description "Landing page for my website"
 
 CMD ["bun", "/app/server/index.mjs"]

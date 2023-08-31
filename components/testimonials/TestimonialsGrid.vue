@@ -48,7 +48,7 @@ const testimonials = [
 			{
 				body: "CPlusPatch is the most talented programmer I have had the pleasure of knowing. He can solve difficult problems using remarkable efficiency and is always happy to assist me with my own projects. Truly a person of all time.",
 				author: {
-					name: "Noah",
+					name: "Alice",
 					title: "Engineering Student",
 					imageUrl: "https://cdn-web.cpluspatch.com/giggler.webp",
 				},
@@ -181,7 +181,7 @@ const testimonials = [
 						]">
 						<figure
 							v-for="testimonial in column"
-							:key="testimonial.author.handle"
+							:key="testimonial.author.name"
 							class="rounded-2xl sm:bg-dark-300 ring-1 hover:ring-2 hover:ring-orange-500 duration-200 ring-dark-100 p-6 shadow-lg">
 							<blockquote class="text-gray-50">
 								<p>{{ `“${testimonial.body}”` }}</p>

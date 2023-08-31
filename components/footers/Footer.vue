@@ -5,7 +5,6 @@ const footerNavigation = {
 		{ name: "AIP", href: "#" },
 	],
 	support: [{ name: "Contact", href: "#" }],
-	company: [{ name: "Website", href: "#" }],
 	legal: [
 		{ name: "Privacy", href: "#" },
 		{ name: "Terms", href: "#" },
@@ -98,23 +97,6 @@ const footerNavigation = {
 						</div>
 					</div>
 					<div class="md:grid md:grid-cols-2 md:gap-8">
-						<div>
-							<h3
-								class="text-sm font-semibold leading-6 text-white">
-								Company
-							</h3>
-							<ul role="list" class="mt-6 space-y-4">
-								<li
-									v-for="item in footerNavigation.company"
-									:key="item.name">
-									<a
-										:href="item.href"
-										class="text-sm leading-6 text-gray-300 hover:text-white"
-										>{{ item.name }}</a
-									>
-								</li>
-							</ul>
-						</div>
 						<div class="mt-10 md:mt-0">
 							<h3
 								class="text-sm font-semibold leading-6 text-white">

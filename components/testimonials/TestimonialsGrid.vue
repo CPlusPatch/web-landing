@@ -21,6 +21,15 @@ const testimonials = [
 						"https://cdn-web.cpluspatch.com/calciume_avatar.webp",
 				},
 			},
+			{
+				body: "All of CPlusPatch's projects turn out looking stunning. They make any project look easy, yet you'd be hard-pressed to find someone who works as quick with nearly the same results.",
+				author: {
+					name: "Hazel",
+					title: "Developer",
+					imageUrl:
+						"https://pool.jortage.com/socialbestieshouse/accounts/avatars/110/772/057/197/102/203/original/bc99a968cdd77e7d.png",
+				},
+			},
 		],
 		[
 			{

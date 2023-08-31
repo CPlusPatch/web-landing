@@ -110,7 +110,7 @@ useServerSeoMeta({
 				<div
 					class="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
 					<img
-						class="absolute inset-0 h-full w-full bg-dark-500 object-cover"
+						class="absolute inset-y-0 right-0 h-full w-full bg-dark-500 object-cover max-w-6xl"
 						src="https://unsplash.com/photos/42gFAgdIUC8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTJ8fGRhdGElMjBjZW50ZXJ8ZW58MHx8fHwxNjkzNDAyMzI4fDA&force=true&w=1920"
 						alt="" />
 				</div>

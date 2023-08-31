@@ -12,29 +12,19 @@ const footerNavigation = {
 	],
 	social: [
 		{
-			name: "Facebook",
-			href: "#",
-			icon: "tabler:brand-facebook",
+			name: "Matrix",
+			href: "https://matrix.to/#/@jesse:cpluspatch.dev",
+			icon: "tabler:brand-matrix",
 		},
 		{
-			name: "Instagram",
-			href: "#",
-			icon: "tabler:brand-instagram",
-		},
-		{
-			name: "Twitter",
-			href: "#",
-			icon: "tabler:brand-twitter",
+			name: "Email",
+			href: "mailto:contact@cpluspatch.com",
+			icon: "tabler:mail",
 		},
 		{
 			name: "GitHub",
-			href: "#",
+			href: "https://github.com/CPlusPatch/",
 			icon: "tabler:brand-github",
-		},
-		{
-			name: "YouTube",
-			href: "#",
-			icon: "tabler:brand-youtube",
 		},
 	],
 };

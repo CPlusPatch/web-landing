@@ -211,5 +211,7 @@ useServerSeoMeta({
 
 	<TestimonialsGrid />
 
+	<ProjectsProjectCards />
+
 	<FootersFooter />
 </template>

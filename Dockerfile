@@ -1,3 +1,5 @@
+# Build with Bun, use Node to run in the end
+# We intend to fully switch to Bun to run as well once it gets more support
 FROM docker.io/oven/bun AS builder
 
 COPY . /app
@@ -14,7 +16,7 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN cd /app && bun install
 RUN cd /app && bun run build
 
-FROM docker.io/oven/bun
+FROM docker.io/node:18-alpine
 
 COPY --from=builder /app/.output/ /app
 COPY --from=builder /app/nuxt.config.ts /nuxt.config.ts
@@ -26,4 +28,4 @@ LABEL org.opencontainers.image.licenses "GPL-3.0"
 LABEL org.opencontainers.image.title "Web Landing"
 LABEL org.opencontainers.image.description "Landing page for my website"
 
-CMD ["bun", "/app/server/index.mjs"]
+CMD ["node", "/app/server/index.mjs"]

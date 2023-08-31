@@ -147,8 +147,8 @@ const footerNavigation = {
 			</div>
 			<div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
 				<p class="text-xs leading-5 text-gray-400">
-					&copy; {{ new Date().getFullYear() }} Uden AI. Licensed
-					under GPLv3
+					&copy; {{ new Date().getFullYear() }} Gaspard Wierzbinski.
+					Licensed under GPLv3
 				</p>
 			</div>
 		</div>

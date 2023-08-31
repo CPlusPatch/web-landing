@@ -209,5 +209,7 @@ useServerSeoMeta({
 		</div>
 	</div>
 
+	<TestimonialsGrid />
+
 	<FootersFooter />
 </template>

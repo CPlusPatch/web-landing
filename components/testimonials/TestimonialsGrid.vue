@@ -124,8 +124,8 @@ const testimonials = [
 					);
 				" />
 		</div>
-		<div class="mx-auto max-w-7xl px-6 lg:px-8">
-			<div class="mx-auto max-w-xl text-center">
+		<div class="mx-auto max-w-7xl">
+			<div class="mx-auto max-w-xl text-center px-6 lg:px-8">
 				<h2
 					class="text-lg font-semibold leading-8 tracking-tight text-orange-600">
 					Reviews
@@ -135,8 +135,101 @@ const testimonials = [
 					Many clients satisfied
 				</p>
 			</div>
+			<div class="sm:px-6 lg:px-8 mt-20">
+				<div
+					class="relative overflow-hidden bg-dark-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
+					<img
+						class="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"
+						src="https://media.mastodon.de/media_attachments/files/110/968/260/268/678/014/original/b8ae482249766c07.jpeg"
+						alt="" />
+					<div
+						class="absolute inset-0 bg-dark-900/90 mix-blend-multiply" />
+					<div
+						class="absolute -left-80 -top-56 transform-gpu blur-3xl"
+						aria-hidden="true">
+						<div
+							class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-red-500 to-orange-300 opacity-[0.45]"
+							style="
+								clip-path: polygon(
+									74.1% 44.1%,
+									100% 61.6%,
+									97.5% 26.9%,
+									85.5% 0.1%,
+									80.7% 2%,
+									72.5% 32.5%,
+									60.2% 62.4%,
+									52.4% 68.1%,
+									47.5% 58.3%,
+									45.2% 34.5%,
+									27.5% 76.7%,
+									0.1% 64.9%,
+									17.9% 100%,
+									27.6% 76.8%,
+									76.1% 97.7%,
+									74.1% 44.1%
+								);
+							" />
+					</div>
+					<div
+						class="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"
+						aria-hidden="true">
+						<div
+							class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-red-500 to-orange-300 opacity-25"
+							style="
+								clip-path: polygon(
+									74.1% 44.1%,
+									100% 61.6%,
+									97.5% 26.9%,
+									85.5% 0.1%,
+									80.7% 2%,
+									72.5% 32.5%,
+									60.2% 62.4%,
+									52.4% 68.1%,
+									47.5% 58.3%,
+									45.2% 34.5%,
+									27.5% 76.7%,
+									0.1% 64.9%,
+									17.9% 100%,
+									27.6% 76.8%,
+									76.1% 97.7%,
+									74.1% 44.1%
+								);
+							" />
+					</div>
+					<div class="relative mx-auto max-w-none lg:mx-0">
+						<img
+							class="h-12 w-auto"
+							src="/images/logos/uden-ai.webp"
+							alt="" />
+						<figure>
+							<blockquote
+								class="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
+								<p>
+									“Developers that are fast, utilize the
+									newest available technology with ease,
+									swiftly understand what you asked for, and
+									can immerse themselves into your project to
+									make case-by-case decisions in a way you
+									would've made them, are already impossible
+									to find. What makes CPlusPatch extraordinary
+									is not just that, but is aided by the fact
+									that CPlusPatch completes such tasks in a
+									speed you'd expect there to be a full-time
+									paid development team on the other end
+									rather than a singular person.”
+								</p>
+							</blockquote>
+							<figcaption class="mt-6 text-base text-white">
+								<div class="font-semibold">Erik Uden</div>
+								<div class="mt-1">CEO, Uden AI</div>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+
 			<div
-				class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+				class="mx-auto mt-16 sm:px-6 lg:px-8 mt-20 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
 				<figure
 					class="col-span-2 hidden sm:block sm:rounded-2xl sm:bg-dark-300 ring-1 hover:ring-2 hover:ring-orange-500 duration-200 ring-dark-100 sm:shadow-lg sm:ring-1 xl:col-start-2 xl:row-end-1">
 					<blockquote

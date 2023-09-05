@@ -1,25 +1,21 @@
-# Build with Bun, use Node to run in the end
-# We intend to fully switch to Bun to run as well once it gets more support
-FROM docker.io/oven/bun AS builder
+FROM docker.io/node:18-alpine AS builder
+
+RUN apk add --update \
+  git
+#  python3 \
+#  make \
+#  build-base
+
+RUN npm install --global pnpm
 
 COPY . /app
 
-ENV NODE_VERSION=18.17.1
-RUN apt update && apt install -y curl
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-ENV NVM_DIR=/root/.nvm
-RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
-ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
-
-RUN cd /app && bun install
-RUN cd /app && bun run build
+RUN cd ./app && pnpm install
+RUN cd ./app && pnpm build
 
 FROM docker.io/node:18-alpine
 
 COPY --from=builder /app/.output/ /app
-COPY --from=builder /app/nuxt.config.ts /nuxt.config.ts
 
 LABEL org.opencontainers.image.authors "Gaspard Wierzbinski (https://cpluspatch.com)"
 LABEL org.opencontainers.image.source "https://github.com/CPlusPatch/web-landing"

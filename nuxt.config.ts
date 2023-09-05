@@ -8,7 +8,16 @@ export default defineNuxtConfig({
 		"@nuxtseo/module",
 		"@nuxtjs/i18n",
 		"nuxt-swiper",
+		"@nuxt/image",
 	],
+	image: {
+		domains: [
+			"cdn.cpluspatch.com",
+			"cdn-web.cpluspatch.com",
+			"s3.kitsunes.club",
+			"unsplash.com",
+		],
+	},
 	app: {
 		head: {
 			link: [

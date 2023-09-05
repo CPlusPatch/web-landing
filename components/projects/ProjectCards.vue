@@ -32,7 +32,11 @@ const cards = [
 				class="group flex flex-col h-full shadow-sm rounded-xl overflow-hidden hover:ring-2 hover:ring-orange-500 duration-200 bg-dark-400 ring-1 ring-dark-300">
 				<div
 					class="h-52 flex flex justify-center items-center overflow-hidden">
-					<img :src="card.image" class="h-full w-full object-cover" />
+					<nuxt-img
+						:src="card.image"
+						sizes="sm:100vw md:70vw lg:50vw"
+						format="webp"
+						class="h-full w-full object-cover" />
 				</div>
 				<div class="p-4 md:p-6">
 					<span

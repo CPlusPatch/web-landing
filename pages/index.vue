@@ -109,8 +109,11 @@ useServerSeoMeta({
 				class="lg:flex lg:w-1/2 lg:shrink lg:grow-0 xl:absolute xl:inset-y-0 xl:right-1/2 xl:w-1/2">
 				<div
 					class="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
-					<img
+					<nuxt-img
+						loading="lazy"
 						class="absolute inset-y-0 right-0 h-full w-full bg-dark-500 object-cover max-w-6xl"
+						sizes="sm:100vw lg:80vw"
+						format="webp"
 						src="https://unsplash.com/photos/42gFAgdIUC8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTJ8fGRhdGElMjBjZW50ZXJ8ZW58MHx8fHwxNjkzNDAyMzI4fDA&force=true&w=1920"
 						alt="" />
 				</div>

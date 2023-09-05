@@ -138,9 +138,12 @@ const testimonials = [
 			<div class="sm:px-6 lg:px-8 mt-20">
 				<div
 					class="relative overflow-hidden bg-dark-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
-					<img
+					<nuxt-img
 						class="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"
 						src="https://media.mastodon.de/media_attachments/files/110/968/260/268/678/014/original/b8ae482249766c07.jpeg"
+						format="webp"
+						sizes="sm:80vw"
+						quality="40"
 						alt="" />
 					<div
 						class="absolute inset-0 bg-dark-900/90 mix-blend-multiply" />
@@ -197,8 +200,9 @@ const testimonials = [
 							" />
 					</div>
 					<div class="relative mx-auto max-w-none lg:mx-0">
-						<img
+						<nuxt-img
 							class="h-12 w-auto"
+							sizes="sm:50vw"
 							src="/images/logos/uden-ai.webp"
 							alt="" />
 						<figure>
@@ -238,8 +242,11 @@ const testimonials = [
 					</blockquote>
 					<figcaption
 						class="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
-						<img
+						<nuxt-img
 							class="h-10 w-10 flex-none rounded ring-1 ring-dark-500 bg-dark-200"
+							width="40"
+							height="40"
+							format="webp"
 							:src="featuredTestimonial.author.imageUrl"
 							alt="" />
 						<div class="flex-auto">
@@ -280,9 +287,12 @@ const testimonials = [
 								<p>{{ `“${testimonial.body}”` }}</p>
 							</blockquote>
 							<figcaption class="mt-6 flex items-center gap-x-4">
-								<img
+								<nuxt-img
 									class="h-10 w-10 rounded-full ring-1 ring-dark-500 bg-dark-900"
 									:src="testimonial.author.imageUrl"
+									width="40"
+									height="40"
+									format="webp"
 									alt="" />
 								<div>
 									<div class="font-semibold text-white">

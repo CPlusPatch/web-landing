@@ -9,6 +9,7 @@ export default defineNuxtConfig({
 		"@nuxtjs/i18n",
 		"nuxt-swiper",
 		"@nuxt/image",
+		"nuxt-security",
 	],
 	image: {
 		domains: [
@@ -22,6 +23,8 @@ export default defineNuxtConfig({
 			"matrix.org",
 			"github.com",
 			"cpluspatch.com",
+			"pool.jortage.com",
+			"media.mastodon.de",
 		],
 	},
 	app: {
@@ -54,6 +57,20 @@ export default defineNuxtConfig({
 		compressPublicAssets: true,
 		routeRules: {
 			"/_nuxt/**": {
+				headers: {
+					"cache-control": `public,max-age=${
+						60 * 60 * 24 * 365
+					},s-maxage=${60 * 60 * 24 * 365}`,
+				},
+			},
+			"/_ipx/**": {
+				headers: {
+					"cache-control": `public,max-age=${
+						60 * 60 * 24 * 365
+					},s-maxage=${60 * 60 * 24 * 365}`,
+				},
+			},
+			"/images/**": {
 				headers: {
 					"cache-control": `public,max-age=${
 						60 * 60 * 24 * 365

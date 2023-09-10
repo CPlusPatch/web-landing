@@ -259,8 +259,9 @@ const testimonials = [
 								{{ `${featuredTestimonial.author.title}` }}
 							</div>
 						</div>
-						<img
+						<nuxt-img
 							class="h-10 w-auto flex-none"
+							sizes="sm:2.5rem"
 							:src="featuredTestimonial.author.logoUrl"
 							alt="" />
 					</figcaption>

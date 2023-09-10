@@ -59,10 +59,10 @@ const open = ref(false);
 			<div class="flex lg:flex-1">
 				<a href="#" class="-m-1.5 p-1.5">
 					<span class="sr-only">CPlusPatch</span>
-					<img
+					<nuxt-img
 						class="h-8 w-auto"
 						src="/images/icons/logo.svg"
-						alt="" />
+						alt="CPlusPatch" />
 				</a>
 			</div>
 			<div class="flex lg:hidden">
@@ -166,13 +166,13 @@ const open = ref(false);
 			class="lg:hidden"
 			:open="open"
 			@close="open = false">
-			<div class="fixed inset-0 z-10" />
+			<div class="fixed inset-0 z-10"></div>
 			<HeadlessDialogPanel
 				class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-dark-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-dark-50/10">
 				<div class="flex items-center justify-between">
 					<a href="#" class="-m-1.5 p-1.5">
 						<span class="sr-only">CPlusPatch</span>
-						<img
+						<nuxt-img
 							class="h-8 w-auto"
 							src="/images/icons/logo.svg"
 							alt="" />

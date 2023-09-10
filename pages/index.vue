@@ -109,8 +109,8 @@ const scrollIntoView = (id: string) =>
 				class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
 				<div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
 					<img
-						src="https://cpluspatch.com/_ipx/s_1920x1080/static/banner.webp"
-						alt="App screenshot"
+						src="/images/assets/banner.webp"
+						alt="VSCode screenshot"
 						width="2432"
 						height="1442"
 						class="w-[76rem] rounded-md bg-white/5 backdrop-blur-xl shadow-2xl ring-1 ring-white/10" />

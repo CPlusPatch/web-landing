@@ -78,6 +78,7 @@ const cards = [
 						:src="card.image"
 						sizes="sm:100vw md:70vw lg:50vw"
 						format="webp"
+						alt=""
 						class="h-full w-full object-cover bg-white/5 backdrop-blur-xl" />
 				</div>
 				<div class="p-4 md:p-6">

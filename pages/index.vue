@@ -98,7 +98,7 @@ useServerSeoMeta({
 						alt="App screenshot"
 						width="2432"
 						height="1442"
-						class="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10" />
+						class="w-[76rem] rounded-md bg-white/5 backdrop-blur-xl shadow-2xl ring-1 ring-white/10" />
 				</div>
 			</div>
 		</div>
@@ -113,7 +113,7 @@ useServerSeoMeta({
 					class="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
 					<nuxt-img
 						loading="lazy"
-						class="absolute inset-y-0 right-0 h-full w-full bg-dark-500 object-cover max-w-6xl"
+						class="absolute inset-y-0 right-0 h-full w-full bg-white/5 backdrop-blur-xl object-cover max-w-6xl"
 						sizes="sm:100vw lg:80vw"
 						format="webp"
 						src="https://unsplash.com/photos/42gFAgdIUC8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTJ8fGRhdGElMjBjZW50ZXJ8ZW58MHx8fHwxNjkzNDAyMzI4fDA&force=true&w=1920"

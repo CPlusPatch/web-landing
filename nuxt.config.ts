@@ -21,6 +21,7 @@ export default defineNuxtConfig({
 			"www.muylinux.com",
 			"matrix.org",
 			"github.com",
+			"cpluspatch.com",
 		],
 	},
 	app: {

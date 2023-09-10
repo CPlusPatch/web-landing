@@ -61,9 +61,6 @@ export default defineNuxtConfig({
 			"/_nuxt/**": {
 				swr: 60 * 60 * 24 * 365,
 			},
-			"/_ipx/**": {
-				swr: 60 * 60 * 24 * 365,
-			},
 			"/images/**": {
 				swr: 60 * 60 * 24 * 365,
 			},

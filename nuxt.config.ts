@@ -9,7 +9,6 @@ export default defineNuxtConfig({
 		"@nuxtjs/i18n",
 		"nuxt-swiper",
 		"@nuxt/image",
-		"nuxt-security",
 	],
 	image: {
 		domains: [

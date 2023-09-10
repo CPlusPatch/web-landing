@@ -203,6 +203,7 @@ const testimonials = [
 						<nuxt-img
 							class="h-12 w-auto"
 							sizes="sm:50vw"
+							format="webp"
 							src="/images/logos/uden-ai.webp"
 							alt="" />
 						<figure>

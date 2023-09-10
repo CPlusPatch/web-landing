@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import SlidingLanguageCarousel from "~/components/grids/SlidingLanguageCarousel.vue";
+
 useServerSeoMeta({
 	title: "Quality Development Services",
 	author: "Gaspard Wierzbinski",
@@ -215,6 +217,8 @@ useServerSeoMeta({
 	<TestimonialsGrid />
 
 	<ProjectsProjectCards />
+
+	<SlidingLanguageCarousel />
 
 	<FootersFooter />
 </template>

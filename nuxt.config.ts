@@ -16,6 +16,10 @@ export default defineNuxtConfig({
 			"cdn-web.cpluspatch.com",
 			"s3.kitsunes.club",
 			"unsplash.com",
+			"thoughtfullaw.com",
+			"aip.cpluspatch.dev",
+			"www.muylinux.com",
+			"matrix.org",
 		],
 	},
 	app: {

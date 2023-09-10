@@ -14,6 +14,34 @@ const cards = [
 		name: "AIP",
 		image: "https://aip.cpluspatch.dev/images/screenshots/screenshot1.webp",
 	},
+	{
+		tag: "Application",
+		name: "Flavi",
+		description:
+			"Flavi is an open-source client for the Matrix ecosystem with the goal of having a clean, familiar interface for users of Discord and the like",
+		image: "/images/assets/flavi-screenshot.png",
+	},
+	{
+		tag: "Services",
+		name: "CPlusPatch ID",
+		description:
+			"CPlusPatch ID is a free and open-source identity provider that allows you to log in to websites and applications using your CPlusPatch ID.",
+		image: "http://thoughtfullaw.com/wp-content/uploads/2014/05/security.jpg",
+	},
+	{
+		tag: "Services",
+		name: "CPlusPatch Cloud",
+		description:
+			"An open-source cloud provider with a focus on privacy and security. It's based on Nextcloud and is available for free for everyone.",
+		image: "https://www.muylinux.com/wp-content/uploads/2020/06/nextcloud.png",
+	},
+	{
+		tag: "Services",
+		name: "CPlusPatch Chat",
+		description:
+			"An open-source Matrix instance, an open network for secure, decentralized communication. Messages are end-to-end encrypted for maximum security.",
+		image: "https://matrix.org/blog/img/splash.jpg",
+	},
 ];
 </script>
 
@@ -29,7 +57,7 @@ const cards = [
 			<div
 				v-for="card of cards"
 				:key="card.name"
-				class="group flex flex-col h-full shadow-sm rounded-xl overflow-hidden hover:ring-2 hover:ring-orange-500 duration-200 bg-dark-400 ring-1 ring-dark-300">
+				class="group flex flex-col h-full shadow-sm rounded overflow-hidden hover:ring-2 hover:ring-orange-500 duration-200 bg-dark-400 ring-1 ring-dark-300">
 				<div
 					class="h-52 flex flex justify-center items-center overflow-hidden">
 					<nuxt-img
@@ -40,14 +68,14 @@ const cards = [
 				</div>
 				<div class="p-4 md:p-6">
 					<span
-						class="inline mb-1 text-xs font-semibold text-orange-800 bg-orange-200 px-2 py-1 rounded-full">
+						class="inline mb-1 text-xs font-semibold text-orange-800 bg-orange-200 px-2 py-1 rounded">
 						{{ card.tag }}
 					</span>
 					<h3
-						class="text-xl mt-2 font-semibold text-gray-200 hover:text-white">
+						class="text-lg mt-3 font-semibold text-gray-200 hover:text-white">
 						{{ card.name }}
 					</h3>
-					<p class="mt-2 text-gray-300">
+					<p class="mt-2 text-gray-300 text-sm">
 						{{ card.description }}
 					</p>
 				</div>

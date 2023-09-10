@@ -4,7 +4,20 @@ import SlidingLanguageCarousel from "~/components/grids/SlidingLanguageCarousel.
 useServerSeoMeta({
 	title: "Quality Development Services",
 	author: "Gaspard Wierzbinski",
+	ogImage: "/images/assets/banner.webp",
+	ogImageAlt: "A screenshot of VSCode open",
+	description:
+		"I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer science and a programmer by passion, with several years of experience in many kinds of fields",
+	ogLocale: "en-US",
+	ogLocaleAlternate: ["fr-FR", "en-US"],
 });
+
+useHead({
+	title: "Quality Development Services",
+});
+
+const scrollIntoView = (id: string) =>
+	document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 </script>
 
 <template>
@@ -79,14 +92,16 @@ useServerSeoMeta({
 				</p>
 				<div class="mt-10 flex items-center gap-x-6">
 					<a
-						href="#"
+						href="#contact"
 						class="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-						>Get started</a
+						@click.prevent="scrollIntoView('contact')"
+						>Contact me</a
 					>
 					<a
-						href="#"
+						href="#philosophy"
 						class="text-sm font-semibold leading-6 group text-white"
-						>Learn more <ButtonsAnimatedArrow
+						@click.prevent="scrollIntoView('philosophy')"
+						>Read more <ButtonsAnimatedArrow
 					/></a>
 				</div>
 			</div>
@@ -104,7 +119,7 @@ useServerSeoMeta({
 		</div>
 	</div>
 
-	<div class="relative">
+	<div id="philosophy" class="relative">
 		<div
 			class="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
 			<div

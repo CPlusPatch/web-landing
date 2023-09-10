@@ -45,7 +45,7 @@ const footerNavigation = {
 						I'm making a note here<br />
 						Huge success
 					</p>
-					<div class="flex space-x-6">
+					<div id="contact" class="flex space-x-6">
 						<a
 							v-for="item in footerNavigation.social"
 							:key="item.name"

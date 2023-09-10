@@ -1,7 +1,7 @@
 export default defineI18nConfig(() => ({
 	legacy: false,
 	messages: {
-		en: {
+		"en-US": {
 			// Navbar
 			aboutUs: "About us",
 			mastodon: "Mastodon",
@@ -53,7 +53,7 @@ export default defineI18nConfig(() => ({
 			feature3SubText:
 				"If you want to change Fediverse servers, you can easily switch and keep all your followers from mastodon.de!",
 		},
-		fr: {
+		"fr-FR": {
 			// Barre de navigation
 			aboutUs: "À propos",
 			mastodon: "Mastodon",
@@ -104,58 +104,6 @@ export default defineI18nConfig(() => ({
 			feature3Title: "Portabilité du compte",
 			feature3SubText:
 				"Si vous souhaitez changer de serveurs Fediverse, vous pouvez facilement changer et conserver tous vos abonnés de mastodon.de!",
-		},
-		de: {
-			// Navigationsleiste
-			aboutUs: "Über uns",
-			mastodon: "Mastodon",
-			clients: "Clients",
-			attributions: "Attributionen",
-			logIn: "Einloggen",
-			contactUs: "Kontaktiere uns",
-
-			aboutUdenAi: "Über Uden AI",
-
-			// Haupt-Landingpage
-			tagline: "Soziales Netzwerk, das nicht verkauft wird",
-			taglineSubText:
-				"Mastodon.de ist ein wirklich offenes soziales Netzwerk. Keine Anzeigen, keine Verfolgung, keine Datensammlung, keine Algorithmen! Das Netzwerk wird von der Gemeinschaft für die Gemeinschaft betrieben.",
-			signUpButton: "Registrieren",
-			learnMoreButton: "Erfahre mehr",
-
-			// Einbetten-Raster
-			embedsGridTitle: "Gemeinschaftsräume",
-			embedsGridSubText1:
-				"Mastodon.de widmet sich dem Angebot seiner Benutzerinnen und Benutzer eine Gemeinschaftserfahrung, in der Likes, Follower oder Boosts nichts bedeuten.",
-			embedsGridSubText2:
-				"Da es keinen Algorithmus gibt, der darüber entscheidet, welche Beiträge in deinem Feed angezeigt werden, kannst du dich einfach entspannen und Spaß beim Posten haben!",
-
-			// Team-Präsentation
-			teamTitle: "Lerne unser Team kennen",
-			teamSubText:
-				"Wir sind eine dynamische Gruppe von Individuen, die leidenschaftlich bei dem sind, was wir tun, und die sich dafür einsetzen, unserer Gemeinschaft eine großartige Erfahrung zu bieten.",
-
-			// Teammitglieder
-			teamMemberErikPosition: "CEO, Uden AI",
-			teamMemberErikDescription:
-				"Erik Uden ist der Leiter von mastodon.de und CEO von Uden AI. Er hat im November 2022 mit der Arbeit an mastodon.de begonnen und es zu dem gemacht, was es heute ist.",
-
-			// Funktionsbereich
-			featuresTitle: "Föderiertes, offenes Netzwerk",
-			featuresSubText:
-				"Mastodon.de ist mit einem gigantischen föderierten Netzwerk von Millionen von Benutzern verbunden, dem Fediverse.\nEs ist wie E-Mail, bei der jeder eine Adresse im Format name{'@'}site.com hat!",
-
-			feature1Title: "Leistungsstarke Moderationstools",
-			feature1SubText:
-				"Blockiere beliebige Schlüsselwörter, damit sie nicht in deinem Feed angezeigt werden, mithilfe von Filtern.",
-
-			feature2Title: "Erstelle deine eigenen Feeds",
-			feature2SubText:
-				"Du allein solltest entscheiden, was in deinen Feeds angezeigt wird. Mastodon.de ermöglicht es dir, deine eigenen Feeds ohne vordefinierten Algorithmus zu kuratieren.",
-
-			feature3Title: "Kontoübertragbarkeit",
-			feature3SubText:
-				"Wenn du zu anderen Fediverse-Servern wechseln möchtest, kannst du problemlos wechseln und alle deine Follower von mastodon.de behalten!",
 		},
 	},
 }));

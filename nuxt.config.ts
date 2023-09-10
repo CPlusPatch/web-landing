@@ -36,6 +36,20 @@ export default defineNuxtConfig({
 			htmlAttrs: { lang: "en-us" },
 		},
 	},
+	i18n: {
+		strategy: "prefix_except_default",
+		defaultLocale: "en-US",
+		locales: [
+			{
+				code: "en-US",
+				iso: "en-US",
+			},
+			{
+				code: "fr-FR",
+				iso: "fr-FR",
+			},
+		],
+	},
 	nitro: {
 		compressPublicAssets: true,
 		routeRules: {
@@ -50,10 +64,6 @@ export default defineNuxtConfig({
 	},
 	runtimeConfig: {
 		public: {
-			siteName: "CPlusPatch Web",
-			siteUrl: "https://cpluspatch.com",
-			siteDescription:
-				"Website for CPlusPatch, a young developer who loves to make things.",
 			language: "en-US",
 			titleSeparator: "·",
 			trailingSlash: true,

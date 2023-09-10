@@ -18,7 +18,7 @@ const cards = [
 		tag: "Application",
 		name: "Flavi",
 		description:
-			"Flavi is an open-source client for the Matrix ecosystem with the goal of having a clean, familiar interface for users of Discord and the like",
+			"Flavi is an open-source client for the Matrix ecosystem with the goal of having a clean, familiar interface for users of Discord and the like.",
 		image: "/images/assets/flavi-screenshot.png",
 	},
 	{
@@ -41,6 +41,20 @@ const cards = [
 		description:
 			"An open-source Matrix instance, an open network for secure, decentralized communication. Messages are end-to-end encrypted for maximum security.",
 		image: "https://matrix.org/blog/img/splash.jpg",
+	},
+	{
+		tag: "Application",
+		name: "Fedibase",
+		description:
+			"Fedibase is a client for the Fediverse allowing you to browse your favourite feeds and interact with them. It's available for any device with a web browser.",
+		image: "/images/assets/fedibase-screenshot.png",
+	},
+	{
+		tag: "Application",
+		name: "CPlusPatch CMS",
+		description:
+			"CPlusPatch CMS is a content management system made with Vue, allowing you to create and manage websites with an extensible block-based system.",
+		image: "https://github.com/CPlusPatch/web-business/raw/master/assets/readme/devices-editor.webp",
 	},
 ];
 </script>

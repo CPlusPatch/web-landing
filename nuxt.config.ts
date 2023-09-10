@@ -20,6 +20,7 @@ export default defineNuxtConfig({
 			"aip.cpluspatch.dev",
 			"www.muylinux.com",
 			"matrix.org",
+			"github.com",
 		],
 	},
 	app: {

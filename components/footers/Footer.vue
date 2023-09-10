@@ -37,7 +37,7 @@ const footerNavigation = {
 			<div class="xl:grid xl:grid-cols-3 xl:gap-8">
 				<div class="space-y-8">
 					<nuxt-img
-						class="h-7"
+						class="h-7 w-auto"
 						width="229"
 						height="229"
 						src="/images/icons/logo.svg"

@@ -26,6 +26,9 @@ export default defineNuxtConfig({
 			"pool.jortage.com",
 			"media.mastodon.de",
 		],
+		ipx: {
+			maxAge: 60 * 60 * 24 * 365,
+		},
 	},
 	app: {
 		head: {
@@ -57,25 +60,13 @@ export default defineNuxtConfig({
 		compressPublicAssets: true,
 		routeRules: {
 			"/_nuxt/**": {
-				headers: {
-					"cache-control": `public,max-age=${
-						60 * 60 * 24 * 365
-					},s-maxage=${60 * 60 * 24 * 365}`,
-				},
+				swr: 60 * 60 * 24 * 365,
 			},
 			"/_ipx/**": {
-				headers: {
-					"cache-control": `public,max-age=${
-						60 * 60 * 24 * 365
-					},s-maxage=${60 * 60 * 24 * 365}`,
-				},
+				swr: 60 * 60 * 24 * 365,
 			},
 			"/images/**": {
-				headers: {
-					"cache-control": `public,max-age=${
-						60 * 60 * 24 * 365
-					},s-maxage=${60 * 60 * 24 * 365}`,
-				},
+				swr: 60 * 60 * 24 * 365,
 			},
 		},
 	},
@@ -83,6 +74,7 @@ export default defineNuxtConfig({
 		public: {
 			language: "en-US",
 			titleSeparator: "·",
+			siteName: "CPlusPatch",
 			trailingSlash: true,
 		},
 	},

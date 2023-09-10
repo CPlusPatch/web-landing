@@ -61,8 +61,10 @@ const open = ref(false);
 					<span class="sr-only">CPlusPatch</span>
 					<nuxt-img
 						class="h-8 w-auto"
+						width="229"
+						height="229"
 						src="/images/icons/logo.svg"
-						alt="CPlusPatch" />
+						alt="CPlusPatch Logo" />
 				</a>
 			</div>
 			<div class="flex lg:hidden">
@@ -174,8 +176,10 @@ const open = ref(false);
 						<span class="sr-only">CPlusPatch</span>
 						<nuxt-img
 							class="h-8 w-auto"
+							width="229"
+							height="229"
 							src="/images/icons/logo.svg"
-							alt="" />
+							alt="CPlusPatch Logo" />
 					</a>
 					<button
 						type="button"

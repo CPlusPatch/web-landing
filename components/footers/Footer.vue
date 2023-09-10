@@ -38,6 +38,8 @@ const footerNavigation = {
 				<div class="space-y-8">
 					<nuxt-img
 						class="h-7"
+						width="229"
+						height="229"
 						src="/images/icons/logo.svg"
 						alt="CPlusPatch" />
 					<p class="text-sm leading-6 text-gray-300">

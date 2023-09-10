@@ -86,10 +86,10 @@ const cards = [
 						class="inline mb-1 text-xs font-semibold text-orange-800 bg-orange-200 px-2 py-1 rounded">
 						{{ card.tag }}
 					</span>
-					<h3
+					<h2
 						class="text-lg mt-3 font-semibold text-gray-200 hover:text-white">
 						{{ card.name }}
-					</h3>
+					</h2>
 					<p class="mt-2 text-gray-300 text-sm">
 						{{ card.description }}
 					</p>

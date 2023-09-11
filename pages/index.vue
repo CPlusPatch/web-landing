@@ -235,5 +235,7 @@ const scrollIntoView = (id: string) =>
 
 	<SlidingLanguageCarousel />
 
+	<StatsBars />
+
 	<FootersFooter />
 </template>

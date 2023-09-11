@@ -38,7 +38,7 @@
     "@julr/unocss-preset-forms": "^0.0.5",
     "@nuxt/image": "rc",
     "@nuxtjs/robots": "^3.0.0",
-    "emailjs": "^4.0.2",
+    "emailjs": "^4.0.3",
     "highlight.js": "^11.8.0",
     "isomorphic-dompurify": "^1.8.0",
     "jsonwebtoken": "latest",

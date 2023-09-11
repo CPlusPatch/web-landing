@@ -52,7 +52,7 @@ dependencies:
     version: 2.2.5
   openai:
     specifier: latest
-    version: 4.4.0
+    version: 4.6.0
   pg:
     specifier: ^8.11.3
     version: 8.11.3
@@ -137,8 +137,8 @@ devDependencies:
     specifier: ^5.2.2
     version: 5.2.2
   vite-plugin-node-polyfills:
-    specifier: ^0.12.0
-    version: 0.12.0(vite@4.4.9)
+    specifier: ^0.13.0
+    version: 0.13.0(vite@4.4.9)
 
 packages:
 
@@ -1584,6 +1584,11 @@ packages:
     dependencies:
       '@intlify/shared': 9.3.0-beta.27
       source-map-js: 1.0.2
+    dev: true
+
+  /@intlify/shared@9.3.0:
+    resolution: {integrity: sha512-MMGRz6zWxtz7rHtxIIdnyb8SYOIaaseN1IvUhAEs9tOW4u77RD4DFp4qgPXesp2Gxo/5QitH9kwSs0jnxGUNEw==}
+    engines: {node: '>= 16'}
     dev: true
 
   /@intlify/shared@9.3.0-beta.27:
@@ -7472,6 +7477,7 @@ packages:
   /human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    requiresBuild: true
 
   /human-signals@4.3.1:
     resolution: {integrity: sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==}
@@ -7847,6 +7853,7 @@ packages:
   /is-stream@2.0.1:
     resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
     engines: {node: '>=8'}
+    requiresBuild: true
 
   /is-stream@3.0.0:
     resolution: {integrity: sha512-LnQR4bZ9IADDRSkvpqMGvt/tEJWclzklNgSw48V5EAaAeDd6qGvN8ei6k5p0tvxSR171VmGyHuTiAOfxAbr8kA==}
@@ -8613,6 +8620,7 @@ packages:
   /mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
+    requiresBuild: true
 
   /mimic-fn@4.0.0:
     resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
@@ -9741,6 +9749,7 @@ packages:
   /onetime@5.1.2:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
     engines: {node: '>=6'}
+    requiresBuild: true
     dependencies:
       mimic-fn: 2.1.0
 
@@ -9770,8 +9779,8 @@ packages:
       is-wsl: 2.2.0
     dev: true
 
-  /openai@4.4.0:
-    resolution: {integrity: sha512-JN0t628Kh95T0IrXl0HdBqnlJg+4Vq0Bnh55tio+dfCnyzHvMLiWyCM9m726MAJD2YkDU4/8RQB6rNbEq9ct2w==}
+  /openai@4.6.0:
+    resolution: {integrity: sha512-LuONkTgoe4D172raQCv+eEK5OdLGnY/M4JrUz/pxRGevZwqDqy3xhBbCeWX8QLCbFcnITYsu/VBJXZJ0rDAMpA==}
     hasBin: true
     dependencies:
       '@types/node': 18.17.14
@@ -11561,6 +11570,7 @@ packages:
   /strip-final-newline@2.0.0:
     resolution: {integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==}
     engines: {node: '>=6'}
+    requiresBuild: true
 
   /strip-final-newline@3.0.0:
     resolution: {integrity: sha512-dOESqjYr96iWYylGObzd39EuNTa5VJxyvVAEm5Jnh7KGo75V43Hk1odPQkNDyXNmUR6k+gEiDVXnjB8HJ3crXw==}
@@ -12632,8 +12642,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-node-polyfills@0.12.0(vite@4.4.9):
-    resolution: {integrity: sha512-xZfpD81aNhwEbIjccEiy8Q/hDdnlYqBSeEaUMIukOpGHuMaz65jqrC2lmnF/FXnliovISy2L1n92da0JOvk36A==}
+  /vite-plugin-node-polyfills@0.13.0(vite@4.4.9):
+    resolution: {integrity: sha512-TaTJmGnVz65I1lquc2Y8AYarPJb2r9XZUDWnXUWbAn3krfqXP7v/V9lg7K7NdVTmCXD/GVwUxl1cWLRwRwjnKg==}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
@@ -12833,7 +12843,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.27
+      '@intlify/shared': 9.3.0
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.27)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.3.0

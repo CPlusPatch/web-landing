@@ -9,14 +9,18 @@ import { presetForms } from "@julr/unocss-preset-forms";
 export default defineConfig({
 	presets: [
 		presetUno(),
-		presetTypography({
-			cssExtend: {
-				"h1,h2,h3,h4,h5.h6": {
-					"font-family": "'Poppins'",
+		presetTypography(),
+		presetWebFonts({
+			// Load Google Fonts
+			fonts: {
+				Inter: {
+					name: "Inter",
+					italic: false,
+					provider: "google",
+					weights: [400, 500, 600, 700],
 				},
 			},
 		}),
-		presetWebFonts(),
 		presetForms(),
 	],
 	rules: [
@@ -47,6 +51,19 @@ export default defineConfig({
 				"0%": { transform: "translateX(0)" },
 				"100%": { transform: "translateX(-100%)" },
 			},
+			"fade-in-down": {
+				"0%": {
+					opacity: "0",
+					transform: "translateY(-10px)",
+				},
+				"100%": {
+					opacity: "1",
+					transform: "translateY(0)",
+				},
+			},
+		},
+		animation: {
+			"fade-in-down": "fade-in-down 0.5s ease-out",
 		},
 	},
 });

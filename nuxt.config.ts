@@ -23,7 +23,9 @@ export default defineNuxtConfig({
 			"github.com",
 			"cpluspatch.com",
 			"pool.jortage.com",
+			"kitsu.life",
 			"media.mastodon.de",
+			"opengraph.githubassets.com",
 		],
 		ipx: {
 			maxAge: 60 * 60 * 24 * 365,

@@ -27,7 +27,7 @@ const testimonials = [
 					name: "Hazel",
 					title: "Developer",
 					imageUrl:
-						"https://pool.jortage.com/socialbestieshouse/accounts/avatars/110/772/057/197/102/203/original/bc99a968cdd77e7d.png",
+						"https://pool.jortage.com/socialbestieshouse/accounts/avatars/110/772/057/197/102/203/original/1fce205aabffea8f.png",
 				},
 			},
 		],
@@ -140,7 +140,7 @@ const testimonials = [
 					class="relative overflow-hidden bg-dark-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
 					<nuxt-img
 						class="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"
-						src="https://media.mastodon.de/media_attachments/files/110/968/260/268/678/014/original/b8ae482249766c07.jpeg"
+						src="/images/assets/erik-smiling.jpeg"
 						format="webp"
 						sizes="sm:80vw"
 						quality="40"

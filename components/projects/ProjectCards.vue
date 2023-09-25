@@ -56,6 +56,20 @@ const cards = [
 			"CPlusPatch CMS is a content management system made with Vue, allowing you to create and manage websites with an extensible block-based system.",
 		image: "https://github.com/CPlusPatch/web-business/raw/master/assets/readme/devices-editor.webp",
 	},
+	{
+		tag: "Application",
+		name: "Lysand",
+		description:
+			"Lysand is an experimental new ActivityPub microblogging server implementing the Mastodon API, written with the Bun runtime",
+		image: "https://opengraph.githubassets.com/0473f3e13c155c834c85ea1188a44fc1191a12fc96220b0acf1301002b15f462/CPlusPatch/lysand",
+	},
+	{
+		tag: "Website",
+		name: "KitsuLife",
+		description:
+			"Website for the Kitsu service suite, showcasing features and the community for Kitsu",
+		image: "https://kitsu.life/images/assets/screenshots/screenshot3.png",
+	},
 ];
 </script>
 
@@ -71,7 +85,7 @@ const cards = [
 			<div
 				v-for="card of cards"
 				:key="card.name"
-				class="group flex flex-col h-full shadow-sm rounded overflow-hidden hover:ring-2 hover:ring-orange-500 duration-200 bg-dark-400 ring-1 ring-dark-300">
+				class="group flex flex-col h-full shadow hover:shadow-xl rounded overflow-hidden hover:ring-2 hover:ring-orange-500 duration-200 bg-dark-400 ring-1 ring-dark-300">
 				<div
 					class="h-52 flex flex justify-center items-center overflow-hidden">
 					<nuxt-img

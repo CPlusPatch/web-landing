@@ -90,7 +90,7 @@ const cards = [
 					class="h-52 flex flex justify-center items-center overflow-hidden">
 					<nuxt-img
 						:src="card.image"
-						sizes="sm:100vw md:70vw lg:50vw"
+						width="400"
 						format="webp"
 						alt=""
 						class="h-full w-full object-cover bg-white/5 backdrop-blur-xl" />

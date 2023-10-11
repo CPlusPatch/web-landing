@@ -109,7 +109,7 @@ const scrollIntoView = (id: string) =>
 				class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
 				<div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
 					<img
-						src="/images/assets/banner.webp"
+						src="/images/assets/banner-2.webp"
 						alt="VSCode screenshot"
 						width="2432"
 						height="1442"
@@ -126,12 +126,10 @@ const scrollIntoView = (id: string) =>
 				class="lg:flex lg:w-1/2 lg:shrink lg:grow-0 xl:absolute xl:inset-y-0 xl:right-1/2 xl:w-1/2">
 				<div
 					class="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
-					<nuxt-img
+					<img
 						loading="lazy"
 						class="absolute inset-y-0 right-0 h-full w-full bg-white/5 backdrop-blur-xl object-cover max-w-6xl"
-						sizes="sm:100vw lg:80vw"
-						format="webp"
-						src="https://unsplash.com/photos/42gFAgdIUC8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTJ8fGRhdGElMjBjZW50ZXJ8ZW58MHx8fHwxNjkzNDAyMzI4fDA&force=true&w=1920"
+						src="/images/assets/buildings.webp"
 						alt="" />
 				</div>
 			</div>

@@ -18,7 +18,7 @@
     "@nuxtseo/module": "2.0.0-beta.15",
     "@types/node": "^20.6.5",
     "@typescript-eslint/parser": "^6.7.2",
-    "@unocss/nuxt": "^0.56.1",
+    "@unocss/nuxt": "^0.57.1",
     "@vueuse/core": "latest",
     "@vueuse/nuxt": "latest",
     "eslint": "^8.50.0",

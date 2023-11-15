@@ -60,7 +60,7 @@ const posts = await queryContent("/").locale(locale.value.split("-")[0]).find();
 								class="h-10 w-10 rounded-full bg-dark-100" />
 							<div class="text-sm leading-6">
 								<p class="font-semibold text-gray-50">
-									<a :href="post.author ?? '#'">
+									<a href="#">
 										<span class="absolute inset-0" />
 										{{ post.author ?? "" }}
 									</a>

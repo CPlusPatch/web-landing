@@ -12,7 +12,8 @@ const cards = [
 		description:
 			"Fully-featured AI application with a community API, a web interface and a working RP mode, ready for business.",
 		name: "AIP",
-		image: "https://aip.cpluspatch.dev/images/screenshots/screenshot1.webp",
+		// image: "https://aip.cpluspatch.dev/images/screenshots/screenshot1.webp",
+		image: "/",
 	},
 	{
 		tag: "Application",

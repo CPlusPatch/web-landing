@@ -72,6 +72,10 @@ export default defineNuxtConfig({
 				swr: 60 * 60 * 24 * 365,
 			},
 		},
+		prerender: {
+			failOnError: false,
+			routes: ["/blog/en/security/opsec-and-you", "/", "/privacy"],
+		},
 	},
 	runtimeConfig: {
 		public: {
@@ -79,6 +83,7 @@ export default defineNuxtConfig({
 			titleSeparator: "·",
 			siteName: "CPlusPatch",
 			trailingSlash: true,
+			siteUrl: "https://cpluspatch.dev",
 		},
 	},
 });

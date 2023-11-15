@@ -1,20 +1,11 @@
 <script setup lang="ts">
-import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
-
 const { locale } = useI18n();
 
-let post: ParsedContent | null;
-try {
-	post = await queryContent(
-		`/${
-			(useRoute().params.path as string[]).toSpliced(0, 1).join("/") ?? ""
-		}`
-	)
-		.locale(locale.value.split("-")[0])
-		.findOne();
-} catch {
-	post = null;
-}
+const post = await queryContent(
+	`/${(useRoute().params.path as string[]).toSpliced(0, 1).join("/") ?? ""}`
+)
+	.locale(locale.value.split("-")[0])
+	.findOne();
 
 useSchemaOrg([
 	defineArticle({

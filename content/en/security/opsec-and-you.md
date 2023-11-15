@@ -42,6 +42,7 @@ You may find this guide interesting if:
       - [LUKS Hardware Key Unlocking](#luks-hardware-key-unlocking)
   - [Secure Boot and Disk Encryption](#secure-boot-and-disk-encryption)
 - [Software Security](#software-security)
+  - [Updates](#updates)
   - [Software Sources](#software-sources)
     - [Desktop](#desktop)
     - [Mobile](#mobile)
@@ -57,16 +58,20 @@ You may find this guide interesting if:
   - [VPNs](#vpns)
     - [Purchasing VPNs](#purchasing-vpns)
   - [DNS](#dns)
+- [Hardening your Kernel](#hardening-your-kernel)
 - [Shredding Data](#shredding-data)
 - [Services to Avoid](#services-to-avoid)
   - [Google](#google)
   - [Facebook](#facebook)
 - [CPU Backdoors](#cpu-backdoors)
+  - [Disabling the Intel Management Engine](#disabling-the-intel-management-engine)
 - [Payment Systems](#payment-systems)
   - [Bank-Related Payments](#bank-related-payments)
   - [Cryptocurrency](#cryptocurrency)
     - [Cryptocurrency Scams](#cryptocurrency-scams)
     - [Cryptocurrency Exchanges](#cryptocurrency-exchanges)
+- [Good Practices](#good-practices)
+  - [If you are arrested](#if-you-are-arrested)
 - [Conclusion](#conclusion)
 
 
@@ -245,6 +250,12 @@ Secure Boot and Disk Encryption **MUST** be used together. Both work hand-in-han
 
 # Software Security
 
+## Updates
+
+You should **always** keep your software up to date. This is because software updates often contain security patches, and not updating your software means that you are vulnerable to known exploits.
+
+Using "old" software for the sake of stability is often a bad idea for security. Even if some fixes are backported, it is often not enough to protect you from attackers. You should **always** use the latest version of your software.
+
 ## Software Sources
 
 Proprietary software **SHOULD** be avoided like the plague for security reasons. This is because proprietary software is not open to public scrutiny, and can contain backdoors and other malicious code. You should **always** use FOSS software when possible.
@@ -402,13 +413,33 @@ If you change your DNS system-wide, **make sure the changes are applied on boot 
 
 > **Note**: If you are using Tor, you do not need to change your DNS settings, as Tor does not use DNS.
 
+# Hardening your Kernel
+
+The Linux kernel is the core of the Linux operating system. It is responsible for managing hardware and software resources, and is the most important part of the operating system. It is also the most vulnerable part of the operating system, as it is the most complex.
+
+You should always disable unnecessary kernel features to reduce the attack surface of your kernel. This is especially important if you are using a custom kernel, as custom kernels often have more features enabled than the default kernel.
+
+To fully secure your kernel, you can [follow this comprehensive guide by Madaidan](https://madaidans-insecurities.github.io/guides/linux-hardening.html). It includes:
+
+- Installing a hardened custom kernel, such as `linux-hardened`
+- Enable Lockdown Mode
+- Disabling old and useless drivers
+- Disabling unnecessary filesystems
+- Changing kernel options to improve security
+
+> **Note**: This guide is rather pessimistic about the security of Linux. While it is true that Linux is not as secure as it could be, it is still more secure than Windows or macOS. You should still follow this guide, but do not be afraid to use Linux. Ultimately, there is no perfect OS.
+
 # Shredding Data
 
 When you delete data by using either `rm` or the system's file manager, the data is not actually deleted. Instead, the file is marked as deleted, and the space it occupies is marked as free. This means that the data is still on your hard drive, and can be recovered by an attacker.
 
 If your computer is compromised, an attacker can use this to recover your data. This is why you should **always** shred your data before deleting it.
 
-Always use special software to shred sensitive files using recommended shredding methods.
+Always use special software (or CLI tools) to shred sensitive files using recommended shredding methods, such as:
+
+- [shred](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html)
+- [srm](https://srm.sourceforge.io/)
+- [Raider](https://github.com/ADBeveridge/raider)
 
 # Services to Avoid
 
@@ -462,6 +493,18 @@ Virtually all modern CPUs contain at least one of these backdoors, and it is oft
 
 Unfortunately, there is no way to securely deal with these pests. However, you may be reassured by the fact that they are very hard to be used by state agents or companies to spy on you, as these things do not report to anybody but the CPU itself (even if they can access the internet).
 
+## Disabling the Intel Management Engine
+
+The Intel Management Engine is a backdoor that is present on all Intel CPUs. It is a small computer inside your computer that has full access to your computer's memory and network. It is not possible to disable it entirely without breaking your CPU, but it is possible to disable some of its features.
+
+You should **never** disable the Intel Management Engine entirely, as it contains important security features that are required for your computer to boot. However, you can disable some of its features, such as the Active Management Technology (AMT) and the Local Management Service (LMS).
+
+To do this, you will need to install [me_cleaner](https://github.com/corna/me_cleaner), acquire a copy of your ME firmware, and modify it to disable the features you want to disable. This is a very complicated process, and you should only do it if you know what you are doing.
+
+Once you have modified the firmware, you will need to flash it back using an SPI programmer. `me_cleaner` does not disable the Intel ME entirely, but effectively nullifies it after the system has booted. This means that it is still possible for the Intel ME to be used to spy on you before the system has booted.
+
+You'll have to use a CPU architecture such as the RISC-V if you want to be sure that your CPU is safe. Fortunately, Linux is widely supported on RISC-V (and is just about the only OS that supports it), so installation of some distros is possible.
+
 # Payment Systems
 
 ## Bank-Related Payments
@@ -508,7 +551,25 @@ If somebody asks you for your wallet passphrase or private key, **IT IS A SCAM**
 
 **THERE ARE NO LAWS GOVERNING CRYPTOCURRENCY**. If you lose your cryptocurrency, you will not be able to get it back. You should **always** be careful when dealing with cryptocurrency, as it is very easy to lose your money.
 
-> **Note**: If you are using cryptocurrency to do something illegal, you should **never** use an exchange to purchase it. Instead, you should use a peer-to-peer exchange. This is because exchanges are required by law to report suspicious activity to the government, and will do so if they suspect you of doing something illegal.
+> **Note**: If you are using cryptocurrency to do something reprehensive or illegal, you should **never** use an exchange to purchase it. Instead, you should use a peer-to-peer exchange. This is because exchanges are required by law to report suspicious activity to the government, and will do so if they suspect you of doing something illegal.
+
+
+# Good Practices
+
+- **Never** share PII (Personally Identifiable Information) with anybody over unencrypted channels
+- **Never** share PII with anybody you do not trust
+- Always assume everybody is a threat by default
+- Never use the same email accounts for personal and "business" use
+- **Avoid** using the same IP address for personal and "business" use
+- **Never** use your real name on the internet
+
+## If you are arrested
+
+If you are arrested, you should **never** talk to the police. You should **always** ask for a lawyer, and **never** answer any questions. You should also **never** consent to a search of your property (unless they have a warrant), as this can be used against you in court.
+
+Law enforcement **can and will lie to you**, offer you bogus "deals", try to trick you into talking, and more. You should **never** trust them, and **never** talk to them without a lawyer present. In some countries, such as the United States, you have the right to remain silent, and you should **always** exercise this right.
+
+**DO NOT** admit to anything and **do not** comply with any orders.
 
 # Conclusion
 

@@ -2,11 +2,7 @@
 const { locale } = useI18n();
 
 const post = await queryContent(
-	`/${
-		((useRoute().params.path ?? []) as string[])
-			.toSpliced(0, 1)
-			.join("/") ?? ""
-	}`
+	(useRoute().params.path as string[]).join("/").replace("en", "")
 )
 	.locale(locale.value.split("-")[0])
 	.findOne();

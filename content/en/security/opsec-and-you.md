@@ -57,6 +57,11 @@ You may find this guide interesting if:
   - [VPNs](#vpns)
     - [Purchasing VPNs](#purchasing-vpns)
   - [DNS](#dns)
+- [Shredding Data](#shredding-data)
+- [Services to Avoid](#services-to-avoid)
+  - [Google](#google)
+  - [Facebook](#facebook)
+- [CPU Backdoors](#cpu-backdoors)
 - [Payment Systems](#payment-systems)
   - [Bank-Related Payments](#bank-related-payments)
   - [Cryptocurrency](#cryptocurrency)
@@ -396,6 +401,66 @@ Good DNS providers include:
 If you change your DNS system-wide, **make sure the changes are applied on boot and for every new connection**.
 
 > **Note**: If you are using Tor, you do not need to change your DNS settings, as Tor does not use DNS.
+
+# Shredding Data
+
+When you delete data by using either `rm` or the system's file manager, the data is not actually deleted. Instead, the file is marked as deleted, and the space it occupies is marked as free. This means that the data is still on your hard drive, and can be recovered by an attacker.
+
+If your computer is compromised, an attacker can use this to recover your data. This is why you should **always** shred your data before deleting it.
+
+Always use special software to shred sensitive files using recommended shredding methods.
+
+# Services to Avoid
+
+Most proprietary service should be avoided as much as possible, but these companies are some of the worst offenders.
+
+## Google
+
+Google is a company that is known to spy on its users. You should **never** use any of their services, as they are not private, and Google **WILL** share everything it can with law enforcement. This includes:
+
+- Google Search
+- Google Chrome
+- Google Drive
+- Google Docs
+- Google Maps
+- Google Photos
+- GMail
+- YouTube
+- Hundreds more of google services
+
+On Android, access the Google Play Store through a burner Google account if possible.
+
+The Google Pixel is a hardware product with an outstanding security track record, but you should **never** use it with Google services. Instead, you should install a custom ROM on it and use it with FOSS software. Please see [Mobile Operating System](#mobile-operating-system) for more information.
+
+## Facebook
+
+Facebook is widely known for having horrible privacy and repeatedly exploiting its users for extra money. You should **never** use a Facebook service, or even worse, share PII with Facebook.
+
+This includes:
+
+- Facebook
+- Instagram
+- WhatsApp
+- Messenger
+- Oculus
+- Threads
+- Any other Facebook service
+
+# CPU Backdoors
+
+Most modern CPUs contain backdoors that can be used to spy on you. These backdoors are not well documented, and are often not even known about. This means that it is impossible to know if your CPU is spying on you.
+
+The only way to be sure that your CPU is not spying on you is to use an open-source CPU, such as the [RISC-V](https://riscv.org/) architecture. However, these CPUs are not yet widely available for consumer use, and are not very powerful.
+
+Here are the different types of backdoors that are known to exist:
+
+- [Intel Management Engine](https://en.wikipedia.org/wiki/Intel_Management_Engine)
+- [AMD Platform Security Processor](https://en.wikipedia.org/wiki/AMD_Platform_Security_Processor)
+- [ARM TrustZone](https://en.wikipedia.org/wiki/ARM_architecture#TrustZone)
+
+Virtually all modern CPUs contain at least one of these backdoors, and it is often impossible to disable them. In the cases that it is possible to disable them, you probably should not, as they contain important security features embedded inside them (such as Intel BootGuard for the Intel ME).
+
+Unfortunately, there is no way to securely deal with these pests. However, you may be reassured by the fact that they are very hard to be used by state agents or companies to spy on you, as these things do not report to anybody but the CPU itself (even if they can access the internet).
 
 # Payment Systems
 

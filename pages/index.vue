@@ -274,5 +274,7 @@ const scrollIntoView = (id: string) =>
 		</div>
 	</div>
 
+	<BlogPresentation />
+
 	<FootersFooter />
 </template>

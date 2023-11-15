@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 		"@nuxtseo/module",
 		"@nuxtjs/i18n",
 		"nuxt-swiper",
+		"@nuxt/content",
 		"@nuxt/image",
 	],
 	image: {
@@ -30,6 +31,10 @@ export default defineNuxtConfig({
 		ipx: {
 			maxAge: 60 * 60 * 24 * 365,
 		},
+	},
+	content: {
+		locales: ["en"],
+		defaultLocale: "en",
 	},
 	app: {
 		head: {

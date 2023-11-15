@@ -13,6 +13,8 @@
     "format": "prettier --write components/ pages/ styles utils/ templates/ server/ plugins/ middleware/ layouts/ db/"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.9.0",
+    "@nuxt/image": "^1.0.0",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@nuxtjs/i18n": "next",
     "@nuxtseo/module": "2.0.0-beta.15",
@@ -21,9 +23,9 @@
     "@unocss/nuxt": "^0.56.1",
     "@vueuse/core": "latest",
     "@vueuse/nuxt": "latest",
-    "eslint": "^8.50.0",
+    "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "nuxt": "^3.7.3",
     "nuxt-headlessui": "^1.1.4",
     "nuxt-rate-limit": "^1.1.0",
@@ -33,9 +35,12 @@
     "typescript": "^5.2.2",
     "vite-plugin-node-polyfills": "^0.14.1"
   },
+  "trustedDependencies": [
+    "sharp",
+    "esbuild"
+  ],
   "dependencies": {
     "@julr/unocss-preset-forms": "^0.0.5",
-    "@nuxt/image": "rc",
     "@nuxtjs/robots": "^3.0.0",
     "highlight.js": "^11.8.0",
     "marked": "^9.0.3",

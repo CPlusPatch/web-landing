@@ -85,7 +85,7 @@ The switch from Windows to Linux will require some computer knowledge about how 
 
 Arch Linux also has an in-depth wiki that can help you with any issues you may have. You can find it [here](https://wiki.archlinux.org/). Commands used in this guide will be written for Arch Linux, but will work on most other distributions as well.
 
-> **Note**: If you want actual insanity-level security, you should use [Qubes OS](https://www.qubes-os.org/). However, Qubes OS is not user-friendly and requires a lot of knowledge to use. I do not recommend it unless you are a journalist or activist.
+> **Note**: If you want maximum security, you should use [Qubes OS](https://www.qubes-os.org/). However, Qubes OS is not user-friendly and requires a lot of knowledge to use. I do not recommend it unless you are a journalist or activist.
 
 ## Mobile Operating System
 
@@ -93,9 +93,9 @@ Do **not** use the iOS operating system (and therefore any iPhone), as it is ful
 
 ### Custom ROMs
 
-The stock Android operating system that comes preloaded with your phone most likely has very poor security and contains bloatware: this is because OEM manufacturers often add their own software to Android, which can contain backdoors and other malicious code. You should install a custom ROM on your phone to remove this bloatware and improve security.
+The OEM Android operating system that comes preloaded with your phone most likely has very poor security and contains bloatware: this is because manufacturers often add their own software to Android, which can contain backdoors and other malicious code. You should install a custom ROM on your phone to remove this bloatware and improve security.
 
-The most secure phone to own is the [Google Pixel](https://pixel.google.com), as it is the only phone that is officially supported by the [GrapheneOS](https://grapheneos.org/) project. GrapheneOS is a FOSS operating system for Android that is designed with security in mind. It is based on the Android Open Source Project (AOSP), and is hardened to protect against attacks. It is the only Android variant that is designed to be secure, and is the only one that I recommend.
+The most secure phone to own is the [Google Pixel](https://pixel.google.com), as it is the only phone that is officially supported by the [GrapheneOS](https://grapheneos.org/) project. GrapheneOS is a FOSS operating system for Android that is designed with security in mind. It is based on the Android Open Source Project (AOSP), and is hardened to protect against attacks. It is the only Android variant that is designed to be secure.
 
 If you cannot purchase a Pixel device, you should purchase a device that is supported by [LineageOS](https://lineageos.org/). LineageOS is not nearly as secure as GrapheneOS, but it is still a marginal improvement over stock Android. You can find a list of supported devices [here](https://wiki.lineageos.org/devices/).
 
@@ -206,6 +206,7 @@ sbctl status
 ```
 
 Keys should be enrolled.
+
 8. Sign your kernel
 This step is required for your system to boot and must be done on every kernel update. You can use automated tools, such as pacman hooks, to do this signing automatically.
     
@@ -216,6 +217,7 @@ sbctl sign -s /boot/vmlinuz-linux
 sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
 ...
 ```
+
 9. Reboot your system (make sure secure boot is enabled) and check that it boots correctly. If it does, run `sbctl status` again to check that Secure Boot is still enabled.
 
 ## Disk Encryption
@@ -228,7 +230,7 @@ To reiterate: **you should always have disk encryption enabled**. If a computer 
 
 ### LUKS
 
-LUKS is a disk encryption standard that is used by most Linux distributions. It is the most secure disk encryption standard available, and is the only one that I recommend. Typically, when installing your distribution, you will be asked if you want to encrypt your disk. You should **always** say yes to this question.
+LUKS is a disk encryption standard that is used by most Linux distributions. It is one of the most secure disk encryption standard available, but there are others. Typically, when installing your distribution, you will be asked if you want to encrypt your disk. You should **always** say yes to this question.
 
 Use a strong password for your disk encryption. This password should be **different** from your BIOS password, and be large and impossible to guess.
 
@@ -239,6 +241,10 @@ There are other methods to encrypt your disk, such as VeraCrypt, but LUKS is a g
 Automatically unlocking LUKS with your TPM lets you have full disk encryption without having to type in a password every time you boot your computer. This is a great feature, as it means that your computer will be encrypted even if you are not there to type in the password. I generally do not use it, but it might be useful if you have trouble remembering passwords.
 
 This feature may not be available on all computers, and requires a TPM 2.0 chip. Most recent computers have this chip, but some older ones do not.
+
+##### Is this secure?
+
+Using TPM LUKS unlocking prevents anybody from decrypting your drive after it is removed from the mainboard. If your computer is booted, your password screen should prevent any attackers from stealing your data, but exploits can still be performed against your OS through USB devices for example.
 
 #### LUKS Hardware Key Unlocking
 
@@ -262,7 +268,7 @@ Proprietary software **SHOULD** be avoided like the plague for security reasons.
 
 ### Desktop
 
-You should **always** use the official repositories of your distribution to install software. This is because the official repositories are maintained by the distribution maintainers, and are therefore more secure than third-party repositories.
+You should use the official repositories of your distribution to install software. This is because the official repositories are maintained by the distribution maintainers, and are therefore more secure than third-party repositories.
 
 If you do not trust an application, install it through [Flatpak](https://flatpak.org/) or [Snap](https://snapcraft.io/). These are sandboxed application formats that prevent applications from accessing your data without your permission. They are also more secure than traditional package managers, as they are signed by the developers and cannot be tampered with.
 
@@ -290,7 +296,7 @@ Good messaging apps are:
 - [Element](https://element.io/), for mobile and desktop (client for the Matrix platform)
 - [Threema](https://threema.ch/en), for mobile and desktop
 
-For more information about what state agents can access in other messaging apps, [check this FBI document](https://therecord.media/fbi-document-shows-what-data-can-be-obtained-from-encrypted-messaging-apps). Do **NOT** under any circumstances share sensitive information on any platform that is not fully end-to-end encrypted and open-source.
+For more information about what state agents can access in other messaging apps, [check this article on revealed FBI documents](https://therecord.media/fbi-document-shows-what-data-can-be-obtained-from-encrypted-messaging-apps). Do **NOT** under any circumstances share sensitive information on any platform that is not fully end-to-end encrypted and open-source.
 
 State agents **CAN** and **WILL** compel companies to give them access to your data. This is why you should **always** use end-to-end encrypted messaging apps, as the companies cannot give out your data since they do not have it (it is encrypted).
 
@@ -357,7 +363,7 @@ By default, your ISP (Internet Service Provider, such as Comcast or AT&T) is abl
 
 ### Paranoid Section
 
-You may desire to route your entire internet traffic through Tor for the highest anonymity possible: on mobile, this can be done through [Orbot](https://support.torproject.org/glossary/orbot/); on desktop, you should look up how to do it.
+You may desire to route your entire internet traffic through Tor for the highest anonymity possible: on mobile, this can be done through [Orbot](https://support.torproject.org/glossary/orbot/); on desktop, you should look up how to do it for your distribution.
 
 ## VPNs
 
@@ -372,7 +378,7 @@ Good VPN services include:
 
 VPN services that try to make false promises to you should probably not be trusted. In general, here is what a VPN **CAN** do:
 
-- Encrypt your traffic **between you and the VPN server** in a better way than it is normally encrypted
+- Hide traffic **between you and the VPN server** in a better way than it is normally hidden
 - Hide your IP address from sites you visit
 - Make being deanonymized harder
 - Improve your security slightly without being too much effort
@@ -435,7 +441,7 @@ When you delete data by using either `rm` or the system's file manager, the data
 
 If your computer is compromised, an attacker can use this to recover your data. This is why you should **always** shred your data before deleting it.
 
-Always use special software (or CLI tools) to shred sensitive files using recommended shredding methods, such as:
+Always use special software (or CLI tools) to shred sensitive files such as:
 
 - [shred](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation.html)
 - [srm](https://srm.sourceforge.io/)
@@ -461,7 +467,7 @@ Google is a company that is known to spy on its users. You should **never** use 
 
 On Android, access the Google Play Store through a burner Google account if possible.
 
-The Google Pixel is a hardware product with an outstanding security track record, but you should **never** use it with Google services. Instead, you should install a custom ROM on it and use it with FOSS software. Please see [Mobile Operating System](#mobile-operating-system) for more information.
+The Google Pixel is a hardware product with good hardware security, but you should **never** use it with Google services. Instead, you should install a custom ROM on it and use it with FOSS software. Please see [Mobile Operating System](#mobile-operating-system) for more information.
 
 ## Facebook
 
@@ -501,9 +507,9 @@ You should **never** disable the Intel Management Engine entirely, as it contain
 
 To do this, you will need to install [me_cleaner](https://github.com/corna/me_cleaner), acquire a copy of your ME firmware, and modify it to disable the features you want to disable. This is a very complicated process, and you should only do it if you know what you are doing.
 
-Once you have modified the firmware, you will need to flash it back using an SPI programmer. `me_cleaner` does not disable the Intel ME entirely, but effectively nullifies it after the system has booted. This means that it is still possible for the Intel ME to be used to spy on you before the system has booted.
+Once you have modified the firmware, you will need to flash it back using an SPI programmer. `me_cleaner` does not disable the Intel ME entirely, but effectively nullifies it after the system has booted.
 
-You'll have to use a CPU architecture such as the RISC-V if you want to be sure that your CPU is safe. Fortunately, Linux is widely supported on RISC-V (and is just about the only OS that supports it), so installation of some distros is possible.
+You'll have to use a CPU architecture such as the RISC-V if you want to be sure that your CPU is safe. Fortunately, Linux is well supported on RISC-V (and is just about the only OS that supports it), so installation of some distros is possible.
 
 # Payment Systems
 
@@ -527,7 +533,7 @@ Cryptocurrency is **not** anonymous. It is pseudonymous, which means that it is 
 
 **Every** payment made with cryptocurrency is public to the whole world because of how blockchain technology works. Most popular cryptocurrencies are also not fungible, which means that it is possible to trace the history of a coin. This means that if you receive a coin that has been used for illegal activities, you may be accused of doing those activities yourself.
 
-To be anonymous, you **should not** use currencies such as Ethereum or Bitcoin: instead, you should use currencies such as Monero. These currencies are designed to be anonymous, and provide a much higher level of anonymity than other currencies.
+To be anonymous, you **should not** use currencies such as Ethereum or Bitcoin: instead, you should use currencies like as Monero. These currencies are designed to be anonymous, and provide a much higher level of anonymity than other currencies.
 
 ### Cryptocurrency Scams
 
@@ -543,7 +549,7 @@ Purchase screens typically look like this:
 
 ### Cryptocurrency Exchanges
 
-You should avoid crypto exchanges like the plague. They are often not secure, and can be hacked. You should **never** store your cryptocurrency on an exchange, as it is very easy to lose it. Your cryptocurrency should be controlled solely by you and you only, stored in a wallet that you control.
+You should avoid online crypto exchanges. While they are very convenient, they are often not secure, and can be hacked. You should **never** store your cryptocurrency on an exchange, as it is very easy to lose it. Your cryptocurrency should be controlled solely by you and you only, stored in a wallet that you control.
 
 **DO NOT** use online wallets, as they are controlled by a third party and can be compromised. You should **always** use a wallet that you control, and **never** share your private keys with anybody.
 
@@ -551,7 +557,7 @@ If somebody asks you for your wallet passphrase or private key, **IT IS A SCAM**
 
 **THERE ARE NO LAWS GOVERNING CRYPTOCURRENCY**. If you lose your cryptocurrency, you will not be able to get it back. You should **always** be careful when dealing with cryptocurrency, as it is very easy to lose your money.
 
-> **Note**: If you are using cryptocurrency to do something reprehensive or illegal, you should **never** use an exchange to purchase it. Instead, you should use a peer-to-peer exchange. This is because exchanges are required by law to report suspicious activity to the government, and will do so if they suspect you of doing something illegal.
+> **Note**: If you are using cryptocurrency to do something reprehensive or illegal, you should **never** use an online exchange to purchase it. Instead, you should use a peer-to-peer exchange, ideally via Tor. This is because exchanges are required by law to report suspicious activity to the government, and will do so if they suspect you of doing something illegal.
 
 
 # Good Practices

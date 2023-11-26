@@ -45,9 +45,35 @@ useServerSeoMeta({
 			alt=""
 			class="aspect-[16/9] mt-30 w-full max-w-3xl mx-auto rounded-2xl bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
 		<div
-			class="mx-auto max-w-3xl prose prose-invert prose-truegray pb-24 sm:pb-32 mt-15 [&_figcaption]:mt-4 [&_h1,&_h2,&_h3,&_h4]:tracking-tight [&_p]:!leading-7 [&_ul]:max-w-xl [&_ul]:space-y-2 [&_p]:!mt-6 [&_img]:mt-6 [&_img]:mx-auto [&_img]:rounded-xl">
+			class="mx-auto max-w-3xl prose prose-invert prose-truegray pb-24 sm:pb-32 mt-15 [&_p]:!leading-7 [&_ul]:max-w-xl [&_ul]:space-y-2 [&_p]:!mt-6 [&_img]:mt-6 [&_img]:mx-auto [&_img]:rounded-xl">
 			<ContentRenderer :value="post" />
 		</div>
 	</div>
 	<Errors404 v-else />
 </template>
+
+<style>
+.prose {
+	font-family: "Inter";
+}
+
+.prose figcaption {
+	margin-top: 0.5rem;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+	letter-spacing: -0.025em;
+}
+
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a,
+.prose h5 a {
+	text-decoration: none;
+	color: var(--un-prose-headings);
+}
+</style>

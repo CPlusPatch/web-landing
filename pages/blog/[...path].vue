@@ -76,4 +76,12 @@ useServerSeoMeta({
 	text-decoration: none;
 	color: var(--un-prose-headings);
 }
+
+.prose input[type="checkbox"] {
+	vertical-align: baseline;
+	height: 0.9rem;
+	width: 0.9rem;
+	border-radius: 0.125rem;
+	margin-right: 0.375rem;
+}
 </style>

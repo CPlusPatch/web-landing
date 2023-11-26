@@ -25,6 +25,9 @@ useSchemaOrg([me, myOrg]);
 
 useServerSeoMeta({
 	author: me.name,
+	titleTemplate: titleChunk => {
+		return titleChunk ? `${titleChunk} · CPlusPatch` : "CPlusPatch";
+	},
 });
 </script>
 

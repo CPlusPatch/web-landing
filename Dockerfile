@@ -18,4 +18,4 @@ LABEL org.opencontainers.image.licenses "GPL-3.0"
 LABEL org.opencontainers.image.title "Web Landing"
 LABEL org.opencontainers.image.description "Landing page for my website"
 
-CMD ["node", "/app/server/index.mjs"]
+CMD ["cd", "/app/server", "&&", "node", "index.mjs"]

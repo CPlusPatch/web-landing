@@ -1,6 +1,5 @@
 import { readdirSync, readFileSync } from "fs";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
+import { join } from "path";
 
 // Extract the FrontMatter header from raw markdown
 const frontMatterParser = function <T>(frontMatter: string) {
@@ -22,10 +21,7 @@ const frontMatterParser = function <T>(frontMatter: string) {
 };
 
 export default defineEventHandler(() => {
-	const directoryPath = join(
-		dirname(fileURLToPath(import.meta.url)),
-		"content"
-	);
+	const directoryPath = join(process.cwd(), "content");
 
 	const getFiles = (dirPath: string): string[] => {
 		const entries = readdirSync(dirPath, { withFileTypes: true });
@@ -55,7 +51,7 @@ export default defineEventHandler(() => {
 
 		results.push({
 			frontMatter,
-			path: file.replace("content/", "").replace(".md", ""),
+			path: file.split("content/")[1].replace(".md", ""),
 		});
 	}
 

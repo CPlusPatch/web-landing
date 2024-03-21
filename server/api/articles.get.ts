@@ -55,5 +55,10 @@ export default defineEventHandler(() => {
 		});
 	}
 
-	return results;
+	// Sort by date
+	return results.sort(
+		(a, b) =>
+			new Date(Number(b.frontMatter?.created_at)).getTime() -
+			new Date(Number(a.frontMatter?.created_at)).getTime()
+	);
 });

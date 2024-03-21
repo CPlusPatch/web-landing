@@ -1,5 +1,28 @@
 <script setup lang="ts">
-import { marked } from "marked";
+import { Marked } from "marked";
+import { markedHighlight } from "marked-highlight";
+import "highlight.js/styles/stackoverflow-dark.min.css";
+import hljs from "highlight.js/lib/core";
+
+import toml from "highlight.js/lib/languages/ini";
+import yaml from "highlight.js/lib/languages/yaml";
+import json from "highlight.js/lib/languages/json";
+import bash from "highlight.js/lib/languages/bash";
+import shell from "highlight.js/lib/languages/shell";
+import plaintext from "highlight.js/lib/languages/plaintext";
+import typescript from "highlight.js/lib/languages/typescript";
+import javascript from "highlight.js/lib/languages/javascript";
+import python from "highlight.js/lib/languages/python";
+
+hljs.registerLanguage("toml", toml);
+hljs.registerLanguage("yaml", yaml);
+hljs.registerLanguage("json", json);
+hljs.registerLanguage("bash", bash);
+hljs.registerLanguage("shell", shell);
+hljs.registerLanguage("plaintext", plaintext);
+hljs.registerLanguage("typescript", typescript);
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("python", python);
 
 const filePath = (useRoute().params.path as string[]).join("/");
 
@@ -26,6 +49,16 @@ useServerSeoMeta({
 	ogImage: frontMatter?.image,
 	twitterCard: "summary_large_image",
 });
+
+const marked = new Marked(
+	markedHighlight({
+		langPrefix: "hljs language-",
+		highlight(code, lang) {
+			const language = hljs.getLanguage(lang) ? lang : "plaintext";
+			return hljs.highlight(code, { language }).value;
+		},
+	})
+);
 </script>
 
 <template>
@@ -63,7 +96,9 @@ useServerSeoMeta({
 			:src="frontMatter.image"
 			alt=""
 			class="aspect-[16/9] mt-20 w-full max-w-3xl mx-auto rounded-2xl bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
-		<div class="mx-auto max-w-3xl content" v-html="marked(data.body)"></div>
+		<div
+			class="mx-auto max-w-3xl content"
+			v-html="marked.parse(data.body)"></div>
 	</div>
 	<Errors404 v-else />
 </template>
@@ -151,7 +186,7 @@ useServerSeoMeta({
 }
 
 .content pre code {
-	--at-apply: "block";
+	--at-apply: "block p-0";
 }
 
 .content code:not(pre code) {
@@ -160,5 +195,11 @@ useServerSeoMeta({
 
 .content img {
 	--at-apply: "my-10 rounded-lg bg-dark-100 ring-1 ring-white/10 mx-auto";
+}
+
+.hljs {
+	/* var(--highlight-color) */
+	color: #ffffff;
+	background-color: transparent;
 }
 </style>

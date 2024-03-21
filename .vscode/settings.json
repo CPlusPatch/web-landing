@@ -1,4 +1,8 @@
 {
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"vue.codeActions.enabled": false
+	"vue.codeActions.enabled": false,
+	"languageToolLinter.languageTool.ignoredWordsInWorkspace": [
+		"kio",
+		"lysand"
+	]
 }

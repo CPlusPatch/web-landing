@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from "fs";
-import { join } from "path";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
 // Extract the FrontMatter header from raw markdown
 const frontMatterParser = function <T>(frontMatter: string) {
@@ -29,7 +30,13 @@ export default defineEventHandler(event => {
 	// Get the path query parameter
 	const filePath = decodeURIComponent(url.searchParams.get("path") ?? "");
 
-	const file = join("./content", `${filePath}.md`);
+	// Get dirname
+
+	const file = join(
+		dirname(fileURLToPath(import.meta.url)),
+		"content",
+		`${filePath}.md`
+	);
 
 	// If the file does not exist, return a 404
 	if (!existsSync(file)) {

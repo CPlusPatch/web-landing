@@ -1,3 +1,6 @@
+import { cpSync } from "fs";
+import { join } from "path";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	modules: [
@@ -78,6 +81,13 @@ export default defineNuxtConfig({
 			siteName: "CPlusPatch",
 			trailingSlash: true,
 			siteUrl: "https://cpluspatch.com",
+		},
+	},
+	hooks: {
+		"nitro:build:public-assets": nitro => {
+			// copy content to .output/server/content
+			const targetDir = join(nitro.options.output.serverDir, "content");
+			cpSync("./content", targetDir, { recursive: true });
 		},
 	},
 	site: {

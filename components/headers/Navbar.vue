@@ -66,6 +66,7 @@ onMounted(() => {
 				</p>
 				<a
 					:href="currentNews.href"
+					targte="_blank"
 					class="text-sm font-semibold text-gray-50 group"
 					>{{ currentNews.linkText }} <AnimatedArrow
 				/></a>
@@ -143,6 +144,7 @@ onMounted(() => {
 											aria-hidden="true" />
 									</div>
 									<a
+										target="_blank"
 										:href="item.href"
 										class="mt-6 block font-semibold text-gray-50">
 										{{ item.name }}
@@ -171,6 +173,7 @@ onMounted(() => {
 			</HeadlessPopoverGroup>
 			<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 				<a
+					target="_blank"
 					href="https://github.com/cpluspatch/web-landing"
 					class="text-sm font-semibold group leading-6 text-gray-50"
 					>Source Code <ButtonsAnimatedArrow
@@ -250,6 +253,7 @@ onMounted(() => {
 						</div>
 						<div class="py-6">
 							<a
+								target="_blank"
 								href="https://github.com/cpluspatch/web-landing"
 								class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500"
 								>Source Code</a

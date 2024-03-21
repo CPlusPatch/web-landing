@@ -39,6 +39,7 @@ const footerNavigation = {
 							:key="item.name"
 							:href="item.href"
 							:title="item.name"
+							target="_blank"
 							class="text-gray-500 hover:text-gray-400">
 							<span class="sr-only">{{ item.name }}</span>
 							<Icon
@@ -60,6 +61,7 @@ const footerNavigation = {
 									v-for="item in footerNavigation.solutions"
 									:key="item.name">
 									<a
+										target="_blank"
 										:href="item.href"
 										class="text-sm leading-6 text-gray-300 hover:text-white"
 										>{{ item.name }}</a
@@ -79,6 +81,7 @@ const footerNavigation = {
 									v-for="item in footerNavigation.legal"
 									:key="item.name">
 									<a
+										target="_blank"
 										:href="item.href"
 										class="text-sm leading-6 text-gray-300 hover:text-white"
 										>{{ item.name }}</a

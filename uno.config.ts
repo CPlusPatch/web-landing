@@ -5,6 +5,7 @@ import {
 	presetWebFonts,
 } from "unocss";
 import { presetForms } from "@julr/unocss-preset-forms";
+import transformerDirectives from "@unocss/transformer-directives";
 
 export default defineConfig({
 	presets: [
@@ -23,6 +24,7 @@ export default defineConfig({
 		}),
 		presetForms(),
 	],
+	transformers: [transformerDirectives()],
 	rules: [
 		// UnoCSS Rule for stroke-dashoffset
 		[

@@ -1,11 +1,11 @@
 ---
-title: 'Developing Lysand, a new federated server'
+title: Developing Lysand, a new federated server
 created_at: 1700020246000
 image: https://opengraph.githubassets.com/0473f3e13c155c834c85ea1188a44fc1191a12fc96220b0acf1301002b15f462/CPlusPatch/lysand
 description: I write about my experience developing Lysand, a new federated server for the Fediverse, and its accompanying protocol
 author: Jesse W
 author_image: /images/avatars/jessew.png
-author_handle: '@jesse:cpluspatch.dev'
+author_handle: @CPlusPatch
 ---
 
 Hello! I'm Jesse, and I'm the lead developer of Lysand, a new federated server for the Fediverse. I'm also the lead developer of the Lysand protocol, which is the protocol that Lysand uses to communicate with other servers. In this post, I'll be talking about my experience developing Lysand and the Lysand protocol, and what I've learned from it.

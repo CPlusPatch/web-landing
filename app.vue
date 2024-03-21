@@ -32,8 +32,6 @@ useServerSeoMeta({
 </script>
 
 <template>
-	<OgImageScreenshot />
-	<OgImageStatic />
 	<NuxtLayout>
 		<NuxtLoadingIndicator />
 		<NuxtPage />

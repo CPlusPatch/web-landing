@@ -294,6 +294,14 @@ const languages = [
 		padding: true,
 		id: "0eV-I6JD8IhW-8JwmdgwX",
 	},
+	{
+		name: "Godot",
+		type: "Game Engine",
+		experience: "Recent",
+		image: "logos:godot-icon",
+		padding: true,
+		id: "HeV-I6JD8IhW-8JImdgwX",
+	},
 ];
 
 const { width } = useWindowSize();

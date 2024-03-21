@@ -24,10 +24,9 @@ const testimonials = [
 			{
 				body: "All of CPlusPatch's projects turn out looking stunning. They make any project look easy, yet you'd be hard-pressed to find someone who works as quick with nearly the same results.",
 				author: {
-					name: "Hazel",
+					name: "[REDACTED]",
 					title: "Developer",
-					imageUrl:
-						"https://pool.jortage.com/socialbestieshouse/accounts/avatars/110/772/057/197/102/203/original/1fce205aabffea8f.png",
+					imageUrl: "/images/assets/wheatley.jpg",
 				},
 			},
 		],

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AnimatedArrow from "../buttons/AnimatedArrow.vue";
+
 const products = [
 	{
 		name: "Mastodon.de Landing",
@@ -29,31 +31,58 @@ const products = [
 	},
 ];
 
-const callsToAction = [
-	{
-		name: "Matrix",
-		href: "https://matrix.to/#/@jesse:cpluspatch.dev",
-		icon: "tabler:brand-matrix",
-	},
-	{ name: "Email", href: "contact@cpluspatch.com", icon: "tabler:mail" },
-	{
-		name: "GitHub",
-		href: "https://github.com/CPlusPatch",
-		icon: "tabler:brand-github",
-	},
-];
-
-const { y: scrollY } = useWindowScroll();
+const currentNews = {
+	id: "lysand2",
+	title: "Lysand 2.0",
+	description: "Lysand 2.0 is now available!",
+	linkText: "Read the docs",
+	href: "https://lysand.org",
+};
 
 const open = ref(false);
+const closedNews = useLocalStorage<string[]>("closedNews", []);
+
+const hasLocalStorageLoaded = ref(false);
+
+onMounted(() => {
+	hasLocalStorageLoaded.value = true;
+});
 </script>
 <template>
 	<header
 		:class="[
 			'z-10 bg-transparent backdrop-blur-lg',
-			'fixed top-0 inset-x-0',
-			scrollY > 100 && 'bg-dark-800/30',
+			'fixed top-0 inset-x-0 bg-dark-800/30',
 		]">
+		<div
+			v-if="!closedNews.includes(currentNews.id) && hasLocalStorageLoaded"
+			class="relative isolate flex items-center gap-x-6 overflow-hidden bg-dark-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+			<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 w-full">
+				<p class="text-sm text-gray-50">
+					<strong class="font-semibold">{{
+						currentNews.title
+					}}</strong
+					>&nbsp;•&nbsp;{{ currentNews.description }}
+				</p>
+				<a
+					:href="currentNews.href"
+					class="text-sm font-semibold text-gray-50 group"
+					>{{ currentNews.linkText }} <AnimatedArrow
+				/></a>
+			</div>
+			<div class="flex justify-end">
+				<button
+					type="button"
+					class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
+					@click="closedNews.push(currentNews.id)">
+					<span class="sr-only">Dismiss</span>
+					<Icon
+						name="tabler:x"
+						class="h-5 w-5 text-gray-50"
+						aria-hidden="true" />
+				</button>
+			</div>
+		</div>
 		<nav
 			class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
 			<div class="flex lg:flex-1">
@@ -82,6 +111,7 @@ const open = ref(false);
 			<HeadlessPopoverGroup class="hidden lg:flex lg:gap-x-12">
 				<HeadlessPopover>
 					<HeadlessPopoverButton
+						id="thebutton"
 						class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-50">
 						Projects
 						<Icon
@@ -123,43 +153,27 @@ const open = ref(false);
 									</p>
 								</div>
 							</div>
-							<div class="bg-dark-300">
-								<div class="mx-auto max-w-7xl px-6 lg:px-8">
-									<div
-										class="grid grid-cols-3 divide-x divide-dark-50/5 border-x border-dark-50/5">
-										<a
-											v-for="item in callsToAction"
-											:key="item.name"
-											:href="item.href"
-											class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-50 hover:bg-dark-400 duration-200">
-											<Icon
-												:name="item.icon"
-												class="h-5 w-5 flex-none text-gray-500"
-												aria-hidden="true" />
-											{{ item.name }}
-										</a>
-									</div>
-								</div>
-							</div>
 						</HeadlessPopoverPanel>
 					</transition>
 				</HeadlessPopover>
 
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-50"
-					>Blog</a
+				<NuxtLink
+					href="/blog"
+					class="text-sm font-semibold leading-6 text-gray-50"
+					>Blog</NuxtLink
 				>
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-50"
-					>Marketplace</a
-				>
-				<a href="#" class="text-sm font-semibold leading-6 text-gray-50"
-					>Contact</a
+
+				<NuxtLink
+					href="/contact"
+					class="text-sm font-semibold leading-6 text-gray-50"
+					>Contact</NuxtLink
 				>
 			</HeadlessPopoverGroup>
 			<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 				<a
-					href="#"
+					href="https://github.com/cpluspatch/web-landing"
 					class="text-sm font-semibold group leading-6 text-gray-50"
-					>Log in <ButtonsAnimatedArrow
+					>Source Code <ButtonsAnimatedArrow
 				/></a>
 			</div>
 		</nav>
@@ -172,7 +186,7 @@ const open = ref(false);
 			<HeadlessDialogPanel
 				class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-dark-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-dark-50/10">
 				<div class="flex items-center justify-between">
-					<a href="#" class="-m-1.5 p-1.5">
+					<NuxtLink href="/" class="-m-1.5 p-1.5">
 						<span class="sr-only">CPlusPatch</span>
 						<nuxt-img
 							class="h-8 w-auto"
@@ -180,7 +194,7 @@ const open = ref(false);
 							height="229"
 							src="/images/icons/logo.svg"
 							alt="CPlusPatch Logo" />
-					</a>
+					</NuxtLink>
 					<button
 						type="button"
 						class="-m-2.5 rounded-md p-2.5 text-gray-200"
@@ -212,10 +226,7 @@ const open = ref(false);
 								</HeadlessDisclosureButton>
 								<HeadlessDisclosurePanel class="mt-2 space-y-2">
 									<HeadlessDisclosureButton
-										v-for="item in [
-											...products,
-											...callsToAction,
-										]"
+										v-for="item in [...products]"
 										:key="item.name"
 										as="a"
 										:href="item.href"
@@ -226,27 +237,22 @@ const open = ref(false);
 									>
 								</HeadlessDisclosurePanel>
 							</HeadlessDisclosure>
-							<a
-								href="#"
+							<NuxtLink
+								href="/blog"
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500"
-								>Blog</a
+								>Blog</NuxtLink
 							>
-							<a
-								href="#"
+							<NuxtLink
+								href="/contact"
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500"
-								>Marketplace</a
-							>
-							<a
-								href="#"
-								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500"
-								>Contact</a
+								>Contact</NuxtLink
 							>
 						</div>
 						<div class="py-6">
 							<a
-								href="#"
+								href="https://github.com/cpluspatch/web-landing"
 								class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500"
-								>Log in</a
+								>Source Code</a
 							>
 						</div>
 					</div>

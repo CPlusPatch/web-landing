@@ -5,10 +5,8 @@ export default defineNuxtConfig({
 		"nuxt-headlessui",
 		"nuxt-icon",
 		"@vueuse/nuxt",
-		"@nuxtseo/module",
+		"@nuxtjs/seo",
 		"@nuxtjs/i18n",
-		"nuxt-swiper",
-		"@nuxt/content",
 		"@nuxt/image",
 	],
 	image: {
@@ -31,10 +29,6 @@ export default defineNuxtConfig({
 		ipx: {
 			maxAge: 60 * 60 * 24 * 365,
 		},
-	},
-	content: {
-		locales: ["en"],
-		defaultLocale: "en",
 	},
 	app: {
 		head: {
@@ -83,7 +77,10 @@ export default defineNuxtConfig({
 			titleSeparator: "·",
 			siteName: "CPlusPatch",
 			trailingSlash: true,
-			siteUrl: "https://cpluspatch.dev",
+			siteUrl: "https://cpluspatch.com",
 		},
+	},
+	site: {
+		url: "https://cpluspatch.com",
 	},
 });

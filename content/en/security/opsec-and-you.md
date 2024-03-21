@@ -1,11 +1,11 @@
 ---
-title: 'Opsec & You: Protection Against Feds, Hackers, and Everyone Else'
+title: Opsec & You: Protection Against Feds, Hackers, and Everyone Else
 created_at: 1700020246000
 image: /images/assets/bsod_joke.png
 description: In this guide I explain how to secure your personal digital devices against high-level adversaries, such as governments.
 author: Jesse W
 author_image: /images/avatars/jessew.png
-author_handle: '@jesse:cpluspatch.dev'
+author_handle: @CPlusPatch
 ---
 
 > **Note:** This guide is a work in progress. It is not yet complete.
@@ -20,59 +20,6 @@ You may find this guide interesting if:
 - You are a journalist or activist
 - You are a whistleblower
 - You would like to learn more about digital security
-
-# Table of Contents
-
-- [Introduction](#introduction)
-- [Table of Contents](#table-of-contents)
-- [Linux and FOSS](#linux-and-foss)
-  - [Mobile Operating System](#mobile-operating-system)
-    - [Custom ROMs](#custom-roms)
-    - [Installing Custom ROMs](#installing-custom-roms)
-- [Passwords](#passwords)
-  - [Securing Passwords](#securing-passwords)
-    - [Two Factor Authentication](#two-factor-authentication)
-    - [Password Generation](#password-generation)
-- [Hardware Security](#hardware-security)
-  - [Hardware Security Keys](#hardware-security-keys)
-  - [Secure Boot](#secure-boot)
-  - [Disk Encryption](#disk-encryption)
-    - [LUKS](#luks)
-      - [LUKS TPM Unlocking](#luks-tpm-unlocking)
-      - [LUKS Hardware Key Unlocking](#luks-hardware-key-unlocking)
-  - [Secure Boot and Disk Encryption](#secure-boot-and-disk-encryption)
-- [Software Security](#software-security)
-  - [Updates](#updates)
-  - [Software Sources](#software-sources)
-    - [Desktop](#desktop)
-    - [Mobile](#mobile)
-- [Communication](#communication)
-  - [Signal](#signal)
-  - [Matrix](#matrix)
-  - [Threema](#threema)
-- [Browsing](#browsing)
-  - [Web Browsers](#web-browsers)
-  - [Tor Browser](#tor-browser)
-    - [Bridge Mode](#bridge-mode)
-    - [Paranoid Section](#paranoid-section)
-  - [VPNs](#vpns)
-    - [Purchasing VPNs](#purchasing-vpns)
-  - [DNS](#dns)
-- [Hardening your Kernel](#hardening-your-kernel)
-- [Shredding Data](#shredding-data)
-- [Services to Avoid](#services-to-avoid)
-  - [Google](#google)
-  - [Facebook](#facebook)
-- [CPU Backdoors](#cpu-backdoors)
-  - [Disabling the Intel Management Engine](#disabling-the-intel-management-engine)
-- [Payment Systems](#payment-systems)
-  - [Bank-Related Payments](#bank-related-payments)
-  - [Cryptocurrency](#cryptocurrency)
-    - [Cryptocurrency Scams](#cryptocurrency-scams)
-    - [Cryptocurrency Exchanges](#cryptocurrency-exchanges)
-- [Good Practices](#good-practices)
-  - [If you are arrested](#if-you-are-arrested)
-- [Conclusion](#conclusion)
 
 
 # Linux and FOSS
@@ -410,7 +357,7 @@ Unsecure DNS traffic is also frequently blocked by ISPs for censorship purposes,
 
 Good DNS providers include:
 
-- [Cloudflare](1.1.1.1)
+- [Cloudflare](https://1.1.1.1)
 - [Quad9](https://quad9.net/)
 - [NextDNS](https://nextdns.io/)
 - [AdGuard](https://adguard.com/en/adguard-dns/overview.html)

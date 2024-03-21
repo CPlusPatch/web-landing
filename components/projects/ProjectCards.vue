@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const cards = [
 	{
+		tag: "Application",
+		name: "Lysand",
+		description:
+			"Lysand is an experimental new ActivityPub microblogging server implementing the Mastodon API, written with the Bun runtime",
+		image: "https://opengraph.githubassets.com/0473f3e13c155c834c85ea1188a44fc1191a12fc96220b0acf1301002b15f462/CPlusPatch/lysand",
+	},
+	{
 		tag: "Website",
 		description:
 			"A landing page for mastodon.de, a social media with no ads, no tracking, and no algorithms. Made with Nuxt.js and Tailwind CSS.",
@@ -12,8 +19,7 @@ const cards = [
 		description:
 			"Fully-featured AI application with a community API, a web interface and a working RP mode, ready for business.",
 		name: "AIP",
-		// image: "https://aip.cpluspatch.dev/images/screenshots/screenshot1.webp",
-		image: "/",
+		image: "https://opengraph.githubassets.com/1/cpluspatch/aip",
 	},
 	{
 		tag: "Application",
@@ -21,27 +27,6 @@ const cards = [
 		description:
 			"Flavi is an open-source client for the Matrix ecosystem with the goal of having a clean, familiar interface for users of Discord and the like.",
 		image: "/images/assets/flavi-screenshot.png",
-	},
-	{
-		tag: "Services",
-		name: "CPlusPatch ID",
-		description:
-			"CPlusPatch ID is a free and open-source identity provider that allows you to log in to websites and applications using your CPlusPatch ID.",
-		image: "http://thoughtfullaw.com/wp-content/uploads/2014/05/security.jpg",
-	},
-	{
-		tag: "Services",
-		name: "CPlusPatch Cloud",
-		description:
-			"An open-source cloud provider with a focus on privacy and security. It's based on Nextcloud and is available for free for everyone.",
-		image: "https://www.muylinux.com/wp-content/uploads/2020/06/nextcloud.png",
-	},
-	{
-		tag: "Services",
-		name: "CPlusPatch Chat",
-		description:
-			"An open-source Matrix instance, an open network for secure, decentralized communication. Messages are end-to-end encrypted for maximum security.",
-		image: "https://matrix.org/blog/img/splash.jpg",
 	},
 	{
 		tag: "Application",
@@ -58,18 +43,11 @@ const cards = [
 		image: "https://github.com/CPlusPatch/web-business/raw/master/assets/readme/devices-editor.webp",
 	},
 	{
-		tag: "Application",
-		name: "Lysand",
-		description:
-			"Lysand is an experimental new ActivityPub microblogging server implementing the Mastodon API, written with the Bun runtime",
-		image: "https://opengraph.githubassets.com/0473f3e13c155c834c85ea1188a44fc1191a12fc96220b0acf1301002b15f462/CPlusPatch/lysand",
-	},
-	{
 		tag: "Website",
 		name: "KitsuLife",
 		description:
 			"Website for the Kitsu service suite, showcasing features and the community for Kitsu",
-		image: "https://kitsu.life/images/assets/screenshots/screenshot3.png",
+		image: "/images/assets/kitsudotlife.png",
 	},
 ];
 </script>

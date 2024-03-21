@@ -1,25 +1,11 @@
 <script setup lang="ts">
 const footerNavigation = {
 	solutions: [
-		{ name: "Mastodon.de", href: "#" },
-		{ name: "AIP", href: "#" },
+		{ name: "Mastodon.de", href: "https://mastodon.de" },
+		{ name: "Lysand", href: "https://lysand.org" },
 	],
-	support: [{ name: "Contact", href: "#" }],
-	legal: [
-		{ name: "Privacy", href: "#" },
-		{ name: "Terms", href: "#" },
-	],
+	legal: [{ name: "Privacy", href: "/privacy" }],
 	social: [
-		{
-			name: "Matrix",
-			href: "https://matrix.to/#/@jesse:cpluspatch.dev",
-			icon: "tabler:brand-matrix",
-		},
-		{
-			name: "Email",
-			href: "mailto:contact@cpluspatch.com",
-			icon: "tabler:mail",
-		},
 		{
 			name: "GitHub",
 			href: "https://github.com/CPlusPatch/",
@@ -47,11 +33,12 @@ const footerNavigation = {
 						I'm making a note here<br />
 						Huge success
 					</p>
-					<div id="contact" class="flex space-x-6">
+					<div class="flex space-x-6">
 						<a
 							v-for="item in footerNavigation.social"
 							:key="item.name"
 							:href="item.href"
+							:title="item.name"
 							class="text-gray-500 hover:text-gray-400">
 							<span class="sr-only">{{ item.name }}</span>
 							<Icon
@@ -62,7 +49,7 @@ const footerNavigation = {
 					</div>
 				</div>
 				<div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-					<div class="md:grid md:grid-cols-2 md:gap-8">
+					<div class="md:grid md:grid-cols-1 md:gap-8">
 						<div>
 							<h3
 								class="text-sm font-semibold leading-6 text-white">
@@ -71,23 +58,6 @@ const footerNavigation = {
 							<ul role="list" class="mt-6 space-y-4">
 								<li
 									v-for="item in footerNavigation.solutions"
-									:key="item.name">
-									<a
-										:href="item.href"
-										class="text-sm leading-6 text-gray-300 hover:text-white"
-										>{{ item.name }}</a
-									>
-								</li>
-							</ul>
-						</div>
-						<div class="mt-10 md:mt-0">
-							<h3
-								class="text-sm font-semibold leading-6 text-white">
-								Support
-							</h3>
-							<ul role="list" class="mt-6 space-y-4">
-								<li
-									v-for="item in footerNavigation.support"
 									:key="item.name">
 									<a
 										:href="item.href"
@@ -126,14 +96,11 @@ const footerNavigation = {
 				</p>
 			</div>
 		</div>
-		<a
-			href="https://cpluspatch.com"
-			target="_blank"
-			rel="noopener noreferrer"
+		<div
 			class="px-4 py-4 text-gray-100 text-sm block bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
 			<div class="mx-auto max-w-7xl text-center w-full">
 				A site by <strong class="font-semibold">CPlusPatch</strong>
 			</div>
-		</a>
+		</div>
 	</footer>
 </template>

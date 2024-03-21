@@ -33,7 +33,7 @@
 			<p>
 				We keep our privacy policy under regular review and we will
 				place any updates on this web page. This privacy policy was last
-				updated on August 30, 2023.
+				updated on March 20, 2024.
 			</p>
 			<h2>How to contact us</h2>
 			<p>

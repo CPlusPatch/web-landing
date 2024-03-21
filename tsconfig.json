@@ -5,7 +5,9 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"strictPropertyInitialization": false,
-		"allowImportingTsExtensions": true,
-		"target": "ESNext"
+		"target": "ESNext",
+		"types": [
+			"bun-types"
+		]
 	}
 }

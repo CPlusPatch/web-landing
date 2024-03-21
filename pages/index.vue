@@ -2,7 +2,7 @@
 import SlidingLanguageCarousel from "~/components/grids/SlidingLanguageCarousel.vue";
 
 useServerSeoMeta({
-	title: "Quality Development Services",
+	title: "Homepage",
 	author: "Gaspard Wierzbinski",
 	ogImage: "/images/assets/banner.webp",
 	ogImageAlt: "A screenshot of VSCode open",
@@ -13,7 +13,7 @@ useServerSeoMeta({
 });
 
 useHead({
-	title: "Quality Development Services",
+	title: "Homepage",
 });
 
 const scrollIntoView = (id: string) =>
@@ -76,7 +76,7 @@ const scrollIntoView = (id: string) =>
 				" />
 		</div>
 		<div
-			class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+			class="mx-auto max-w-7xl px-6 pb-24 pt-30 sm:pb-32 lg:flex lg:px-8 lg:py-40">
 			<div
 				class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8 mt-20">
 				<h1
@@ -91,11 +91,10 @@ const scrollIntoView = (id: string) =>
 					many kinds of fields
 				</p>
 				<div class="mt-10 flex items-center gap-x-6">
-					<a
-						href="#contact"
+					<NuxtLink
+						href="/contact"
 						class="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-						@click.prevent="scrollIntoView('contact')"
-						>Contact me</a
+						>Contact me</NuxtLink
 					>
 					<a
 						href="#philosophy"
@@ -168,7 +167,7 @@ const scrollIntoView = (id: string) =>
 									>
 									I use systems such as Docker or Nix to build
 									and deploy my systems in a way that is
-									reproducible and sandboxe</span
+									reproducible and sandboxed.</span
 								>
 							</li>
 							<li class="flex gap-x-3">
@@ -182,7 +181,7 @@ const scrollIntoView = (id: string) =>
 									>
 									My apps are strictly checked for errors
 									whenever I edit code, leading to less bugs
-									and better-looking outputs
+									and better-looking outputs.
 								</span>
 							</li>
 							<li class="flex gap-x-3">
@@ -198,18 +197,10 @@ const scrollIntoView = (id: string) =>
 									Apps should be written with scaling up in
 									mind, and this is true of any system. Things
 									should be done in a way that they still make
-									sense later on</span
+									sense later on.</span
 								>
 							</li>
 						</ul>
-						<!-- <p class="mt-8">
-							Et vitae blandit facilisi magna lacus commodo. Vitae
-							sapien duis odio id et. Id blandit molestie auctor
-							fermentum dignissim. Lacus diam tincidunt ac cursus
-							in vel. Mauris varius vulputate et ultrices hac
-							adipiscing egestas. Iaculis convallis ac tempor et
-							ut. Ac lorem vel integer orci.
-						</p> -->
 						<h2
 							class="mt-16 text-2xl font-bold tracking-tight text-gray-50">
 							Security
@@ -217,7 +208,7 @@ const scrollIntoView = (id: string) =>
 						<p class="mt-6">
 							I am a fervent believer in security and hardening:
 							all my devices are protected with full-disk
-							encryption, I follow industry standard security
+							encryption, I follow industry-standard security
 							practices and use Linux and open systems with a
 							hardened configuration everywhere.
 						</p>
@@ -247,11 +238,10 @@ const scrollIntoView = (id: string) =>
 				new pair of pants if you need one.
 			</p>
 			<div class="mt-10 flex items-center justify-center gap-x-6">
-				<a
-					href="#contact"
+				<NuxtLink
+					href="/contact"
 					class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-					@click.prevent="scrollIntoView('contact')"
-					>Send me a message</a
+					>Send me a message</NuxtLink
 				>
 			</div>
 			<svg

@@ -77,6 +77,7 @@ export default defineNuxtConfig({
 			routes: ["/blog/en/security/opsec-and-you", "/", "/privacy"],
 		},
 		preset: "bun",
+		minify: true,
 	},
 	runtimeConfig: {
 		public: {

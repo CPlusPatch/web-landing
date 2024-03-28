@@ -60,7 +60,10 @@ export default defineNuxtConfig({
 		],
 	},
 	nitro: {
-		compressPublicAssets: true,
+		compressPublicAssets: {
+			gzip: true,
+			brotli: false,
+		},
 		routeRules: {
 			"/_nuxt/**": {
 				swr: 60 * 60 * 24 * 365,
@@ -73,6 +76,7 @@ export default defineNuxtConfig({
 			failOnError: false,
 			routes: ["/blog/en/security/opsec-and-you", "/", "/privacy"],
 		},
+		preset: "bun",
 	},
 	runtimeConfig: {
 		public: {

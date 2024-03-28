@@ -47,7 +47,7 @@
   "dependencies": {
     "@julr/unocss-preset-forms": "^0.1.0",
     "@nuxtjs/robots": "^3.0.0",
-    "@nuxtjs/seo": "2.0.0-rc.9",
+    "@nuxtjs/seo": "2.0.0-rc.10",
     "highlight.js": "^11.9.0",
     "marked": "^12.0.1",
     "marked-highlight": "^2.1.1",

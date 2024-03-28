@@ -19,7 +19,7 @@ env:
 
 jobs:
     build:
-        name: Build for ARM and x86
+        name: Build for all architectures
         runs-on: ubuntu-latest
         permissions:
             contents: read
@@ -56,7 +56,7 @@ jobs:
               with:
                   context: .
                   file: Dockerfile.Bun
-                  platforms: linux/amd64,linux/arm64
+                  platforms: all
                   push: ${{ github.event_name != 'pull_request' }}
                   tags: ${{ steps.meta.outputs.tags }}
                   labels: ${{ steps.meta.outputs.labels }}

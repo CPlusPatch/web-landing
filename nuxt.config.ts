@@ -100,7 +100,7 @@ export default defineNuxtConfig({
 		},
 		prerender: {
 			failOnError: false,
-			routes: [...getRouteRenderingPaths(), "/", "/privacy"],
+			routes: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
 		},
 		preset: "bun",
 		minify: true,
@@ -120,6 +120,9 @@ export default defineNuxtConfig({
 			const targetDir = join(nitro.options.output.serverDir, "content");
 			cpSync("./content", targetDir, { recursive: true });
 		},
+	},
+	sitemap: {
+		sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
 	},
 	site: {
 		url: "https://cpluspatch.com",

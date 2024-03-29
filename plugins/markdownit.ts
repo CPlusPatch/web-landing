@@ -32,6 +32,11 @@ export default defineNuxtPlugin(async () => {
 		linkify: true,
 	});
 
+	const otherRenderer = MarkdownIt({
+		html: true,
+		linkify: true,
+	});
+
 	renderer.use(
 		fromHighlighter((await highlighter) as any, {
 			theme: "rose-pine",
@@ -57,6 +62,53 @@ export default defineNuxtPlugin(async () => {
 	renderer.use(markdownItTaskLists);
 
 	renderer.use(markdownItContainer);
+
+	renderer.use(md => {
+		md.renderer.rules.html_block = (tokens, idx) => {
+			// Modify figure tags
+			if (tokens[idx].content.startsWith("<figure")) {
+				const imageUrl = (tokens[idx].content.match(
+					/src="([^"]+)"/
+				) ?? [null, null])[1];
+
+				if (!imageUrl) {
+					return otherRenderer.render(tokens[idx].content);
+				}
+
+				const newUrl = useImage()(imageUrl, {
+					format: "webp",
+					width: 800,
+				});
+
+				return tokens[idx].content.replace(imageUrl, newUrl);
+			} else {
+				return otherRenderer.render(tokens[idx].content);
+			}
+		};
+
+		md.renderer.rules.image = (tokens, idx, options, env, self) => {
+			const output = otherRenderer.renderer.rules.image!(
+				tokens,
+				idx,
+				options,
+				env,
+				self
+			);
+
+			const imageUrl = (output.match(/src="([^"]+)"/) ?? [null, null])[1];
+
+			if (!imageUrl) {
+				return output;
+			}
+
+			const newUrl = useImage()(imageUrl, {
+				format: "webp",
+				width: 800,
+			});
+
+			return output.replace(imageUrl, newUrl);
+		};
+	});
 
 	return {
 		provide: {

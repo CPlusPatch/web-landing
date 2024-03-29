@@ -60,9 +60,11 @@ const { $mdRenderer } = useNuxtApp();
 				>
 			</div>
 		</div>
-		<img
+		<nuxt-img
 			v-if="frontMatter.image"
 			:src="frontMatter.image"
+			width="800"
+			format="webp"
 			alt=""
 			class="aspect-[16/9] mt-20 w-full max-w-3xl mx-auto rounded-2xl bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
 		<div

@@ -20,7 +20,9 @@ const posts = data.value ?? [];
 					class="flex flex-col items-start justify-between"
 					:href="`/blog/${post.path}`">
 					<div class="relative w-full">
-						<img
+						<nuxt-img
+							format="webp"
+							width="500"
 							:src="post.frontMatter?.image ?? ''"
 							alt=""
 							class="aspect-[16/9] w-full rounded-2xl bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />

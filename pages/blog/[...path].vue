@@ -20,7 +20,10 @@ useSchemaOrg([
 
 useServerSeoMeta({
 	title: frontMatter?.title,
+	ogTitle: frontMatter?.title,
+	author: frontMatter?.author,
 	description: frontMatter?.description,
+	ogDescription: frontMatter?.description,
 	ogImage: frontMatter?.image,
 	twitterCard: "summary_large_image",
 });

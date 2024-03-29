@@ -1,17 +1,16 @@
 <script setup lang="ts">
 useServerSeoMeta({
 	title: "Blog",
+	ogTitle: "Blog",
 	author: "Gaspard Wierzbinski",
-	ogImage: "/images/assets/banner.webp",
+	ogImage: "/images/assets/banner-2.webp",
 	ogImageAlt: "A screenshot of VSCode open",
 	description:
-		"I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer science and a programmer by passion, with several years of experience in many kinds of fields",
+		"Blog posts about programming, computer science, software engineering, and other topics.",
+	ogDescription:
+		"Blog posts about programming, computer science, software engineering, and other topics.",
 	ogLocale: "en-US",
 	ogLocaleAlternate: ["fr-FR", "en-US"],
-});
-
-useHead({
-	title: "Blog",
 });
 </script>
 

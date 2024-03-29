@@ -1,5 +1,31 @@
-import { cpSync } from "fs";
+import { cpSync, readdirSync } from "fs";
 import { join } from "path";
+
+/*
+ * Reads the content directory and returns an array of all the files in the directory and subdirectories.
+ */
+const getRouteRenderingPaths = () => {
+	const contentDir = join(process.cwd(), "content");
+	const paths: string[] = [];
+
+	const readDir = (dir: string) => {
+		const files = readdirSync(dir);
+		files.forEach(file => {
+			const filePath = join(dir, file);
+			if (file.endsWith(".md")) {
+				paths.push(
+					filePath.replace(contentDir, "/blog").replace(".md", "")
+				);
+			} else {
+				readDir(filePath);
+			}
+		});
+	};
+
+	readDir(contentDir);
+
+	return paths;
+};
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -74,7 +100,7 @@ export default defineNuxtConfig({
 		},
 		prerender: {
 			failOnError: false,
-			routes: ["/blog/en/security/opsec-and-you", "/", "/privacy"],
+			routes: [...getRouteRenderingPaths(), "/", "/privacy"],
 		},
 		preset: "bun",
 		minify: true,

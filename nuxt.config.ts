@@ -55,6 +55,7 @@ export default defineNuxtConfig({
 			"media.mastodon.de",
 			"opengraph.githubassets.com",
 			"avatars.githubusercontent.com",
+			"raw.githubusercontent.com",
 		],
 		ipx: {
 			maxAge: 60 * 60 * 24 * 365,

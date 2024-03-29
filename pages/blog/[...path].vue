@@ -27,7 +27,6 @@ useServerSeoMeta({
 	ogImage: frontMatter?.image,
 	twitterCard: "summary_large_image",
 });
-const { $mdRenderer } = useNuxtApp();
 </script>
 
 <template>
@@ -67,9 +66,7 @@ const { $mdRenderer } = useNuxtApp();
 			format="webp"
 			alt=""
 			class="aspect-[16/9] mt-20 w-full max-w-3xl mx-auto rounded-2xl bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
-		<div
-			class="mx-auto max-w-3xl content"
-			v-html="$mdRenderer.render(data.body)"></div>
+		<div class="mx-auto max-w-3xl content" v-html="data.body"></div>
 	</div>
 	<Errors404 v-else />
 </template>

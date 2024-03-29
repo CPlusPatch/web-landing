@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import { getMarkdownRenderer } from "~/utils/markdown";
 
 // Extract the FrontMatter header from raw markdown
 const frontMatterParser = function <T>(frontMatter: string) {
@@ -20,7 +21,7 @@ const frontMatterParser = function <T>(frontMatter: string) {
 	return frontMatterObject as T;
 };
 
-export default defineEventHandler(event => {
+export default defineEventHandler(async event => {
 	const url = new URL(
 		event.node.req.url ?? "",
 		`http://${event.node.req.headers.host}`
@@ -56,8 +57,12 @@ export default defineEventHandler(event => {
 		author_handle: string;
 	}>(fileContents ?? "");
 
+	const renderedBody = (await getMarkdownRenderer()).render(
+		stripFrontMatter(fileContents ?? "")
+	);
+
 	return {
 		headers: frontMatter,
-		body: stripFrontMatter(fileContents ?? ""),
+		body: renderedBody,
 	};
 });

@@ -26,7 +26,7 @@ const highlighter = getHighlighterCore({
 	loadWasm: import("shiki/wasm"),
 });
 
-export default defineNuxtPlugin(async () => {
+export const getMarkdownRenderer = async () => {
 	const renderer = MarkdownIt({
 		html: true,
 		linkify: true,
@@ -75,10 +75,8 @@ export default defineNuxtPlugin(async () => {
 					return otherRenderer.render(tokens[idx].content);
 				}
 
-				const newUrl = useImage()(imageUrl, {
-					format: "webp",
-					width: 800,
-				});
+				// Delete the first / if it exists
+				const newUrl = `/_ipx/w_800&f_webp/${imageUrl.replace(/^\//, "")}`;
 
 				return tokens[idx].content.replace(imageUrl, newUrl);
 			} else {
@@ -101,18 +99,11 @@ export default defineNuxtPlugin(async () => {
 				return output;
 			}
 
-			const newUrl = useImage()(imageUrl, {
-				format: "webp",
-				width: 800,
-			});
+			const newUrl = `/_ipx/w_800&f_webp/${imageUrl.replace(/^\//, "")}`;
 
 			return output.replace(imageUrl, newUrl);
 		};
 	});
 
-	return {
-		provide: {
-			mdRenderer: renderer,
-		},
-	};
-});
+	return renderer;
+};

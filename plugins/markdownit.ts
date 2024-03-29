@@ -6,7 +6,7 @@ import markdownItTaskLists from "@hackmd/markdown-it-task-lists";
 import { fromHighlighter } from "@shikijs/markdown-it/core";
 import { getHighlighterCore } from "shiki/core";
 
-const highlighter = await getHighlighterCore({
+const highlighter = getHighlighterCore({
 	themes: [import("shiki/themes/rose-pine.mjs")],
 	langs: [
 		import("shiki/langs/javascript.mjs"),
@@ -26,14 +26,14 @@ const highlighter = await getHighlighterCore({
 	loadWasm: import("shiki/wasm"),
 });
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin(async () => {
 	const renderer = MarkdownIt({
 		html: true,
 		linkify: true,
 	});
 
 	renderer.use(
-		fromHighlighter(highlighter as any, {
+		fromHighlighter((await highlighter) as any, {
 			theme: "rose-pine",
 		})
 	);

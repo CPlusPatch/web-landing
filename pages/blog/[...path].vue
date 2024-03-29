@@ -1,28 +1,4 @@
 <script setup lang="ts">
-import { Marked } from "marked";
-import { markedHighlight } from "marked-highlight";
-import hljs from "highlight.js/lib/core";
-
-import toml from "highlight.js/lib/languages/ini";
-import yaml from "highlight.js/lib/languages/yaml";
-import json from "highlight.js/lib/languages/json";
-import bash from "highlight.js/lib/languages/bash";
-import shell from "highlight.js/lib/languages/shell";
-import plaintext from "highlight.js/lib/languages/plaintext";
-import typescript from "highlight.js/lib/languages/typescript";
-import javascript from "highlight.js/lib/languages/javascript";
-import python from "highlight.js/lib/languages/python";
-
-hljs.registerLanguage("toml", toml);
-hljs.registerLanguage("yaml", yaml);
-hljs.registerLanguage("json", json);
-hljs.registerLanguage("bash", bash);
-hljs.registerLanguage("shell", shell);
-hljs.registerLanguage("plaintext", plaintext);
-hljs.registerLanguage("typescript", typescript);
-hljs.registerLanguage("javascript", javascript);
-hljs.registerLanguage("python", python);
-
 const filePath = (useRoute().params.path as string[]).join("/");
 
 const { data } = await useFetch(
@@ -48,16 +24,7 @@ useServerSeoMeta({
 	ogImage: frontMatter?.image,
 	twitterCard: "summary_large_image",
 });
-
-const marked = new Marked(
-	markedHighlight({
-		langPrefix: "hljs language-",
-		highlight(code, lang) {
-			const language = hljs.getLanguage(lang) ? lang : "plaintext";
-			return hljs.highlight(code, { language }).value;
-		},
-	})
-);
+const { $mdRenderer } = useNuxtApp();
 </script>
 
 <template>
@@ -97,7 +64,7 @@ const marked = new Marked(
 			class="aspect-[16/9] mt-20 w-full max-w-3xl mx-auto rounded-2xl bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
 		<div
 			class="mx-auto max-w-3xl content"
-			v-html="marked.parse(data.body)"></div>
+			v-html="$mdRenderer.render(data.body)"></div>
 	</div>
 	<Errors404 v-else />
 </template>
@@ -127,24 +94,29 @@ const marked = new Marked(
 	--at-apply: "mt-8 text-base font-bold tracking-tight text-gray-50";
 }
 
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5 {
+	scroll-margin-top: 8rem;
+	--at-apply: "block relative";
+}
+
 .content figure {
-	--at-apply: "mt-10 border-l border-orange-600 pl-9";
+	--at-apply: "mt-10";
 }
 
 .content figure > img {
-	--at-apply: "aspect-video rounded-xl bg-dark-50 object-cover";
+	--at-apply: "rounded-xl bg-dark-50 ring-1 ring-white/10 mx-auto";
 }
 
 .content figure figcaption {
-	--at-apply: "mt-6 flex gap-x-4";
+	--at-apply: "mt-2 text-center text-gray-300 text-sm w-full";
 }
 
 .content figure figcaption img {
 	--at-apply: "h-6 w-6 flex-none rounded-full bg-dark-50";
-}
-
-.content blockquote {
-	--at-apply: "font-semibold text-gray-50";
 }
 
 .content p {
@@ -158,6 +130,16 @@ const marked = new Marked(
 .content ul,
 .content ol {
 	--at-apply: mt-8 max-w-xl space-y-3 text-gray-300 pl-5 list-disc;
+}
+
+.content .header-anchor {
+	/* Replace with a link emoji, make it hang on the left of the text outside the parent */
+	--at-apply: "no-underline absolute top-0 -left-10 text-gray-50 opacity-100";
+}
+
+.content .header-anchor::before {
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1.5em' width='1.5em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23c5c5d2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m9 15l6-6m-4-3l.463-.536a5 5 0 0 1 7.071 7.072L18 13m-5 5l-.397.534a5.068 5.068 0 0 1-7.127 0a4.972 4.972 0 0 1 0-7.071L6 11'/%3E%3C/svg%3E");
+	--at-apply: "text-gray-50 visible";
 }
 
 .content ul li input[type="checkbox"],
@@ -196,111 +178,11 @@ const marked = new Marked(
 	--at-apply: "my-10 rounded-lg bg-dark-100 ring-1 ring-white/10 mx-auto";
 }
 
-/*!
-  Theme: StackOverflow Dark
-  Description: Dark theme as used on stackoverflow.com
-  Author: stackoverflow.com
-  Maintainer: @Hirse
-  Website: https://github.com/StackExchange/Stacks
-  License: MIT
-  Updated: 2021-05-15
+.content blockquote {
+	--at-apply: "mt-10 border-l border-orange-600 pl-9";
+}
 
-  Updated for @stackoverflow/stacks v0.64.0
-  Code Blocks: /blob/v0.64.0/lib/css/components/_stacks-code-blocks.less
-  Colors: /blob/v0.64.0/lib/css/exports/_stacks-constants-colors.less
-*/
-.hljs {
-	/* var(--highlight-color) */
-	color: #ffffff;
-	/* var(--highlight-bg) */
-}
-.hljs-subst {
-	/* var(--highlight-color) */
-	color: #ffffff;
-}
-.hljs-comment {
-	/* var(--highlight-comment) */
-	color: #999999;
-}
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-meta .hljs-keyword,
-.hljs-doctag,
-.hljs-section {
-	/* var(--highlight-keyword) */
-	color: #88aece;
-}
-.hljs-attr {
-	/* var(--highlight-attribute); */
-	color: #88aece;
-}
-.hljs-attribute {
-	/* var(--highlight-symbol) */
-	color: #c59bc1;
-}
-.hljs-name,
-.hljs-type,
-.hljs-number,
-.hljs-selector-id,
-.hljs-quote,
-.hljs-template-tag {
-	/* var(--highlight-namespace) */
-	color: #f08d49;
-}
-.hljs-selector-class {
-	/* var(--highlight-keyword) */
-	color: #88aece;
-}
-.hljs-string,
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr {
-	/* var(--highlight-variable) */
-	color: #b5bd68;
-}
-.hljs-meta,
-.hljs-selector-pseudo {
-	/* var(--highlight-keyword) */
-	color: #88aece;
-}
-.hljs-built_in,
-.hljs-title,
-.hljs-literal {
-	/* var(--highlight-literal) */
-	color: #f08d49;
-}
-.hljs-bullet,
-.hljs-code {
-	/* var(--highlight-punctuation) */
-	color: #cccccc;
-}
-.hljs-meta .hljs-string {
-	/* var(--highlight-variable) */
-	color: #b5bd68;
-}
-.hljs-deletion {
-	/* var(--highlight-deletion) */
-	color: #de7176;
-}
-.hljs-addition {
-	/* var(--highlight-addition) */
-	color: #76c490;
-}
-.hljs-emphasis {
-	font-style: italic;
-}
-.hljs-strong {
-	font-weight: bold;
-}
-.hljs-formula,
-.hljs-operator,
-.hljs-params,
-.hljs-property,
-.hljs-punctuation,
-.hljs-tag {
-	/* purposely ignored */
+.content blockquote p {
+	--at-apply: "mt-4 text-gray-50 italic";
 }
 </style>

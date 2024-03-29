@@ -137,7 +137,7 @@ const { $mdRenderer } = useNuxtApp();
 
 .content .header-anchor {
 	/* Replace with a link emoji, make it hang on the left of the text outside the parent */
-	--at-apply: "no-underline absolute top-0 -left-10 text-gray-50 opacity-100";
+	--at-apply: "no-underline absolute bottom-0 w-15 md:w-auto text-right left-[calc(100%-3.75rem)] md:-left-10 text-gray-50 opacity-100 bg-gradient-to-r from-transparent to-40% to-dark-800";
 }
 
 .content .header-anchor::before {

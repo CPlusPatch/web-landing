@@ -19,12 +19,12 @@ env:
 jobs:
     build:
         name: Build
-        runs-on: ${{ matrix.os }}
+        runs-on: "[${{ matrix.os }}]"
         strategy:
             fail-fast: false
             matrix:
                 include:
-                    - os: "nu-01a"
+                    - os: self-hosted
                       platform: linux/arm64
                     - os: ubuntu-latest
                       platform: linux/amd64

@@ -19,13 +19,15 @@ env:
 jobs:
     build:
         name: Build
-        runs-on: [self-hosted]
+        runs-on: ${{ matrix.os }}
         strategy:
             fail-fast: false
             matrix:
-                platform:
-                    - linux/amd64
-                    - linux/arm64
+                include:
+                    - os: "[self-hosted]"
+                      platform: linux/arm64
+                    - os: ubuntu-latest
+                      platform: linux/amd64
         permissions:
             contents: read
             packages: write

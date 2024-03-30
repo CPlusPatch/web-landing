@@ -18,7 +18,7 @@ env:
 
 jobs:
     build:
-        name: Build
+        name: Build for ${{ matrix.platform }}
         runs-on: ${{ matrix.os }}
         environment:
             name: Production
@@ -135,7 +135,7 @@ jobs:
               run: |
                   docker buildx imagetools inspect ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}
     deploy:
-        name: Deploy the new container to production
+        name: Deploy
         runs-on: ubuntu-latest
         environment:
             name: Production

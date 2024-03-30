@@ -20,6 +20,8 @@ jobs:
     build:
         name: Build
         runs-on: ${{ matrix.os }}
+        environment:
+            name: Production
         strategy:
             fail-fast: false
             matrix:
@@ -91,6 +93,8 @@ jobs:
     merge:
         name: Merge digests
         runs-on: ubuntu-latest
+        environment:
+            name: Production
         needs:
             - build
         steps:
@@ -133,6 +137,9 @@ jobs:
     deploy:
         name: Deploy the new container to production
         runs-on: ubuntu-latest
+        environment:
+            name: Production
+            url: https://cpluspatch.com
         needs:
             - merge
         steps:
@@ -142,5 +149,5 @@ jobs:
                  host: ${{ secrets.HOST }}
                  username: ${{ secrets.USERNAME }}
                  key: ${{ secrets.KEY }}
-                 passhphrase: ${{ secrets.PASSPHRASE }}
+                 passphrase: ${{ secrets.PASSPHRASE }}
                  script: docker compose -f /home/jessew/docker/web-landing/docker-compose.yml pull && docker compose -f /home/jessew/docker/web-landing/docker-compose.yml down && docker compose -f /home/jessew/docker/web-landing/docker-compose.yml up -d

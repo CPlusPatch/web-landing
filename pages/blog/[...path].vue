@@ -34,6 +34,31 @@ useServerSeoMeta({
     ogImage: frontMatter?.image,
     twitterCard: "summary_large_image",
 });
+
+if (!data.value || !data.value.body) {
+    throw createError({
+        statusCode: 404,
+        message: "Article not found",
+    });
+}
+
+let body = String(data.value.body);
+// Fix for optimizing images during prerendering
+const img = useImage();
+
+// Find all links of type /_ipx/ in body
+const ipxLinks = body.match(/\/_ipx\/[^"]+/g) || [];
+
+for (const ipxLink of ipxLinks) {
+    body = body.replace(
+        ipxLink,
+        // Replace the link with the optimized imag
+        img(`/${ipxLink.split("/").slice(3).join("/")}` || "", {
+            width: 800,
+            format: "webp",
+        })
+    );
+}
 </script>
 
 <template>
@@ -54,14 +79,14 @@ useServerSeoMeta({
             hour: "numeric",
             minute: "numeric",
         }).format(new Date(Number(frontMatter.created_at)))
-    }}</time>
+                    }}</time>
             </div>
         </div>
         <nuxt-img v-if="frontMatter.image" :src="frontMatter.image" width="800" format="webp" alt=""
             class="aspect-[16/9] mt-20 w-full max-w-3xl mx-auto rounded-2xl bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
         <article
             class="mx-auto max-w-3xl prose prose-invert mt-10 content prose-code:before:content-none prose-code:after:content-none prose-a:text-orange-500 prose-a:underline"
-            v-html="data.body"></article>
+            v-html="body"></article>
     </div>
     <Errors404 v-else />
 </template>

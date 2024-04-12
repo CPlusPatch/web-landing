@@ -26,7 +26,7 @@ The Lysand protocol works in a similar way as ActivityPub, with inboxes and "act
 
 Lysand has official specifications for features such as Polls, Custom Emojis, Cryptographic Signatures, Rich Text, Image Metadata, Username Changes, and more. These specifications are written in a simple, easy-to-understand format, which makes it easy to implement them in any app.
 
-> You can find this spec at [the lysand website](https://lysand.org).
+You can find this spec at [the lysand website](https://lysand.org).
 
 ## What is it used for?
 

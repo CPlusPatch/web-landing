@@ -1,61 +1,58 @@
 {
-  "name": "web-landing",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "eslint --ext .js,.ts . --ignore-path ./.gitignore",
-    "lint-fix": "eslint --ext .js,.ts . --ignore-path ./.gitignore --fix",
-    "format": "prettier --write components/ pages/ styles utils/ templates/ server/ plugins/ middleware/ layouts/ db/"
-  },
-  "devDependencies": {
-    "@nuxt/image": "^1.4.0",
-    "@nuxtjs/eslint-config-typescript": "latest",
-    "@nuxtjs/i18n": "^8.2.0",
-    "@shikijs/markdown-it": "^1.2.1",
-    "@types/bun": "^1.0.10",
-    "@types/markdown-it": "^13.0.7",
-    "@typescript-eslint/parser": "^7.3.1",
-    "@unocss/nuxt": "^0.58.6",
-    "@unocss/transformer-directives": "^0.58.6",
-    "@vueuse/core": "latest",
-    "@vueuse/nuxt": "latest",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "nuxt": "^3.11.1",
-    "nuxt-headlessui": "^1.1.5",
-    "nuxt-security": "1.2.2",
-    "nuxt-seo-kit": "^1.3.13",
-    "prettier": "latest",
-    "typescript": "^5.4.3",
-    "vite-plugin-node-polyfills": "^0.21.0"
-  },
-  "trustedDependencies": [
-    "@fortawesome/fontawesome-common-types",
-    "@fortawesome/free-regular-svg-icons",
-    "@fortawesome/free-solid-svg-icons",
-    "esbuild",
-    "json-editor-vue",
-    "sharp"
-  ],
-  "overrides": {
-    "ipx": "^3.0.1"
-  },
-  "dependencies": {
-    "@hackmd/markdown-it-task-lists": "^2.1.4",
-    "@julr/unocss-preset-forms": "^0.1.0",
-    "@nuxtjs/robots": "^3.0.0",
-    "@nuxtjs/seo": "2.0.0-rc.10",
-    "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^8.6.7",
-    "markdown-it-container": "^4.0.0",
-    "markdown-it-toc-done-right": "^4.2.0",
-    "nanoid": "^5.0.6",
-    "nuxt-icon": "^0.6.10"
-  }
+    "name": "web-landing",
+    "private": true,
+    "type": "module",
+    "license": "AGPL-3.0",
+    "author": {
+        "email": "contact@cpluspatch.com",
+        "name": "CPlusPatch",
+        "url": "https://cpluspatch.com"
+    },
+    "maintainers": [
+        {
+            "email": "contact@cpluspatch.com",
+            "name": "CPlusPatch",
+            "url": "https://cpluspatch.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CPlusPatch/web-landing.git"
+    },
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+        "@hackmd/markdown-it-task-lists": "^2.1.4",
+        "@nuxt/image": "^1.5.0",
+        "@shikijs/markdown-it": "^1.3.0",
+        "markdown-it": "^14.1.0",
+        "markdown-it-anchor": "^8.6.7",
+        "markdown-it-container": "^4.0.0",
+        "markdown-it-toc-done-right": "^4.2.0",
+        "nuxt": "^3.11.2",
+        "typescript": "^5.4.5",
+        "vue": "^3.4.21",
+        "vue-router": "^4.3.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.6.4",
+        "@nuxt/fonts": "^0.6.1",
+        "@nuxtjs/seo": "^2.0.0-rc.10",
+        "@nuxtjs/tailwindcss": "^6.11.4",
+        "@tailwindcss/forms": "^0.5.7",
+        "@tailwindcss/typography": "^0.5.12",
+        "@types/markdown-it-container": "^2.0.10",
+        "@vueuse/nuxt": "^10.9.0",
+        "nuxt-headlessui": "^1.2.0",
+        "nuxt-icon": "^0.6.10",
+        "shiki": "^1.3.0"
+    },
+    "overrides": {
+        "ipx": "^3.0.1"
+    }
 }

@@ -1,25 +1,6 @@
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
-import { getMarkdownRenderer } from "~/utils/markdown";
-
-// Extract the FrontMatter header from raw markdown
-const frontMatterParser = function <T>(frontMatter: string) {
-	const regex = /---\n([\s\S]+?)\n---/;
-	const match = frontMatter.match(regex);
-	if (!match) return null;
-	const [, frontMatterString] = match;
-	const frontMatterObject = frontMatterString
-		.split("\n")
-		.map(line => line.split(": "))
-		.reduce(
-			(acc, [key, value]) => {
-				acc[key] = value;
-				return acc;
-			},
-			{} as Record<string, string>
-		);
-	return frontMatterObject as T;
-};
+import { frontMatterParser, getMarkdownRenderer } from "~/utils/markdown";
 
 export default defineEventHandler(async event => {
 	const url = new URL(

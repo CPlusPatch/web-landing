@@ -32,7 +32,7 @@ const footerNavigation = {
                         <a v-for="item in footerNavigation.social" :key="item.name" :href="item.href" :title="item.name"
                             target="_blank" class="text-gray-500 hover:text-gray-400">
                             <span class="sr-only">{{ item.name }}</span>
-                            <Icon :name="item.icon" class="h-6 w-6" aria-hidden="true" />
+                            <iconify-icon :icon="item.icon" width="1.5rem" height="1.5rem" aria-hidden="true" />
                         </a>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ const footerNavigation = {
             <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
                 <p class="text-xs leading-5 text-gray-400">
                     &copy; {{ new Date().getFullYear() }} Gaspard Wierzbinski.
-                    Licensed under GPLv3
+                    Licensed under AGPLv3
                 </p>
             </div>
         </div>

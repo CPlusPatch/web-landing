@@ -23,7 +23,7 @@ After a battle with Gallaxhar's robot probe, the President of the United States 
 ## B.O.B.
 
 <figure>
-    <img src="/images/articles/monsters-vs-aliens-marxism/bob-in-love.jpg" alt="Picture of B.O.B in love with a jello mold">
+    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/bob-in-love.jpg" alt="Picture of B.O.B in love with a jello mold">
     <figcaption>B.O.B. in love with a jello mold</figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ However, despite his small intelligence, B.O.B. can be very resourceful and crea
 ## Dr. Cockroach
 
 <figure>
-    <img src="/images/articles/monsters-vs-aliens-marxism/dr-cockroach-and-bob.jpg" alt="Picture of Dr. Cockroach with B.O.B.">
+    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/dr-cockroach-and-bob.jpg" alt="Picture of Dr. Cockroach with B.O.B.">
     <figcaption>Dr. Cockroach with B.O.B.</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ Dr. Cockroach is a metaphor for the intellectuals among the working class, who a
 ## The Missing Link
 
 <figure>
-    <img src="/images/articles/monsters-vs-aliens-marxism/missing-link-in-group.jpg" alt="Picture of The Missing Link with the other monsters">
+    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/missing-link-in-group.jpg" alt="Picture of The Missing Link with the other monsters">
     <figcaption>The Missing Link with the other monsters</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ I don't really have a good metaphor for The Missing Link, but I think he's a goo
 ## Susan Murphy
 
 <figure>
-    <img src="/images/articles/monsters-vs-aliens-marxism/susan-in-bars.jpg" alt="Susan Murphy facing Gallaxhar from inside a prison of red bars">
+    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/susan-in-bars.jpg" alt="Susan Murphy facing Gallaxhar from inside a prison of red bars">
     <figcaption>Susan Murphy facing Gallaxhar from inside a prison of red bars</figcaption>
 </figure>
 

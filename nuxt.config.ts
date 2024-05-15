@@ -35,9 +35,14 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "nuxt-headlessui",
         "@nuxt/fonts",
-        "nuxt-icon",
         "@nuxt/image",
+        "nuxt-security",
     ],
+    vue: {
+        compilerOptions: {
+            isCustomElement: (tag) => tag === "iconify-icon",
+        },
+    },
     app: {
         head: {
             link: [
@@ -68,6 +73,8 @@ export default defineNuxtConfig({
             "opengraph.githubassets.com",
             "avatars.githubusercontent.com",
             "raw.githubusercontent.com",
+            "cdn.lysand.org",
+            "lysand.org",
         ],
         ipx: {
             maxAge: 60 * 60 * 24 * 365,
@@ -84,9 +91,6 @@ export default defineNuxtConfig({
             failOnError: true,
         },
     },
-    ogImage: {
-        enabled: false,
-    },
     runtimeConfig: {
         public: {
             language: "en-US",
@@ -99,6 +103,6 @@ export default defineNuxtConfig({
         sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
     },
     site: {
-        url: "https://dev.lysand.org",
+        url: "https://cpluspatch.com",
     },
 });

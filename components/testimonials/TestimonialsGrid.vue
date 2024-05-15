@@ -121,7 +121,7 @@ const testimonials = [
         </div>
         <div class="mx-auto max-w-7xl">
             <div class="mx-auto max-w-xl text-center px-6 lg:px-8">
-                <h2 class="text-lg font-semibold leading-8 tracking-tight text-orange-600">
+                <h2 class="text-sm font-bold uppercase leading-8 tracking-tight text-orange-600">
                     Reviews
                 </h2>
                 <p class="mt-2 text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">

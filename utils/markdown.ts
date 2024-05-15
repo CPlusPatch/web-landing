@@ -1,9 +1,9 @@
-import MarkdownIt from "markdown-it";
-import markdownItTocDoneRight from "markdown-it-toc-done-right";
-import markdownItContainer from "markdown-it-container";
-import markdownItAnchor from "markdown-it-anchor";
 import markdownItTaskLists from "@hackmd/markdown-it-task-lists";
 import { fromHighlighter } from "@shikijs/markdown-it/core";
+import MarkdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItContainer from "markdown-it-container";
+import markdownItTocDoneRight from "markdown-it-toc-done-right";
 import { getHighlighterCore } from "shiki/core";
 
 const highlighter = getHighlighterCore({
@@ -113,7 +113,7 @@ export const getMarkdownRenderer = async () => {
 };
 
 // Extract the FrontMatter header from raw markdown
-export const frontMatterParser = <T>(frontMatter: string) => {
+export const parseFrontMatter = <T>(frontMatter: string): T | null => {
     const regex = /---\n([\s\S]+?)\n---/;
     const match = frontMatter.match(regex);
     if (!match) return null;
@@ -129,4 +129,9 @@ export const frontMatterParser = <T>(frontMatter: string) => {
             {} as Record<string, string>,
         );
     return frontMatterObject as T;
+};
+
+export const stripFrontMatter = (markdown: string) => {
+    // Also strip the --- --- around the front matter
+    return markdown.replace(/---\n([\s\S]+?)\n---/, "");
 };

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "iconify-icon";
 const me = definePerson({
     name: "Gaspard Wierzbinski",
     image: "/images/avatars/with_background.webp",
@@ -22,13 +23,13 @@ useSchemaOrg([me, myOrg]);
 
 useServerSeoMeta({
     author: me.name,
-    titleTemplate: titleChunk => {
+    titleTemplate: (titleChunk) => {
         return titleChunk ? `${titleChunk} · CPlusPatch` : "CPlusPatch";
     },
 });
 
 // Use SSR-safe IDs for Headless UI
-provideHeadlessUseId(() => useId())
+provideHeadlessUseId(() => useId());
 </script>
 
 <template>
@@ -37,3 +38,11 @@ provideHeadlessUseId(() => useId())
         <NuxtPage />
     </NuxtLayout>
 </template>
+
+<style>
+iconify-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+</style>

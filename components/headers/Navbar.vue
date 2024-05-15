@@ -1,38 +1,39 @@
 <script setup lang="ts">
 const products = [
     {
-        name: "Mastodon.de Landing",
+        name: "Lysand",
         description:
-            "Beautiful landing page for Mastodon.de, a German Fediverse instance",
-        href: "https://join-mastodon.de",
-        icon: "tabler:brand-mastodon",
-    },
-    {
-        name: "AIP",
-        description:
-            "Fully business-ready AI application for conversing with FOSS models",
-        href: "https://aip.cpluspatch.dev",
-        icon: "tabler:server-bolt",
-    },
-    {
-        name: "CPlusPatch Web",
-        description:
-            "Complete WYSIWYG CMS ready to be used for websites and blogs",
-        href: "https://github.com/CPlusPatch/web-business",
+            "Highly standardized federation protocol that's easy to use and understand.",
         icon: "tabler:world-www",
+        href: "https://lysand.org",
     },
     {
-        name: "Fedibase",
-        description: "Fully featured Fediverse client with lots of features",
-        href: "https://github.com/CPlusPatch/fedibase",
-        icon: "tabler:browser",
+        name: "Lysand Server",
+        description:
+            "Reference implementation of the Lysand protocol. Fast, lightweight and configurable.",
+        icon: "tabler:server",
+        href: "https://github.com/lysand-org/lysand",
+    },
+    {
+        name: "Join Mastodon",
+        description:
+            "A landing page for mastodon.de, a social media with no ads, no tracking, and no algorithms. Made with Nuxt.js and Tailwind CSS.",
+        icon: "tabler:brand-mastodon",
+        href: "https://join-mastodon.de",
+    },
+    {
+        name: "KitsuLife",
+        description:
+            "Website for the Kitsu service suite, showcasing features and the community for Kitsu.",
+        icon: "tabler:social",
+        href: "https://kitsu.life",
     },
 ];
 
 const currentNews = {
-    id: "lysand2",
-    title: "Lysand 2.0",
-    description: "Lysand 2.0 is now available!",
+    id: "lysand3",
+    title: "Lysand 3.0",
+    description: "Lysand 3.0 is now available!",
     linkText: "Read the docs",
     href: "https://lysand.org",
 };
@@ -68,7 +69,7 @@ onMounted(() => {
                 <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
                     @click="closedNews.push(currentNews.id)">
                     <span class="sr-only">Dismiss</span>
-                    <Icon name="tabler:x" class="h-5 w-5 text-gray-50" aria-hidden="true" />
+                    <iconify-icon icon="tabler:x" height="none" class="h-5 w-5 text-gray-50" aria-hidden="true" />
                 </button>
             </div>
         </div>
@@ -85,7 +86,7 @@ onMounted(() => {
                     class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
                     @click="open = true">
                     <span class="sr-only">Open main menu</span>
-                    <Icon name="tabler:menu-2" class="h-6 w-6" aria-hidden="true" />
+                    <iconify-icon icon="tabler:menu-2" height="none" class="h-6 w-6" aria-hidden="true" />
                 </button>
             </div>
             <HeadlessPopoverGroup class="hidden lg:flex lg:gap-x-12">
@@ -93,7 +94,8 @@ onMounted(() => {
                     <HeadlessPopoverButton id="thebutton"
                         class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-50">
                         Projects
-                        <Icon name="tabler:chevron-down" class="h-5 w-5 flex-none text-gray-500" aria-hidden="true" />
+                        <iconify-icon icon="tabler:chevron-down" height="none" class="h-5 w-5 flex-none text-gray-500"
+                            aria-hidden="true" />
                     </HeadlessPopoverButton>
 
                     <transition enter-active-class="transition ease-out duration-200"
@@ -107,7 +109,7 @@ onMounted(() => {
                                     class="group relative rounded-lg p-6 text-sm leading-6 hover:bg-dark-400 duration-200 ring-dark-200 hover:ring-1">
                                     <div
                                         class="flex h-11 w-11 items-center justify-center rounded-lg bg-dark-300 duration-200 group-hover:bg-dark-700">
-                                        <Icon :name="item.icon"
+                                        <iconify-icon :icon="item.icon" height="none"
                                             class="h-6 w-6 text-gray-400 group-hover:text-orange-400"
                                             aria-hidden="true" />
                                     </div>
@@ -147,7 +149,7 @@ onMounted(() => {
                     </NuxtLink>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-200" @click="open = false">
                         <span class="sr-only">Close menu</span>
-                        <Icon name="tabler:x" class="h-6 w-6" aria-hidden="true" />
+                        <iconify-icon icon="tabler:x" height="none" class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
                 <div class="mt-6 flow-root">
@@ -157,7 +159,7 @@ onMounted(() => {
                                 <HeadlessDisclosureButton
                                     class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500">
                                     Projects
-                                    <Icon name="tabler:chevron-down" :class="[
+                                    <iconify-icon icon="tabler:chevron-down" height="none" :class="[
         open ? '-scale-y-100' : '',
         'h-5 w-5 flex-none duration-200',
     ]" aria-hidden="true" />
@@ -167,7 +169,7 @@ onMounted(() => {
                                         :href="item.href"
                                         class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-50 hover:bg-dark-300">
                                         {{
-        item.name
+                                        item.name
                                         }}</HeadlessDisclosureButton>
                                 </HeadlessDisclosurePanel>
                             </HeadlessDisclosure>

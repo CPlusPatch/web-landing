@@ -92,8 +92,9 @@ const scrollIntoView = (id: string) =>
 
     <div id="philosophy" class="relative">
         <div class="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
-            <div class="lg:flex lg:w-1/2 lg:shrink lg:grow-0 xl:absolute xl:inset-y-0 xl:right-1/2 xl:w-1/2">
-                <div class="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
+            <div
+                class="lg:flex lg:w-1/2 lg:shrink lg:grow-0 xl:absolute xl:inset-y-0 xl:right-1/2 xl:w-1/2 rounded-l-full">
+                <div class="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0 lg:rounded-r-lg overflow-hidden">
                     <img loading="lazy"
                         class="absolute inset-y-0 right-0 h-full w-full bg-white/5 backdrop-blur-xl object-cover max-w-6xl"
                         src="/images/assets/buildings.webp" alt="" />
@@ -121,16 +122,16 @@ const scrollIntoView = (id: string) =>
                         </p>
                         <ul role="list" class="mt-8 space-y-6 text-gray-300">
                             <li class="flex gap-x-3">
-                                <Icon name="tabler:brand-docker" class="mt-1 h-5 w-5 flex-none text-orange-500"
-                                    aria-hidden="true" />
+                                <iconify-icon icon="tabler:brand-docker" height="none"
+                                    class="mt-1 h-5 w-5 flex-none text-orange-500" aria-hidden="true" />
                                 <span><strong class="font-semibold text-gray-50">Build Reproducibility</strong>
                                     I use systems such as Docker or Nix to build
                                     and deploy my systems in a way that is
                                     reproducible and sandboxed.</span>
                             </li>
                             <li class="flex gap-x-3">
-                                <Icon name="tabler:list-check" class="mt-1 h-5 w-5 flex-none text-orange-500"
-                                    aria-hidden="true" />
+                                <iconify-icon icon="tabler:list-check" height="none"
+                                    class="mt-1 h-5 w-5 flex-none text-orange-500" aria-hidden="true" />
                                 <span><strong class="font-semibold text-gray-50">Automatic Linting & Formatting</strong>
                                     My apps are strictly checked for errors
                                     whenever I edit code, leading to less bugs
@@ -138,8 +139,8 @@ const scrollIntoView = (id: string) =>
                                 </span>
                             </li>
                             <li class="flex gap-x-3">
-                                <Icon name="tabler:3d-cube-sphere" class="mt-1 h-5 w-5 flex-none text-orange-500"
-                                    aria-hidden="true" />
+                                <iconify-icon icon="tabler:3d-cube-sphere" height="none"
+                                    class="mt-1 h-5 w-5 flex-none text-orange-500" aria-hidden="true" />
                                 <span><strong class="font-semibold text-gray-50">Extensibility and
                                         Futureproofing</strong>
                                     Apps should be written with scaling up in
@@ -168,7 +169,7 @@ const scrollIntoView = (id: string) =>
 
     <StatsBars />
 
-    <ProjectsProjectCards />
+    <ProjectsOverview />
 
     <GridsSlidingLanguageCarousel />
 

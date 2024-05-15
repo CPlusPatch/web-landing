@@ -1,1 +1,1 @@
-declare module '@hackmd/markdown-it-task-lists';
+declare module "@hackmd/markdown-it-task-lists";

@@ -40,6 +40,7 @@ export const usePost = async (path: string): Promise<Post | null> => {
             image: header.author_image,
             name: header.author,
         },
+        private: header.private === "true",
         content: renderedBody,
         created_at: new Date(Number(header.created_at || 0)).toISOString(),
         description: header.description,

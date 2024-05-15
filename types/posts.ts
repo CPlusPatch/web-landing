@@ -3,6 +3,7 @@ export interface FrontMatter {
     description: string;
     image: string;
     created_at: string;
+    private?: string;
     author: string;
     author_image: string;
     author_handle: string;
@@ -14,6 +15,7 @@ export interface Post {
     image: string;
     banner?: string;
     author: Author;
+    private: boolean;
     created_at: string;
     content: string;
     path: string;

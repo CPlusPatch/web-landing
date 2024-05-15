@@ -37,32 +37,34 @@ export const getMarkdownRenderer = async () => {
         linkify: true,
     });
 
-    renderer.use(
-        // @ts-ignore
-        fromHighlighter(await highlighter, {
-            theme: "rose-pine",
-        }),
-    );
+    for (const ren of [renderer, otherRenderer]) {
+        ren.use(
+            // @ts-ignore
+            fromHighlighter(await highlighter, {
+                theme: "rose-pine",
+            }),
+        );
 
-    renderer.use(markdownItAnchor, {
-        permalink: markdownItAnchor.permalink.ariaHidden({
-            symbol: "",
-            placement: "before",
-        }),
-    });
+        ren.use(markdownItAnchor, {
+            permalink: markdownItAnchor.permalink.ariaHidden({
+                symbol: "",
+                placement: "before",
+            }),
+        });
 
-    renderer.use(markdownItTocDoneRight, {
-        containerClass: "toc",
-        level: [1, 2, 3, 4],
-        listType: "ul",
-        listClass: "toc-list",
-        itemClass: "toc-item",
-        linkClass: "toc-link",
-    });
+        ren.use(markdownItTocDoneRight, {
+            containerClass: "toc",
+            level: [1, 2, 3, 4],
+            listType: "ul",
+            listClass: "toc-list",
+            itemClass: "toc-item",
+            linkClass: "toc-link",
+        });
 
-    renderer.use(markdownItTaskLists);
+        ren.use(markdownItTaskLists);
 
-    renderer.use(markdownItContainer);
+        ren.use(markdownItContainer, "spoiler");
+    }
 
     renderer.use((md) => {
         md.renderer.rules.html_block = (tokens, idx) => {

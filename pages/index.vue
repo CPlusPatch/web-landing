@@ -63,7 +63,7 @@ const isJesse = useJesse()
         <div class="mx-auto max-w-7xl px-6 pb-24 pt-30 sm:pb-32 lg:flex lg:px-8 lg:py-40">
             <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8 mt-20">
                 <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                    Heya,<br />
+                    {{ isJesse ? "Hii :3" : "Heya" }},<br />
                     I'm {{ !isJesse ? "CPlusPatch" : "Jesse 🏳️‍⚧️" }}
                 </h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300">

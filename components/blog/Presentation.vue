@@ -3,7 +3,12 @@ import type { Post } from "~/types/posts";
 
 const { data } = await useFetch<Post[]>("/api/articles");
 
-const posts = ref(data.value?.filter(p => !p.private) ?? []);
+const posts = ref(data.value?.filter((p) => !p.private) ?? []);
+
+if (import.meta.prerender) {
+    // Show all posts during prerendering so that their images are fetched
+    posts.value = data.value ?? [];
+}
 
 const { j_e_s_e } = useMagicKeys();
 
@@ -11,7 +16,7 @@ watchEffect(() => {
     if (j_e_s_e.value) {
         posts.value = data.value ?? [];
     }
-})
+});
 </script>
 
 <template>

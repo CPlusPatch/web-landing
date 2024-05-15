@@ -15,6 +15,8 @@ useServerSeoMeta({
 
 const scrollIntoView = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+const isJesse = useJesse()
 </script>
 
 <template>
@@ -62,7 +64,7 @@ const scrollIntoView = (id: string) =>
             <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8 mt-20">
                 <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                     Heya,<br />
-                    I'm CPlusPatch
+                    I'm {{ !isJesse ? "CPlusPatch" : "Jesse 🏳️‍⚧️" }}
                 </h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300">
                     I make apps, websites, servers and dreams through FOSS and
@@ -71,8 +73,9 @@ const scrollIntoView = (id: string) =>
                     many kinds of fields
                 </p>
                 <div class="mt-10 flex items-center gap-x-6">
-                    <NuxtLink href="/contact"
-                        class="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400">
+                    <NuxtLink href="/contact" :class="['rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400',
+                        isJesse && 'text-black/0 bg-[linear-gradient(to_right,#5BCEFA,#5BCEFA_20%,#F5A9B8_20%,#F5A9B8_40%,#FFFFFF_40%,#FFFFFF_60%,#F5A9B8_60%,#F5A9B8_80%,#5BCEFA_80%,#5BCEFA)]'
+                    ]">
                         Contact me</NuxtLink>
                     <a href="#philosophy" class="text-sm font-semibold leading-6 group text-white"
                         @click.prevent="scrollIntoView('philosophy')">Read more

@@ -36,7 +36,7 @@ export default defineNuxtConfig({
         "nuxt-headlessui",
         "@nuxt/fonts",
         "@nuxt/image",
-        "nuxt-security",
+        //"nuxt-security",
     ],
     vue: {
         compilerOptions: {

@@ -75,7 +75,7 @@ const formatDate = (date?: string) => {
 
             <div class="mt-8 mx-auto">
                 <time v-if="post.created_at" :datetime="post.created_at" class="text-gray-500">{{
-                    formatDate(post.created_at) }}</time>
+        formatDate(post.created_at) }}</time>
             </div>
         </div>
         <nuxt-img v-if="post.image" :src="post.image" width="800" format="webp" alt=""

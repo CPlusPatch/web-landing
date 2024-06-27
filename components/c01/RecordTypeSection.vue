@@ -1,7 +1,7 @@
 <template>
     <section class="form-section flex flex-col gap-4">
         <h4 class="font-semibold">Type of record desired</h4>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="form-grid grid-cols-2 gap-4">
             <RecordTypeOption label="Search and Certified Transcript (Certificate)" fee="SC 100.00" />
             <RecordTypeOption label="Search and Certified Copy (Long Form)" fee="SC 100.00" />
         </div>

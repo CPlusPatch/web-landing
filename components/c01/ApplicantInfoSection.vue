@@ -12,7 +12,7 @@
             <FormInput label="SuperMail Address:" placeholder="john.helldiver@mail.gov" />
         </div>
         <div class="form-grid grid-cols-4 mt-4">
-            <FormInput label="Address of Applicant:" class="col-span-2" />
+            <FormInput label="Address of Applicant:" class="md:col-span-2" />
             <FormInput label="Megacity:" />
             <FormInput label="Sector:" />
             <FormInput label="ZIP:" />

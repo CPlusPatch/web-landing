@@ -30,4 +30,10 @@ import RecordTypeSection from "./RecordTypeSection.vue";
 .form-grid {
     @apply grid gap-4;
 }
+
+@media (max-width: 768px) {
+    .form-grid {
+        @apply grid-cols-1;
+    }
+}
 </style>

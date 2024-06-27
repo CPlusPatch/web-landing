@@ -16,7 +16,7 @@ useServerSeoMeta({
 const scrollIntoView = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-const isJesse = useJesse()
+const isJesse = useJesse();
 </script>
 
 <template>

@@ -4,9 +4,9 @@ import MarkdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItContainer from "markdown-it-container";
 import markdownItTocDoneRight from "markdown-it-toc-done-right";
-import { getHighlighterCore } from "shiki/core";
+import { createHighlighterCore } from "shiki/core";
 
-const highlighter = getHighlighterCore({
+const highlighter = createHighlighterCore({
     themes: [import("shiki/themes/rose-pine.mjs")],
     langs: [
         import("shiki/langs/javascript.mjs"),

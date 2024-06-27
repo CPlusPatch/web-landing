@@ -29,32 +29,32 @@
     },
     "dependencies": {
         "@hackmd/markdown-it-task-lists": "^2.1.4",
-        "@nuxt/image": "^1.5.0",
-        "@shikijs/markdown-it": "^1.3.0",
+        "@nuxt/image": "^1.7.0",
+        "@shikijs/markdown-it": "^1.9.1",
         "iconify-icon": "^2.1.0",
         "markdown-it": "^14.1.0",
-        "markdown-it-anchor": "^8.6.7",
+        "markdown-it-anchor": "^9.0.1",
         "markdown-it-container": "^4.0.0",
         "markdown-it-toc-done-right": "^4.2.0",
-        "nuxt": "^3.11.2",
-        "nuxt-security": "^2.0.0-beta.5",
-        "typescript": "^5.4.5",
-        "vue": "^3.4.21",
-        "vue-router": "^4.3.0"
+        "nuxt": "^3.12.2",
+        "nuxt-security": "^2.0.0-rc.7",
+        "typescript": "^5.5.2",
+        "vue": "^3.4.30",
+        "vue-router": "^4.4.0"
     },
     "devDependencies": {
-        "@biomejs/biome": "^1.6.4",
-        "@nuxt/fonts": "^0.7.0",
-        "@nuxtjs/seo": "^2.0.0-rc.10",
-        "@nuxtjs/tailwindcss": "^6.11.4",
+        "@biomejs/biome": "^1.8.2",
+        "@nuxt/fonts": "^0.7.1",
+        "@nuxtjs/seo": "^2.0.0-rc.11",
+        "@nuxtjs/tailwindcss": "^6.12.0",
         "@tailwindcss/forms": "^0.5.7",
-        "@tailwindcss/typography": "^0.5.12",
-        "@types/bun": "^1.1.2",
+        "@tailwindcss/typography": "^0.5.13",
+        "@types/bun": "^1.1.6",
         "@types/markdown-it-container": "^2.0.10",
-        "@vueuse/nuxt": "^10.9.0",
+        "@vueuse/nuxt": "^10.11.0",
         "nuxt-headlessui": "^1.2.0",
         "nuxt-icon": "^0.6.10",
-        "shiki": "^1.3.0"
+        "shiki": "^1.9.1"
     },
     "overrides": {
         "ipx": "^3.0.1"
@@ -64,6 +64,9 @@
         "@fortawesome/fontawesome-common-types",
         "@fortawesome/free-regular-svg-icons",
         "@fortawesome/free-solid-svg-icons",
-        "json-editor-vue"
+        "esbuild",
+        "json-editor-vue",
+        "sharp",
+        "vue-demi"
     ]
 }

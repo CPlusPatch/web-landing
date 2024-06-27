@@ -68,7 +68,7 @@ When logging in with new OAuth apps, which is to say logging in with anything, a
 
 This screen will trigger whether you are logging in via username/password or through an OpenID provider.
 
-![OAuth Permissions Screen](https://raw.githubusercontent.com/lysand-org/lysand/main/assets/redirect.webp)
+![OAuth Permissions Screen](https://raw.githubusercontent.com/lysand-org/lysand/af354a5fb88278a6ee53b17f66060496ead57574/assets/redirect.webp)
 
 ### Bait Mode
 

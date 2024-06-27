@@ -75,6 +75,7 @@ export default defineNuxtConfig({
             "raw.githubusercontent.com",
             "cdn.lysand.org",
             "lysand.org",
+            "static.wikia.nocookie.net",
         ],
         ipx: {
             maxAge: 60 * 60 * 24 * 365,

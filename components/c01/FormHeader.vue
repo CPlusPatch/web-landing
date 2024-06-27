@@ -2,7 +2,7 @@
     <header class="form-grid grid-cols-[auto_1fr] gap-8">
         <div class="flex flex-col gap-3 min-w-36 items-center justify-center">
             <nuxt-img
-                src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/8/8d/Super_earth.png/revision/latest?cb=20180527113712"
+                src="https://static.wikia.nocookie.net/helldivers_gamepedia/images/8/8d/Super_earth.png/revision/latest"
                 alt="Logo" class="size-36 shrink-0 invert -m-2" format="webp" />
             <strong class="my-0 text-center">{{ department }}</strong>
         </div>

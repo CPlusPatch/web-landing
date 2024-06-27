@@ -45,7 +45,7 @@ const ipxLinks = body.match(/\/_ipx\/[^"]+/g) || [];
 for (const ipxLink of ipxLinks) {
     body = body.replace(
         ipxLink,
-        // Replace the link with the optimized imag
+        // Replace the link with the optimized image
         img(`/${ipxLink.split("/").slice(3).join("/")}` || "", {
             width: 800,
             format: "webp",

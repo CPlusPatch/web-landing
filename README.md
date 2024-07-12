@@ -1,75 +1,26 @@
-# Nuxt 3 Minimal Starter
+<!-- <p align="center">
+  <a href="https://lysand.org"><img src="https://cdn.lysand.org/logo-long-dark.webp" alt="Lysand Logo" height="110"></a>
+</p> -->
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<center><h1><code>lists-project</code></h1></center>
 
-## Setup
+Testing project.
 
-Make sure to install the dependencies:
+## Getting Started
 
-```bash
-# npm
-npm install
+### Prerequisites
 
-# pnpm
-pnpm install
+#### For Usage
 
-# yarn
-yarn install
+See the [**Compatibility**](#compatibility) section for the supported environments. Any package manager can be used to install the packages.
 
-# bun
-bun install
-```
+#### For Development
 
-## Development Server
+- [**Bun**](https://bun.sh) version `1.1.17` or higher.
 
-Start the development server on `http://localhost:3000`:
+### Compatibility
 
-```bash
-# npm
-npm run dev
+This library is built for Browsers with the support for:
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [**ES Modules**](https://nodejs.org/api/esm.html)
+- [**ECMAScript 2020**](https://www.ecma-international.org/ecma-262/11.0/index.html)

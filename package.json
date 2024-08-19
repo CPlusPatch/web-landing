@@ -51,7 +51,7 @@
         "@tailwindcss/typography": "^0.5.13",
         "@types/bun": "^1.1.6",
         "@types/markdown-it-container": "^2.0.10",
-        "@vueuse/nuxt": "^10.11.0",
+        "@vueuse/nuxt": "^11.0.0",
         "nuxt-headlessui": "^1.2.0",
         "nuxt-icon": "^0.6.10",
         "shiki": "^1.9.1"

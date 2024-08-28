@@ -2,7 +2,7 @@
 const footerNavigation = {
     solutions: [
         { name: "Mastodon.de", href: "https://mastodon.de" },
-        { name: "Lysand", href: "https://lysand.org" },
+        { name: "Versia", href: "https://versia.pub" },
     ],
     legal: [{ name: "Privacy", href: "/privacy" }],
     social: [

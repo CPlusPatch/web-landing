@@ -1,18 +1,18 @@
 <script setup lang="ts">
 const products = [
     {
-        name: "Lysand",
+        name: "Versia",
         description:
             "Highly standardized federation protocol that's easy to use and understand.",
         icon: "tabler:world-www",
-        href: "https://lysand.org",
+        href: "https://versia.pub",
     },
     {
-        name: "Lysand Server",
+        name: "Versia Server",
         description:
-            "Reference implementation of the Lysand protocol. Fast, lightweight and configurable.",
+            "Reference implementation of the Versia protocol. Fast, lightweight and configurable.",
         icon: "tabler:server",
-        href: "https://github.com/lysand-org/lysand",
+        href: "https://github.com/versia-pub/server",
     },
     {
         name: "Join Mastodon",
@@ -31,11 +31,11 @@ const products = [
 ];
 
 const currentNews = {
-    id: "lysand3",
-    title: "Lysand 3.0",
-    description: "Lysand 3.0 is now available!",
+    id: "versia4",
+    title: "Versia 0.4",
+    description: "Versia 0.4 is now available!",
     linkText: "Read the docs",
-    href: "https://lysand.org",
+    href: "https://versia.pub",
 };
 
 const open = ref(false);
@@ -57,11 +57,11 @@ onMounted(() => {
             <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 w-full">
                 <p class="text-sm text-gray-50">
                     <strong class="font-semibold">{{
-        currentNews.title
-    }}</strong>&nbsp;•&nbsp;{{ currentNews.description }}
+                        currentNews.title
+                        }}</strong>&nbsp;•&nbsp;{{ currentNews.description }}
                 </p>
                 <a :href="currentNews.href" targte="_blank" class="text-sm font-semibold text-gray-50 group">{{
-        currentNews.linkText }}
+                    currentNews.linkText }}
                     <ButtonsAnimatedArrow />
                 </a>
             </div>
@@ -160,16 +160,16 @@ onMounted(() => {
                                     class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500">
                                     Projects
                                     <iconify-icon icon="tabler:chevron-down" height="none" :class="[
-        open ? '-scale-y-100' : '',
-        'h-5 w-5 flex-none duration-200',
-    ]" aria-hidden="true" />
+                                        open ? '-scale-y-100' : '',
+                                        'h-5 w-5 flex-none duration-200',
+                                    ]" aria-hidden="true" />
                                 </HeadlessDisclosureButton>
                                 <HeadlessDisclosurePanel class="mt-2 space-y-2">
                                     <HeadlessDisclosureButton v-for="item in [...products]" :key="item.name" as="a"
                                         :href="item.href"
                                         class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-50 hover:bg-dark-300">
                                         {{
-                                        item.name
+                                            item.name
                                         }}</HeadlessDisclosureButton>
                                 </HeadlessDisclosurePanel>
                             </HeadlessDisclosure>

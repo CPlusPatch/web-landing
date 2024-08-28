@@ -18,7 +18,7 @@ I have been working on the Lysand 2.0 protocol update, which is an update of min
 - Removed some deprecated fields and objects
 - More spec compliance rules for stricter implementations
 
-You can find the updated protocol documentation [at the lysand spec website](https://lysand.org). For a Git diff of the changes, you can check out the [full comparison on GitHub](https://github.com/lysand-org/docs/compare/158ec6e...f11d51c).
+You can find the updated protocol documentation [at the lysand spec website](https://versia.pub). For a Git diff of the changes, you can check out the [full comparison on GitHub](https://github.com/versia-pub/docs/compare/158ec6e...f11d51c).
 
 ## Work on Lysand Server
 
@@ -68,7 +68,7 @@ When logging in with new OAuth apps, which is to say logging in with anything, a
 
 This screen will trigger whether you are logging in via username/password or through an OpenID provider.
 
-![OAuth Permissions Screen](https://raw.githubusercontent.com/lysand-org/lysand/af354a5fb88278a6ee53b17f66060496ead57574/assets/redirect.webp)
+![OAuth Permissions Screen](https://raw.githubusercontent.com/versia-pub/server/af354a5fb88278a6ee53b17f66060496ead57574/assets/redirect.webp)
 
 ### Bait Mode
 

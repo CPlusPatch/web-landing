@@ -26,7 +26,7 @@ The Lysand protocol works in a similar way as ActivityPub, with inboxes and "act
 
 Lysand has official specifications for features such as Polls, Custom Emojis, Cryptographic Signatures, Rich Text, Image Metadata, Username Changes, and more. These specifications are written in a simple, easy-to-understand format, which makes it easy to implement them in any app.
 
-You can find this spec at [the lysand website](https://lysand.org).
+You can find this spec at [the lysand website](https://versia.pub).
 
 ## What is it used for?
 
@@ -90,6 +90,6 @@ As it's not finished, I can't fully compare it to other servers, but I think it'
 
 I have learned a lot from writing Lysand and the Lysand protocol. I had never written a spec before, so that was a new experience for me. I also had never tried to write a big server project like this, which was a very enriching experience.
 
-I'm hoping to get Lysand Server finished soon, so I can fully release it and start working on a client. (it's fully FOSS by the way, available at [this GitHub repo](https://github.com/lysand-org/lysand)). In the meantime, I hope you've enjoyed reading this post, and I hope you'll enjoy using Lysand when it's ready!
+I'm hoping to get Lysand Server finished soon, so I can fully release it and start working on a client. (it's fully FOSS by the way, available at [this GitHub repo](https://github.com/versia-pub/server)). In the meantime, I hope you've enjoyed reading this post, and I hope you'll enjoy using Lysand when it's ready!
 
 Goodbye!

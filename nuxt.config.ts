@@ -96,7 +96,7 @@ export default defineNuxtConfig({
         public: {
             language: "en-US",
             titleSeparator: "·",
-            siteName: "Lysand",
+            siteName: "CPlusPatch",
             trailingSlash: true,
         },
     },

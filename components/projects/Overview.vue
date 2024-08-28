@@ -1,20 +1,20 @@
 <script setup lang="ts">
 const cards = [
     {
-        name: "Lysand Protocol",
+        name: "Versia Protocol",
         description:
-            "Fully documented protocol specification for Lysand, a decentralized federation protocol that focuses on good experience.",
+            "Fully documented protocol specification for Versia, a decentralized federation protocol that focuses on good experience.",
         image: "/images/assets/lysand-org-frontpage.png",
         featured: true,
         links: [
             {
                 name: "GitHub",
-                href: "https://github.com/lysand-org/docs",
+                href: "https://github.com/versia-pub/docs",
                 icon: "tabler:brand-github",
             },
             {
                 name: "Website",
-                href: "https://lysand.org",
+                href: "https://versia.pub",
                 icon: "tabler:link",
             },
             {
@@ -25,15 +25,15 @@ const cards = [
         ],
     },
     {
-        name: "Lysand Server",
+        name: "Versia Server",
         description:
-            "Reference implementation of the Lysand protocol. High-quality, efficient and configurable server software.",
+            "Reference implementation of the Versia protocol. High-quality, efficient and configurable server software.",
         image: "/images/assets/lysand-readme.png",
         featured: true,
         links: [
             {
                 name: "GitHub",
-                href: "https://github.com/lysand-org/lysand",
+                href: "https://github.com/versia-pub/server",
                 icon: "tabler:brand-github",
             },
             {
@@ -49,15 +49,15 @@ const cards = [
         ],
     },
     {
-        name: "Lysand-FE",
+        name: "Versia-FE",
         description:
-            "Frontend for Lysand Server, made with Vue 3 and Tailwind CSS. It's a modern, responsive and fast web application.",
+            "Frontend for Versia Server, made with Vue 3 and Tailwind CSS. It's a modern, responsive and fast web application.",
         image: "/images/assets/lysand-fe.png",
         featured: false,
         links: [
             {
                 name: "GitHub",
-                href: "https://github.com/lysand-org/lysand-fe",
+                href: "https://github.com/versia-pub/frontend",
                 icon: "tabler:brand-github",
             },
             {
@@ -73,25 +73,25 @@ const cards = [
         ],
     },
     {
-        name: "Lysand APIs",
+        name: "Versia APIs",
         description:
-            "APIs for TypeScript Lysand implementations, including federation and clients. Well-documented, small and efficient.",
+            "APIs for TypeScript Versia implementations, including federation and clients. Well-documented, small and efficient.",
         image: "/images/assets/lysand-apis.png",
         featured: false,
         links: [
             {
                 name: "GitHub",
-                href: "https://github.com/lysand-org/api",
+                href: "https://github.com/versia-pub/api",
                 icon: "tabler:brand-github",
             },
             {
                 name: "NPM",
-                href: "https://www.npmjs.com/package/@lysand-org/federation",
+                href: "https://www.npmjs.com/package/@versia/federation",
                 icon: "tabler:brand-npm",
             },
             {
                 name: "JSR",
-                href: "https://jsr.io/@lysand-org/federation",
+                href: "https://jsr.io/@versia/federation",
                 icon: "tabler:package",
             },
             {

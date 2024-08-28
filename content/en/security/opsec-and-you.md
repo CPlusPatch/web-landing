@@ -28,7 +28,7 @@ FOSS (Free and Open Source Software) is a type of software that is free to use, 
 
 You **should** use the Linux operating system and FOSS software whenever possible. This is because it is more secure than proprietary software, and is less likely to contain backdoors or other malicious code. It is also more customizable, and can be configured to your liking. [Windows is known to contain multiple backdoors from the likes of the NSA](https://arstechnica.com/information-technology/2017/04/nsa-backdoor-detected-on-55000-windows-boxes-can-now-be-remotely-removed/) and, being proprietary, cannot be audited by the public.
 
-The switch from Windows to Linux will require some computer knowledge about how computers function. If you are not comfortable with this, please document yourself on installation of Linux and basic command line usage. My personaly distribution recommendation is [EndeavourOS](https://endeavouros.com/), which is a user-friendly derivative of [Arch Linux](https://archlinux.org/). Arch Linux is a rolling release distribution, which means that it is constantly updated with the latest software. This is important for security, as it means that you will always have the latest security patches.
+The switch from Windows to Linux will require some computer knowledge about how computers function. If you are not comfortable with this, please document yourself on installation of Linux and basic command line usage. My personal distribution recommendation is [EndeavourOS](https://endeavouros.com/), which is a user-friendly derivative of [Arch Linux](https://archlinux.org/). Arch Linux is a rolling release distribution, which means that it is constantly updated with the latest software. This is important for security, as it means that you will always have the latest security patches.
 
 Arch Linux also has an in-depth wiki that can help you with any issues you may have. You can find it [here](https://wiki.archlinux.org/). Commands used in this guide will be written for Arch Linux, but will work on most other distributions as well.
 
@@ -285,7 +285,7 @@ Bad web browsers include:
 
 - [Google Chrome](https://google.com/chrome), as it is full of proprietary tracking code by Google
 - [Microsoft Edge](https://microsoft.com/edge), and any proprietary derivatives of Chromium (such as Samsung Internet, Arc, etc.)
-- [Brave](https://brave.com), as it has a track record of overally shadyness, and is not as secure as it claims to be
+- [Brave](https://brave.com), as it has a track record of overall shadyness, and is not as secure as it claims to be
 - [Safari](https://apple.com/safari), as it is proprietary software by Apple.
 
 ## Tor Browser

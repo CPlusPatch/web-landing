@@ -2,7 +2,7 @@
 title: Lysand in March 2024 - Updates
 created_at: 1711003713000
 image: https://opengraph.githubassets.com/0473f3e13c155c834c85ea1188a44fc1191a12fc96220b0acf1301002b15f462/CPlusPatch/lysand
-description: Writing about about the new work that's been done on Lysand since my November post
+description: Writing about the new work that's been done on Lysand since my November post
 author: Jesse W
 author_image: /images/avatars/jessew.png
 author_handle: @CPlusPatch

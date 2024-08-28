@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import logo from "@/public/images/icons/logo.svg";
-import Image from "next/image";
 import React from "react";
 
 export const Logo = React.forwardRef<
@@ -13,7 +12,7 @@ export const Logo = React.forwardRef<
             {...props}
             className={cn("flex items-center space-x-2", className)}
         >
-            <Image
+            <img
                 src={logo.src}
                 width={logo.width}
                 height={logo.height}

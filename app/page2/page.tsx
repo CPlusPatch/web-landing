@@ -6,7 +6,6 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import hero from "@/public/images/assets/banner-2.webp";
-import Image from "next/image";
 import React from "react";
 
 export default function Home() {
@@ -32,14 +31,12 @@ export default function Home() {
                         </h1>
                     }
                 >
-                    <Image
+                    <img
                         src={hero.src}
                         alt="Banner"
                         className="rounded-2xl object-cover h-full mx-auto"
-                        placeholder="blur"
                         width={hero.width}
                         height={hero.height}
-                        blurDataURL={hero.blurDataURL}
                     />
                 </ContainerScroll>
 

@@ -103,6 +103,7 @@ export default defineNuxtConfig({
     sitemap: {
         sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
     },
+    compatibilityDate: "2024-08-28",
     site: {
         url: "https://cpluspatch.com",
     },

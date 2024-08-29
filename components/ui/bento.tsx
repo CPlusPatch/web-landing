@@ -78,7 +78,7 @@ const Feature = ({
     return (
         <div
             className={cn(
-                "flex flex-col [&:not(:last-child)]:lg:border-r py-16 relative group/feature dark:border-neutral-800",
+                "flex flex-col [&:not(:last-child)]:lg:border-r py-16 relative group/feature border-b dark:border-neutral-800",
                 index < 4 && "lg:border-b dark:border-neutral-800",
             )}
         >

@@ -1,62 +1,65 @@
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import type React from "react";
+import { BackgroundGradient } from "./background-gradient";
 
 export function FeaturesGrid() {
     const features = [
         {
-            title: "Built for developers",
+            title: "Security first",
             description:
-                "Built for engineers, developers, dreamers, thinkers and doers.",
-            icon: <Icon icon="tabler:terminal-2" />,
+                "It is all too often that application security is an afterthought. Not with with me.",
+            icon: <Icon icon="tabler:shield" />,
         },
         {
-            title: "Ease of use",
+            title: "Proficiency in all OSes",
             description:
-                "It's as easy as using an Apple, and as expensive as buying one.",
-            icon: <Icon icon="tabler:ease-in-out" />,
+                "Whether it's Windows, macOS, Linux, iOS, Android, or the Web, I've got experience there.",
+            icon: <Icon icon="tabler:brand-finder" />,
         },
         {
-            title: "Pricing like no other",
+            title: "Boldness like no other",
             description:
-                "Our prices are best in the market. No cap, no lock, no credit card required.",
-            icon: <Icon icon="tabler:currency-dollar" />,
+                "I'm always ready to take on new challenges and learn new things.",
+            icon: <Icon icon="tabler:test-pipe" />,
         },
         {
-            title: "100% Uptime guarantee",
-            description: "We just cannot be taken down by anyone.",
+            title: "Made to scale",
+            description: "Proficiency in large-scale containerized deployments",
             icon: <Icon icon="tabler:cloud" />,
         },
         {
-            title: "Multi-tenant Architecture",
+            title: "You name it, I've used it",
             description:
-                "You can simply share passwords instead of buying new seats",
-            icon: <Icon icon="tabler:route-alt-left" />,
+                "I have experience with a very wide range of programming languages and frameworks.",
+            icon: <Icon icon="tabler:brand-typescript" />,
         },
         {
-            title: "24/7 Customer Support",
+            title: "Engineering excellence",
             description:
-                "We are available a 100% of the time. Atleast our AI Agents are.",
-            icon: <Icon icon="tabler:help" />,
+                "I strive to write clean, maintainable, and efficient code. I'm the one driving the code reviews.",
+            icon: <Icon icon="tabler:code" />,
         },
         {
-            title: "Money back guarantee",
+            title: "Satisfied partners",
             description:
-                "If you donot like EveryAI, we will convince you to like us.",
-            icon: <Icon icon="tabler:adjustments-bolt" />,
-        },
-        {
-            title: "And everything else",
-            description:
-                "I just ran out of copy ideas. Accept my sincere apologies",
+                "I have a good track record of working with partners to deliver high-quality solutions.",
             icon: <Icon icon="tabler:heart" />,
+        },
+        {
+            title: "And, I can design too",
+            description:
+                "I have experience with designing user interfaces and user experiences. Good ones, too.",
+            icon: <Icon icon="tabler:adjustments-bolt" />,
         },
     ];
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 max-w-7xl mx-auto rounded-md border bg-card">
-            {features.map((feature, index) => (
-                <Feature key={feature.title} {...feature} index={index} />
-            ))}
+        <div className="max-w-7xl mx-auto rounded-md">
+            <BackgroundGradient className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 rounded-md bg-card overflow-hidden">
+                {features.map((feature, index) => (
+                    <Feature key={feature.title} {...feature} index={index} />
+                ))}
+            </BackgroundGradient>
         </div>
     );
 }

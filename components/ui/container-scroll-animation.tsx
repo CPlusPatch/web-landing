@@ -21,7 +21,7 @@ export const ContainerScroll = ({
     });
     const [isMobile, setIsMobile] = React.useState(false);
     const [scrollContainerHeight, setScrollContainerHeight] = React.useState(
-        scrollContainerRef.current?.clientHeight ?? 0,
+        scrollContainerRef.current?.clientHeight ?? 2000,
     );
 
     React.useEffect(() => {

@@ -6,6 +6,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import hero from "@/public/images/assets/banner-2.webp";
+import { motion } from "framer-motion";
 import React from "react";
 
 export default function Home() {
@@ -25,10 +26,19 @@ export default function Home() {
                 <ContainerScroll
                     scrollContainerRef={scrollContainerRef}
                     titleComponent={
-                        <h1 className="mb-20 text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+                        <motion.h1
+                            className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
+                            initial={{ marginBottom: "0.5rem" }}
+                            animate={{ marginBottom: "6rem" }}
+                            transition={{
+                                duration: 1,
+                                bounce: 0.25,
+                                type: "spring",
+                            }} // Adjust the duration as needed
+                        >
                             {isJesse ? "Hii :3" : "Heya"},<br />
                             I'm {isJesse ? "Jesse 🏳️‍⚧️" : "CPlusPatch"}
-                        </h1>
+                        </motion.h1>
                     }
                 >
                     <img

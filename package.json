@@ -30,20 +30,20 @@
     "dependencies": {
         "@hackmd/markdown-it-task-lists": "^2.1.4",
         "@nuxt/image": "^1.8.0",
-        "@shikijs/markdown-it": "^1.17.6",
+        "@shikijs/markdown-it": "^1.17.7",
         "iconify-icon": "^2.1.0",
         "markdown-it": "^14.1.0",
         "markdown-it-anchor": "^9.2.0",
         "markdown-it-container": "^4.0.0",
         "markdown-it-toc-done-right": "^4.2.0",
-        "nuxt": "^3.13.1",
+        "nuxt": "^3.13.2",
         "nuxt-security": "^2.0.0-rc.9",
         "typescript": "^5.6.2",
-        "vue": "^3.5.5",
+        "vue": "^3.5.6",
         "vue-router": "^4.4.5"
     },
     "devDependencies": {
-        "@biomejs/biome": "^1.9.0",
+        "@biomejs/biome": "^1.9.1",
         "@nuxt/fonts": "^0.8.0",
         "@nuxtjs/seo": "^2.0.0-rc.21",
         "@nuxtjs/tailwindcss": "^6.12.1",
@@ -51,10 +51,10 @@
         "@tailwindcss/typography": "^0.5.15",
         "@types/bun": "^1.1.9",
         "@types/markdown-it-container": "^2.0.10",
-        "@vueuse/nuxt": "^11.0.3",
+        "@vueuse/nuxt": "^11.1.0",
         "nuxt-headlessui": "^1.2.0",
         "nuxt-icon": "^1.0.0-beta.7",
-        "shiki": "^1.17.6"
+        "shiki": "^1.17.7"
     },
     "overrides": {
         "ipx": "^3.0.1"

@@ -30,6 +30,15 @@ useServerSeoMeta({
 
 // Use SSR-safe IDs for Headless UI
 provideHeadlessUseId(() => useId());
+
+useHead({
+    link: [
+        {
+            rel: "me",
+            href: "https://mk.cpluspatch.com/@jessew",
+        }
+    ]
+})
 </script>
 
 <template>

@@ -36,8 +36,7 @@ const footerNavigation = {
                         </a>
                     </div>
                 </div>
-                <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                    <div class="md:grid md:grid-cols-1 md:gap-8">
+                <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
                         <div>
                             <h3 class="text-sm font-semibold leading-6 text-white">
                                 Projects
@@ -49,8 +48,6 @@ const footerNavigation = {
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
                         <div class="mt-10 md:mt-0">
                             <h3 class="text-sm font-semibold leading-6 text-white">
                                 Legal
@@ -58,11 +55,25 @@ const footerNavigation = {
                             <ul role="list" class="mt-6 space-y-4">
                                 <li v-for="item in footerNavigation.legal" :key="item.name">
                                     <a target="_blank" :href="item.href"
-                                        class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
+                                    class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                        <div class="mt-10 md:mt-0">
+                            <h3 class="text-sm font-semibold leading-6 text-white">
+                                Assets
+                            </h3>
+                            <ul role="list" class="mt-6 space-y-4">
+                                <li>
+                                    <img src="/images/icons/88x31.png" alt="The text 'Jesse' overlaid on a dark rectangle with rainbow stripes on the top left. A small drawn character is present on the left." title="My 88x31 icon" class="[image-rendering:pixelated]" />
+                                    <p class="text-xs leading-6 mt-2 text-gray-400 max-w-48">
+                                        Please hotlink this image instead of reuploading it.<br/>
+                                        <br/>
+                                        Alt text included.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
                 </div>
             </div>
             <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">

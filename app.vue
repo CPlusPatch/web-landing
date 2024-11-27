@@ -36,9 +36,9 @@ useHead({
         {
             rel: "me",
             href: "https://mk.cpluspatch.com/@jessew",
-        }
-    ]
-})
+        },
+    ],
+});
 </script>
 
 <template>

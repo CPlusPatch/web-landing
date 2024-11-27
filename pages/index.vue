@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Physplay from "~/components/physplay/physplay.vue";
+
 useServerSeoMeta({
     title: "Homepage",
     ogTitle: "Homepage",
@@ -207,6 +209,10 @@ const isJesse = useJesse();
     </div>
 
     <BlogPresentation />
+
+    <ClientOnly>
+        <Physplay />
+    </ClientOnly>
 
     <FootersFooter />
 </template>

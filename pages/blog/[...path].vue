@@ -74,7 +74,7 @@ const formatDate = (date?: string) => {
             </h1>
 
             <div class="mt-8 mx-auto">
-                <time v-if="post.created_at" :datetime="post.created_at" class="text-gray-500">{{
+                <time data-allow-mismatch v-if="post.created_at" :datetime="post.created_at" class="text-gray-500">{{
         formatDate(post.created_at) }}</time>
             </div>
         </div>

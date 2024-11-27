@@ -4,7 +4,7 @@ const cards = [
         name: "Versia Protocol",
         description:
             "Fully documented protocol specification for Versia, a decentralized federation protocol that focuses on good experience.",
-        image: "/images/assets/lysand-org-frontpage.png",
+        image: "/images/assets/versia-pub-frontpage.png",
         featured: true,
         links: [
             {
@@ -28,7 +28,7 @@ const cards = [
         name: "Versia Server",
         description:
             "Reference implementation of the Versia protocol. High-quality, efficient and configurable server software.",
-        image: "/images/assets/lysand-readme.png",
+        image: "/images/assets/versia-readme.png",
         featured: true,
         links: [
             {
@@ -52,7 +52,7 @@ const cards = [
         name: "Versia-FE",
         description:
             "Frontend for Versia Server, made with Vue 3 and Tailwind CSS. It's a modern, responsive and fast web application.",
-        image: "/images/assets/lysand-fe.png",
+        image: "/images/assets/versia-fe.png",
         featured: false,
         links: [
             {

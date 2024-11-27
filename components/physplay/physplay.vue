@@ -19,6 +19,7 @@ onMounted(() => {
 </script>
 
 <style>
+/* Stolen from https://www.half-life.com/en/halflife2/20th */
 #mobilemessage {
     text-align: center;
     font-size: 100%;

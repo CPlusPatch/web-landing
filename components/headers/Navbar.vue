@@ -48,7 +48,7 @@ onMounted(() => {
 });
 </script>
 <template>
-    <header :class="[
+    <header data-phys="true" :class="[
         'z-10 bg-transparent backdrop-blur-lg',
         'fixed top-0 inset-x-0 bg-dark-800/30',
     ]">

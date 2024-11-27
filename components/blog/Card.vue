@@ -1,5 +1,5 @@
 <template>
-    <article class="hover:drop-shadow-xl duration-200 hover:ring-2 p-4 hover:bg-dark-400 ring-orange-500 rounded">
+    <article data-phys="true" class="hover:drop-shadow-xl duration-200 hover:ring-2 p-4 hover:bg-dark-400 ring-orange-500 rounded">
         <NuxtLink class="flex flex-col items-start h-full justify-between" :href="`/blog${post.path}`">
             <div class="relative w-full" v-if="post.image">
                 <nuxt-img format="webp" width="500" :src="post.image" alt=""

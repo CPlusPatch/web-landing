@@ -87,6 +87,7 @@ export default defineNuxtConfig({
                 "img-src": ["'self'", "https:", "data:"],
             },
         },
+        rateLimiter: false,
     },
     nitro: {
         compressPublicAssets: {

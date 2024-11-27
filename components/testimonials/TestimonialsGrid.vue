@@ -129,7 +129,7 @@ const testimonials = [
                 </p>
             </div>
             <div class="sm:px-6 lg:px-8 mt-20">
-                <div
+                <div data-phys="true"
                     class="relative overflow-hidden bg-dark-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
                     <nuxt-img class="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"
                         src="/images/assets/erik-smiling.jpeg" format="webp" sizes="sm:80vw" quality="40" alt="" />
@@ -212,7 +212,7 @@ const testimonials = [
 
             <div
                 class="mx-auto mt-16 sm:px-6 lg:px-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-                <figure
+                <figure data-phys="true"
                     class="col-span-2 hidden sm:block sm:rounded-2xl sm:bg-dark-300 ring-1 hover:ring-2 hover:ring-orange-500 duration-200 ring-dark-100 sm:shadow-lg sm:ring-1 xl:col-start-2 xl:row-end-1">
                     <blockquote class="p-12 text-xl font-semibold leading-8 tracking-tight text-gray-50">
                         <p>{{ `“${featuredTestimonial.body}”` }}</p>
@@ -236,14 +236,14 @@ const testimonials = [
                 <div v-for="(columnGroup, columnGroupIdx) in testimonials" :key="columnGroupIdx"
                     class="space-y-8 xl:contents xl:space-y-0">
                     <div v-for="(column, columnIdx) in columnGroup" :key="columnIdx" :class="[
-                            (columnGroupIdx === 0 && columnIdx === 0) ||
-                                (columnGroupIdx === testimonials.length - 1 &&
-                                    columnIdx === columnGroup.length - 1)
-                                ? 'xl:row-span-2'
-                                : 'xl:row-start-1',
-                            'space-y-8',
-                        ]">
-                        <figure v-for="testimonial in column" :key="testimonial.author.name"
+                        (columnGroupIdx === 0 && columnIdx === 0) ||
+                            (columnGroupIdx === testimonials.length - 1 &&
+                                columnIdx === columnGroup.length - 1)
+                            ? 'xl:row-span-2'
+                            : 'xl:row-start-1',
+                        'space-y-8',
+                    ]">
+                        <figure v-for="testimonial in column" :key="testimonial.author.name" data-phys="true"
                             class="rounded-2xl sm:bg-dark-300 ring-1 hover:ring-2 hover:ring-orange-500 duration-200 ring-dark-100 p-6 shadow-lg">
                             <blockquote class="text-gray-50">
                                 <p>{{ `“${testimonial.body}”` }}</p>

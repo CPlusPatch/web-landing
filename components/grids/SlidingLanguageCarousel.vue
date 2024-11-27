@@ -325,7 +325,7 @@ const getGroup = (n: number) => {
                 ? 'animate-[scrollLeft_40s_linear_infinite]'
                 : 'animate-[scrollRight_40s_linear_infinite]',
         ]">
-            <div v-for="system of getGroup(group - 1)" :key="system.id"
+            <div data-phys="true"  v-for="system of getGroup(group - 1)" :key="system.id"
                 class="flex w-72 bg-dark-200 shrink-0 col-span-1 divide-x divide-dark-300 ring-dark-300 rounded shadow ring-1 duration-200 hover:scale-[102%] no-bad-scale hover:shadow-2xl hover:ring-2 hover:ring-orange-500">
                 <iconify-icon height="none" :icon="system.image" :class="[
             'icon object-contain rounded-sm duration-150 aspect-1 flex flex-shrink-0',

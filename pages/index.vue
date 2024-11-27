@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Loader from "~/components/physplay/loader.vue";
 import Physplay from "~/components/physplay/physplay.vue";
 
 useServerSeoMeta({
@@ -210,9 +211,7 @@ const isJesse = useJesse();
 
     <BlogPresentation />
 
-    <ClientOnly>
-        <Physplay />
-    </ClientOnly>
+    <Loader />
 
     <FootersFooter />
 </template>

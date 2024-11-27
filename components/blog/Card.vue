@@ -8,7 +8,7 @@
             </div>
             <div class="max-w-xl h-full flex flex-col">
                 <div class="mt-8 flex items-center gap-x-4 text-xs">
-                    <time :datetime="post.created_at" class="text-gray-500">{{ formatDate(post.created_at)
+                    <time data-allow-mismatch :datetime="post.created_at" class="text-gray-500">{{ formatDate(post.created_at)
                         }}</time>
                 </div>
                 <div class="group relative">

@@ -60,7 +60,7 @@ onMounted(() => {
                         currentNews.title
                         }}</strong>&nbsp;•&nbsp;{{ currentNews.description }}
                 </p>
-                <a :href="currentNews.href" targte="_blank" class="text-sm font-semibold text-gray-50 group">{{
+                <a :href="currentNews.href" target="_blank" class="text-sm font-semibold text-gray-50 group">{{
                     currentNews.linkText }}
                     <ButtonsAnimatedArrow />
                 </a>

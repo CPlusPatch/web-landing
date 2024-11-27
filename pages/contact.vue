@@ -6,9 +6,9 @@ useServerSeoMeta({
     ogImage: "/images/assets/banner-2.webp",
     ogImageAlt: "A screenshot of VSCode open",
     description:
-        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer science and a programmer by passion, with several years of experience in many kinds of fields",
+        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
     ogDescription:
-        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer science and a programmer by passion, with several years of experience in many kinds of fields",
+        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
     ogLocale: "en-US",
     ogLocaleAlternate: ["fr-FR", "en-US"],
 });

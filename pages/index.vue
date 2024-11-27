@@ -6,9 +6,9 @@ useServerSeoMeta({
     ogImage: "/images/assets/banner-2.webp",
     ogImageAlt: "A screenshot of VSCode open",
     description:
-        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer science and a programmer by passion, with several years of experience in many kinds of fields",
+        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
     ogDescription:
-        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer science and a programmer by passion, with several years of experience in many kinds of fields",
+        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
     ogLocale: "en-US",
     ogLocaleAlternate: ["fr-FR", "en-US"],
 });
@@ -68,7 +68,7 @@ const isJesse = useJesse();
                 </h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300">
                     I make apps, websites, servers and dreams through FOSS and
-                    open standards. I am a student in computer science and a
+                    open standards. I am a student in computer engineering and a
                     programmer by passion, with several years of experience in
                     many kinds of fields
                 </p>

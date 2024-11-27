@@ -26,7 +26,7 @@
                     I am a competent, experienced developer with professional skills
                 </h2>
                 <p class="mt-6 text-base leading-7 text-gray-300">
-                    I am a student in computer science and a programmer by
+                    I am a student in computer engineering and a programmer by
                     passion, with several years of experience in many kinds of
                     fields.
                 </p>

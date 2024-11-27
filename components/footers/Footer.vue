@@ -13,6 +13,46 @@ const footerNavigation = {
         },
     ],
 };
+
+const friends88x31: {
+    name: string;
+    link: string;
+    src: string;
+    steal?: boolean;
+}[] = [
+    {
+        name: "Alex",
+        link: "https://gra.phite.ro",
+        src: "https://sophari.org/img/buttons/alex.png",
+        steal: true,
+    },
+    {
+        name: "Astrid Yu",
+        link: "https://astrid.tech",
+        src: "https://s3.us-west-000.backblazeb2.com/nyaabucket/a313cf12a8c46d0262c69cdf8a3accc3b6a2d159b8e1211b7abe30886a212884/astriddottech.png",
+    },
+    {
+        name: "Lily",
+        link: "https://lunahd.neocities.org/",
+        src: "https://lunahd.neocities.org/assets/88x31/me.png",
+    },
+    {
+        name: "Sophari",
+        link: "https://sophari.org",
+        src: "https://sophari.org/img/sophari.gif",
+    },
+    {
+        name: "Yassie",
+        link: "https://labyrinth.zone/@yassie_j",
+        src: "https://lunahd.neocities.org/assets/88x31/yassie.gif",
+        steal: true,
+    },
+    {
+        name: "Lexi",
+        link: "https://softkittypa.ws",
+        src: "https://softkittypa.ws/assets/buttons/softkittypaws.png",
+    },
+];
 </script>
 
 <template>
@@ -81,6 +121,12 @@ const footerNavigation = {
                     &copy; {{ new Date().getFullYear() }} Gaspard Wierzbinski.
                     Licensed under AGPLv3
                 </p>
+
+                <div class="flex flex-row gap-2 flex-wrap justify-start mt-4">
+                    <a v-for="item in friends88x31" :key="item.name" :href="item.link" target="_blank" rel="noopener noreferrer nofollow" class="duration-200 hover:ring-2 hover:ring-orange-500 hover:animate-wiggle">
+                        <img :src="item.src" :alt="item.name" :title="item.name" width="88" height="33" class="[image-rendering:pixelated]" />
+                    </a>
+                </div>
             </div>
         </div>
         <div class="px-4 py-4 text-gray-100 text-sm block bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">

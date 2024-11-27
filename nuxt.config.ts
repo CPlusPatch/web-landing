@@ -81,6 +81,13 @@ export default defineNuxtConfig({
             maxAge: 60 * 60 * 24 * 365,
         },
     },
+    security: {
+        headers: {
+            contentSecurityPolicy: {
+                "img-src": ["'self'", "https:", "data:"],
+            },
+        },
+    },
     nitro: {
         compressPublicAssets: {
             gzip: false,

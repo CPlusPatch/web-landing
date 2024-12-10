@@ -30,9 +30,9 @@
     "dependencies": {
         "@hackmd/markdown-it-task-lists": "^2.1.4",
         "@nuxt/image": "^1.8.1",
-        "@shikijs/markdown-it": "^1.23.1",
+        "@shikijs/markdown-it": "^1.24.2",
         "fastdom": "^1.0.12",
-        "iconify-icon": "^2.1.0",
+        "iconify-icon": "^2.2.0",
         "markdown-it": "^14.1.0",
         "markdown-it-anchor": "^9.2.0",
         "markdown-it-container": "^4.0.0",
@@ -40,14 +40,14 @@
         "matter-js": "^0.20.0",
         "matter-wrap": "^0.2.0",
         "nuxt": "^3.14.1592",
-        "nuxt-security": "^2.1.4",
+        "nuxt-security": "^2.1.5",
         "typescript": "^5.7.2",
         "vue": "^3.5.13",
         "vue-router": "^4.5.0"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",
-        "@nuxt/fonts": "^0.10.2",
+        "@nuxt/fonts": "^0.10.3",
         "@nuxtjs/seo": "^2.0.2",
         "@nuxtjs/tailwindcss": "^6.12.2",
         "@tailwindcss/forms": "^0.5.9",
@@ -58,7 +58,7 @@
         "@vueuse/nuxt": "^12.0.0",
         "nuxt-headlessui": "^1.2.0",
         "nuxt-icon": "^1.0.0-beta.7",
-        "shiki": "^1.23.1"
+        "shiki": "^1.24.2"
     },
     "overrides": {
         "ipx": "^3.0.1"

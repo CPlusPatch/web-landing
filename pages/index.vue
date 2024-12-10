@@ -19,6 +19,8 @@ useServerSeoMeta({
 const scrollIntoView = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
+const openInNewTab = (url: string) => window.open(url, "_blank");
+
 const isJesse = useJesse();
 </script>
 
@@ -89,8 +91,8 @@ const isJesse = useJesse();
             <div
                 class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
                 <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                    <img src="/images/assets/banner-2.webp" alt="VSCode screenshot" width="2432" height="1442"
-                        class="w-[76rem] rounded-md bg-white/5 backdrop-blur-xl shadow-2xl ring-1 ring-white/10" />
+                    <img @click="openInNewTab('/videos/why-dont-you-go-craft-some-bitches.webm')" src="/images/assets/banner-2.webp" alt="VSCode screenshot" width="2432" height="1442"
+                        class="w-[76rem] rounded-md bg-white/5 hover:cursor-pointer backdrop-blur-xl shadow-2xl ring-1 ring-white/10 hover:rotate-[0.5deg] duration-100 ease-in-out" />
                 </div>
             </div>
         </div>

@@ -67,7 +67,7 @@ export const usePostList = async (): Promise<Post[] | null> => {
         if (dirent.isFile() && dirent.name.endsWith(".md")) {
             files.push(
                 // Remove process.cwd() and .md from the path
-                join(dirent.path, dirent.name.replace(".md", "")).replace(
+                join(dirent.parentPath, dirent.name.replace(".md", "")).replace(
                     join(process.cwd(), "content"),
                     "",
                 ),

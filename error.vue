@@ -9,7 +9,7 @@ console.log(props.error);
 </script>
 
 <template>
-    <main class="w-full h-full min-h-dvh bg-dark-800">
+    <main class="size-full min-h-dvh bg-dark-800">
         <HeadersNavbar />
         <Errors404 v-if="error.statusCode === 404" />
     </main>

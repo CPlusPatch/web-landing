@@ -103,7 +103,7 @@ const formatDate = (date?: string) => {
 }
 
 .content figure figcaption img {
-    @apply h-6 w-6 flex-none rounded-full bg-dark-50;
+    @apply size-6 flex-none rounded-full bg-dark-50;
 }
 
 .content .header-anchor {

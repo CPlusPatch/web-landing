@@ -1,26 +1,6 @@
-<script setup lang="ts">
-// To calculate LoC: cloc . --exclude-dir node_modules,akkoma-fe,cute-fedi-girls,fediback-db,fediback-bad,llama-node,target,nextjs-tailwind-template,nixpkgs,replugged,supabase-generate-typescript-types,tailwind-ui,vllm-project,.git,.next,.output,.nuxt --exclude-ext yaml
-
-// 28 Aug 2024
-// Versia Server = 345 824
-// Versia Frontend = 18 366
-// Versia Docs = 19 267
-// Web Landing = 29 821
-// Web Business = 141 953
-// Fedibase = 65 829
-// Flavi = 30 020
-// Sidepages Backend = 4 081
-// AIP = 28 943
-// Kitsu Landing = 15 748
-// Versia API = 13 855
-// CPlusPatch Web = 4 524
-// CompensationVR Web = 30 931
-
-// Python expression to calculate = 345824 + 18366 + 19267 + 29821 + 141953 + 65829 + 30020 + 4081 + 28943 + 15748 + 13855 + 4524 + 30931
-</script>
 <template>
-    <div class="py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <section>
+        <Container>
             <div class="mx-auto max-w-2xl lg:mx-0">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">
                     I am a competent, experienced developer with professional skills
@@ -81,6 +61,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </Container>
+    </section>
 </template>
+
+<script lang="ts" setup>
+import Container from "~/components/containers/big.vue";
+</script>

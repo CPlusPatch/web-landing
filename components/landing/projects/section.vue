@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import Container from "~/components/containers/big.vue";
+import Card from "./card.vue";
+
 const cards = [
     {
         name: "Versia Protocol",
@@ -155,7 +158,8 @@ const cards = [
 </script>
 
 <template>
-    <div class="mx-auto grid max-w-[85rem] grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+    <section>
+    <Container class="grid grid-cols-1 gap-x-8 gap-y-20 xl:grid-cols-3">
         <ul role="list"
             class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 lg:grid-cols-3 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-3">
             <div class="mx-auto max-w-2xl lg:mx-0">
@@ -169,9 +173,10 @@ const cards = [
                     people.
                 </p>
             </div>
-            <ProjectsCard v-for="card in cards" :key="card.name" :name="card.name" :image="card.image"
+            <Card v-for="card in cards" :key="card.name" :name="card.name" :image="card.image"
                 :description="card.description" :links="card.links ?? []" :featured="card.featured" />
         </ul>
 
-    </div>
+    </Container>
+</section>
 </template>

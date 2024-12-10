@@ -20,7 +20,7 @@
                     </p>
                 </div>
                 <div class="mt-auto pt-8 flex items-center gap-x-4">
-                    <img :src="post.author.image" alt="" class="h-10 w-10 rounded bg-dark-100" />
+                    <img :src="post.author.image" alt="" class="size-10 rounded bg-dark-100" />
                     <div class="text-sm leading-6">
                         <p class="font-semibold text-gray-50">
                             {{ post.author.name }}

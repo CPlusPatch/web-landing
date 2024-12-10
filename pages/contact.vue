@@ -50,7 +50,7 @@ const contactMethods = [
             <a v-for="method in contactMethods" :key="method.name" :href="method.href" target="_blank"
                 referrerpolicy="no-referrer"
                 class="flex flex-col items-center space-y-4 bg-white/5 hover:bg-white/10 duration-200 hover:shadow-xl hover:ring-2 ring-orange-500 rounded p-8">
-                <iconify-icon :icon="method.icon" height="none" class="h-12 w-12 text-gray-50" />
+                <iconify-icon :icon="method.icon" height="none" class="size-12 text-gray-50" />
                 <span class="text-gray-50 font-semibold">
                     {{ method.name }}
                 </span>

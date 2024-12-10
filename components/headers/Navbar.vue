@@ -49,8 +49,7 @@ onMounted(() => {
 </script>
 <template>
     <header data-phys="true" :class="[
-        'z-10 bg-transparent backdrop-blur-lg',
-        'fixed top-0 inset-x-0 bg-dark-800/30',
+        'z-10 backdrop-blur-lg fixed top-0 inset-x-0 bg-dark-800/30',
     ]">
         <div v-if="!closedNews.includes(currentNews.id) && hasLocalStorageLoaded"
             class="relative isolate flex items-center gap-x-6 overflow-hidden bg-dark-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
@@ -69,7 +68,7 @@ onMounted(() => {
                 <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
                     @click="closedNews.push(currentNews.id)">
                     <span class="sr-only">Dismiss</span>
-                    <iconify-icon icon="tabler:x" height="none" class="h-5 w-5 text-gray-50" aria-hidden="true" />
+                    <iconify-icon icon="tabler:x" height="none" class="size-5 text-gray-50" aria-hidden="true" />
                 </button>
             </div>
         </div>
@@ -86,7 +85,7 @@ onMounted(() => {
                     class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
                     @click="open = true">
                     <span class="sr-only">Open main menu</span>
-                    <iconify-icon icon="tabler:menu-2" height="none" class="h-6 w-6" aria-hidden="true" />
+                    <iconify-icon icon="tabler:menu-2" height="none" class="size-6" aria-hidden="true" />
                 </button>
             </div>
             <HeadlessPopoverGroup class="hidden lg:flex lg:gap-x-12">
@@ -94,7 +93,7 @@ onMounted(() => {
                     <HeadlessPopoverButton id="thebutton"
                         class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-50">
                         Projects
-                        <iconify-icon icon="tabler:chevron-down" height="none" class="h-5 w-5 flex-none text-gray-500"
+                        <iconify-icon icon="tabler:chevron-down" height="none" class="size-5 flex-none text-gray-500"
                             aria-hidden="true" />
                     </HeadlessPopoverButton>
 
@@ -108,9 +107,9 @@ onMounted(() => {
                                 <div v-for="item in products" :key="item.name"
                                     class="group relative rounded-lg p-6 text-sm leading-6 hover:bg-dark-400 duration-200 ring-dark-200 hover:ring-1">
                                     <div
-                                        class="flex h-11 w-11 items-center justify-center rounded-lg bg-dark-300 duration-200 group-hover:bg-dark-700">
+                                        class="flex size-11 items-center justify-center rounded-lg bg-dark-300 duration-200 group-hover:bg-dark-700">
                                         <iconify-icon :icon="item.icon" height="none"
-                                            class="h-6 w-6 text-gray-400 group-hover:text-orange-400"
+                                            class="size-6 text-gray-400 group-hover:text-orange-400"
                                             aria-hidden="true" />
                                     </div>
                                     <a target="_blank" :href="item.href" class="mt-6 block font-semibold text-gray-50">
@@ -149,7 +148,7 @@ onMounted(() => {
                     </NuxtLink>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-200" @click="open = false">
                         <span class="sr-only">Close menu</span>
-                        <iconify-icon icon="tabler:x" height="none" class="h-6 w-6" aria-hidden="true" />
+                        <iconify-icon icon="tabler:x" height="none" class="size-6" aria-hidden="true" />
                     </button>
                 </div>
                 <div class="mt-6 flow-root">
@@ -161,7 +160,7 @@ onMounted(() => {
                                     Projects
                                     <iconify-icon icon="tabler:chevron-down" height="none" :class="[
                                         open ? '-scale-y-100' : '',
-                                        'h-5 w-5 flex-none duration-200',
+                                        'size-5 flex-none duration-200',
                                     ]" aria-hidden="true" />
                                 </HeadlessDisclosureButton>
                                 <HeadlessDisclosurePanel class="mt-2 space-y-2">

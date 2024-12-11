@@ -29,6 +29,11 @@ const contactMethods = [
         href: "mailto:contact@cpluspatch.com",
         icon: "tabler:mail",
     },
+    {
+        name: "GitHub",
+        href: "https://github.com/CPlusPatch",
+        icon: "tabler:brand-github",
+    },
 ];
 </script>
 
@@ -42,11 +47,10 @@ const contactMethods = [
             </h2>
             <p class="mt-6 text-lg leading-8 text-gray-300 max-w-xl">
                 You can contact me through various means, such as Matrix, Email
-                or Signal. Please use Signal first for communication or send an
-                email if it's not the kind of message that needs a conversation.
+                or Signal.
             </p>
         </div>
-        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <a v-for="method in contactMethods" :key="method.name" :href="method.href" target="_blank"
                 referrerpolicy="no-referrer"
                 class="flex flex-col items-center space-y-4 bg-white/5 hover:bg-white/10 duration-200 hover:shadow-xl hover:ring-2 ring-orange-500 rounded p-8">

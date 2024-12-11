@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Blog from "~/components/landing/blog/section.vue";
+
 useServerSeoMeta({
     title: "Blog",
     ogTitle: "Blog",
@@ -17,9 +19,7 @@ useServerSeoMeta({
 <template>
 	<HeadersNavbar />
 
-	<div class="h-20 block"></div>
-
-	<BlogPresentation />
+	<Blog class="py-32" />
 
 	<FootersFooter />
 </template>

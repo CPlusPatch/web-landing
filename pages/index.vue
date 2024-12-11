@@ -8,6 +8,7 @@ import Philosophy from "~/components/landing/philosophy/section.vue";
 import Projects from "~/components/landing/projects/section.vue";
 import Stats from "~/components/landing/stats/section.vue";
 import Testimonials from "~/components/landing/testimonials/section.vue";
+import Audio from "~/components/widgets/audio.vue";
 
 useServerSeoMeta({
     title: "Homepage",
@@ -47,5 +48,7 @@ useServerSeoMeta({
         <Destructor />
 
         <FootersFooter />
+        
+        <Audio />
     </div>
 </template>

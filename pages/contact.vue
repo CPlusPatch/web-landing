@@ -16,7 +16,7 @@ useServerSeoMeta({
 const contactMethods = [
     {
         name: "Signal",
-        href: "https://signal.me/#eu/mdX6iV0ayndNmJst43sNtlw3eFXgHSm7if4Y/mwYT1+qFDzl1PFAeroW+RpHGaRu",
+        href: "https://signal.me/#eu/Qw6gQXvEfcNrgEFgl-KjOBFiF6-3gWSSghgcpSj9dSedVFIPny5NYazioN5t7E24",
         icon: "tabler:message-circle",
     },
     {

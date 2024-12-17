@@ -115,7 +115,7 @@ export default defineNuxtConfig({
     plausible: {
         // Prevent tracking on localhost
         ignoredHostnames: ["localhost"],
-        apiHost: "https://analytics.cpluspatch.com",
+        apiHost: "https://logs.cpluspatch.com",
         autoOutboundTracking: true,
     },
     compatibilityDate: "2024-08-28",

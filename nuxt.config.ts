@@ -37,6 +37,7 @@ export default defineNuxtConfig({
         "@nuxt/fonts",
         "@nuxt/image",
         "nuxt-security",
+        "@nuxtjs/plausible",
     ],
     vue: {
         compilerOptions: {
@@ -110,6 +111,12 @@ export default defineNuxtConfig({
     },
     sitemap: {
         sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
+    },
+    plausible: {
+        // Prevent tracking on localhost
+        ignoredHostnames: ["localhost"],
+        apiHost: "https://analytics.cpluspatch.com",
+        autoOutboundTracking: true,
     },
     compatibilityDate: "2024-08-28",
     site: {

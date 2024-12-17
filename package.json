@@ -30,6 +30,7 @@
     "dependencies": {
         "@hackmd/markdown-it-task-lists": "^2.1.4",
         "@nuxt/image": "^1.8.1",
+        "@nuxtjs/plausible": "1.2.0",
         "@shikijs/markdown-it": "^1.24.2",
         "fastdom": "^1.0.12",
         "iconify-icon": "^2.2.0",

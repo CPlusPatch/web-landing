@@ -9,7 +9,7 @@ author_image: /images/avatars/jessew.png
 author_handle: @CPlusPatch
 ---
 
-This article is a refresh of my [Opsec & You](/blog/en/security/opsec-and-you) article, updated for 2024. It is a general and specific guide to security or anonymity on computers in general.
+This article is a refresh of my **Opsec & You** article, updated for 2024. It is a general and specific guide to security or anonymity on computers in general.
 
 #### Who is this useful for?
 

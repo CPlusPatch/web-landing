@@ -52,6 +52,11 @@ const friends88x31: {
         link: "https://softkittypa.ws",
         src: "https://softkittypa.ws/assets/buttons/softkittypaws.png",
     },
+    {
+        name: "Ari",
+        link: "https://ari.lt",
+        src: "https://ari.lt/badge.png",
+    },
 ];
 </script>
 

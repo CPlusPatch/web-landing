@@ -8,7 +8,7 @@ const isJesse = useJesse();
 </script>
 
 <template>
-    <section class="relative isolate pt-40">
+    <section class="relative isolate pt-40 overflow-hidden">
         <SquarePattern />
         <HeroBackground />
         <HeroContent :is-jesse="isJesse" />

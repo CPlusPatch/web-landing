@@ -15,9 +15,9 @@ const getGroup = (n: number) => {
 </script>
 
 <template>
-    <section class="flex flex-col gap-3">
+    <section class="flex flex-col gap-3 overflow-hidden">
         <div v-for="group of groupCount" :key="group" :class="[
-            'flex flex-row gap-4 w-full shrink-0 min-w-full px-4 ',
+            'flex flex-row gap-4 w-full shrink-0 min-w-full px-4',
             group % 2 === 1
                 ? 'animate-[scrollLeft_40s_linear_infinite]'
                 : 'animate-[scrollRight_20s_linear_infinite]',

@@ -39,11 +39,13 @@ export default defineNuxtConfig({
         "nuxt-security",
         "@nuxtjs/plausible",
     ],
+
     vue: {
         compilerOptions: {
             isCustomElement: (tag) => tag === "iconify-icon",
         },
     },
+
     app: {
         head: {
             link: [
@@ -56,6 +58,7 @@ export default defineNuxtConfig({
             htmlAttrs: { lang: "en-us" },
         },
     },
+
     image: {
         domains: [
             "cdn.cpluspatch.com",
@@ -82,6 +85,7 @@ export default defineNuxtConfig({
             maxAge: 60 * 60 * 24 * 365,
         },
     },
+
     security: {
         headers: {
             contentSecurityPolicy: {
@@ -90,6 +94,7 @@ export default defineNuxtConfig({
         },
         rateLimiter: false,
     },
+
     nitro: {
         compressPublicAssets: {
             gzip: false,
@@ -101,6 +106,7 @@ export default defineNuxtConfig({
             failOnError: true,
         },
     },
+
     runtimeConfig: {
         public: {
             language: "en-US",
@@ -109,17 +115,25 @@ export default defineNuxtConfig({
             trailingSlash: true,
         },
     },
+
     sitemap: {
         sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
     },
+
     plausible: {
         // Prevent tracking on localhost
         ignoredHostnames: ["localhost"],
         apiHost: "https://logs.cpluspatch.com",
         autoOutboundTracking: true,
     },
+
     compatibilityDate: "2024-08-28",
+
     site: {
         url: "https://cpluspatch.com",
+    },
+
+    devtools: {
+        enabled: true,
     },
 });

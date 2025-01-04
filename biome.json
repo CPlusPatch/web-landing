@@ -15,6 +15,7 @@
         "indentWidth": 4
     },
     "files": {
-        "ignore": ["node_modules", "dist", ".nuxt", ".output"]
+        "ignore": ["node_modules", "dist", ".nuxt", ".output"],
+        "maxSize": 10000000
     }
 }

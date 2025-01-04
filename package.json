@@ -32,7 +32,9 @@
         "@nuxt/image": "^1.8.1",
         "@nuxtjs/plausible": "1.2.0",
         "@shikijs/markdown-it": "^1.24.2",
+        "@types/three": "^0.171.0",
         "fastdom": "^1.0.12",
+        "geojson": "^0.5.0",
         "iconify-icon": "^2.2.0",
         "markdown-it": "^14.1.0",
         "markdown-it-anchor": "^9.2.0",
@@ -42,6 +44,8 @@
         "matter-wrap": "^0.2.0",
         "nuxt": "^3.14.1592",
         "nuxt-security": "^2.1.5",
+        "three": "^0.172.0",
+        "three-globe": "^2.39.1",
         "typescript": "^5.7.2",
         "vue": "^3.5.13",
         "vue-router": "^4.5.0"
@@ -74,5 +78,8 @@
         "json-editor-vue",
         "sharp",
         "vue-demi"
-    ]
+    ],
+    "patchedDependencies": {
+        "three-globe@2.39.1": "patches/three-globe@2.39.1.patch"
+    }
 }

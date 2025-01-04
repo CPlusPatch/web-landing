@@ -1,0 +1,15 @@
+diff --git a/dist/three-globe.mjs b/dist/three-globe.mjs
+index bcfcf00bec1b495967b1c4a7565dd3664d06b5ff..377a835594b054a4415d2923bc7b5d85d7f6701d 100644
+--- a/dist/three-globe.mjs
++++ b/dist/three-globe.mjs
+@@ -2117,7 +2117,9 @@ var HexedPolygonsLayerKapsule = Kapsule({
+       objBindAttr: '__threeObjHexPolygon'
+     }).onCreateObj(function () {
+       var obj = new THREE$9.Mesh(undefined, new THREE$9.MeshLambertMaterial({
+-        side: THREE$9.DoubleSide
++        side: THREE$9.DoubleSide,
++        emissive: new Color(0xffffff),
++        emissiveIntensity: 0.4
+       }));
+       obj.__globeObjType = 'hexPolygon'; // Add object type
+ 

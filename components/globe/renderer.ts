@@ -101,13 +101,13 @@ export class GlobeVisualization {
     private controls!: OrbitControls;
     private globe!: ThreeGlobe;
     private clock: Clock = new Clock();
-    private currentDate = new Date();
     private atmosphere!: GlowMesh;
     private orbits: Mesh[] = [];
     private mouseX = 0;
     private mouseY = 0;
     private windowHalfX: number;
     private windowHalfY: number;
+    public currentDate = new Date();
     /* Amount that all time values should be scaled by */
     public timeScale = 1000;
 

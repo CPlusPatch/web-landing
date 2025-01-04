@@ -25,9 +25,6 @@ import { degToRad } from "three/src/math/MathUtils.js";
 import AtmosphereMaterial, { type AtmosphereMaterialParameters } from "./glow";
 import { CustomOrbitCurve } from "./orbit";
 
-/* Amount that all time values should be scaled by */
-export const TIME_SCALE = 5_000;
-
 export class GlowMesh extends Mesh {
     constructor(geometry: BufferGeometry, glow: AtmosphereMaterialParameters) {
         super();
@@ -111,6 +108,8 @@ export class GlobeVisualization {
     private mouseY = 0;
     private windowHalfX: number;
     private windowHalfY: number;
+    /* Amount that all time values should be scaled by */
+    public timeScale = 1000;
 
     /**
      * Creates a new globe visualization
@@ -393,13 +392,13 @@ export class GlobeVisualization {
      * Animation loop
      */
     private animate = (): void => {
-        if (Math.abs(this.mouseX) <= this.windowHalfX / 2) {
+        /* if (Math.abs(this.mouseX) <= this.windowHalfX / 2) {
             this.camera.position.x +=
                 (this.mouseX / 2 - this.camera.position.x) * 0.005;
         }
         this.camera.position.y +=
             (-this.mouseY / 2 - this.camera.position.y) * 0.005;
-        this.camera.lookAt(this.scene.position);
+        this.camera.lookAt(this.scene.position); */
 
         this.controls.update();
         this.animateGlobe();
@@ -411,7 +410,7 @@ export class GlobeVisualization {
         // Calculate current simulated time
         const deltaMs = this.clock.getDelta() * 1000;
         this.currentDate = new Date(
-            this.currentDate.getTime() + deltaMs * TIME_SCALE * 10,
+            this.currentDate.getTime() + deltaMs * this.timeScale,
         );
 
         /**

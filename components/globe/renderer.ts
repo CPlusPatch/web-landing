@@ -91,6 +91,13 @@ export interface OrbitData {
     inclination: number;
 }
 
+export interface GlobeVisualizationConstants {
+    /** Amount that all time values should be scaled by */
+    timeScale: number;
+    /** Earth's axial tilt in degrees */
+    earthAxialTilt: number;
+}
+
 /**
  * Manages a 3D globe visualization with flight paths and airport markers
  */
@@ -108,8 +115,10 @@ export class GlobeVisualization {
     private windowHalfX: number;
     private windowHalfY: number;
     public currentDate = new Date();
-    /* Amount that all time values should be scaled by */
-    public timeScale = 1000;
+    public constants: GlobeVisualizationConstants = {
+        timeScale: 1000,
+        earthAxialTilt: 23.5,
+    };
 
     /**
      * Creates a new globe visualization
@@ -400,73 +409,85 @@ export class GlobeVisualization {
             (-this.mouseY / 2 - this.camera.position.y) * 0.005;
         this.camera.lookAt(this.scene.position); */
 
+        this.tickTime();
         this.controls.update();
         this.animateGlobe();
         this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.animate);
     };
 
-    private animateGlobe = (): void => {
-        // Calculate current simulated time
+    /**
+     * Updates the current date based on the elapsed time
+     */
+    private tickTime = (): void => {
         const deltaMs = this.clock.getDelta() * 1000;
         this.currentDate = new Date(
-            this.currentDate.getTime() + deltaMs * this.timeScale,
+            this.currentDate.getTime() + deltaMs * this.constants.timeScale,
         );
+    };
 
-        /**
-         * Calculate the rotation of the Earth for a given date
-         *
-         * Assumes the earth is at rotation 0 on January 1st 1970, and completes a full rotation every day
-         * @param date
-         * @returns
-         */
-        const getWorldRotationForDate = (date: Date): number => {
-            const msSinceEpoch = date.getTime();
-            const msSince1970 = msSinceEpoch - 0;
-            const msPerDay = 1000 * 60 * 60 * 24;
-            const daysSince1970 = msSince1970 / msPerDay;
-            const rotation = (daysSince1970 * Math.PI * 2) % (Math.PI * 2);
+    /*
+     * Calculate the rotation of the Earth for a given date
+     *
+     * Assumes the earth is at rotation 0 on January 1st 1970, and completes a full rotation every day
+     * @param date
+     * @returns
+     */
+    private getWorldRotationForDate = (date: Date): number => {
+        const msSinceEpoch = date.getTime();
+        const msSince1970 = msSinceEpoch - 0;
+        const msPerDay = 1000 * 60 * 60 * 24;
+        const daysSince1970 = msSince1970 / msPerDay;
+        const rotation = (daysSince1970 * Math.PI * 2) % (Math.PI * 2);
 
-            return rotation;
-        };
+        return rotation;
+    };
 
-        const earthAxisTilt = 23.5;
+    /**
+     * Calculate the sunlight's rotation for a given date
+     *
+     * Assumes the sun is at rotation 0 on January 1st 1970, and completes a full rotation every year
+     * Rotation 0 is illuminating the globe from the left
+     * @param date
+     */
+    private getSunlightRotationForDate = (date: Date): number => {
+        const msSinceEpoch = date.getTime();
+        const msSince1970 = msSinceEpoch - 0;
+        const msPerYear = 1000 * 60 * 60 * 24 * 365;
+        const yearsSince1970 = msSince1970 / msPerYear;
+        const rotation = (yearsSince1970 * Math.PI * 2) % (Math.PI * 2);
 
-        // Rotate globe to match Earth's rotation, accounting for axial tilt
+        return rotation;
+    };
+
+    private setLightDirection = (vector: Vector3): void => {
+        // @ts-expect-error - Materials don't export uniform's types
+        this.atmosphere.material.uniforms.lightDirection.value = vector;
+    };
+
+    private animateGlobe = (): void => {
+        // Set axial tilt and rotation of the Earth
         this.globe.setRotationFromEuler(
             new Euler(
-                degToRad(earthAxisTilt),
-                getWorldRotationForDate(this.currentDate),
+                degToRad(this.constants.earthAxialTilt),
+                this.getWorldRotationForDate(this.currentDate),
                 0,
-                Euler.DEFAULT_ORDER,
             ),
         );
 
-        /**
-         * Calculate the sunlight's rotation for a given date
-         *
-         * Assumes the sun is at rotation 0 on January 1st 1970, and completes a full rotation every year
-         * Rotation 0 is illuminating the globe from the left
-         * @param date
-         */
-        const getSunlightRotationForDate = (date: Date): number => {
-            const msSinceEpoch = date.getTime();
-            const msSince1970 = msSinceEpoch - 0;
-            const msPerYear = 1000 * 60 * 60 * 24 * 365;
-            const yearsSince1970 = msSince1970 / msPerYear;
-            const rotation = (yearsSince1970 * Math.PI * 2) % (Math.PI * 2);
-
-            return rotation;
-        };
-
         // Rotate sunlight to match Earth's rotation
-        const sunlightRotation = getSunlightRotationForDate(this.currentDate);
+        const sunlightRotation = this.getSunlightRotationForDate(
+            this.currentDate,
+        );
 
-        // @ts-expect-error - Materials don't export uniform's types
-        this.atmosphere.material.uniforms.lightDirection.value = new Vector3(
-            Math.cos(sunlightRotation),
-            Math.sin(sunlightRotation),
-            0,
+        this.setLightDirection(
+            // Sunlight comes from the side, not directly above
+            // In OpenGL, y is up
+            new Vector3(
+                Math.cos(sunlightRotation),
+                0,
+                Math.sin(sunlightRotation),
+            ),
         );
     };
 

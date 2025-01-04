@@ -13,6 +13,7 @@
                 <button @click="speed = 10000000" class="bg-gray-800 text-gray-200 px-2 py-1 rounded-md">10 000
                     000x</button>
             </div>
+            <input type="range" v-model="tilt" min="0" max="90" />
         </div>
         <div class="absolute bottom-2 left-2 flex flex-col gap-1 bg-dark-500 p-2 rounded-md justify-center-center">
             <p class="text-gray-200 font-mono">{{ date.toUTCString() }}</p>
@@ -35,6 +36,7 @@ const container = useTemplateRef<HTMLDivElement>("container");
 const globe = ref<GlobeVisualization | null>(null);
 
 const speed = ref(1);
+const tilt = ref(23.5);
 const date = ref(new Date());
 
 onMounted(() => {
@@ -57,7 +59,13 @@ onMounted(() => {
 
 watch(speed, (newSpeed) => {
     if (globe.value) {
-        globe.value.timeScale = newSpeed;
+        globe.value.constants.timeScale = newSpeed;
+    }
+});
+
+watch(tilt, (newTilt) => {
+    if (globe.value) {
+        globe.value.constants.earthAxialTilt = newTilt;
     }
 });
 

@@ -19,6 +19,8 @@
         </div>
         <div class="absolute bottom-2 right-2 flex flex-col gap-1 bg-dark-500 p-2 rounded-md justify-center-center max-w-sm text-sm">
             <p class="text-gray-200 font-mono">Earth rotation and sun position are realistic if you ignore most things about physics and astronomy, and assume that everything started on Jan 1, 1970.</p>
+
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/CPlusPatch/web-landing/blob/main/components/globe/globe.vue" class="text-gray-200 underline">Source code</a>
         </div>
         <div ref="container" class="h-full w-full"></div>
     </div>

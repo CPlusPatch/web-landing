@@ -57,6 +57,11 @@ const friends88x31: {
         link: "https://ari.lt",
         src: "https://ari.lt/badge.png",
     },
+    {
+        name: "Nexy",
+        link: "https://nexy7574.co.uk",
+        src: "https://nexy7574.co.uk/88x31s/nexy7574-new.gif",
+    },
 ];
 </script>
 

@@ -1,14 +1,21 @@
 <template>
     <Container class="py-36 !max-w-2xl">
-        <div class="flex flex-col gap-8">
-            <QuoteVue v-for="quote in quotes.toSorted(
-                (a, b) => b.date.getTime() - a.date.getTime()
-            )" :key="quote.title" :quote="quote" />
+        <div class="relative">
+            <iconify-icon icon="tabler:search" width="unset"
+                class="pointer-events-none absolute left-4 top-3.5 size-5 text-gray-500" aria-hidden="true" />
+            <input
+                class="h-12 w-full rounded bg-dark-500 ring-1 !ring-white/10 pl-11 pr-4 text-white !outline-none focus:!outline-none !border-0 sm:text-sm"
+                placeholder="Search..." v-model="filter" />
+        </div>
+
+        <div class="flex flex-col gap-8 mt-4">
+            <QuoteVue v-for="quote in quotesToRender" :key="quote.title" :quote="quote" />
         </div>
     </Container>
 </template>
 
 <script lang="ts" setup>
+import { go } from "fuzzysort";
 import Container from "~/components/containers/big.vue";
 import QuoteVue, { type Quote } from "~/components/quotes/quote.vue";
 
@@ -26,6 +33,22 @@ const jesse: Quote["author"] = {
     href: "https://cpluspatch.com",
     avatar: "/images/avatars/jessew.png",
 };
+
+const filter = ref<string>("");
+
+const quotesToRender = computed(() => {
+    if (!filter.value) {
+        return quotes.toSorted((a, b) => b.date.getTime() - a.date.getTime());
+    }
+
+    return go(
+        filter.value,
+        quotes.toSorted((a, b) => b.date.getTime() - a.date.getTime()),
+        {
+            key: "title",
+        },
+    ).map((result) => result.obj);
+});
 
 const quotes: Quote[] = [
     {

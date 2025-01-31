@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { go } from "fuzzysort";
+import fz from "fuzzysort";
 import Container from "~/components/containers/big.vue";
 import QuoteVue, { type Quote } from "~/components/quotes/quote.vue";
 
@@ -41,13 +41,15 @@ const quotesToRender = computed(() => {
         return quotes.toSorted((a, b) => b.date.getTime() - a.date.getTime());
     }
 
-    return go(
-        filter.value,
-        quotes.toSorted((a, b) => b.date.getTime() - a.date.getTime()),
-        {
-            key: "title",
-        },
-    ).map((result) => result.obj);
+    return fz
+        .go(
+            filter.value,
+            quotes.toSorted((a, b) => b.date.getTime() - a.date.getTime()),
+            {
+                key: "title",
+            },
+        )
+        .map((result) => result.obj);
 });
 
 const quotes: Quote[] = [

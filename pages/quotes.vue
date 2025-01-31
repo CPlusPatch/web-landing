@@ -118,5 +118,38 @@ const quotes: Quote[] = [
         date: new Date("2025-01-30 02:18:48 GMT+0100"),
         title: "Mother",
     },
+    {
+        author: jesse,
+        image: {
+            src: "/images/quotes/d7436643-edb8-45a0-b88b-7113033f0157.png",
+        },
+        date: new Date("2025-01-31 13:48:30 GMT+0100"),
+        uris: {
+            matrix: "https://matrix.to/#/#lounge:envs.net/$6UnWbqJwbGt5MrLYTsccqdUq0OmJUwu0771bnrPXHpk",
+        },
+        title: "She Diddled Her Roomba",
+    },
+    {
+        author: jesse,
+        image: {
+            src: "/images/quotes/83b0f633-896a-4564-a9f0-6e0f370b13ae.png",
+        },
+        date: new Date("2025-01-31 15:49:21 GMT+0100"),
+        uris: {
+            matrix: "https://matrix.to/#/#lounge:envs.net/$s6gOQJD621nPYUhFVaIXEoodxo39TMwykc5NKHwW0JA",
+        },
+        title: "The Cum Sub",
+    },
+    {
+        author: jesse,
+        image: {
+            src: "/images/quotes/bfa07f23-3849-4675-9a99-7821417cbed3.png",
+        },
+        date: new Date("2025-01-27 14:06:32 GMT+0100"),
+        uris: {
+            matrix: "https://matrix.to/#/#lounge:envs.net/$lLTpbNVI_I8mumJ2ARF6GK0NVb1SORSkyF3quOuI3nM",
+        },
+        title: "Jesse on AI Slop",
+    },
 ];
 </script>

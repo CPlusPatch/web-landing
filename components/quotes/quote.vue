@@ -70,5 +70,9 @@ export interface Quote {
     title?: string;
     description?: string;
     date: Date;
+    uris?: {
+        matrix?: string;
+        href?: string;
+    }
 }
 </script>

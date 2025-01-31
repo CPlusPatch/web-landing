@@ -35,11 +35,13 @@ const contactMethods = [
         icon: "tabler:brand-github",
     },
 ];
+
+definePageMeta({
+    layout: "navbar-and-footer",
+});
 </script>
 
 <template>
-    <HeadersNavbar />
-
     <div class="px-4 md:px-6 py-24 mx-auto max-w-7xl">
         <div class="mx-auto mt-20">
             <h2 class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">
@@ -61,6 +63,4 @@ const contactMethods = [
             </a>
         </div>
     </div>
-
-    <FootersFooter />
 </template>

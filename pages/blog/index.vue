@@ -14,12 +14,12 @@ useServerSeoMeta({
     ogLocale: "en-US",
     ogLocaleAlternate: ["fr-FR", "en-US"],
 });
+
+definePageMeta({
+    layout: "navbar-and-footer",
+});
 </script>
 
 <template>
-	<HeadersNavbar />
-
 	<Blog class="py-32" />
-
-	<FootersFooter />
 </template>

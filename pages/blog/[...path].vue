@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Post } from "~/types/posts";
 
+definePageMeta({
+    layout: "navbar-and-footer",
+});
+
 const filePath = (useRoute().params.path as string[]).join("/");
 
 const { data: post } = await useFetch<Post>(
@@ -16,7 +20,10 @@ if (!post.value) {
 
 useSchemaOrg([
     defineArticle({
-        author: post.value.author.name,
+        author: {
+            name: post.value.author.name,
+            image: post.value.author.image,
+        },
         datePublished: post.value.created_at,
         image: post.value.image,
         description: post.value.description,
@@ -65,8 +72,6 @@ const formatDate = (date?: string) => {
 </script>
 
 <template>
-    <HeadersNavbar />
-
     <div v-if="post" class="mx-auto max-w-7xl pb-24 sm:pb-32 px-6 lg:px-8 pt-1">
         <div class="mx-auto max-w-2xl text-center mt-40">
             <h1 v-if="post.title" class="text-4xl font-bold tracking-tight text-gray-50 sm:text-5xl">
@@ -84,8 +89,6 @@ const formatDate = (date?: string) => {
             class="mx-auto max-w-3xl prose prose-invert mt-10 content prose-code:before:content-none prose-code:after:content-none prose-a:text-orange-500 prose-a:underline"
             v-html="body"></article>
     </div>
-
-    <FootersFooter />
 </template>
 
 <style lang="postcss">

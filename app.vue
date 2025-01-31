@@ -54,4 +54,8 @@ iconify-icon {
     width: 1em;
     height: 1em;
 }
+
+html {
+    color-scheme: dark;
+}
 </style>

@@ -4,6 +4,7 @@ import MarkdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItContainer from "markdown-it-container";
 import markdownItTocDoneRight from "markdown-it-toc-done-right";
+import { createOnigurumaEngine } from "shiki";
 import { createHighlighterCore } from "shiki/core";
 
 const highlighter = createHighlighterCore({
@@ -23,7 +24,7 @@ const highlighter = createHighlighterCore({
         import("shiki/langs/shell.mjs"),
         import("shiki/langs/yaml.mjs"),
     ],
-    loadWasm: import("shiki/wasm"),
+    engine: createOnigurumaEngine(() => import("shiki/wasm")),
 });
 
 export const getMarkdownRenderer = async () => {

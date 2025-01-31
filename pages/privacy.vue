@@ -1,6 +1,10 @@
-<template>
-	<HeadersNavbar />
+<script setup lang="ts">
+definePageMeta({
+    layout: "navbar-and-footer",
+});
+</script>
 
+<template>
 	<div class="px-6 py-32 lg:px-8">
 		<div class="mx-auto max-w-3xl prose prose-invert prose-zinc">
 			<h1>Privacy Policy</h1>
@@ -42,6 +46,4 @@
 			</p>
 		</div>
 	</div>
-
-	<FootersFooter />
 </template>

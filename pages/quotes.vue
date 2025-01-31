@@ -16,6 +16,11 @@ definePageMeta({
     layout: "navbar-and-footer",
 });
 
+useServerSeoMeta({
+    title: "Quotes",
+    description: "Quotes of questionable quality. No refunds.",
+});
+
 const jesse: Quote["author"] = {
     name: "Jesse",
     href: "https://cpluspatch.com",

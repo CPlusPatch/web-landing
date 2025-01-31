@@ -31,9 +31,9 @@ const products = [
 ];
 
 const currentNews = {
-    id: "versia4",
-    title: "Versia 0.4",
-    description: "Versia 0.4 is now available!",
+    id: "versia5",
+    title: "Versia 0.5",
+    description: "Versia 0.5 is now available!",
     linkText: "Read the docs",
     href: "https://versia.pub",
 };

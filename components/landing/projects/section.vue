@@ -159,24 +159,25 @@ const cards = [
 
 <template>
     <section>
-    <Container class="grid grid-cols-1 gap-x-8 gap-y-20 xl:grid-cols-3">
-        <ul role="list"
-            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 lg:grid-cols-3 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-3">
-            <div class="mx-auto max-w-2xl lg:mx-0">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">Projects</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-300">
-                    Here are some of the projects I have fully created myself, all of them are open-source and free to
-                    use.
-                </p>
-                <p class="mt-6 text-lg leading-8 text-gray-300">
-                    Some of them are still in development, while others are already in production and used by many
-                    people.
-                </p>
-            </div>
-            <Card v-for="card in cards" :key="card.name" :name="card.name" :image="card.image"
-                :description="card.description" :links="card.links ?? []" :featured="card.featured" />
-        </ul>
+        <Container class="grid grid-cols-1 gap-x-8 gap-y-20 xl:grid-cols-3">
+            <ul role="list"
+                class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 lg:grid-cols-3 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-3">
+                <div class="mx-auto max-w-2xl lg:mx-0">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">Projects</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-300">
+                        Here are some of the projects I have fully created myself, all of them are open-source and free
+                        to
+                        use.
+                    </p>
+                    <p class="mt-6 text-lg leading-8 text-gray-300">
+                        Some of them are still in development, while others are already in production and used by many
+                        people.
+                    </p>
+                </div>
+                <Card v-for="card in cards" :key="card.name" :name="card.name" :image="card.image"
+                    :description="card.description" :links="card.links ?? []" :featured="card.featured" />
+            </ul>
 
-    </Container>
-</section>
+        </Container>
+    </section>
 </template>

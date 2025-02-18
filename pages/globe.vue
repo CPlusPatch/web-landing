@@ -1,9 +1,9 @@
 <template>
-    <ClientOnly>
-        <Globe />
-    </ClientOnly>
+    Redirecting...
 </template>
 
 <script lang="ts" setup>
-import Globe from "~/components/globe/globe.vue";
+await navigateTo("https://globe.cpluspatch.com", {
+    external: true,
+});
 </script>

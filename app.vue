@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import "iconify-icon";
+import "~/styles/index.css";
+
 const me = definePerson({
     name: "Gaspard Wierzbinski",
     image: "/images/avatars/with_background.webp",

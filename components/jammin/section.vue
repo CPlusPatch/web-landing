@@ -46,9 +46,9 @@
 import { BrowserDetector } from "browser-dtector";
 import { Loader } from "lucide-vue-next";
 import {
-	dataToText,
-	fetchIpData,
-	getGpuData,
+    dataToText,
+    fetchIpData,
+    getGpuData,
 } from "~/components/jammin/fetchers";
 
 const data = ref<string[]>([]);
@@ -61,109 +61,109 @@ const loadProgress = ref(0);
 const loaded = ref(false);
 
 const videoLoadHandler = async () => {
-	const ipData = await fetchIpData();
-	const detector = new BrowserDetector(
-		window.navigator.userAgent
-	).parseUserAgent();
+    const ipData = await fetchIpData();
+    const detector = new BrowserDetector(
+        window.navigator.userAgent,
+    ).parseUserAgent();
 
-	const gpuData = await getGpuData();
+    const gpuData = await getGpuData();
 
-	data.value = dataToText(ipData, gpuData, detector);
+    data.value = dataToText(ipData, gpuData, detector);
 
-	loaded.value = true;
+    loaded.value = true;
 };
 
 const startAnimation = () => {
-	if (!video.value) {
-		throw new Error("Video element is null");
-	}
+    if (!video.value) {
+        throw new Error("Video element is null");
+    }
 
-	const START_TIME = 13.166;
-	const STEP_DURATION = 0.5;
+    const START_TIME = 13.166;
+    const STEP_DURATION = 0.5;
 
-	started.value = true;
-	video.value.play();
+    started.value = true;
+    video.value.play();
 
-	let time = video.value.currentTime - START_TIME;
-	let step = 0;
+    let time = video.value.currentTime - START_TIME;
+    let step = 0;
 
-	// If the text is too big and overflows, we decrease the font size
-	const interval = setInterval(() => {
-		if (!video.value) {
-			throw new Error("Video element is null");
-		}
+    // If the text is too big and overflows, we decrease the font size
+    const interval = setInterval(() => {
+        if (!video.value) {
+            throw new Error("Video element is null");
+        }
 
-		if (!lines.value) {
-			throw new Error("Lines element is null");
-		}
+        if (!lines.value) {
+            throw new Error("Lines element is null");
+        }
 
-		time = video.value.currentTime - START_TIME - step * STEP_DURATION;
+        time = video.value.currentTime - START_TIME - step * STEP_DURATION;
 
-		if (time > 0) {
-			if (step === 0) {
-				document.title = "You just got jammed!";
-			}
+        if (time > 0) {
+            if (step === 0) {
+                document.title = "You just got jammed!";
+            }
 
-			text.value.push(data.value[step]);
-			const height = lines.value.getBoundingClientRect().height;
+            text.value.push(data.value[step]);
+            const height = lines.value.getBoundingClientRect().height;
 
-			if (height > window.innerHeight) {
-				fontSize.value -= fontSize.value / 10;
-			}
+            if (height > window.innerHeight) {
+                fontSize.value -= fontSize.value / 10;
+            }
 
-			step++;
-		}
-	}, 10);
+            step++;
+        }
+    }, 10);
 
-	video.value.onended = () => {
-		if (!video.value) {
-			throw new Error("Video element is null");
-		}
+    video.value.onended = () => {
+        if (!video.value) {
+            throw new Error("Video element is null");
+        }
 
-		video.value.style.display = "none";
-		clearInterval(interval);
-	};
+        video.value.style.display = "none";
+        clearInterval(interval);
+    };
 };
 
 onMounted(async () => {
-	if (!video.value) {
-		throw new Error("Video element is null");
-	}
+    if (!video.value) {
+        throw new Error("Video element is null");
+    }
 
-	video.value.addEventListener("canplaythrough", videoLoadHandler);
+    video.value.addEventListener("canplaythrough", videoLoadHandler);
 
-	const response = await fetch("/videos/jammin.mp4");
+    const response = await fetch("/videos/jammin.mp4");
 
-	if (!response.body) {
-		throw new Error("Response body is null");
-	}
+    if (!response.body) {
+        throw new Error("Response body is null");
+    }
 
-	// Here, we are reading the video file in chunks and updating the load progress
-	// using this technique that works for some reason
-	const reader = response.body.getReader();
-	const contentLength = Number(response.headers.get("Content-Length"));
-	let receivedLength = 0;
-	const chunks: Uint8Array[] = [];
+    // Here, we are reading the video file in chunks and updating the load progress
+    // using this technique that works for some reason
+    const reader = response.body.getReader();
+    const contentLength = Number(response.headers.get("Content-Length"));
+    let receivedLength = 0;
+    const chunks: Uint8Array[] = [];
 
-	while (true) {
-		const { done, value } = await reader.read();
+    while (true) {
+        const { done, value } = await reader.read();
 
-		if (done) {
-			break;
-		}
+        if (done) {
+            break;
+        }
 
-		chunks.push(value);
-		receivedLength += value.length;
-		loadProgress.value = receivedLength / contentLength;
-	}
+        chunks.push(value);
+        receivedLength += value.length;
+        loadProgress.value = receivedLength / contentLength;
+    }
 
-	video.value.src = URL.createObjectURL(
-		new Blob(chunks, { type: "video/mp4" })
-	);
-	video.value.load();
+    video.value.src = URL.createObjectURL(
+        new Blob(chunks, { type: "video/mp4" }),
+    );
+    video.value.load();
 });
 
 onUnmounted(() => {
-	video.value?.removeEventListener("canplaythrough", videoLoadHandler);
+    video.value?.removeEventListener("canplaythrough", videoLoadHandler);
 });
 </script>

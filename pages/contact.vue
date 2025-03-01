@@ -45,28 +45,37 @@ definePageMeta({
 </script>
 
 <template>
-    <Container class="py-24 flex flex-col gap-20 mt-20">
-        <Inbox />
-        <section>
-            <div class="mx-auto">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">
-                    How to contact me
-                </h2>
-                <p class="mt-6 text-lg leading-8 text-gray-300 max-w-xl">
-                    You can contact me through various means, such as Matrix, Email
-                    or Signal.
-                </p>
-            </div>
-            <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                <a v-for="method in contactMethods" :key="method.name" :href="method.href" target="_blank"
-                    referrerpolicy="no-referrer"
-                    class="flex flex-col items-center space-y-4 bg-white/5 hover:bg-white/10 duration-200 hover:shadow-xl hover:ring-2 ring-orange-500 rounded p-8">
-                    <iconify-icon :icon="method.icon" height="none" class="size-12 text-gray-50" />
-                    <span class="text-gray-50 font-semibold">
-                        {{ method.name }}
-                    </span>
-                </a>
-            </div>
-        </section>
-    </Container>
+	<Container class="py-40 flex flex-col gap-20">
+		<Inbox />
+		<section>
+			<div class="mx-auto">
+				<h2
+					class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">
+					How to contact me
+				</h2>
+				<p class="mt-6 text-lg leading-8 text-gray-300 max-w-xl">
+					You can contact me through various means, such as Matrix,
+					Email or Signal.
+				</p>
+			</div>
+			<div
+				class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+				<a
+					v-for="method in contactMethods"
+					:key="method.name"
+					:href="method.href"
+					target="_blank"
+					referrerpolicy="no-referrer"
+					class="flex flex-col items-center space-y-4 bg-white/5 hover:bg-white/10 duration-200 hover:shadow-xl hover:ring-2 ring-orange-500 rounded p-8">
+					<iconify-icon
+						:icon="method.icon"
+						height="none"
+						class="size-12 text-gray-50" />
+					<span class="text-gray-50 font-semibold">
+						{{ method.name }}
+					</span>
+				</a>
+			</div>
+		</section>
+	</Container>
 </template>

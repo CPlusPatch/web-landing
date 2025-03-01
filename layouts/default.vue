@@ -1,5 +1,5 @@
 <template>
-    <main class="size-full min-h-dvh bg-dark-800">
+    <main class="size-full min-h-dvh bg-dark-800 dark">
         <slot />
     </main>
 </template>

@@ -6,6 +6,7 @@ import Hero from "~/components/landing/hero/section.vue";
 import Languages from "~/components/landing/languages/section.vue";
 import Philosophy from "~/components/landing/philosophy/section.vue";
 import Projects from "~/components/landing/projects/section.vue";
+import Projects2 from "~/components/landing/projects/section2.vue";
 import Stats from "~/components/landing/stats/section.vue";
 import Testimonials from "~/components/landing/testimonials/section.vue";
 import Audio from "~/components/widgets/audio.vue";
@@ -23,6 +24,8 @@ useServerSeoMeta({
     ogLocale: "en-US",
     ogLocaleAlternate: ["fr-FR", "en-US"],
 });
+
+const isJesse = useJesse();
 </script>
 
 <template>
@@ -37,7 +40,8 @@ useServerSeoMeta({
 
         <Stats />
 
-        <Projects />
+        <Projects2 v-if="isJesse ?? false" />
+        <Projects v-else />
 
         <Languages />
 

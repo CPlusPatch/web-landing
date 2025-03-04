@@ -1,67 +1,67 @@
 <script setup lang="ts">
 const footerNavigation = {
-	solutions: [
-		{ name: "Mastodon.de", href: "https://mastodon.de" },
-		{ name: "Versia", href: "https://versia.pub" },
-	],
-	legal: [{ name: "Privacy", href: "/privacy" }],
-	social: [
-		{
-			name: "GitHub",
-			href: "https://github.com/CPlusPatch/",
-			icon: "tabler:brand-github",
-		},
-	],
+    solutions: [
+        { name: "Mastodon.de", href: "https://mastodon.de" },
+        { name: "Versia", href: "https://versia.pub" },
+    ],
+    legal: [{ name: "Privacy", href: "/privacy" }],
+    social: [
+        {
+            name: "GitHub",
+            href: "https://github.com/CPlusPatch/",
+            icon: "tabler:brand-github",
+        },
+    ],
 };
 
 const friends88x31: {
-	name: string;
-	link: string;
-	src: string;
-	steal?: boolean;
+    name: string;
+    link: string;
+    src: string;
+    steal?: boolean;
 }[] = [
-	{
-		name: "Alex",
-		link: "https://gra.phite.ro",
-		src: "https://sophari.org/img/buttons/alex.png",
-		steal: true,
-	},
-	{
-		name: "Astrid Yu",
-		link: "https://astrid.tech",
-		src: "https://s3.us-west-000.backblazeb2.com/nyaabucket/a313cf12a8c46d0262c69cdf8a3accc3b6a2d159b8e1211b7abe30886a212884/astriddottech.png",
-	},
-	{
-		name: "Lily",
-		link: "https://lunahd.neocities.org/",
-		src: "https://lunahd.neocities.org/assets/88x31/me.png",
-	},
-	{
-		name: "Sophari",
-		link: "https://sophari.org",
-		src: "https://sophari.org/img/sophari.gif",
-	},
-	{
-		name: "Yassie",
-		link: "https://labyrinth.zone/@yassie_j",
-		src: "https://lunahd.neocities.org/assets/88x31/yassie.gif",
-		steal: true,
-	},
-	{
-		name: "Lexi",
-		link: "https://softkittypa.ws",
-		src: "https://softkittypa.ws/assets/buttons/softkittypaws.png",
-	},
-	{
-		name: "Ari",
-		link: "https://ari.lt",
-		src: "https://ari.lt/badge.png",
-	},
-	{
-		name: "Nexy",
-		link: "https://nexy7574.co.uk",
-		src: "https://nexy7574.co.uk/88x31s/nexy7574-new.gif",
-	},
+    {
+        name: "Alex",
+        link: "https://gra.phite.ro",
+        src: "https://sophari.org/img/buttons/alex.png",
+        steal: true,
+    },
+    {
+        name: "Astrid Yu",
+        link: "https://astrid.tech",
+        src: "https://s3.us-west-000.backblazeb2.com/nyaabucket/a313cf12a8c46d0262c69cdf8a3accc3b6a2d159b8e1211b7abe30886a212884/astriddottech.png",
+    },
+    {
+        name: "Lily",
+        link: "https://lunahd.neocities.org/",
+        src: "https://lunahd.neocities.org/assets/88x31/me.png",
+    },
+    {
+        name: "Sophari",
+        link: "https://sophari.org",
+        src: "https://sophari.org/img/sophari.gif",
+    },
+    {
+        name: "Yassie",
+        link: "https://labyrinth.zone/@yassie_j",
+        src: "https://lunahd.neocities.org/assets/88x31/yassie.gif",
+        steal: true,
+    },
+    {
+        name: "Lexi",
+        link: "https://softkittypa.ws",
+        src: "https://softkittypa.ws/assets/buttons/softkittypaws.png",
+    },
+    {
+        name: "Ari",
+        link: "https://ari.lt",
+        src: "https://ari.lt/badge.png",
+    },
+    {
+        name: "Nexy",
+        link: "https://nexy7574.co.uk",
+        src: "https://nexy7574.co.uk/88x31s/nexy7574-new.gif",
+    },
 ];
 </script>
 

@@ -42,14 +42,14 @@
 
 <script lang="ts" setup>
 defineProps<{
-	name: string;
-	description: string;
-	image: string;
-	featured?: boolean;
-	links: {
-		name: string;
-		icon: string;
-		href: string;
-	}[];
+    name: string;
+    description: string;
+    image: string;
+    featured?: boolean;
+    links: {
+        name: string;
+        icon: string;
+        href: string;
+    }[];
 }>();
 </script>

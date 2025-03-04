@@ -1,23 +1,23 @@
 <script setup lang="ts">
 const principles = [
-	{
-		icon: "tabler:brand-docker",
-		title: "Build Reproducibility",
-		description:
-			"I use systems such as Docker or Nix to build and deploy my systems in a way that is reproducible and sandboxed.",
-	},
-	{
-		icon: "tabler:list-check",
-		title: "Automatic Linting & Formatting",
-		description:
-			"My apps are strictly checked for errors whenever I edit code, leading to less bugs and better-looking outputs.",
-	},
-	{
-		icon: "tabler:3d-cube-sphere",
-		title: "Extensibility and Futureproofing",
-		description:
-			"Apps should be written with scaling up in mind, and this is true of any system. Things should be done in a way that they still make sense later on.",
-	},
+    {
+        icon: "tabler:brand-docker",
+        title: "Build Reproducibility",
+        description:
+            "I use systems such as Docker or Nix to build and deploy my systems in a way that is reproducible and sandboxed.",
+    },
+    {
+        icon: "tabler:list-check",
+        title: "Automatic Linting & Formatting",
+        description:
+            "My apps are strictly checked for errors whenever I edit code, leading to less bugs and better-looking outputs.",
+    },
+    {
+        icon: "tabler:3d-cube-sphere",
+        title: "Extensibility and Futureproofing",
+        description:
+            "Apps should be written with scaling up in mind, and this is true of any system. Things should be done in a way that they still make sense later on.",
+    },
 ];
 </script>
 

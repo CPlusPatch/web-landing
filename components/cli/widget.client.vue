@@ -63,7 +63,8 @@ useIntervalFn(() => {
     text.value = text.value.replace(/Uptime: \d+s/, `Uptime: ${uptimeString}`);
 }, 1000);
 
-const commandActions: Record<string, () => void> = {
+type MaybePromise<T> = T | Promise<T>;
+const commandActions: Record<string, () => MaybePromise<void>> = {
     clear: () => {
         text.value = "";
     },
@@ -86,6 +87,48 @@ const commandActions: Record<string, () => void> = {
     fastfetch: () => {
         text.value += `${fastfetchText}\n`;
     },
+    badapple: async () => {
+        text.value += "Loading frames...\n";
+
+        const VERTICAL_RES = 26;
+        const FPS = 4;
+        const frameText = await fetch("/ascii/badapple.txt").then((res) =>
+            res.text(),
+        );
+
+        const chunkEveryNewlines = (text: string, height: number): string[] => {
+            const chunks = [];
+            const split = text.split("\n");
+
+            for (let i = 0; i < split.length; i += height) {
+                chunks.push(split.slice(i, i + height).join("\n"));
+            }
+
+            return chunks;
+        };
+
+        // Split every VERTICAL_RES lines into a frame
+        const frames = chunkEveryNewlines(frameText, VERTICAL_RES);
+
+        console.log(frames);
+
+        for (const frame of frames) {
+            text.value += `${frame}\n`;
+
+            await nextTick();
+
+            // Scroll to the bottom
+            if (container.value) {
+                container.value.scrollTop = container.value.scrollHeight;
+            }
+
+            await new Promise((resolve) => setTimeout(resolve, 1000 / FPS));
+
+            // Remove the last frame
+            text.value = text.value.slice(0, -frame.length - 1);
+            await nextTick();
+        }
+    },
 };
 
 const onInput = async (e: Event) => {
@@ -99,7 +142,7 @@ const onInput = async (e: Event) => {
         text.value += `${command}\n`;
 
         if (commandActions[command]) {
-            commandActions[command]();
+            await commandActions[command]();
         } else {
             text.value += `Command not found: ${command}\n`;
         }

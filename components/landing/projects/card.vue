@@ -24,7 +24,7 @@
 					target="_blank"
 					rel="noreferrer"
 					class="text-white">
-					<iconify-icon :icon="link.icon" class="text-2xl" />
+					<LinkIcon class="text-2xl" />
 				</a>
 			</li>
 		</ul>
@@ -41,6 +41,8 @@
 </template>
 
 <script lang="ts" setup>
+import { LinkIcon } from "lucide-vue-next";
+
 defineProps<{
     name: string;
     description: string;

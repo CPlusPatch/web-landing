@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Github } from "lucide-vue-next";
+
 const footerNavigation = {
     solutions: [
         { name: "Mastodon.de", href: "https://mastodon.de" },
@@ -9,7 +11,7 @@ const footerNavigation = {
         {
             name: "GitHub",
             href: "https://github.com/CPlusPatch/",
-            icon: "tabler:brand-github",
+            icon: Github,
         },
     ],
 };
@@ -97,11 +99,7 @@ const friends88x31: {
 							target="_blank"
 							class="text-gray-500 hover:text-gray-400">
 							<span class="sr-only">{{ item.name }}</span>
-							<iconify-icon
-								:icon="item.icon"
-								width="1.5rem"
-								height="1.5rem"
-								aria-hidden="true" />
+							<component :is="item.icon" class="size-5" />
 						</a>
 					</div>
 				</div>

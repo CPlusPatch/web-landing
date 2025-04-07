@@ -1,19 +1,21 @@
 <script setup lang="ts">
+import { Blend, Container, ListCheck } from "lucide-vue-next";
+
 const principles = [
     {
-        icon: "tabler:brand-docker",
+        icon: Container,
         title: "Build Reproducibility",
         description:
             "I use systems such as Docker or Nix to build and deploy my systems in a way that is reproducible and sandboxed.",
     },
     {
-        icon: "tabler:list-check",
+        icon: ListCheck,
         title: "Automatic Linting & Formatting",
         description:
             "My apps are strictly checked for errors whenever I edit code, leading to less bugs and better-looking outputs.",
     },
     {
-        icon: "tabler:3d-cube-sphere",
+        icon: Blend,
         title: "Extensibility and Futureproofing",
         description:
             "Apps should be written with scaling up in mind, and this is true of any system. Things should be done in a way that they still make sense later on.",
@@ -33,11 +35,8 @@ const principles = [
 				v-for="principle in principles"
 				:key="principle.title"
 				class="flex gap-x-3">
-				<iconify-icon
-					:icon="principle.icon"
-					height="none"
-					class="mt-1 size-5 flex-none text-orange-500"
-					aria-hidden="true" />
+				<component :is="principle.icon"
+					class="mt-1 size-5 flex-none text-orange-500" />
 				<span>
 					<strong class="font-semibold text-gray-50">{{
 						principle.title

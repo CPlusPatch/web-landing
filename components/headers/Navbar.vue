@@ -1,31 +1,41 @@
 <script setup lang="ts">
+import {
+    ChevronDown,
+    Globe,
+    Menu,
+    MessagesSquare,
+    Network,
+    Server,
+    X,
+} from "lucide-vue-next";
+
 const products = [
     {
         name: "Versia",
         description:
             "Highly standardized federation protocol that's easy to use and understand.",
-        icon: "tabler:world-www",
+        icon: Network,
         href: "https://versia.pub",
     },
     {
         name: "Versia Server",
         description:
             "Reference implementation of the Versia protocol. Fast, lightweight and configurable.",
-        icon: "tabler:server",
+        icon: Server,
         href: "https://github.com/versia-pub/server",
     },
     {
         name: "Join Mastodon",
         description:
             "A landing page for mastodon.de, a social media with no ads, no tracking, and no algorithms. Made with Nuxt.js and Tailwind CSS.",
-        icon: "tabler:brand-mastodon",
+        icon: Globe,
         href: "https://join-mastodon.de",
     },
     {
         name: "KitsuLife",
         description:
             "Website for the Kitsu service suite, showcasing features and the community for Kitsu.",
-        icon: "tabler:social",
+        icon: MessagesSquare,
         href: "https://kitsu.life",
     },
 ];
@@ -68,7 +78,7 @@ onMounted(() => {
                 <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
                     @click="closedNews.push(currentNews.id)">
                     <span class="sr-only">Dismiss</span>
-                    <iconify-icon icon="tabler:x" height="none" class="size-5 text-gray-50" aria-hidden="true" />
+                    <X class="size-5 text-gray-50" />
                 </button>
             </div>
         </div>
@@ -85,7 +95,7 @@ onMounted(() => {
                     class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
                     @click="open = true">
                     <span class="sr-only">Open main menu</span>
-                    <iconify-icon icon="tabler:menu-2" height="none" class="size-6" aria-hidden="true" />
+                    <Menu height="none" class="size-6" />
                 </button>
             </div>
             <HeadlessPopoverGroup class="hidden lg:flex lg:gap-x-12">
@@ -93,8 +103,7 @@ onMounted(() => {
                     <HeadlessPopoverButton id="thebutton"
                         class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-50">
                         Projects
-                        <iconify-icon icon="tabler:chevron-down" height="none" class="size-5 flex-none text-gray-500"
-                            aria-hidden="true" />
+                        <ChevronDown class="size-5 flex-none text-gray-500" />
                     </HeadlessPopoverButton>
 
                     <transition enter-active-class="transition ease-out duration-200"
@@ -108,9 +117,8 @@ onMounted(() => {
                                     class="group relative rounded-lg p-6 text-sm leading-6 hover:bg-dark-400 duration-200 ring-dark-200 hover:ring-1">
                                     <div
                                         class="flex size-11 items-center justify-center rounded-lg bg-dark-300 duration-200 group-hover:bg-dark-700">
-                                        <iconify-icon :icon="item.icon" height="none"
-                                            class="size-6 text-gray-400 group-hover:text-orange-400"
-                                            aria-hidden="true" />
+                                        <component :is="item.icon"
+                                            class="size-6 text-gray-400 group-hover:text-orange-400" />
                                     </div>
                                     <a target="_blank" :href="item.href" class="mt-6 block font-semibold text-gray-50">
                                         {{ item.name }}
@@ -148,7 +156,7 @@ onMounted(() => {
                     </NuxtLink>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-200" @click="open = false">
                         <span class="sr-only">Close menu</span>
-                        <iconify-icon icon="tabler:x" height="none" class="size-6" aria-hidden="true" />
+                        <X class="size-6" />
                     </button>
                 </div>
                 <div class="mt-6 flow-root">
@@ -158,10 +166,10 @@ onMounted(() => {
                                 <HeadlessDisclosureButton
                                     class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-50 hover:bg-dark-500">
                                     Projects
-                                    <iconify-icon icon="tabler:chevron-down" height="none" :class="[
+                                    <ChevronDown :class="[
                                         open ? '-scale-y-100' : '',
                                         'size-5 flex-none duration-200',
-                                    ]" aria-hidden="true" />
+                                    ]" />
                                 </HeadlessDisclosureButton>
                                 <HeadlessDisclosurePanel class="mt-2 space-y-2">
                                     <HeadlessDisclosureButton v-for="item in [...products]" :key="item.name" as="a"

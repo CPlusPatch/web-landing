@@ -41,12 +41,6 @@ export default defineNuxtConfig({
         "shadcn-nuxt",
     ],
 
-    vue: {
-        compilerOptions: {
-            isCustomElement: (tag) => tag === "iconify-icon",
-        },
-    },
-
     tailwindcss: {
         // Don't inject the default @tailwind utilities CSS
         // To avoid conflicts with our own styles

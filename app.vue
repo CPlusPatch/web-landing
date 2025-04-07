@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import "iconify-icon";
 import "~/styles/index.css";
 import Uwuifier from "uwuifier";
 
@@ -74,12 +73,6 @@ watchEffect(() => {
 </template>
 
 <style>
-iconify-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-}
-
 html {
     color-scheme: dark;
 }

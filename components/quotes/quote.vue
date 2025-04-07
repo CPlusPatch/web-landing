@@ -13,7 +13,7 @@
                     class="w-full max-h-96 min-h-12 object-contain rounded bg-dark-100" />
                 <a title="Download image" :href="quote.image.src" download
                     class="absolute bottom-2 right-2 rounded-md bg-dark-800 size-8 text-sm font-semibold text-gray-200 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white flex items-center justify-center">
-                    <iconify-icon icon="tabler:download" height="none" class="size-4" aria-hidden="true" />
+                    <Download class="size-4" />
                 </a>
             </div>
             <div class="flex mt-4 items-center gap-x-4 text-xs">
@@ -37,6 +37,8 @@
 </template>
 
 <script lang="ts" setup>
+import { Download } from "lucide-vue-next";
+
 defineProps<{
     quote: Quote;
 }>();

@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" :class="['bg-black/80 backdrop-blur-xl min-h-32 max-h-[50rem] w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded ring-2 ring-white/5 font-mono overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]', $style.container]">
+  <div ref="container" :class="['bg-black/80 backdrop-blur-xl min-h-32 max-h-[50rem] w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded ring-2 ring-white/5 overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]', $style.container]">
     {{ text }}
     <input 
       type="text"
@@ -10,6 +10,11 @@
 </template>
 
 <style module>
+.container {
+    font-family: "Inconsolata", monospace;
+    font-display: swap;
+}
+
 .container::after {
     content: "";
     position: absolute;

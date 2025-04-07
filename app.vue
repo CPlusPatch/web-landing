@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import "~/styles/index.css";
 import Uwuifier from "uwuifier";
+import Dropdown from "./components/cli/dropdown.client.vue";
 
 const me = definePerson({
     name: "Gaspard Wierzbinski",
@@ -41,34 +42,15 @@ useHead({
         },
     ],
 });
-
-const { Ctrl_U, Ctrl_V } = useMagicKeys({
-    onEventFired: (e) => {
-        if (e.ctrlKey && (e.key === "u" || e.key === "v")) {
-            e.preventDefault();
-        }
-    },
-    passive: false,
-});
-
-watchEffect(() => {
-    if (Ctrl_U.value) {
-        const uwuifier = new Uwuifier();
-        applyFnToTextNodes((t) => uwuifier.uwuifySentence(t));
-    }
-});
-
-watchEffect(() => {
-    if (Ctrl_V.value) {
-        applyFnToTextNodes((t) => swearWordify(t));
-    }
-});
 </script>
 
 <template>
     <NuxtLayout>
         <NuxtLoadingIndicator />
         <NuxtPage />
+        <ClientOnly>
+            <Dropdown />
+        </ClientOnly>
     </NuxtLayout>
 </template>
 

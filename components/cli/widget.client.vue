@@ -111,4 +111,16 @@ const onInput = async (e: Event) => {
         target.focus();
     }
 };
+
+defineExpose({
+    clear: () => {
+        text.value = "";
+    },
+    focus: () => {
+        console.log(input.value);
+        if (input.value) {
+            input.value.focus();
+        }
+    },
+});
 </script>

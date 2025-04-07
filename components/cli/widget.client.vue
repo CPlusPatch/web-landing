@@ -159,7 +159,7 @@ const commandActions: Record<string, (args: string[]) => MaybePromise<void>> = {
         text.value += "Loading frames...\n";
 
         const VERTICAL_RES = 26;
-        const FPS = 4;
+        const FPS = 1;
 
         // Load assets
         const frameText = await fetch("/ascii/badapple.txt").then((res) =>

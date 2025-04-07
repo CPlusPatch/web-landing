@@ -76,6 +76,9 @@ const commandActions: Record<string, () => void> = {
         applyFnToTextNodes((t) => uwuifier.uwuifySentence(t));
         text.value += "UwUified text\n";
     },
+    exit: () => {
+        window.location.href = "https://google.com";
+    },
     vivziepop: () => {
         applyFnToTextNodes((t) => swearWordify(t));
         text.value += "BITCH\n";

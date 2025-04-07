@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="bg-black min-h-32 max-h-[50rem] w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded ring-2 ring-white/5 font-mono overflow-x-hidden overflow-y-auto">
+  <div ref="container" :class="['bg-black/80 backdrop-blur-xl min-h-32 max-h-[50rem] w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded ring-2 ring-white/5 font-mono overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]', $style.container]">
     {{ text }}
     <input 
       type="text"
@@ -8,6 +8,24 @@
       placeholder="Type here..." />
   </div>
 </template>
+
+<style module>
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}
+</style>
 
 <script lang="ts" setup>
 import { BrowserDetector } from "browser-dtector";
@@ -21,7 +39,7 @@ const detector = new BrowserDetector(
 ).parseUserAgent();
 const timeAtLoad = new Date();
 
-const fastfetchText = `                                          jessew@hacktop
+const fastfetchText = `                                                  jessew@hacktop
   ⠀⠀⠀⠀⠀⢀⣤⠖⠒⠒⠒⢒⡒⠒⠒⠒⠒⠒⠲⠦⠤⢤⣤⣄⣀⠀⠀⠀⠀⠀    --------------
   ⠀⠀⠀⠀⣠⠟⠀⢀⠠⣐⢭⡐⠂⠬⠭⡁⠐⠒⠀⠀⣀⣒⣒⠐⠈⠙⢦⠀⠀⠀    OS: ${detector.name} ${detector.version}
   ⠀⠀⠀⣰⠏⠀⠐⠡⠪⠂⣁⣀⣀⣀⡀⠰⠀⠀⠀⢨⠂⠀⠀⠈⢢⠀⠀⢹⠀⠀    Host: JesseOS (1.2.4)
@@ -35,16 +53,16 @@ const fastfetchText = `                                          jessew@hacktop
   ⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⣭⣐⠉⠴⢂⡤⠀⠐⠀⠒⠒⢀⡀⠀⠄⠁⡠⠀⢸⠀    WM Theme: jessew-dark
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤⣀⣀⠉⠁⠀⠀⠀⠒⠒⠒⠉⠀⢀⡾⠀    Theme: Breeze [Qt], adw-gtk3-dark [GTK2/3/4]
   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠲⠦⠤⠤⠤⠤⠴⠞⠋⠀⠀    Icons: breeze-dark [Qt], Adwaita [GTK2/3/4]
-                                           Font: JetBrains Mono (10pt) [Qt], Adwaita Sans (10pt) [GTK2/3/4]
-                                           Cursor: Adwaita (24px)
-                                           Terminal: jtty 1.4.0
-                                           Terminal Font: JetBrainsMono Nerd Font (11pt)
-                                           CPU: JessePU (16) @ 4.50 GHz
-                                           GPU 2: Nvidia RTX 4090D [Integrated]
-                                           Memory: 9.50 GiB / 63.43 GiB (64%)
-                                           Disk (/): 203.76 GiB / 223.54 GiB (91%) - btrfs
-                                           Local IP (wlan0): 192.168.2.154/24
-                                           Locale: en_GB.UTF-8`;
+                                                  Font: JetBrains Mono (10pt) [Qt], Adwaita Sans (10pt) [GTK2/3/4]
+                                                  Cursor: Adwaita (24px)
+                                                  Terminal: jtty 1.4.0
+                                                  Terminal Font: JetBrainsMono Nerd Font (11pt)
+                                                  CPU: JessePU (16) @ 4.50 GHz
+                                                  GPU 2: Nvidia RTX 4090D [Integrated]
+                                                  Memory: 9.50 GiB / 63.43 GiB (64%)
+                                                  Disk (/): 203.76 GiB / 223.54 GiB (91%) - btrfs
+                                                  Local IP (wlan0): 192.168.2.154/24
+                                                  Locale: en_GB.UTF-8`;
 
 const initialText = `${prompt}fastfetch\n${fastfetchText}\n`;
 
@@ -82,7 +100,7 @@ const commandActions: Record<string, () => MaybePromise<void>> = {
     },
     vivziepop: () => {
         applyFnToTextNodes((t) => swearWordify(t));
-        text.value += "BITCH\n";
+        text.value += "Me if I was written by Vivziepop 🤯\n";
     },
     fastfetch: () => {
         text.value += `${fastfetchText}\n`;
@@ -92,9 +110,16 @@ const commandActions: Record<string, () => MaybePromise<void>> = {
 
         const VERTICAL_RES = 26;
         const FPS = 4;
+
+        // Load assets
         const frameText = await fetch("/ascii/badapple.txt").then((res) =>
             res.text(),
         );
+        const audio = new Audio("/audio/bad-apple.mp3");
+        await new Promise((resolve) => {
+            audio.addEventListener("canplaythrough", resolve);
+        });
+        audio.play();
 
         const chunkEveryNewlines = (text: string, height: number): string[] => {
             const chunks = [];

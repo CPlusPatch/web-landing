@@ -8,6 +8,9 @@ export default (<Partial<Config>>{
     darkMode: ["class"],
     theme: {
         extend: {
+            fontFamily: {
+                mono: ["Inconsolata", "monospace"],
+            },
             colors: {
                 dark: {
                     "50": "#4a4a4a",

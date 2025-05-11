@@ -41,7 +41,7 @@ const cards = [
             },
             {
                 name: "Production Instance",
-                href: "https://social.lysand.org",
+                href: "https://vs.cpluspatch.com",
                 icon: "tabler:server",
             },
             {
@@ -65,7 +65,7 @@ const cards = [
             },
             {
                 name: "Production Instance",
-                href: "https://social.lysand.org",
+                href: "https://vs.cpluspatch.com",
                 icon: "tabler:server",
             },
             {

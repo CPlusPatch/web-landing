@@ -40,11 +40,9 @@ export default defineNuxtConfig({
         "@nuxtjs/plausible",
         "@nuxt/content",
     ],
-
     vite: {
         plugins: [tailwindcss()],
     },
-
     app: {
         head: {
             link: [
@@ -57,34 +55,18 @@ export default defineNuxtConfig({
             htmlAttrs: { lang: "en-us" },
         },
     },
-
     image: {
         domains: [
             "cdn.cpluspatch.com",
             "cdn-web.cpluspatch.com",
             "s3.kitsunes.club",
             "unsplash.com",
-            "thoughtfullaw.com",
-            "aip.cpluspatch.dev",
-            "www.muylinux.com",
-            "matrix.org",
-            "github.com",
             "cpluspatch.com",
-            "pool.jortage.com",
-            "kitsu.life",
-            "media.mastodon.de",
-            "opengraph.githubassets.com",
-            "avatars.githubusercontent.com",
-            "raw.githubusercontent.com",
-            "cdn.lysand.org",
-            "lysand.org",
-            "static.wikia.nocookie.net",
         ],
         ipx: {
             maxAge: 60 * 60 * 24 * 365,
         },
     },
-
     security: {
         headers: {
             contentSecurityPolicy: {
@@ -101,45 +83,26 @@ export default defineNuxtConfig({
         },
         rateLimiter: false,
     },
-
     nitro: {
-        compressPublicAssets: {
-            gzip: false,
-            brotli: false,
-        },
         preset: "static",
         minify: true,
         prerender: {
             failOnError: true,
         },
     },
-
-    runtimeConfig: {
-        public: {
-            language: "en-US",
-            titleSeparator: "·",
-            siteName: "CPlusPatch",
-            trailingSlash: true,
-        },
-    },
-
     sitemap: {
         sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
     },
-
     plausible: {
         // Prevent tracking on localhost
         ignoredHostnames: ["localhost"],
         apiHost: "https://logs.cpluspatch.com",
         autoOutboundTracking: true,
     },
-
-    compatibilityDate: "2024-08-28",
-
+    compatibilityDate: "2025-05-11",
     site: {
         url: "https://cpluspatch.com",
     },
-
     devtools: {
         enabled: true,
     },

@@ -3,9 +3,6 @@ title: How Monsters vs Aliens (2009) is the embodiment of Marx's work
 created_at: 1711689806000
 image: /images/articles/monsters-vs-aliens-marxism/poster.jpg
 description: Monsters vs Aliens is a 2009 animated film that is the embodiment of Karl Marx's work. In this article, I will explain how the film is a perfect representation of Marx's ideas.
-author: Jesse W
-author_image: /images/avatars/jessew.png
-author_handle: @CPlusPatch
 ---
 
 Monsters vs. Aliens is a 2009 animated film that is the embodiment of Karl Marx's work. In this article, I will explain how the film is a perfect representation of Marx's ideas.
@@ -23,7 +20,7 @@ After a battle with Gallaxhar's robot probe, the President of the United States 
 ## B.O.B.
 
 <figure>
-    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/bob-in-love.jpg" alt="Picture of B.O.B in love with a jello mold">
+    <img src="/images/articles/monsters-vs-aliens-marxism/bob-in-love.jpg" alt="Picture of B.O.B in love with a jello mold">
     <figcaption>B.O.B. in love with a jello mold</figcaption>
 </figure>
 
@@ -42,7 +39,7 @@ However, despite his small intelligence, B.O.B. can be very resourceful and crea
 ## Dr. Cockroach
 
 <figure>
-    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/dr-cockroach-and-bob.jpg" alt="Picture of Dr. Cockroach with B.O.B.">
+    <img src="/images/articles/monsters-vs-aliens-marxism/dr-cockroach-and-bob.jpg" alt="Picture of Dr. Cockroach with B.O.B.">
     <figcaption>Dr. Cockroach with B.O.B.</figcaption>
 </figure>
 
@@ -53,7 +50,7 @@ Dr. Cockroach is a metaphor for the intellectuals among the working class, who a
 ## The Missing Link
 
 <figure>
-    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/missing-link-in-group.jpg" alt="Picture of The Missing Link with the other monsters">
+    <img src="/images/articles/monsters-vs-aliens-marxism/missing-link-in-group.jpg" alt="Picture of The Missing Link with the other monsters">
     <figcaption>The Missing Link with the other monsters</figcaption>
 </figure>
 
@@ -64,7 +61,7 @@ I don't really have a good metaphor for The Missing Link, but I think he's a goo
 ## Susan Murphy
 
 <figure>
-    <img style="width: 100%" src="/images/articles/monsters-vs-aliens-marxism/susan-in-bars.jpg" alt="Susan Murphy facing Gallaxhar from inside a prison of red bars">
+    <img src="/images/articles/monsters-vs-aliens-marxism/susan-in-bars.jpg" alt="Susan Murphy facing Gallaxhar from inside a prison of red bars">
     <figcaption>Susan Murphy facing Gallaxhar from inside a prison of red bars</figcaption>
 </figure>
 

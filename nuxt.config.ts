@@ -38,6 +38,7 @@ export default defineNuxtConfig({
         "@nuxt/image",
         "nuxt-security",
         "@nuxtjs/plausible",
+        "@nuxt/content",
     ],
 
     vite: {
@@ -88,6 +89,14 @@ export default defineNuxtConfig({
         headers: {
             contentSecurityPolicy: {
                 "img-src": ["'self'", "https:", "data:"],
+                "script-src": [
+                    "'self'",
+                    "https:",
+                    "'unsafe-inline'",
+                    "'strict-dynamic'",
+                    "'nonce-{{nonce}}'",
+                    "'wasm-unsafe-eval'",
+                ],
             },
         },
         rateLimiter: false,

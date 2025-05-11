@@ -7,8 +7,8 @@
                 <div class="absolute inset-0 rounded-2xl ring-1 ring-   inset ring-gray-100/10" />
             </div>
             <div class="max-w-xl h-full flex flex-col">
-                <div class="mt-8 flex items-center gap-x-4 text-xs">
-                    <time data-allow-mismatch :datetime="post.created_at" class="text-gray-500">{{ formatDate(post.created_at)
+                <div v-if="post.created_at" class="mt-8 flex items-center gap-x-4 text-xs">
+                    <time data-allow-mismatch :datetime="new Date(post.created_at).toISOString()" class="text-gray-500">{{ formatDate(post.created_at)
                         }}</time>
                 </div>
                 <div class="group relative">
@@ -20,13 +20,13 @@
                     </p>
                 </div>
                 <div class="mt-auto pt-8 flex items-center gap-x-4">
-                    <img :src="post.author.image" alt="" class="size-10 rounded-sm bg-dark-100" />
+                    <img src="/images/avatars/jessew.png" alt="" class="size-10 rounded-sm bg-dark-100" />
                     <div class="text-sm leading-6">
                         <p class="font-semibold text-gray-50">
-                            {{ post.author.name }}
+                            Jesse W
                         </p>
                         <p class="text-gray-300">
-                            {{ post.author.handle }}
+                            @CPlusPatch
                         </p>
                     </div>
                 </div>
@@ -36,17 +36,17 @@
 </template>
 
 <script lang="ts" setup>
-import type { Post } from "~/types/posts";
+import type { ContentCollectionItem } from "@nuxt/content";
 
 defineProps<{
-    post: Post;
+    post: ContentCollectionItem;
 }>();
 
-const formatDate = (date?: string) => {
+const formatDate = (date: number) => {
     return new Intl.DateTimeFormat(undefined, {
         year: "numeric",
         month: "long",
         day: "numeric",
-    }).format(Date.parse(date ?? new Date().toISOString()));
+    }).format(new Date(date));
 };
 </script>

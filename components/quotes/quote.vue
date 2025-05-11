@@ -1,6 +1,6 @@
 <template>
     <article data-phys="true"
-        class="hover:drop-shadow-xl duration-200 hover:ring-2 ring-1 p-4 hover:bg-dark-400 ring-white/10 rounded">
+        class="hover:drop-shadow-xl duration-200 hover:ring-2 ring-1 p-4 hover:bg-dark-400 ring-white/10 rounded-sm">
         <div class="flex flex-col justify-center gap-4">
             <h3 v-if="quote.title" class="text-lg font-semibold leading-6 text-gray-50">
                 {{ quote.title }}
@@ -10,9 +10,9 @@
             </p>
             <div class="relative">
                 <nuxt-img format="webp" width="600" :src="quote.image.src" :alt="quote.image.alt || ''"
-                    class="w-full max-h-96 min-h-12 object-contain rounded bg-dark-100" />
+                    class="w-full max-h-96 min-h-12 object-contain rounded-sm bg-dark-100" />
                 <a title="Download image" :href="quote.image.src" download
-                    class="absolute bottom-2 right-2 rounded-md bg-dark-800 size-8 text-sm font-semibold text-gray-200 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white flex items-center justify-center">
+                    class="absolute bottom-2 right-2 rounded-md bg-dark-800 size-8 text-sm font-semibold text-gray-200 shadow-xs hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white flex items-center justify-center">
                     <Download class="size-4" />
                 </a>
             </div>
@@ -22,7 +22,7 @@
                 }}</time>
             </div>
             <div class="flex items-center gap-x-4">
-                <img :src="quote.author.avatar" alt="" class="size-10 rounded bg-dark-100" />
+                <img :src="quote.author.avatar" alt="" class="size-10 rounded-sm bg-dark-100" />
                 <div class="text-sm">
                     <p class="text-gray-300 text-xs">
                         Author

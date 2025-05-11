@@ -1,9 +1,9 @@
 <template>
-    <article data-phys="true" class="hover:drop-shadow-xl duration-200 hover:ring-2 p-4 hover:bg-dark-400 ring-orange-500 rounded">
+    <article data-phys="true" class="hover:drop-shadow-xl duration-200 hover:ring-2 p-4 hover:bg-dark-400 ring-orange-500 rounded-sm">
         <NuxtLink class="flex flex-col items-start h-full justify-between" :href="`/blog${post.path}`">
             <div class="relative w-full" v-if="post.image">
                 <nuxt-img format="webp" width="500" :src="post.image" alt=""
-                    class="aspect-[16/9] w-full rounded bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
+                    class="aspect-video w-full rounded-sm bg-dark-100 object-cover sm:aspect-2/1 lg:aspect-3/2" />
                 <div class="absolute inset-0 rounded-2xl ring-1 ring-   inset ring-gray-100/10" />
             </div>
             <div class="max-w-xl h-full flex flex-col">
@@ -20,7 +20,7 @@
                     </p>
                 </div>
                 <div class="mt-auto pt-8 flex items-center gap-x-4">
-                    <img :src="post.author.image" alt="" class="size-10 rounded bg-dark-100" />
+                    <img :src="post.author.image" alt="" class="size-10 rounded-sm bg-dark-100" />
                     <div class="text-sm leading-6">
                         <p class="font-semibold text-gray-50">
                             {{ post.author.name }}

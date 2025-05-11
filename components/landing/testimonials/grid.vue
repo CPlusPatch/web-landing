@@ -73,7 +73,7 @@ const testimonials = [
 
 <template>
 
-    <Container class="!px-0">
+    <Container class="px-0!">
         <div class="mx-auto max-w-xl text-center px-6 lg:px-8">
             <h2 class="text-sm font-bold uppercase leading-8 tracking-tight text-orange-600">
                 Reviews
@@ -89,7 +89,7 @@ const testimonials = [
                     src="/images/assets/erik-smiling.jpeg" format="webp" sizes="sm:80vw" quality="40" alt="" />
                 <div class="absolute inset-0 bg-dark-900/90 mix-blend-multiply" />
                 <div class="absolute -left-80 -top-56 transform-gpu blur-3xl" aria-hidden="true">
-                    <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-red-500 to-orange-300 opacity-[0.45]"
+                    <div class="aspect-1097/845 w-274.25 bg-linear-to-r from-red-500 to-orange-300 opacity-[0.45]"
                         style="
 								clip-path: polygon(
 									74.1% 44.1%,
@@ -111,9 +111,9 @@ const testimonials = [
 								);
 							" />
                 </div>
-                <div class="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"
+                <div class="hidden md:absolute md:bottom-16 md:left-200 md:block md:transform-gpu md:blur-3xl"
                     aria-hidden="true">
-                    <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-red-500 to-orange-300 opacity-25"
+                    <div class="aspect-1097/845 w-274.25 bg-linear-to-r from-red-500 to-orange-300 opacity-25"
                         style="
 								clip-path: polygon(
 									74.1% 44.1%,
@@ -172,14 +172,14 @@ const testimonials = [
                     <p>{{ `“${featuredTestimonial.body}”` }}</p>
                 </blockquote>
                 <figcaption class="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
-                    <nuxt-img class="size-10 flex-none rounded ring-1 ring-dark-500 bg-dark-200" width="40"
+                    <nuxt-img class="size-10 flex-none rounded-sm ring-1 ring-dark-500 bg-dark-200" width="40"
                         height="40" format="webp" :src="featuredTestimonial.author.imageUrl" alt="" />
                     <div class="flex-auto">
                         <div class="font-semibold text-white">
                             {{ featuredTestimonial.author.name }}
                         </div>
                         <div
-                            class="text-transparent bg-clip-text bg-gradient-to-tl from-fuchsia-500 via-red-600 !to-orange-400">
+                            class="text-transparent bg-clip-text bg-linear-to-tl from-fuchsia-500 via-red-600 to-orange-400!">
                             {{ `${featuredTestimonial.author.title}` }}
                         </div>
                     </div>
@@ -210,7 +210,7 @@ const testimonials = [
                                     {{ testimonial.author.name }}
                                 </div>
                                 <div
-                                    class="text-transparent bg-clip-text bg-gradient-to-tl from-fuchsia-500 via-red-600 !to-orange-400">
+                                    class="text-transparent bg-clip-text bg-linear-to-tl from-fuchsia-500 via-red-600 to-orange-400!">
                                     {{ `${testimonial.author.title}` }}
                                 </div>
                             </div>

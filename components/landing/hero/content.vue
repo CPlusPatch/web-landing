@@ -12,7 +12,7 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
 
 <template>
     <Container class="lg:flex *:mx-auto *:max-w-2xl">
-        <div class="flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8 mt-20">
+        <div class="shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8 mt-20">
             <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 {{ isJesse ? "Hii :3" : "Heya" }},<br />
                 I'm {{ !isJesse ? "CPlusPatch" : "Jesse 🏳️‍⚧️" }}
@@ -25,7 +25,7 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
             </p>
             <div class="mt-10 flex items-center gap-x-6">
                 <NuxtLink href="/contact" :class="[
-                    'rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400',
+                    'rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-orange-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-orange-400',
                     isJesse && 'text-black/0 bg-[linear-gradient(to_right,#5BCEFA,#5BCEFA_20%,#F5A9B8_20%,#F5A9B8_40%,#FFFFFF_40%,#FFFFFF_60%,#F5A9B8_60%,#F5A9B8_80%,#5BCEFA_80%,#5BCEFA)]'
                 ]">
                     Contact me
@@ -41,7 +41,7 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
             <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                 <img @click="openInNewTab('/videos/why-dont-you-go-craft-some-bitches.webm')"
                     src="/images/assets/banner-2.webp" alt="VSCode screenshot" width="2432" height="1442"
-                    class="w-[76rem] rounded-md bg-white/5 hover:cursor-pointer backdrop-blur-xl shadow-2xl ring-1 ring-white/10 hover:rotate-[0.5deg] duration-100 ease-in-out" />
+                    class="w-304 rounded-md bg-white/5 hover:cursor-pointer backdrop-blur-xl shadow-2xl ring-1 ring-white/10 hover:rotate-[0.5deg] duration-100 ease-in-out" />
             </div>
         </div>
     </Container>

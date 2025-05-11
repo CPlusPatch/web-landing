@@ -1,5 +1,6 @@
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
+import tailwindcss from "@tailwindcss/vite";
 
 /*
  * Reads the content directory and returns an array of all the files in the directory and subdirectories.
@@ -31,20 +32,16 @@ const getRouteRenderingPaths = () => {
 export default defineNuxtConfig({
     modules: [
         "@nuxtjs/seo",
-        "@nuxtjs/tailwindcss",
         "@vueuse/nuxt",
         "nuxt-headlessui",
         "@nuxt/fonts",
         "@nuxt/image",
         "nuxt-security",
         "@nuxtjs/plausible",
-        "shadcn-nuxt",
     ],
 
-    tailwindcss: {
-        // Don't inject the default @tailwind utilities CSS
-        // To avoid conflicts with our own styles
-        cssPath: false,
+    vite: {
+        plugins: [tailwindcss()],
     },
 
     app: {

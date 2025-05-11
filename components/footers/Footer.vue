@@ -188,7 +188,7 @@ const friends88x31: {
 			</div>
 		</div>
 		<div
-			class="px-4 py-4 text-gray-100 text-sm block bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+			class="px-4 py-4 text-gray-100 text-sm block bg-linear-to-r from-pink-500 via-red-500 to-yellow-500">
 			<div class="mx-auto max-w-7xl text-center w-full">
 				A site by <strong class="font-semibold">CPlusPatch</strong>
 			</div>

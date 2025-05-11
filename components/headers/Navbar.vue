@@ -40,48 +40,12 @@ const products = [
     },
 ];
 
-const currentNews = {
-    id: "versia5",
-    title: "Versia 0.5",
-    description: "Versia 0.5 is now available!",
-    linkText: "Read the docs",
-    href: "https://versia.pub",
-};
-
 const open = ref(false);
-const closedNews = useLocalStorage<string[]>("closedNews", []);
-
-const hasLocalStorageLoaded = ref(false);
-
-onMounted(() => {
-    hasLocalStorageLoaded.value = true;
-});
 </script>
 <template>
     <header data-phys="true" :class="[
         'z-10 backdrop-blur-lg fixed top-0 inset-x-0 bg-dark-800/30',
     ]">
-        <div v-if="!closedNews.includes(currentNews.id) && hasLocalStorageLoaded"
-            class="relative isolate flex items-center gap-x-6 overflow-hidden bg-dark-900 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
-            <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 w-full">
-                <p class="text-sm text-gray-50">
-                    <strong class="font-semibold">{{
-                        currentNews.title
-                        }}</strong>&nbsp;•&nbsp;{{ currentNews.description }}
-                </p>
-                <a :href="currentNews.href" target="_blank" class="text-sm font-semibold text-gray-50 group">{{
-                    currentNews.linkText }}
-                    <ButtonsAnimatedArrow />
-                </a>
-            </div>
-            <div class="flex justify-end">
-                <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
-                    @click="closedNews.push(currentNews.id)">
-                    <span class="sr-only">Dismiss</span>
-                    <X class="size-5 text-gray-50" />
-                </button>
-            </div>
-        </div>
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
             <div class="flex lg:flex-1">
                 <NuxtLink href="/" class="-m-1.5 p-1.5">

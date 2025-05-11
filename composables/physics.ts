@@ -1815,7 +1815,7 @@ class PhysPlayConfig {
                 this.onupdate?.();
             };
             elem.querySelector("input")?.addEventListener("change", fnUpdate);
-            elem.querySelector("input")?.addEventListener("blur", fnUpdate);
+            elem.querySelector("input")?.addEventListener("blur-sm", fnUpdate);
             elem.querySelector("input")?.addEventListener("submit", fnUpdate);
             elemContainer.appendChild(elem);
         }

@@ -7,7 +7,7 @@
             class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-dark-700 shadow-lg ring-1 ring-white/5 ring-opacity-5">
             <div class="p-4">
                 <div class="flex items-start">
-                    <div class="flex-shrink-0">
+                    <div class="shrink-0">
                         <Check class="size-6 text-green-400" aria-hidden="true" />
                     </div>
                     <div class="ml-3 w-0 flex-1 pt-0.5">

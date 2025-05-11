@@ -128,7 +128,7 @@ definePageMeta({
 					:href="method.href"
 					target="_blank"
 					referrerpolicy="no-referrer"
-					class="flex flex-col items-center space-y-4 bg-white/5 hover:bg-white/10 duration-200 hover:shadow-xl hover:ring-2 ring-orange-500 rounded p-8">
+					class="flex flex-col items-center space-y-4 bg-white/5 hover:bg-white/10 duration-200 hover:shadow-xl hover:ring-2 ring-orange-500 rounded-sm p-8">
 					<component :is="method.icon"
 						class="size-12 text-gray-50" />
 					<span class="text-gray-50 font-semibold">

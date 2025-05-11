@@ -42,5 +42,5 @@ const skipLinks = [
     <main id="content" role="main" class="fr-container" tabindex="0">
         <slot />
     </main>
-    <DsfrFooter id="footer" tabindex="0" a11y-compliance-link="#" cookies-link="#" personal-data-link="#" legal-link="#" />
+    <DsfrFooter id="footer" tabindex="0" a11y-compliance-link="/" cookies-link="/" personal-data-link="/" legal-link="/" />
 </template>

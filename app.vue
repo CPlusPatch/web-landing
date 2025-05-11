@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import "~/styles/index.css";
-import Uwuifier from "uwuifier";
 import Dropdown from "./components/cli/dropdown.client.vue";
 
 const me = definePerson({

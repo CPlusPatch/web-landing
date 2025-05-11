@@ -1,10 +1,10 @@
 <template>
-    <Container class="py-36 !max-w-2xl">
+    <Container class="py-36 max-w-2xl!">
         <div class="relative">
             <Search
                 class="pointer-events-none absolute left-4 top-3.5 size-5 text-gray-500" />
             <input
-                class="h-12 w-full rounded bg-dark-500 ring-1 !ring-white/10 pl-11 pr-4 text-white !outline-none focus:!outline-none !border-0 sm:text-sm"
+                class="h-12 w-full rounded-sm bg-dark-500 ring-1 ring-white/10! pl-11 pr-4 text-white outline-hidden! focus:outline-hidden! border-0! sm:text-sm"
                 placeholder="Search..." v-model="filter" />
         </div>
 

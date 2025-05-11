@@ -84,14 +84,16 @@ const formatDate = (date?: string) => {
             </div>
         </div>
         <nuxt-img v-if="post.image" :src="post.image" width="800" format="webp" alt=""
-            class="aspect-[16/9] drop-shadow-2xl mt-20 w-full max-w-3xl mx-auto rounded bg-dark-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
+            class="aspect-video drop-shadow-2xl mt-20 w-full max-w-3xl mx-auto rounded-sm bg-dark-100 object-cover sm:aspect-2/1 lg:aspect-3/2" />
         <article
             class="mx-auto max-w-3xl prose prose-invert mt-10 content prose-code:before:content-none prose-code:after:content-none prose-a:text-orange-500 prose-a:underline"
             v-html="body"></article>
     </div>
 </template>
 
-<style lang="postcss">
+<style>
+@reference "~/styles/index.css";
+
 .content h1,
 .content h2,
 .content h3,

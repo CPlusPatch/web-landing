@@ -11,7 +11,7 @@
         <form action="#" @submit.prevent="submit">
             <Notification title="Message sent" :show="showNotification" class="mb-10" />
             <div
-                class="rounded-md border border-white/20 shadow-sm focus-within:border-orange-500 focus-within:ring-1 focus-within:ring-orange-500 max-w-2xl">
+                class="rounded-md border border-white/20 shadow-xs focus-within:border-orange-500 focus-within:ring-1 focus-within:ring-orange-500 max-w-2xl">
                 <label for="title" class="sr-only">Title</label>
                 <input type="text" name="title" id="title"
                     class="block w-full bg-transparent border-0 pt-2.5 text-lg font-medium placeholder:text-gray-400 focus:ring-0"
@@ -22,7 +22,7 @@
                     placeholder="I like your website, consider adding more Portal 2 songs."></textarea>
                 <div class="flex items-center justify-end p-2">
                     <button type="submit"
-                        class="inline-flex items-center rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Blaze
+                        class="inline-flex items-center rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Blaze
                         it</button>
                 </div>
             </div>

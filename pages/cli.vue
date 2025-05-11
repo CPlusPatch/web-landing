@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center justify-center h-dvh w-full">
         <ClientOnly>
-            <Widget class="!max-w-7xl" />
+            <Widget class="max-w-7xl!" />
         </ClientOnly>
     </div>
 </template>

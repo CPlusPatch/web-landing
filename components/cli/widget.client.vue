@@ -2,14 +2,14 @@
 	<div
 		ref="container"
 		:class="[
-			'bg-black/80 backdrop-blur-xl min-h-32 max-h-[50rem] w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded ring-2 ring-white/5 overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]',
+			'bg-black/80 backdrop-blur-xl min-h-32 max-h-200 w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded-sm ring-2 ring-white/5 overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]',
 			$style.container,
 		]">
 		{{ text }}
 		<input
 			type="text"
 			ref="input"
-			class="w-full bg-transparent border-none outline-none !ring-0 p-0 -ml-[1ch]"
+			class="w-full bg-transparent border-none outline-hidden ring-0! p-0 -ml-[1ch]"
 			placeholder="Type here..." />
 	</div>
 </template>

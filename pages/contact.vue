@@ -1,6 +1,7 @@
 <script setup lang="tsx">
 import Inbox from "~/components/contact/inbox.vue";
 import Container from "~/components/containers/big.vue";
+import { Card } from "~/components/ui/card";
 
 useServerSeoMeta({
     title: "Contact",
@@ -19,7 +20,7 @@ useServerSeoMeta({
 const contactMethods = [
     {
         name: "Signal",
-        href: "https://signal.me/#eu/Qw6gQXvEfcNrgEFgl-KjOBFiF6-3gWSSghgcpSj9dSedVFIPny5NYazioN5t7E24",
+        href: "https://signal.me/#eu/29gu1hAuAfCAifqIvTWNB2u4hmlVvk9VnCEP15r25Hix_8nBBEBEx7OHuTsuemPX",
         icon: (
             <svg
                 aria-hidden="true"
@@ -112,29 +113,29 @@ definePageMeta({
 		<section>
 			<div class="mx-auto">
 				<h2
-					class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">
+					class="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
 					How to contact me
 				</h2>
-				<p class="mt-6 text-lg leading-8 text-gray-300 max-w-xl">
+				<p class="mt-6 text-lg leading-8 text-secondary-foreground max-w-xl">
 					You can contact me through various means, such as Matrix,
 					Email or Signal.
 				</p>
 			</div>
 			<div
 				class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-				<a
+				<Card as="a"
 					v-for="method in contactMethods"
 					:key="method.name"
 					:href="method.href"
 					target="_blank"
 					referrerpolicy="no-referrer"
-					class="flex flex-col items-center space-y-4 bg-white/5 hover:bg-white/10 duration-200 hover:shadow-xl hover:ring-2 ring-orange-500 rounded-sm p-8">
+					class="space-y-4 items-center gap-1">
 					<component :is="method.icon"
-						class="size-12 text-gray-50" />
-					<span class="text-gray-50 font-semibold">
+						class="size-12 text-primary-foreground" />
+					<span class="text-primary-foreground font-semibold">
 						{{ method.name }}
 					</span>
-				</a>
+				</Card>
 			</div>
 		</section>
 	</Container>

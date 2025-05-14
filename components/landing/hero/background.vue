@@ -1,7 +1,7 @@
 <template>
     <div class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
         aria-hidden="true">
-        <div class="aspect-1108/632 w-277 bg-linear-to-r from-orange-500 to-red-600 opacity-20" style="
+        <div class="aspect-1108/632 w-277 bg-linear-to-r from-primary to-secondary opacity-20" style="
             clip-path: polygon(
                 73.6% 51.7%,
                 91.7% 11.8%,

@@ -32,14 +32,14 @@ export const languages = [
         type: "Framework",
         experience: "Two years",
         image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-        padding: 8,
+        padding: true,
     },
     {
         name: "Next.js",
         type: "Framework",
         experience: "One year",
         image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-        padding: 8,
+        padding: true,
     },
     {
         name: "CSS",
@@ -60,7 +60,7 @@ export const languages = [
         type: "Framework",
         experience: "One year",
         image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg",
-        padding: 8,
+        padding: true,
     },
     {
         name: "Supabase",

@@ -2,10 +2,10 @@
     <section>
         <Container>
             <div class="mx-auto max-w-2xl lg:mx-0">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
                     I am a competent, experienced developer with professional skills
                 </h2>
-                <p class="mt-6 text-base leading-7 text-gray-300">
+                <p class="mt-6 text-base leading-7 text-secondary-foreground">
                     I am a student in computer engineering and a programmer by
                     passion, with several years of experience in many kinds of
                     fields.

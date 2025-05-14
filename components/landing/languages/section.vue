@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Language from "./language.vue";
 import { languages } from "./languages";
 
 const { width } = useWindowSize();
@@ -15,54 +16,14 @@ const getGroup = (n: number) => {
 </script>
 
 <template>
-    <section class="flex flex-col gap-3 overflow-hidden">
+    <section class="flex flex-col gap-3 overflow-hidden py-4                                ">
         <div v-for="group of groupCount" :key="group" :class="[
             'flex flex-row gap-4 w-full shrink-0 min-w-full px-4',
             group % 2 === 1
-                ? 'animate-[scrollLeft_40s_linear_infinite]'
-                : 'animate-[scrollRight_20s_linear_infinite]',
+                ? 'animate-scroll-left'
+                : 'animate-scroll-right',
         ]">
-            <div data-phys="true" v-for="system of getGroup(group - 1)" :key="system.name"
-                class="flex w-72 bg-dark-200 shrink-0 divide-x divide-dark-300 ring-dark-300 rounded-sm shadow-sm ring-1 duration-200 hover:scale-[102%] no-bad-scale hover:shadow-2xl hover:ring-2 hover:ring-orange-500">
-                <nuxt-img :src="system.image" :alt="`${system.name} logo`" :class="[
-                    'object-contain rounded-xs duration-150 aspect-1 flex shrink-0',
-                    system.padding ? 'm-2 sm:size-[calc(6rem-1rem)] size-[calc(5rem-1rem)]' : 'size-20 sm:size-24',
-                ]" />
-                <div class="flex flex-col h-full flex-1 justify-center items-start truncate bg-dark-400 p-4">
-                    <h3 data-placeholder="Element name" class="text-lg font-bold text-gray-50">
-                        {{ system.name }}
-                    </h3>
-                    <p data-placeholder="Element subtitle" class="text-gray-400">
-                        {{ system.experience }}
-                    </p>
-                </div>
-            </div>
+            <Language v-for="system of getGroup(group - 1)" :key="system.name" :system="system" />
         </div>
     </section>
 </template>
-
-<style>
-@keyframes scrollLeft {
-
-    0%,
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    50% {
-        transform: translate3d(-50%, 0, 0);
-    }
-}
-
-@keyframes scrollRight {
-
-    0%,
-    100% {
-        transform: translate3d(-50%, 0, 0);
-    }
-
-    50% {
-        transform: translate3d(0, 0, 0);
-    }
-}
-</style>

@@ -2,9 +2,9 @@
     <Container class="py-36 max-w-2xl!">
         <div class="relative">
             <Search
-                class="pointer-events-none absolute left-4 top-3.5 size-5 text-gray-500" />
-            <input
-                class="h-12 w-full rounded-sm bg-dark-500 ring-1 ring-white/10! pl-11 pr-4 text-white outline-hidden! focus:outline-hidden! border-0! sm:text-sm"
+                class="pointer-events-none absolute left-4 top-3.5 size-5 text-muted-foreground" />
+            <Input
+                class="h-12 w-full pl-11 pr-4"
                 placeholder="Search..." v-model="filter" />
         </div>
 
@@ -19,6 +19,7 @@ import fz from "fuzzysort";
 import { Search } from "lucide-vue-next";
 import Container from "~/components/containers/big.vue";
 import QuoteVue, { type Quote } from "~/components/quotes/quote.vue";
+import { Input } from "~/components/ui/input";
 
 definePageMeta({
     layout: "navbar-and-footer",

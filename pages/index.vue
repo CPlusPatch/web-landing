@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Blog from "~/components/landing/blog/section.vue";
-import Cta from "~/components/landing/cta/section.vue";
 import Destructor from "~/components/landing/destructor/section.vue";
 import Hero from "~/components/landing/hero/section.vue";
 import Languages from "~/components/landing/languages/section.vue";
@@ -23,12 +22,14 @@ useServerSeoMeta({
     ogLocale: "en-US",
     ogLocaleAlternate: ["fr-FR", "en-US"],
 });
+
+definePageMeta({
+    layout: "navbar-and-footer",
+});
 </script>
 
 <template>
-    <div class="flex flex-col gap-48">
-        <HeadersNavbar />
-
+    <div class="flex flex-col gap-48 pb-48">
         <Hero />
 
         <Philosophy />
@@ -41,13 +42,9 @@ useServerSeoMeta({
 
         <Languages />
 
-        <Cta />
-
         <Blog />
 
         <Destructor />
-
-        <FootersFooter />
         
         <Audio />
     </div>

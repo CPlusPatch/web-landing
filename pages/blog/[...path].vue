@@ -39,16 +39,6 @@ useServerSeoMeta({
     ogImage: post.value.image,
     twitterCard: "summary_large_image",
 });
-
-const formatDate = (date: number) => {
-    return new Intl.DateTimeFormat("en-GB", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-    }).format(new Date(date));
-};
 </script>
 
 <template>
@@ -58,9 +48,8 @@ const formatDate = (date: number) => {
                 {{ post.title }}
             </h1>
 
-            <time data-allow-mismatch v-if="post.created_at" :datetime="new Date(post.created_at).toISOString()"
-                class="text-gray-500">{{
-                    formatDate(post.created_at) }}</time>
+            <NuxtTime v-if="post.created_at" :datetime="new Date(post.created_at)" date-style="long" time-style="short"
+                class="text-muted-foreground" locale="en-GB" />
         </div>
         <nuxt-img v-if="post.image" :src="post.image" width="800" format="webp" alt=""
             class="aspect-video drop-shadow-2xl my-20 w-full max-w-3xl mx-auto rounded-sm bg-dark-100 object-cover sm:aspect-2/1 lg:aspect-3/2" />

@@ -39,6 +39,7 @@ export default defineNuxtConfig({
         "nuxt-security",
         "@nuxtjs/plausible",
         "@nuxt/content",
+        "shadcn-nuxt",
     ],
     vite: {
         plugins: [tailwindcss()],
@@ -52,7 +53,7 @@ export default defineNuxtConfig({
                     type: "image/png",
                 },
             ],
-            htmlAttrs: { lang: "en-us" },
+            htmlAttrs: { lang: "en-us", class: "dark" },
         },
     },
     image: {

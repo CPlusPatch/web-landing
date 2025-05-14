@@ -5,7 +5,7 @@
 // NOTES:
 //
 // - Adjust the DraggableSelector value below to make elements draggable based on selector.
-// - Add the a data-phys attribute to any elements to also make them draggable. e.g. <div data-phys>...</div>
+// - Add the a data-phys="true" attribute to any elements to also make them draggable. e.g. <div data-phys="true">...</div>
 // - To prevent an otherwise draggable element from being draggable, set data-phys="none".
 //
 
@@ -32,7 +32,8 @@ const defaultPhysConfigValues = {
     AutoEquipGravGun: false,
     NoYoutube: false,
     DraggableSelector: [
-        "[data-phys]",
+        "[data-phys=true]",
+        "[data-slot=card]",
         "img",
         "video",
         ".tab > div",

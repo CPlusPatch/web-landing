@@ -9,8 +9,7 @@ console.log(props.error);
 </script>
 
 <template>
-    <main class="size-full min-h-dvh bg-dark-800">
-        <HeadersNavbar />
+    <NuxtLayout name="navbar-and-footer">
         <Errors404 v-if="error.statusCode === 404" />
-    </main>
+    </NuxtLayout>
 </template>

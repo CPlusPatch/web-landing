@@ -1,52 +1,50 @@
 <template>
-    <article data-phys="true" class="hover:drop-shadow-xl duration-200 hover:ring-2 p-4 hover:bg-dark-400 ring-orange-500 rounded-sm">
-        <NuxtLink class="flex flex-col items-start h-full justify-between" :href="`/blog${post.path}`">
-            <div class="relative w-full" v-if="post.image">
+    <Card as="article">
+        <NuxtLink class="flex flex-col gap-4" :href="`/blog${post.path}`">
+            <CardHeader v-if="post.image" class="w-full">
                 <nuxt-img format="webp" width="500" :src="post.image" alt=""
-                    class="aspect-video w-full rounded-sm bg-dark-100 object-cover sm:aspect-2/1 lg:aspect-3/2" />
-                <div class="absolute inset-0 rounded-2xl ring-1 ring-   inset ring-gray-100/10" />
-            </div>
-            <div class="max-w-xl h-full flex flex-col">
-                <div v-if="post.created_at" class="mt-8 flex items-center gap-x-4 text-xs">
-                    <time data-allow-mismatch :datetime="new Date(post.created_at).toISOString()" class="text-gray-500">{{ formatDate(post.created_at)
-                        }}</time>
-                </div>
-                <div class="group relative">
-                    <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-50 group-hover:text-gray-300">
-                        {{ post.title }}
-                    </h3>
-                    <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">
-                        {{ post.description }}
+                    class="aspect-video w-full rounded-sm object-cover sm:aspect-2/1 lg:aspect-3/2" />
+            </CardHeader>
+            <CardContent class="flex flex-col gap-3">
+                <NuxtTime v-if="post.created_at" date-style="long" :datetime="new Date(post.created_at)"
+                    class="text-muted-foreground text-xs" locale="en-GB" />
+                <CardTitle>
+                    {{ post.title }}
+                </CardTitle>
+                <CardDescription class="line-clamp-3">
+                    {{ post.description }}
+                </CardDescription>
+            </CardContent>
+            <CardFooter class="mt-auto flex items-center gap-2">
+                <Avatar class="size-10">
+                    <AvatarImage src="/images/avatars/jessew.png" alt="" />
+                </Avatar>
+                <div class="leading-6 flex flex-col gap-0.5">
+                    <p class="font-semibold text-sm">
+                        Jesse W
+                    </p>
+                    <p class="text-secondary-foreground text-xs">
+                        @CPlusPatch
                     </p>
                 </div>
-                <div class="mt-auto pt-8 flex items-center gap-x-4">
-                    <img src="/images/avatars/jessew.png" alt="" class="size-10 rounded-sm bg-dark-100" />
-                    <div class="text-sm leading-6">
-                        <p class="font-semibold text-gray-50">
-                            Jesse W
-                        </p>
-                        <p class="text-gray-300">
-                            @CPlusPatch
-                        </p>
-                    </div>
-                </div>
-            </div>
+            </CardFooter>
         </NuxtLink>
-    </article>
+    </Card>
 </template>
 
 <script lang="ts" setup>
 import type { ContentCollectionItem } from "@nuxt/content";
+import { Avatar, AvatarImage } from "~/components/ui/avatar";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "~/components/ui/card";
 
 defineProps<{
     post: ContentCollectionItem;
 }>();
-
-const formatDate = (date: number) => {
-    return new Intl.DateTimeFormat(undefined, {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    }).format(new Date(date));
-};
 </script>

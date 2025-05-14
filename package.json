@@ -34,7 +34,10 @@
         "@nuxt/image": "^1.10.0",
         "@nuxtjs/plausible": "1.2.0",
         "@tailwindcss/vite": "^4.1.6",
+        "@vueuse/core": "^13.2.0",
         "browser-dtector": "^4.1.0",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
         "fastdom": "^1.0.12",
         "fuzzysort": "^3.1.0",
         "lucide-vue-next": "^0.509.0",
@@ -42,12 +45,16 @@
         "matter-wrap": "^0.2.0",
         "nuxt": "^3.17.2",
         "nuxt-security": "^2.2.0",
+        "reka-ui": "^2.2.1",
         "shadcn-nuxt": "2.1.0",
+        "tailwind-merge": "^3.3.0",
         "tailwindcss": "^4.1.6",
+        "tw-animate-css": "^1.2.9",
         "typescript": "^5.8.3",
         "uwuifier": "^4.2.2",
         "vue": "^3.5.13",
-        "vue-router": "^4.5.1"
+        "vue-router": "^4.5.1",
+        "vue-sonner": "^1.3.2"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.9.4",

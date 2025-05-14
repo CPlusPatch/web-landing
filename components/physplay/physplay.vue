@@ -1,7 +1,7 @@
 <template>
     <section id="gravgun" class=" ">
         <div id="gravgunimage" class="gravgunimage"></div>
-        <div id="mobilemessage" class="text-gray-200 text-sm">
+        <div id="mobilemessage" class="text-secondary-foreground text-xs">
             <span class="use-mouse">Perhaps with a mouse?</span>
             <span class="use-desktop">Perhaps on a desktop browser?</span>
         </div>

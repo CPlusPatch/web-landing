@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import "~/styles/index.css";
 import Dropdown from "./components/cli/dropdown.client.vue";
+import { Toaster } from "./components/ui/sonner";
 
 const me = definePerson({
     name: "Gaspard Wierzbinski",
@@ -51,6 +52,10 @@ useHead({
             <Dropdown />
         </ClientOnly>
     </NuxtLayout>
+
+    <ClientOnly>
+        <Toaster position="top-right" />
+    </ClientOnly>
 </template>
 
 <style>

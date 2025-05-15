@@ -1,6 +1,10 @@
 <template>
-    <Container class="py-40">
-        <Card class="mx-auto max-w-2xl outline-none! bg-card/20 h-[70vh] grid grid-rows-[1fr_auto]">
+    <Container class="py-40 flex flex-col gap-10">
+        <h2 class="text-center mx-auto text-3xl font-bold tracking-tight sm:text-4xl">
+            Chat with JesseAI
+        </h2>
+        
+        <Card class="mx-auto max-w-2xl w-full outline-none! bg-card/20 h-[70vh] grid grid-rows-[1fr_auto]">
             <CardContent id="chat" class="flex flex-col gap-2 overflow-y-auto p-3">
                 <TransitionGroup enter-active-class="duration-300 ease-out transform" enter-from-class="opacity-0"
                     enter-to-class="opacity-100" leave-active-class="duration-200 ease-in transform"

@@ -15,7 +15,7 @@
             </CardContent>
             <CardFooter class="-m-2">
                 <form class="flex w-full items-center relative" @submit.prevent="submit">
-                    <Input name="text" placeholder="Type a message..." class="flex-1 bg-transparent h-12 pr-10" />
+                    <Input name="text" autocomplete="off" placeholder="Type a message..." class="flex-1 bg-transparent h-12 pr-10" />
                     <Button size="sm" variant="default" class="absolute right-2" title="Send">
                         Send
                     </Button>
@@ -68,24 +68,21 @@ const addMessage = async (
         });
     } else if (role === "assistant") {
         // Simulate AI "typing"
-        messages.value.push({
-            id: getId(),
-            role,
-            content: "",
-            date,
-        });
+        const index =
+            messages.value.push({
+                id: getId(),
+                role,
+                content: "",
+                date,
+            }) - 1;
 
-        while (
-            messages.value[messages.value.length - 1].content.length <
-            content.length
-        ) {
+        while (messages.value[index].content.length < content.length) {
             // Add a random amount of characters between 1 and 6 to the message
             const charsToAdd = Math.floor(Math.random() * 6 + 1);
 
-            messages.value[messages.value.length - 1].content += content.slice(
-                messages.value[messages.value.length - 1].content.length,
-                messages.value[messages.value.length - 1].content.length +
-                    charsToAdd,
+            messages.value[index].content += content.slice(
+                messages.value[index].content.length,
+                messages.value[index].content.length + charsToAdd,
             );
 
             await new Promise((resolve) => setTimeout(resolve, 50));

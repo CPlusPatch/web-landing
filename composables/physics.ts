@@ -24,7 +24,7 @@ interface CustomMouseEvent extends MouseEvent {
 const defaultPhysConfigValues = {
     // ====== EDIT DEFAULT VALUES HERE ======
     // Or temporarily change values at the bottom of the page.
-    ShowPhysDebugUI: false,
+    ShowPhysDebugUI: true,
     ShowSoundDebugUI: false,
     MouseCanDragElements: false,
     DebugPageElements: false,
@@ -63,6 +63,8 @@ const defaultPhysConfigValues = {
     // HoverScale: 1.02,
     HoverScale: 1,
     MinMouseDragDistance: 5,
+    MaxHeight: 1000,
+    MaxWidth: 1000,
     GravityHoverDebounceDelay: 200, // ms
 };
 
@@ -969,6 +971,10 @@ export class PhysPlay {
             this.config.values.DraggableSelector,
         );
         for (const elem of elements) {
+            if (!(elem instanceof HTMLElement)) {
+                continue;
+            }
+
             this.makeElementExtractable(elem as HTMLElement);
         }
 
@@ -1008,6 +1014,15 @@ export class PhysPlay {
         }
 
         if (elem.matches(this.config.values.NeverDraggableSelector)) {
+            return;
+        }
+
+        const { width, height } = elem.getBoundingClientRect();
+
+        if (
+            width > this.config.values.MaxWidth ||
+            height > this.config.values.MaxHeight
+        ) {
             return;
         }
 
@@ -1266,9 +1281,9 @@ class PhysPlayGun {
             this.hoveredItem &&
             (this.hoveredItem.isExtractable || this.hoveredItem.isExtracted)
         ) {
-            this.pickupItem(this.hoveredItem, event).catch(() =>
+            this.pickupItem(this.hoveredItem, event); /* .catch(() =>
                 this.dryFire(),
-            );
+            ); */
         } else {
             this.dryFire();
         }
@@ -1428,6 +1443,10 @@ class PhysPlayUtil {
 
         const newChildren = [];
         for (const child of elem.childNodes) {
+            if (!(child instanceof HTMLElement)) {
+                continue;
+            }
+
             newChildren.push(
                 PhysPlayUtil.deepCloneElement(
                     child as HTMLElement,

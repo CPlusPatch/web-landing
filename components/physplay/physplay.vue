@@ -6,10 +6,12 @@
             <span class="use-desktop">Perhaps on a desktop browser?</span>
         </div>
     </section>
-    <div id="physContainer">
-        <canvas id="physCanvas"> </canvas>
-        <canvas width="933" height="1057" id="physCanvas" style="background: transparent 0% 0% / contain"></canvas>
-    </div>
+    <Teleport to="body">
+        <div id="physContainer">
+            <canvas id="physCanvas"></canvas>
+            <canvas width="933" height="1057" id="physCanvas" style="background: transparent 0% 0% / contain"></canvas>
+        </div>
+    </Teleport>
 </template>
 
 <script lang="ts" setup>

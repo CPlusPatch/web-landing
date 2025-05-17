@@ -67,6 +67,8 @@ const addMessage = async (
             date,
         });
     } else if (role === "assistant") {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
         // Simulate AI "typing"
         const index =
             messages.value.push({

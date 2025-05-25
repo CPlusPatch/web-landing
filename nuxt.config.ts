@@ -94,6 +94,11 @@ export default defineNuxtConfig({
     sitemap: {
         sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
     },
+    fonts: {
+        defaults: {
+            weights: [400, 500, 600, 700],
+        },
+    },
     plausible: {
         // Prevent tracking on localhost
         ignoredHostnames: ["localhost"],

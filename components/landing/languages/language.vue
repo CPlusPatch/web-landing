@@ -8,7 +8,7 @@
             <h3 class="text-lg font-bold">
                 {{ system.name }}
             </h3>
-            <p class="text-muted-foreground">
+            <p class="text-secondary-foreground">
                 {{ system.experience }}
             </p>
         </div>

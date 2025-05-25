@@ -22,7 +22,7 @@
                         <p class="text-lg font-semibold tracking-tight text-gray-900">
                             Commits per year
                         </p>
-                        <p class="mt-2 text-base leading-7 text-gray-600">
+                        <p class="mt-2 text-base leading-7 text-secondary">
                             Across all of my projects, I averaged more than
                             2,142 commits this year.
                         </p>
@@ -45,15 +45,15 @@
                     </div>
                 </div>
                 <div data-phys="true"
-                    class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-orange-600 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
-                    <p class="flex-none text-3xl font-bold tracking-tight text-white">
+                    class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-primary p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
+                    <p class="flex-none text-3xl font-bold tracking-tight text-primary-foreground">
                         749,162+
                     </p>
                     <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                        <p class="text-lg font-semibold tracking-tight text-white">
+                        <p class="text-lg font-semibold tracking-tight text-primary-foreground">
                             Lines of code written
                         </p>
-                        <p class="mt-2 text-base leading-7 text-orange-200">
+                        <p class="mt-2 text-base leading-7 text-secondary-foreground">
                             Including
                             <strong class="font-semibold">713,707</strong> lines
                             of TypeScript, totaled across every project I've kept in source control.

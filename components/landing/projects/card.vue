@@ -13,14 +13,14 @@
             </CardDescription>
             <ul class="flex gap-4 list-none flex-wrap">
                 <li v-for="link in links" :key="link.name">
-                    <a :href="link.href" target="_blank" rel="noreferrer">
+                    <a :href="link.href" target="_blank" rel="noreferrer" :title="link.name">
                         <LinkIcon class="size-6" />
                     </a>
                 </li>
             </ul>
         </CardContent>
         <CardFooter :class="[
-            'font-semibold -mx-6 -mb-6 rounded-b-xl px-4 py-2 justify-center mt-auto',
+            'font-semibold -mx-6 -mb-6 rounded-b-xl px-4 py-2 justify-center mt-auto text-primary-foreground',
             featured ? 'bg-primary' : 'bg-background',
         ]">
             {{ featured ? "Featured" : "Project" }}

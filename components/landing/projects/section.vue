@@ -162,7 +162,7 @@ const cards = [
 		<Container class="grid grid-cols-1 gap-x-8 gap-y-20 xl:grid-cols-3">
 			<ul
 				class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 lg:grid-cols-3 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-3">
-				<div class="mx-auto max-w-2xl lg:mx-0">
+				<li class="mx-auto max-w-2xl lg:mx-0">
 					<h2
 						class="text-3xl font-bold tracking-tight sm:text-4xl">
 						Projects
@@ -175,7 +175,7 @@ const cards = [
 						Some of them are still in development, while others are
 						already in production and used by many people.
 					</p>
-				</div>
+				</li>
 				<Card
 					v-for="card in cards"
 					:key="card.name"

@@ -17,7 +17,7 @@
                     Accept
                 </Button>
                 <Button @click="click" variant="outline">
-                    Decline
+                    Essential Only
                 </Button>
             </CardFooter>
         </Card>

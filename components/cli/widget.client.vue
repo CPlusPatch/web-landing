@@ -40,7 +40,7 @@
 <script lang="ts" setup>
 import { BrowserDetector } from "browser-dtector";
 import Uwuifier from "uwuifier";
-import { FileSystemEmulator, demoFilesystemDirectory } from "./emulator";
+import { demoFilesystemDirectory, FileSystemEmulator } from "./emulator";
 
 const container = useTemplateRef<HTMLDivElement>("container");
 const input = useTemplateRef<HTMLInputElement>("input");

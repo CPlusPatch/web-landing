@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { NuxtLink } from "#components";
 import Container from "~/components/containers/big.vue";
 import { Button } from "~/components/ui/button";
-import { NuxtLink } from "#components";
 
 defineProps<{
     isJesse: boolean;

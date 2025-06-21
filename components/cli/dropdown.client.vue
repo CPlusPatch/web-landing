@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-// biome-ignore lint/style/useImportType: <explanation>
 import Widget from "./widget.client.vue";
 
 const widget = useTemplateRef<InstanceType<typeof Widget>>("widget");

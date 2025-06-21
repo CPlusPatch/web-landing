@@ -115,7 +115,7 @@ export class PhysicsElement {
      * Handles mouse enter events
      * @param event - Mouse event
      */
-    private onMouseEnter(event: MouseEvent): void {
+    private onMouseEnter(): void {
         if (!this.isExtractable || this.getParentPhysicsElements().length > 0) {
             return;
         }
@@ -132,7 +132,7 @@ export class PhysicsElement {
      * Handles mouse leave events
      * @param event - Mouse event
      */
-    private onMouseLeave(event: MouseEvent): void {
+    private onMouseLeave(): void {
         this.isHoveringOverElement = false;
         this.isHoveringOverPickupBounds = false;
         this.updateHoverStyle();
@@ -218,7 +218,7 @@ export class PhysicsElement {
         await this.prepareForExtraction();
         this.createPhysicsBody();
         await this.replaceWithPlaceholder();
-        this.finalizeExtraction(mouseEvent);
+        this.finalizeExtraction();
     }
 
     /**
@@ -424,7 +424,7 @@ export class PhysicsElement {
      * Finalizes the extraction process
      * @param mouseEvent - Optional mouse event
      */
-    private finalizeExtraction(mouseEvent?: MouseEvent): void {
+    private finalizeExtraction(): void {
         if (!this.element || !this.physicsBody) return;
 
         this.simulation.addExtractedElement(this.element, this);

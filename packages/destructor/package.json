@@ -31,7 +31,9 @@
         }
     ],
     "description": "TypeScript library providing an animated Gravity Gun to blow up your website.",
-    "categories": ["Other"],
+    "categories": [
+        "Other"
+    ],
     "type": "module",
     "engines": {
         "bun": ">=1.2.5"
@@ -46,7 +48,10 @@
             "default": "./styles.css"
         }
     },
-    "keywords": ["typescript", "half-life"],
+    "keywords": [
+        "typescript",
+        "half-life"
+    ],
     "packageManager": "bun@1.2.5",
     "dependencies": {
         "fastdom": "^1.0.12",

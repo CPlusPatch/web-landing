@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts" setup>
-import { cn } from "@/lib/utils";
 import { CheckCheck } from "lucide-vue-next";
+import { cn } from "@/lib/utils";
 
 const { role, content, date } = defineProps<{
     role: "user" | "assistant";

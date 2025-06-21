@@ -58,7 +58,7 @@ export const getGpuData = async (): Promise<GpuData> => {
             canvas.getContext("webgl") ||
             (canvas.getContext("experimental-webgl") as WebGLRenderingContext);
         debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
-    } catch (e) {}
+    } catch {}
 
     if (gl && debugInfo) {
         return {

@@ -8,7 +8,9 @@
         "name": "CPlusPatch",
         "url": "https://cpluspatch.com"
     },
-    "workspaces": ["packages/*"],
+    "workspaces": [
+        "packages/*"
+    ],
     "maintainers": [
         {
             "email": "contact@cpluspatch.com",
@@ -59,7 +61,7 @@
         "vue-sonner": "^2.0.0"
     },
     "devDependencies": {
-        "@biomejs/biome": "^1.9.4",
+        "@biomejs/biome": "^2.0.4",
         "@nuxt/fonts": "0.11.4",
         "@nuxtjs/seo": "^3.0.3",
         "@tailwindcss/forms": "^0.5.10",

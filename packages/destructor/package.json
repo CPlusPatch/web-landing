@@ -1,0 +1,59 @@
+{
+    "name": "@cpluspatch/destructor",
+    "displayName": "Destructor",
+    "version": "0.0.1",
+    "author": {
+        "email": "contact@cpluspatch.com",
+        "name": "Jesse Wierzbinski (CPlusPatch)",
+        "url": "https://cpluspatch.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CPlusPatch/web-landing.git",
+        "directory": "packages/destructor"
+    },
+    "bugs": {
+        "url": "https://github.com/CPlusPatch/web-landing/issues"
+    },
+    "license": "AGPL-3.0",
+    "contributors": [
+        {
+            "name": "Jesse Wierzbinski",
+            "email": "contact@cpluspatch.com",
+            "url": "https://cpluspatch.com"
+        }
+    ],
+    "maintainers": [
+        {
+            "name": "Jesse Wierzbinski",
+            "email": "contact@cpluspatch.com",
+            "url": "https://cpluspatch.com"
+        }
+    ],
+    "description": "TypeScript library providing an animated Gravity Gun to blow up your website.",
+    "categories": ["Other"],
+    "type": "module",
+    "engines": {
+        "bun": ">=1.2.5"
+    },
+    "exports": {
+        ".": {
+            "import": "./main.ts",
+            "default": "./main.ts"
+        },
+        "./styles.css": {
+            "import": "./styles.css",
+            "default": "./styles.css"
+        }
+    },
+    "keywords": ["typescript", "half-life"],
+    "packageManager": "bun@1.2.5",
+    "dependencies": {
+        "fastdom": "^1.0.12",
+        "matter-js": "^0.20.0",
+        "matter-wrap": "^0.2.0"
+    },
+    "devDependencies": {
+        "@types/matter-js": "^0.19.8"
+    }
+}

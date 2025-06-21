@@ -8,6 +8,7 @@
         "name": "CPlusPatch",
         "url": "https://cpluspatch.com"
     },
+    "workspaces": ["packages/*"],
     "maintainers": [
         {
             "email": "contact@cpluspatch.com",
@@ -28,6 +29,7 @@
         "lint": "bunx @biomejs/biome check ."
     },
     "dependencies": {
+        "@cpluspatch/destructor": "workspace:*",
         "@gouvfr/dsfr": "^1.13.2",
         "@gouvminint/vue-dsfr": "^8.4.0",
         "@nuxt/content": "^3.5.1",

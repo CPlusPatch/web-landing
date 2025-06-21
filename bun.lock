@@ -4,6 +4,7 @@
     "": {
       "name": "web-landing",
       "dependencies": {
+        "@cpluspatch/destructor": "workspace:*",
         "@gouvfr/dsfr": "^1.13.2",
         "@gouvminint/vue-dsfr": "^8.4.0",
         "@nuxt/content": "^3.5.1",
@@ -44,6 +45,18 @@
         "nuxt-headlessui": "^1.2.0",
         "nuxt-icon": "^1.0.0-beta.7",
         "shiki": "^3.5.0",
+      },
+    },
+    "packages/destructor": {
+      "name": "@cpluspatch/destructor",
+      "version": "0.0.1",
+      "dependencies": {
+        "fastdom": "^1.0.12",
+        "matter-js": "^0.20.0",
+        "matter-wrap": "^0.2.0",
+      },
+      "devDependencies": {
+        "@types/matter-js": "^0.19.8",
       },
     },
   },
@@ -143,6 +156,8 @@
     "@cloudflare/kv-asset-handler": ["@cloudflare/kv-asset-handler@0.4.0", "", { "dependencies": { "mime": "^3.0.0" } }, "sha512-+tv3z+SPp+gqTIcImN9o0hqE9xyfQjI1XD9pL6NuKjua9B1y7mNYv0S9cP+QEbA4ppVgGZEmKOvHX5G5Ei1CVA=="],
 
     "@colors/colors": ["@colors/colors@1.6.0", "", {}, "sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA=="],
+
+    "@cpluspatch/destructor": ["@cpluspatch/destructor@workspace:packages/destructor"],
 
     "@dabh/diagnostics": ["@dabh/diagnostics@2.0.3", "", { "dependencies": { "colorspace": "1.1.x", "enabled": "2.0.x", "kuler": "^2.0.0" } }, "sha512-hrlQOIi7hAfzsMqlGSFyVucrx38O+j6wiGOf//H2ecvIEqYN4ADBSS2iLMh5UFyDunCNniUIPk/q3riFv45xRA=="],
 

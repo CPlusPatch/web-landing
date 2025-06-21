@@ -6,7 +6,7 @@
                     class="aspect-video w-full rounded-sm object-cover sm:aspect-2/1 lg:aspect-3/2" />
             </CardHeader>
             <CardContent class="flex flex-col gap-3">
-                <NuxtTime v-if="post.created_at" date-style="long" :datetime="new Date(post.created_at)"
+                <NuxtTime v-if="post.created_at" date-style="long" :datetime="new Date(Number(post.created_at))"
                     class="text-muted-foreground text-xs" locale="en-GB" />
                 <CardTitle>
                     {{ post.title }}
@@ -44,7 +44,7 @@ import {
     CardTitle,
 } from "~/components/ui/card";
 
-defineProps<{
+const { post } = defineProps<{
     post: ContentCollectionItem;
 }>();
 </script>

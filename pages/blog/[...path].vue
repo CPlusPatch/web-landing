@@ -48,7 +48,7 @@ useServerSeoMeta({
                 {{ post.title }}
             </h1>
 
-            <NuxtTime v-if="post.created_at" :datetime="new Date(post.created_at)" date-style="long" time-style="short"
+            <NuxtTime v-if="post.created_at" :datetime="new Date(Number(post.created_at))" date-style="long" time-style="short"
                 class="text-muted-foreground" locale="en-GB" />
         </div>
         <nuxt-img v-if="post.image" :src="post.image" width="800" format="webp" alt=""

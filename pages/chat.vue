@@ -132,12 +132,13 @@ const responses = [
     "computer",
     "How can I help you?",
     "Hey guys, did you know that in terms of male human and female Pokémon breeding, Vaporeon is the most compatible Pokémon for humans? Not only are they in the field egg group, which is mostly comprised of mammals, Vaporeon are an average of 3”03’ tall and 63.9 pounds, this means they’re large enough to be able handle human dicks, and with their impressive Base Stats for HP and access to Acid Armor, you can be rough with one. Due to their mostly water based biology, there’s no doubt in my mind that an aroused Vaporeon would be incredibly wet, so wet that you could easily have sex with one for hours without getting sore. They can also learn the moves Attract, Baby-Doll Eyes, Captivate, Charm, and Tail Whip, along with not having fur to hide nipples, so it’d be incredibly easy for one to get you in the mood. With their abilities Water Absorb and Hydration, they can easily recover from fatigue with enough water. No other Pokémon comes close to this level of compatibility. Also, fun fact, if you pull out enough, you can make your Vaporeon turn white. Vaporeon is literally built for human dick. Ungodly defense stat+high HP pool+Acid Armor means it can take cock all day, all shapes and sizes and still come for more",
-    "**** IMPORTANT ****  ALL USERS PLEASE NOTE ****\n\nDue to a recent systems overload error your recent disk files have been erased.  Therefore, in accordance with the UNIX Basic Manual, University of Washington Geophysics Manual, and Bylaw 9(c), Section XII of the Revised Federal Communications Act, you are being granted Temporary Disk Space, valid for three months from this date, subject to the restrictions set forth in Appendix II of the Federal Communications Handbook (18th edition) as well as the references mentioned herein.  You may apply for more disk space at any time.  Disk usage in or above the eighth percentile will secure the removal of all restrictions and you will immediately receive your permanent disk space.  Disk usage in the sixth or seventh percentile will not effect the validity of your temporary disk space, though its expiration date may be extended for a period of up to three months.  A score in the fifth percentile or below will result in the withdrawal of your Temporary Disk space.",
+    "I don't feel like it.",
     "meow meow meoowoww",
     "BITCH BITCH BITCH",
     "I am madly in love with you",
     "How to kill",
-    "I want to kill the president of the United States of America.\n\nIt's illegal, it's a federal offense. It's one of the only sentences you're not allowed to say. Now, it was okay for me to say it, because I was just letting you know so you don't go out there and say something like that. It's kind of like a public service announcement.",
+    "I want to kill the president of the United States of America.",
+    'google "big boobs" NOW!',
 ];
 
 const makeAiResponse = async () => {

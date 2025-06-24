@@ -5,12 +5,8 @@ import {
     simulateFakeTyping,
 } from "~/components/chat/chat";
 
-const isScrolledAtBottom = (element: HTMLElement): boolean => {
-    return element.scrollHeight - element.scrollTop <= element.clientHeight;
-};
-
 export const useChat = (
-    scrollContainer: TemplateRef<HTMLElement> | null = null,
+    scrollContainer: TemplateRef<HTMLElement | null>,
 ): {
     messages: Ref<ChatMessage[]>;
     addMessage: (message: string) => Promise<void>;
@@ -34,6 +30,14 @@ export const useChat = (
 
         messages.value.push(newMessage);
 
+        await nextTick();
+        if (scrollContainer?.value) {
+            await scrollContainer.value.scrollTo({
+                top: scrollContainer.value.scrollHeight,
+                behavior: "smooth",
+            });
+        }
+
         // Wait a few seconds before responding
         await new Promise((r) => setTimeout(r, 1000));
 
@@ -50,16 +54,14 @@ export const useChat = (
         const index = messages.value.push(assistantMessage) - 1;
 
         for (const chunk of chunks) {
-            const scrolledAtBottom =
-                scrollContainer?.value &&
-                isScrolledAtBottom(scrollContainer.value);
-
             messages.value[index].content += chunk;
             await nextTick();
 
-            if (scrollContainer?.value && scrolledAtBottom) {
-                scrollContainer.value.scrollTop =
-                    scrollContainer.value.scrollHeight;
+            if (scrollContainer?.value) {
+                await scrollContainer.value.scrollTo({
+                    top: scrollContainer.value.scrollHeight,
+                    behavior: "smooth",
+                });
             }
 
             await new Promise((r) => setTimeout(r, 50));

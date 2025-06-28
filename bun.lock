@@ -10,6 +10,7 @@
         "@nuxt/content": "^3.6.1",
         "@nuxt/image": "^1.10.0",
         "@nuxtjs/plausible": "1.2.0",
+        "@skwalexe/memz": "^0.1.0",
         "@tailwindcss/vite": "^4.1.11",
         "@vueuse/core": "^13.4.0",
         "better-sqlite3": "^12.1.1",
@@ -557,6 +558,10 @@
     "@sindresorhus/is": ["@sindresorhus/is@4.6.0", "", {}, "sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw=="],
 
     "@sindresorhus/merge-streams": ["@sindresorhus/merge-streams@4.0.0", "", {}, "sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ=="],
+
+    "@skwalexe/memz": ["@skwalexe/memz@0.1.0", "", { "dependencies": { "@skwalexe/winmb": "^0.1.2" } }, "sha512-QmWQF4xeCOajc1bma2BAIjF0NkfWVUC+5FjPvfTXyqJ8PcgGWTFCjKUxT65UTaFNMUE908gQPzScb++8r2Qu7g=="],
+
+    "@skwalexe/winmb": ["@skwalexe/winmb@0.1.4", "", {}, "sha512-aBHA67TwmcWlQ9qd/B4UWQ/3GH3Xpf2J8060WGUdqEWsPo9tHmzQreW4pX2he/8IQf+q2v0gFGhI3FQ+8X5ldQ=="],
 
     "@socket.io/component-emitter": ["@socket.io/component-emitter@3.1.2", "", {}, "sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA=="],
 

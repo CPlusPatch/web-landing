@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { NuxtLink } from "#components";
 import Container from "~/components/containers/big.vue";
-import { Button } from "~/components/ui/button";
+import Virus from "./virus.vue";
 
 defineProps<{
     isJesse: boolean;
@@ -24,9 +23,9 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
                 many kinds of fields
             </p>
             <div class="mt-10 flex items-center gap-4">
-                <Button href="/contact" :as="NuxtLink">
-                    Contact me
-                </Button>
+                <ClientOnly>
+                    <Virus />
+                </ClientOnly>
             </div>
         </div>
         <div class="mt-16 flex sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">

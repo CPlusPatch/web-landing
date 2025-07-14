@@ -2,7 +2,7 @@
 	<div
 		ref="container"
 		:class="[
-			'bg-black/80 backdrop-blur-xl min-h-32 max-h-200 w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded-sm ring-2 ring-white/5 overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]',
+			'bg-black/80 backdrop-blur-xl min-h-32 text-sm max-h-200 w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded-sm ring-2 ring-white/5 overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]',
 			$style.container,
 		]">
 		{{ text }}

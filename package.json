@@ -32,6 +32,7 @@
     },
     "dependencies": {
         "@cpluspatch/destructor": "workspace:*",
+        "@cpluspatch/emulator": "workspace:*",
         "@gouvfr/dsfr": "^1.14.0",
         "@gouvminint/vue-dsfr": "^8.6.0",
         "@nuxt/content": "^3.6.3",

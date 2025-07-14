@@ -38,46 +38,28 @@
 </style>
 
 <script lang="ts" setup>
-import { BrowserDetector } from "browser-dtector";
+import {
+    Filesystem,
+    Inode,
+    InodeFlags,
+    type InodeFunction,
+    Shell,
+} from "@cpluspatch/emulator";
+import {
+    cat,
+    cd,
+    echo,
+    help,
+    ls,
+    neofetch,
+    pwd,
+    touch,
+    which,
+} from "@cpluspatch/emulator/commands";
 import Uwuifier from "uwuifier";
-import { demoFilesystemDirectory, FileSystemEmulator } from "./emulator";
 
 const container = useTemplateRef<HTMLDivElement>("container");
 const input = useTemplateRef<HTMLInputElement>("input");
-const prompt = "[jessew@hacktop ~]$ ";
-const detector = new BrowserDetector(
-    window.navigator.userAgent,
-).parseUserAgent();
-const timeAtLoad = new Date();
-
-const fastfetchText = `                                                  jessew@hacktop
-  ⠀⠀⠀⠀⠀⢀⣤⠖⠒⠒⠒⢒⡒⠒⠒⠒⠒⠒⠲⠦⠤⢤⣤⣄⣀⠀⠀⠀⠀⠀    --------------
-  ⠀⠀⠀⠀⣠⠟⠀⢀⠠⣐⢭⡐⠂⠬⠭⡁⠐⠒⠀⠀⣀⣒⣒⠐⠈⠙⢦⠀⠀⠀    OS: ${detector.name} ${detector.version}
-  ⠀⠀⠀⣰⠏⠀⠐⠡⠪⠂⣁⣀⣀⣀⡀⠰⠀⠀⠀⢨⠂⠀⠀⠈⢢⠀⠀⢹⠀⠀    Host: JesseOS (1.2.4)
-  ⠀⣠⣾⠿⠤⣤⡀⠤⡢⡾⠿⠿⠿⣬⣉⣷⠀⠀⢀⣨⣶⣾⡿⠿⠆⠤⠤⠌⡳⣄    Kernel: ${detector.platform}
-  ⣰⢫⢁⡾⠋⢹⡙⠓⠦⠤⠴⠛⠀⠀⠈⠁⠀⠀⠀⢹⡀⠀⢠⣄⣤⢶⠲⠍⡎⣾    Uptime: 0s
-  ⢿⠸⠸⡇⠶⢿⡙⠳⢦⣄⣀⠐⠒⠚⣞⢛⣀⡀⠀⠀⢹⣶⢄⡀⠀⣸⡄⠠⣃⣿    Packages: 2067 (jacman), 90 (jatpak)
-  ⠈⢷⣕⠋⠀⠘⢿⡶⣤⣧⡉⠙⠓⣶⠿⣬⣀⣀⣐⡶⠋⣀⣀⣬⢾⢻⣿⠀⣼⠃    Shell: jash 0.22.1
-  ⠀⠀⠙⣦⠀⠀⠈⠳⣄⡟⠛⠿⣶⣯⣤⣀⣀⣏⣉⣙⣏⣉⣸⣧⣼⣾⣿⠀⡇⠀    Display (${detector.name.toUpperCase()}): 1920x1080 @ 165 Hz in 16" [Built-in]
-  ⠀⠀⠀⠘⢧⡀⠀⠀⠈⠳⣄⡀⣸⠃⠉⠙⢻⠻⠿⢿⡿⢿⡿⢿⢿⣿⡟⠀⣧⠀    DE: JNOME 48.0
-  ⠀⠀⠀⠀⠀⠙⢦⣐⠤⣒⠄⣉⠓⠶⠤⣤⣼⣀⣀⣼⣀⣼⣥⠿⠾⠛⠁⠀⢿⠀    WM: Jutter (Wayland)
-  ⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⣭⣐⠉⠴⢂⡤⠀⠐⠀⠒⠒⢀⡀⠀⠄⠁⡠⠀⢸⠀    WM Theme: jessew-dark
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤⣀⣀⠉⠁⠀⠀⠀⠒⠒⠒⠉⠀⢀⡾⠀    Theme: Breeze [Qt], adw-gtk3-dark [GTK2/3/4]
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠲⠦⠤⠤⠤⠤⠴⠞⠋⠀⠀    Icons: breeze-dark [Qt], Adwaita [GTK2/3/4]
-                                                  Font: JetBrains Mono (10pt) [Qt], Adwaita Sans (10pt) [GTK2/3/4]
-                                                  Cursor: Adwaita (24px)
-                                                  Terminal: jtty 1.4.0
-                                                  Terminal Font: JetBrainsMono Nerd Font (11pt)
-                                                  CPU: JessePU (16) @ 4.50 GHz
-                                                  GPU 2: Nvidia RTX 4090D [Integrated]
-                                                  Memory: 9.50 GiB / 63.43 GiB (64%)
-                                                  Disk (/): 203.76 GiB / 223.54 GiB (91%) - btrfs
-                                                  Local IP (wlan0): 192.168.2.154/24
-                                                  Locale: en_GB.UTF-8`;
-
-const initialText = `${prompt}fastfetch\n${fastfetchText}\n`;
-
-const text = ref(initialText + prompt);
 
 onMounted(() => {
     useEventListener(input, "keypress", onInput, {
@@ -85,123 +67,164 @@ onMounted(() => {
     });
 });
 
-useIntervalFn(() => {
-    const now = new Date();
-    const uptime = Math.floor((now.getTime() - timeAtLoad.getTime()) / 1000);
-    const uptimeString = `${Math.floor(uptime)}s`;
-    text.value = text.value.replace(/Uptime: \d+s/, `Uptime: ${uptimeString}`);
-}, 1000);
+const makePrompt = (pwd: string[]) => {
+    if (pwd.length === 2 && pwd[0] === "home" && pwd[1] === "jessew") {
+        return "[jessew@website ~]$ ";
+    }
 
-const filesystem = new FileSystemEmulator(demoFilesystemDirectory, [
-    "home",
-    "jessew",
+    return `[jessew@website ${filesystem.formatPath(pwd)}]$ `;
+};
+
+const badapple: InodeFunction = async ({ shell }) => {
+    shell.stdout("Loading frames...");
+
+    const VERTICAL_RES = 26;
+    const FPS = 1;
+
+    // Load assets
+    const frameText = await fetch("/ascii/badapple.txt").then((res) =>
+        res.text(),
+    );
+    const audio = new Audio("/audio/bad-apple.mp3");
+    await new Promise((resolve) => {
+        audio.addEventListener("canplaythrough", resolve);
+    });
+    audio.play();
+
+    const chunkEveryNewlines = (text: string, height: number): string[] => {
+        const chunks = [];
+        const split = text.split("\n");
+
+        for (let i = 0; i < split.length; i += height) {
+            chunks.push(split.slice(i, i + height).join("\n"));
+        }
+
+        return chunks;
+    };
+
+    // Split every VERTICAL_RES lines into a frame
+    const frames = chunkEveryNewlines(frameText, VERTICAL_RES);
+
+    for (const frame of frames) {
+        shell.stdout(frame);
+
+        await nextTick();
+
+        // Scroll to the bottom
+        if (container.value) {
+            container.value.scrollTop = container.value.scrollHeight;
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 1000 / FPS));
+
+        // Remove the last frame
+        text.value = text.value.slice(0, -frame.length - 1);
+        await nextTick();
+    }
+};
+
+const filesystem = new Filesystem([
+    new Inode(["usr", "bin", "ls"], ls, InodeFlags.Read | InodeFlags.Execute),
+    new Inode(["usr", "bin", "cat"], cat, InodeFlags.Read | InodeFlags.Execute),
+    new Inode(["usr", "bin", "cd"], cd, InodeFlags.Read | InodeFlags.Execute),
+    new Inode(
+        ["usr", "bin", "echo"],
+        echo,
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(["usr", "bin", "pwd"], pwd, InodeFlags.Read | InodeFlags.Execute),
+    new Inode(
+        ["usr", "bin", "touch"],
+        touch,
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "neofetch"],
+        neofetch,
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "fastfetch"],
+        neofetch,
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "help"],
+        help,
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "uwu"],
+        ({ shell }) => {
+            const uwuifier = new Uwuifier();
+            applyFnToTextNodes((t) => uwuifier.uwuifySentence(t));
+            shell.stdout("UwUified text");
+        },
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "clear"],
+        () => {
+            text.value = "";
+        },
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "which"],
+        which,
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "exit"],
+        async () => {
+            window.location.href = "https://google.com";
+        },
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "vivziepop"],
+        ({ shell }) => {
+            applyFnToTextNodes((t) => swearWordify(t));
+            shell.stdout("Me if I was written by Vivziepop 🤯");
+        },
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["usr", "bin", "badapple"],
+        badapple,
+        InodeFlags.Read | InodeFlags.Execute,
+    ),
+    new Inode(
+        ["home", "jessew", "hello.txt"],
+        "Hey there! This is a file in your home directory.",
+        InodeFlags.Read | InodeFlags.Write,
+    ),
 ]);
+const shell = new Shell(filesystem, ["home", "jessew"]);
 
-type MaybePromise<T> = T | Promise<T>;
-const commandActions: Record<string, (args: string[]) => MaybePromise<void>> = {
-    clear: () => {
-        text.value = "";
-    },
-    help: () => {
-        const commands = Object.keys(commandActions);
-        text.value += `Available commands: ${commands.join(", ")}\n`;
-    },
-    uwu: () => {
-        const uwuifier = new Uwuifier();
-        applyFnToTextNodes((t) => uwuifier.uwuifySentence(t));
-        text.value += "UwUified text\n";
-    },
-    exit: () => {
-        window.location.href = "https://google.com";
-    },
-    vivziepop: () => {
-        applyFnToTextNodes((t) => swearWordify(t));
-        text.value += "Me if I was written by Vivziepop 🤯\n";
-    },
-    fastfetch: () => {
-        text.value += `${fastfetchText}\n`;
-    },
-    pwd: () => {
-        text.value += `${filesystem.pwd()}\n`;
-    },
-    ls: (args) => {
-        const path = args[0] || ".";
+const text = ref(makePrompt(shell.cwd));
 
-        const files = filesystem.ls(path);
-        text.value += `${files.map((f) => f.name).join("   ")}\n`;
-    },
-    cat: (args) => {
-        const path = args[0];
-        const content = filesystem.cat(path);
-        if (content === null) {
-            text.value += `cat: ${path}: No such file or directory\n`;
-        } else {
-            text.value += `${content}\n`;
-        }
-    },
-    cd: (args) => {
-        const path = args[0];
+const onStdout = (message: string) => {
+    text.value += message;
+};
 
-        if (!filesystem.cd(path)) {
-            text.value += `cd: ${path}: No such file or directory\n`;
-        }
-    },
-    touch: (args) => {
-        const name = args[0];
-        const content = args[1];
-        filesystem.touch(name, content);
-    },
-    mkdir: (args) => {
-        const path = args[0];
-        filesystem.mkdir(path);
-    },
-    badapple: async () => {
-        text.value += "Loading frames...\n";
+onMounted(async () => {
+    shell.output.on("stdout", onStdout);
+    shell.output.on("stderr", onStdout);
 
-        const VERTICAL_RES = 26;
-        const FPS = 1;
+    await executeCommand("fastfetch");
+});
 
-        // Load assets
-        const frameText = await fetch("/ascii/badapple.txt").then((res) =>
-            res.text(),
-        );
-        const audio = new Audio("/audio/bad-apple.mp3");
-        await new Promise((resolve) => {
-            audio.addEventListener("canplaythrough", resolve);
-        });
-        audio.play();
+onUnmounted(() => {
+    shell.output.off("stdout", onStdout);
+    shell.output.off("stderr", onStdout);
+});
 
-        const chunkEveryNewlines = (text: string, height: number): string[] => {
-            const chunks = [];
-            const split = text.split("\n");
-
-            for (let i = 0; i < split.length; i += height) {
-                chunks.push(split.slice(i, i + height).join("\n"));
-            }
-
-            return chunks;
-        };
-
-        // Split every VERTICAL_RES lines into a frame
-        const frames = chunkEveryNewlines(frameText, VERTICAL_RES);
-
-        for (const frame of frames) {
-            text.value += `${frame}\n`;
-
-            await nextTick();
-
-            // Scroll to the bottom
-            if (container.value) {
-                container.value.scrollTop = container.value.scrollHeight;
-            }
-
-            await new Promise((resolve) => setTimeout(resolve, 1000 / FPS));
-
-            // Remove the last frame
-            text.value = text.value.slice(0, -frame.length - 1);
-            await nextTick();
-        }
-    },
+const executeCommand = async (command: string, ...args: string[]) => {
+    text.value += `${command} ${args.join(" ")}\n`;
+    await shell.executeCommand(command, ...args);
+    await nextTick();
+    text.value += makePrompt(shell.cwd);
 };
 
 const onInput = async (e: Event) => {
@@ -213,24 +236,12 @@ const onInput = async (e: Event) => {
         const command = value.trim().split(" ")[0];
         const args = value.trim().split(" ").slice(1);
 
-        text.value += `${value.trim()}\n`;
-
-        if (commandActions[command]) {
-            await commandActions[command](args);
-        } else {
-            text.value += `Command not found: ${command}\n`;
-        }
-
-        text.value += `${prompt.replace(
-            "~",
-            filesystem.pwd() === "/home/jessew" ? "~" : filesystem.pwd(),
-        )}`;
-
-        await nextTick();
+        await executeCommand(command, ...args);
 
         if (container.value) {
             container.value.scrollTop = container.value.scrollHeight;
         }
+
         target.focus();
     }
 };

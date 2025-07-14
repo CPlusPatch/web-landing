@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { Terminal } from "lucide-vue-next";
+import { toast } from "vue-sonner";
 import Container from "~/components/containers/big.vue";
+import { Button } from "~/components/ui/button";
 import Virus from "./virus.vue";
 
 defineProps<{
@@ -26,6 +29,11 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
                 <ClientOnly>
                     <Virus />
                 </ClientOnly>
+                <Button variant="secondary" class="md:flex hidden"
+                    @click="toast.info('Try pressing F12 on your keyboard.')">
+                    <Terminal />
+                    Drop me in the mainframe!
+                </Button>
             </div>
         </div>
         <div class="mt-16 flex sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">

@@ -5,6 +5,7 @@
       "name": "web-landing",
       "dependencies": {
         "@cpluspatch/destructor": "workspace:*",
+        "@cpluspatch/emulator": "workspace:*",
         "@gouvfr/dsfr": "^1.14.0",
         "@gouvminint/vue-dsfr": "^8.6.0",
         "@nuxt/content": "^3.6.3",
@@ -59,6 +60,14 @@
       },
       "devDependencies": {
         "@types/matter-js": "^0.19.8",
+      },
+    },
+    "packages/emulator": {
+      "name": "@cpluspatch/emulator",
+      "version": "0.0.1",
+      "dependencies": {
+        "browser-dtector": "^4.1.0",
+        "mitt": "^3.0.1",
       },
     },
   },
@@ -164,6 +173,8 @@
     "@colors/colors": ["@colors/colors@1.6.0", "", {}, "sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA=="],
 
     "@cpluspatch/destructor": ["@cpluspatch/destructor@workspace:packages/destructor"],
+
+    "@cpluspatch/emulator": ["@cpluspatch/emulator@workspace:packages/emulator"],
 
     "@dabh/diagnostics": ["@dabh/diagnostics@2.0.3", "", { "dependencies": { "colorspace": "1.1.x", "enabled": "2.0.x", "kuler": "^2.0.0" } }, "sha512-hrlQOIi7hAfzsMqlGSFyVucrx38O+j6wiGOf//H2ecvIEqYN4ADBSS2iLMh5UFyDunCNniUIPk/q3riFv45xRA=="],
 

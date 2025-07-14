@@ -57,7 +57,7 @@ export const ls: InodeFunction = ({ fs, shell }, path = ".") => {
                 ) === index,
         );
 
-    shell.stdout(paths.map((path) => fs.formatPath(path)).join("\n"));
+    shell.stdout(paths.map((path) => path.at(-1)).join("\n"));
 };
 
 export const cat: InodeFunction = ({ fs, shell }, path) => {

@@ -117,30 +117,30 @@ export const neofetch: InodeFunction = ({ shell }) => {
         window.navigator.userAgent,
     ).parseUserAgent();
 
-    const fastfetchText = `                                                  jessew@website
-  ⠀⠀⠀⠀⠀⢀⣤⠖⠒⠒⠒⢒⡒⠒⠒⠒⠒⠒⠲⠦⠤⢤⣤⣄⣀⠀⠀⠀⠀⠀    --------------
-  ⠀⠀⠀⠀⣠⠟⠀⢀⠠⣐⢭⡐⠂⠬⠭⡁⠐⠒⠀⠀⣀⣒⣒⠐⠈⠙⢦⠀⠀⠀    OS: ${detector.name} ${detector.version}
-  ⠀⠀⠀⣰⠏⠀⠐⠡⠪⠂⣁⣀⣀⣀⡀⠰⠀⠀⠀⢨⠂⠀⠀⠈⢢⠀⠀⢹⠀⠀    Host: JesseOS (1.2.4)
-  ⠀⣠⣾⠿⠤⣤⡀⠤⡢⡾⠿⠿⠿⣬⣉⣷⠀⠀⢀⣨⣶⣾⡿⠿⠆⠤⠤⠌⡳⣄    Kernel: ${detector.platform}
-  ⣰⢫⢁⡾⠋⢹⡙⠓⠦⠤⠴⠛⠀⠀⠈⠁⠀⠀⠀⢹⡀⠀⢠⣄⣤⢶⠲⠍⡎⣾    Uptime: Who knows!
-  ⢿⠸⠸⡇⠶⢿⡙⠳⢦⣄⣀⠐⠒⠚⣞⢛⣀⡀⠀⠀⢹⣶⢄⡀⠀⣸⡄⠠⣃⣿    Packages: 2067 (jacman), 90 (jatpak)
-  ⠈⢷⣕⠋⠀⠘⢿⡶⣤⣧⡉⠙⠓⣶⠿⣬⣀⣀⣐⡶⠋⣀⣀⣬⢾⢻⣿⠀⣼⠃    Shell: jash 0.22.1
-  ⠀⠀⠙⣦⠀⠀⠈⠳⣄⡟⠛⠿⣶⣯⣤⣀⣀⣏⣉⣙⣏⣉⣸⣧⣼⣾⣿⠀⡇⠀    Display (${detector.name.toUpperCase()}): 1920x1080 @ 165 Hz in 16" [Built-in]
-  ⠀⠀⠀⠘⢧⡀⠀⠀⠈⠳⣄⡀⣸⠃⠉⠙⢻⠻⠿⢿⡿⢿⡿⢿⢿⣿⡟⠀⣧⠀    DE: JNOME 48.1
-  ⠀⠀⠀⠀⠀⠙⢦⣐⠤⣒⠄⣉⠓⠶⠤⣤⣼⣀⣀⣼⣀⣼⣥⠿⠾⠛⠁⠀⢿⠀    WM: Jutter (Wayland)
-  ⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⣭⣐⠉⠴⢂⡤⠀⠐⠀⠒⠒⢀⡀⠀⠄⠁⡠⠀⢸⠀    WM Theme: jessew-dark
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤⣀⣀⠉⠁⠀⠀⠀⠒⠒⠒⠉⠀⢀⡾⠀    Theme: Breeze [Qt], adw-gtk3-dark [GTK2/3/4]
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠲⠦⠤⠤⠤⠤⠴⠞⠋⠀⠀    Icons: breeze-dark [Qt], Adwaita [GTK2/3/4]
-                                                  Font: JetBrains Mono (10pt) [Qt], Adwaita Sans (10pt) [GTK2/3/4]
-                                                  Cursor: Adwaita (24px)
-                                                  Terminal: jtty 1.4.0
-                                                  Terminal Font: JetBrainsMono Nerd Font (11pt)
-                                                  CPU: JessePU (16) @ 4.50 GHz
-                                                  GPU 1: Jvidia RTX 4070 Ti
-                                                  Memory: 9.50 GiB / 63.43 GiB (64%)
-                                                  Disk (/): 203.76 GiB / 223.54 GiB (91%) - btrfs
-                                                  Local IP (wlan0): 192.168.2.154/24
-                                                  Locale: en_GB.UTF-8`;
+    const fastfetchText = String.raw`                            jessew@website
+    _____  __      __       --------------
+   /\___ \/\ \  __/\ \      OS: ${detector.name} ${detector.version}
+   \/__/\ \ \ \/\ \ \ \     Host: JesseOS (1.2.4)
+      _\ \ \ \ \ \ \ \ \    Kernel: ${detector.platform}
+     /\ \_\ \ \ \_/ \_\ \   Uptime: Who knows!
+     \ \____/\ \`\___x___/   Packages: 2067 (jacman), 90 (jatpak)
+      \/___/  '\/__//__/    Shell: jash 0.22.1
+                            Display (${detector.name.toUpperCase()}): 1920x1080 @ 165 Hz in 16" [Built-in]
+                            DE: JNOME 48.1
+                            WM: Jutter (Wayland)
+                            WM Theme: jessew-dark
+                            Theme: Breeze [Qt], adw-gtk3-dark [GTK2/3/4]
+                            Icons: breeze-dark [Qt], Adwaita [GTK2/3/4]
+                            Font: JetBrains Mono (10pt) [Qt], Adwaita Sans (10pt) [GTK2/3/4]
+                            Cursor: Adwaita (24px)
+                            Terminal: jtty 1.4.0
+                            Terminal Font: JetBrainsMono Nerd Font (11pt)
+                            CPU: JessePU (16) @ 4.50 GHz
+                            GPU 1: Jvidia RTX 4070 Ti
+                            Memory: 9.50 GiB / 63.43 GiB (64%)
+                            Disk (/): 203.76 GiB / 223.54 GiB (91%) - btrfs
+                            Local IP (wlan0): 192.168.2.154/24
+                            Locale: en_GB.UTF-8`.replace("\\`", "`");
 
     shell.stdout(fastfetchText);
 };

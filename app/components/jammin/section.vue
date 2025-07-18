@@ -20,25 +20,20 @@
 	</div>
 	<div
 		v-show="!started"
-		class="flex items-center justify-center p-10 inset-0 absolute size-full bg-black">
-		<div
-			v-if="!loaded"
-			class="flex flex-col items-center justify-center gap-5 text-center">
-			<Loader class="text-white animate-spin size-8" />
-			<p class="text-white font-mono">
+		class="flex items-center justify-center p-10 inset-0 absolute size-full bg-background">
+		<Card v-if="!loaded" class="items-center gap-4">
+			<Loader class="animate-spin size-8" />
+			<CardTitle>
 				{{
 					loadProgress === 1
 						? `Fetching...`
 						: `${Math.round(loadProgress * 100)}%`
 				}}
-			</p>
-		</div>
-		<button
-			v-else
-			@click="startAnimation"
-			class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+			</CardTitle>
+		</Card>
+		<Button v-else @click="startAnimation">
 			Jam It!
-		</button>
+		</Button>
 	</div>
 </template>
 
@@ -50,6 +45,8 @@ import {
     fetchIpData,
     getGpuData,
 } from "~/components/jammin/fetchers";
+import { Button } from "../ui/button";
+import { Card, CardTitle } from "../ui/card";
 
 const data = ref<string[]>([]);
 const text = ref<string[]>([]);

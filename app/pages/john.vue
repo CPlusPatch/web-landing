@@ -23,7 +23,7 @@
         </Card>
 
         <div :class="['fixed inset-0 z-50 flex items-center justify-center', !hasClicked && 'opacity-0 pointer-events-none']">
-            <video ref="scare" src="/public/videos/jumpscare.mp4" loop @click="videoClick" class="size-full object-cover"></video>
+            <video ref="scare" src="/videos/jumpscare.mp4" loop @click="videoClick" class="size-full object-cover"></video>
         </div>
     </Container>
 </template>

@@ -19,7 +19,7 @@ const me = definePerson({
 
 const myOrg = defineOrganization({
     name: "CPlusPatch Development",
-    logo: "/public/images/icons/logo.svg",
+    logo: "/images/icons/logo.svg",
 });
 
 useSchemaOrg([me, myOrg]);

@@ -158,8 +158,8 @@
     --animate-accordion-down: accordion-down 0.2s ease-out;
     --animate-accordion-up: accordion-up 0.2s ease-out;
 
-    --animate-scroll-left: scroll-left 20s linear infinite;
-    --animate-scroll-right: scroll-right 20s linear infinite;
+    --animate-logo-cloud-left: logo-cloud-left 10s linear infinite;
+    --animate-logo-cloud-right: logo-cloud-right 10s linear infinite;
 
     @keyframes accordion-down {
         from {
@@ -179,21 +179,21 @@
         }
     }
 
-    @keyframes scroll-left {
+    @keyframes logo-cloud-left {
         0% {
             transform: translateX(0);
         }
-        100% {
-            transform: translateX(-50%);
+        50% {
+            transform: translateX(calc(-50% - 4rem));
         }
     }
 
-    @keyframes scroll-right {
+    @keyframes logo-cloud-right {
         0% {
-            transform: translateX(-50%);
-        }
-        100% {
             transform: translateX(0);
+        }
+        50% {
+            transform: translateX(calc(50% + 4rem));
         }
     }
 }

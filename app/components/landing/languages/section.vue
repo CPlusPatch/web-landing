@@ -2,13 +2,11 @@
 import Language from "./language.vue";
 import { languages } from "./languages";
 
-const { width } = useWindowSize();
-
-const groupCount = computed(() => (width.value < 900 ? 5 : 3));
+const GROUP_COUNT = 3;
 
 // Function to separate these languages into 3 equally sized groups, then return the nth group
 const getGroup = (n: number) => {
-    const groupSize = Math.ceil(languages.length / groupCount.value);
+    const groupSize = Math.ceil(languages.length / GROUP_COUNT);
     const start = groupSize * n;
     const end = start + groupSize;
     return languages.slice(start, end);
@@ -16,12 +14,10 @@ const getGroup = (n: number) => {
 </script>
 
 <template>
-    <section class="flex flex-col gap-3 overflow-hidden py-4                                ">
-        <div v-for="group of groupCount" :key="group" :class="[
-            'flex flex-row gap-4 w-full shrink-0 min-w-full px-4',
-            group % 2 === 1
-                ? 'animate-scroll-left'
-                : 'animate-scroll-right',
+    <section class="flex flex-col gap-2 py-4 overflow-hidden">
+        <div v-for="group of GROUP_COUNT" :key="group" :class="[
+            'group relative flex gap-4 overflow-hidden p-1 mask-linear-[to_left,transparent_0%,black_20%,black_80%,transparent_95%]',
+            group % 2 === 0 ? '*:animate-logo-cloud-left' : '*:animate-logo-cloud-right'
         ]">
             <Language v-for="system of getGroup(group - 1)" :key="system.name" :system="system" />
         </div>

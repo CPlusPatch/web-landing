@@ -143,6 +143,10 @@ export async function bakeComputedStyles(
                 const element = elements[i];
                 const styles = elementStyles[i];
 
+                if (!(element && styles)) {
+                    continue;
+                }
+
                 element.style.contain = "layout";
                 for (const [propName, propValue] of styles) {
                     if (propName !== "contain") {
@@ -179,14 +183,19 @@ export function getTextBounds(element: HTMLElement): DOMRect | null {
     if (textRects.length === 0) return null;
 
     const bounds = {
-        left: textRects[0].left,
-        right: textRects[0].right,
-        top: textRects[0].top,
-        bottom: textRects[0].bottom,
+        left: (textRects[0] as DOMRect).left,
+        right: (textRects[0] as DOMRect).right,
+        top: (textRects[0] as DOMRect).top,
+        bottom: (textRects[0] as DOMRect).bottom,
     };
 
     for (let i = 1; i < textRects.length; i++) {
         const rect = textRects[i];
+
+        if (!rect) {
+            continue;
+        }
+
         bounds.left = Math.min(bounds.left, rect.left);
         bounds.top = Math.min(bounds.top, rect.top);
         bounds.right = Math.max(bounds.right, rect.right);

@@ -1,0 +1,13 @@
+diff --git a/dist/module.mjs b/dist/module.mjs
+index f82da990e732688b264f7e4633bdb27a1bf92b07..e412546271e104217089db49f59b877e2b789eaa 100644
+--- a/dist/module.mjs
++++ b/dist/module.mjs
+@@ -99,7 +99,7 @@ const module = defineNuxtModule({
+     name: "nuxt-headlessui",
+     configKey: "headlessui",
+     compatibility: {
+-      nuxt: "^3.0.0",
++      nuxt: ">=3.0.0",
+       bridge: true
+     }
+   },

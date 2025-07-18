@@ -200,7 +200,9 @@ class SoundEffectState {
         }
 
         const audioSource = this.audioContext.createBufferSource();
-        audioSource.buffer = this.audioBuffers[this.nextAudioIndex];
+        audioSource.buffer = this.audioBuffers[
+            this.nextAudioIndex
+        ] as AudioBuffer;
         audioSource.loop = this.config.loop ?? false;
         audioSource.connect(this.gainNode);
 
@@ -390,7 +392,9 @@ export class PhysicsSoundEffects {
      * @returns Unique identifier
      */
     private generatePlayRequestId(): number {
-        return this.nextPlayRequestId++;
+        this.nextPlayRequestId += 1;
+
+        return this.nextPlayRequestId;
     }
 
     /**

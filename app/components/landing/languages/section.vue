@@ -14,10 +14,10 @@ const getGroup = (n: number) => {
 </script>
 
 <template>
-    <section class="flex flex-col gap-2 py-4 overflow-hidden">
+    <section class="flex flex-col items-center gap-2 py-4 overflow-hidden mask-linear-[to_left,transparent_0%,black_20%,black_80%,transparent_95%]">
         <div v-for="group of GROUP_COUNT" :key="group" :class="[
-            'group relative flex gap-4 overflow-hidden p-1 mask-linear-[to_left,transparent_0%,black_20%,black_80%,transparent_95%]',
-            group % 2 === 0 ? '*:animate-logo-cloud-left' : '*:animate-logo-cloud-right'
+            'group relative flex gap-4 p-1',
+            group % 2 === 0 ? 'animate-logo-cloud-left' : 'animate-logo-cloud-right'
         ]">
             <Language v-for="system of getGroup(group - 1)" :key="system.name" :system="system" />
         </div>

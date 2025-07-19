@@ -181,19 +181,19 @@
 
     @keyframes logo-cloud-left {
         0% {
-            transform: translateX(0);
+            transform: translateX(10%);
         }
         50% {
-            transform: translateX(calc(-50% - 4rem));
+            transform: translateX(-10%);
         }
     }
 
     @keyframes logo-cloud-right {
         0% {
-            transform: translateX(0);
+            transform: translateX(-10%);
         }
         50% {
-            transform: translateX(calc(50% + 4rem));
+            transform: translateX(10%);
         }
     }
 }

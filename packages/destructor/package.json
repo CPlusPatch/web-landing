@@ -59,6 +59,6 @@
         "matter-wrap": "^0.2.0"
     },
     "devDependencies": {
-        "@types/matter-js": "^0.19.8"
+        "@types/matter-js": "^0.20.0"
     }
 }

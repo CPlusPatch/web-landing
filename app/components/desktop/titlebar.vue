@@ -1,6 +1,6 @@
 <template>
     <div ref="titleBar"
-        class="p-2 text-center relative flex items-center justify-center w-full z-2 border-b font-semibold text-sm">
+        class="p-2 text-center bg-card relative rounded-t-md flex items-center justify-center w-full z-2 border-b font-semibold text-sm">
         <div></div>
         <h1 class="truncate">{{ window.title || "Untitled Window" }}</h1>
         <div class="flex items-center gap-1 *:size-6 *:cursor-pointer absolute right-0 pr-2 bg-card">

@@ -1,5 +1,5 @@
 <template>
-    <div ref="element" class="bg-card text-card-foreground rounded border shadow-sm absolute" :style="{
+    <div ref="element" class="text-card-foreground bg-card/95 grid grid-rows-[auto_1fr] backdrop-blur-xl rounded-md border shadow-sm absolute" :style="{
         width: `${width}px`,
         height: `${height}px`,
         left: `${x}px`,
@@ -7,8 +7,8 @@
     }">
         <WindowResizeHandles @resize="onResize" />
         <Titlebar :window="window" />
-        <div class="p-2">
-            Sus Amogus
+        <div class="overflow-scroll">
+            <slot />
         </div>
     </div>
 </template>

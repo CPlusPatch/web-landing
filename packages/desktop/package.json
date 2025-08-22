@@ -1,0 +1,56 @@
+{
+    "name": "@cpluspatch/desktop",
+    "displayName": "Desktop",
+    "version": "0.0.1",
+    "author": {
+        "email": "contact@cpluspatch.com",
+        "name": "Jesse Wierzbinski (CPlusPatch)",
+        "url": "https://cpluspatch.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CPlusPatch/web-landing.git",
+        "directory": "packages/desktop"
+    },
+    "bugs": {
+        "url": "https://github.com/CPlusPatch/web-landing/issues"
+    },
+    "license": "AGPL-3.0",
+    "contributors": [
+        {
+            "name": "Jesse Wierzbinski",
+            "email": "contact@cpluspatch.com",
+            "url": "https://cpluspatch.com"
+        }
+    ],
+    "maintainers": [
+        {
+            "name": "Jesse Wierzbinski",
+            "email": "contact@cpluspatch.com",
+            "url": "https://cpluspatch.com"
+        }
+    ],
+    "description": "Simulates a desktop environment with a taskbar, start menu, and more.",
+    "categories": [
+        "Other"
+    ],
+    "type": "module",
+    "engines": {
+        "bun": ">=1.2.5"
+    },
+    "exports": {
+        ".": {
+            "import": "./main.ts",
+            "default": "./main.ts"
+        }
+    },
+    "keywords": [
+        "desktop",
+        "gui"
+    ],
+    "packageManager": "bun@1.2.5",
+    "dependencies": {
+        "mitt": "^3.0.1"
+    },
+    "devDependencies": {}
+}

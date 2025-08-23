@@ -84,6 +84,16 @@ export default defineNuxtConfig({
         },
         rateLimiter: false,
     },
+    routeRules: {
+        // Disable CSP on /desktop because it fucks with the browser app
+        "/desktop": {
+            security: {
+                headers: {
+                    contentSecurityPolicy: false,
+                },
+            },
+        },
+    },
     nitro: {
         preset: "static",
         minify: true,

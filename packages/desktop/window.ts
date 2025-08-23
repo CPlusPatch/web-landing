@@ -15,6 +15,7 @@ interface WindowOptions {
 
 export class Window {
     public id: string;
+    public appId: string;
     public title: string | undefined;
     public geometry: DOMRect;
     public decorationFlags: number;
@@ -22,8 +23,9 @@ export class Window {
         "geometry.update": DOMRect;
     }>();
 
-    public constructor(options?: Partial<WindowOptions>) {
+    public constructor(appId: string, options?: Partial<WindowOptions>) {
         this.id = crypto.randomUUID();
+        this.appId = appId;
         this.title = options?.title;
         this.geometry = new DOMRect(
             0,

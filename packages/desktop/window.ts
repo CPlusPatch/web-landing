@@ -20,7 +20,7 @@ export class Window {
     public geometry: DOMRect;
     public decorationFlags: number;
     public emitter = mitt<{
-        "geometry.update": DOMRect;
+        "geometry.update": Window;
     }>();
 
     public constructor(appId: string, options?: Partial<WindowOptions>) {
@@ -42,6 +42,6 @@ export class Window {
 
     public updateGeometry(geometry: DOMRect): void {
         this.geometry = geometry;
-        this.emitter.emit("geometry.update", this.geometry);
+        this.emitter.emit("geometry.update", this);
     }
 }

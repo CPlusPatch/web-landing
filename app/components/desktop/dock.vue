@@ -31,7 +31,7 @@ const emit = defineEmits<{
 const dockRef = useTemplateRef<HTMLDivElement>("dock");
 const mouseX = ref<number | null>(null);
 
-const MAX_SCALE = 1.4;
+const MAX_SCALE = 1.1;
 const EFFECT_RADIUS = 100;
 const ICON_SIZE = 80;
 const GAP_SIZE = 4;

@@ -7,6 +7,7 @@ export interface DesktopOptions {
 
 export class Desktop {
     public options: DesktopOptions;
+    /** Order of windows is z-order */
     private windows: Window[] = [];
     private geometry: DOMRect;
     public emitter = mitt<{
@@ -29,11 +30,26 @@ export class Desktop {
 
     public addWindow(window: Window): void {
         this.windows.push(window);
+        window.emitter.on(
+            "geometry.update",
+            this.handleWindowUpdate.bind(this),
+        );
         this.emitter.emit("window.update", this.windows);
     }
 
     public removeWindow(window: Window): void {
         this.windows = this.windows.filter((w) => w.id !== window.id);
+        window.emitter.off(
+            "geometry.update",
+            this.handleWindowUpdate.bind(this),
+        );
+        this.emitter.emit("window.update", this.windows);
+    }
+
+    public handleWindowUpdate(window: Window): void {
+        // Move window to end of array (top of z-order)
+        this.windows = this.windows.filter((w) => w.id !== window.id);
+        this.windows.push(window);
         this.emitter.emit("window.update", this.windows);
     }
 

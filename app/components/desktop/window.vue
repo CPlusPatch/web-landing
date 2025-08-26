@@ -29,11 +29,11 @@ const height = ref<number>(window.geometry.height);
 const x = ref<number>(window.geometry.x);
 const y = ref<number>(window.geometry.y);
 
-const onGeometryUpdate = (updatedGeometry: DOMRect) => {
-    width.value = updatedGeometry.width;
-    height.value = updatedGeometry.height;
-    x.value = updatedGeometry.x;
-    y.value = updatedGeometry.y;
+const onGeometryUpdate = (window: Window) => {
+    width.value = window.geometry.width;
+    height.value = window.geometry.height;
+    x.value = window.geometry.x;
+    y.value = window.geometry.y;
 };
 
 type Side =

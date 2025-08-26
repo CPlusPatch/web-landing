@@ -41,5 +41,6 @@ useDraggable(titlebar, {
             ),
         );
     },
+    preventDefault: true,
 });
 </script>

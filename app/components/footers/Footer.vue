@@ -20,54 +20,56 @@ const friends88x31: {
     name: string;
     link: string;
     src: string;
-    steal?: boolean;
 }[] = [
     {
         name: "Alex",
         link: "https://gra.phite.ro",
-        src: "https://sophari.org/img/buttons/alex.png",
-        steal: true,
+        src: "/images/88x31s/alex.png",
     },
     {
         name: "Astrid Yu",
         link: "https://astrid.tech",
-        src: "https://s3.us-west-000.backblazeb2.com/nyaabucket/a313cf12a8c46d0262c69cdf8a3accc3b6a2d159b8e1211b7abe30886a212884/astriddottech.png",
+        src: "/images/88x31s/astrid.png",
     },
     {
         name: "Lily",
         link: "https://lunahd.neocities.org/",
-        src: "https://lunahd.neocities.org/assets/88x31/me.png",
+        src: "/images/88x31s/lunahd.png",
     },
     {
         name: "Sophari",
         link: "https://sophari.org",
-        src: "https://sophari.org/img/sophari.gif",
+        src: "/images/88x31s/sophari.gif",
     },
     {
         name: "Yassie",
         link: "https://labyrinth.zone/@yassie_j",
-        src: "https://lunahd.neocities.org/assets/88x31/yassie.gif",
-        steal: true,
+        src: "/images/88x31s/yassie.gif",
     },
     {
         name: "Lexi",
         link: "https://softkittypa.ws",
-        src: "https://softkittypa.ws/assets/buttons/softkittypaws.png",
+        src: "/images/88x31s/lexi.png",
     },
     {
         name: "Ari",
         link: "https://ari.lt",
-        src: "https://ari.lt/badge.png",
+        src: "/images/88x31s/ari.png",
     },
     {
         name: "Nexy",
         link: "https://nexy7574.co.uk",
-        src: "https://nexy7574.co.uk/88x31s/nexy7574-new.gif",
+        src: "/images/88x31s/nexy.gif",
     },
     {
         name: "June",
         link: "https://f.dog",
-        src: "https://f.dog/~strawberry/june_88x31.png",
+        src: "/images/88x31s/june.png",
+    },
+    {
+        name: "Noohance",
+        link: "https://example.com",
+        src: "/images/88x31s/nhat.jpg",
     },
 ];
 </script>
@@ -173,7 +175,7 @@ const friends88x31: {
 						target="_blank"
 						rel="noopener noreferrer nofollow"
 						class="duration-200 hover:ring-2 hover:ring-orange-500 hover:animate-wiggle">
-						<img
+						<nuxt-img
 							:src="item.src"
 							:alt="item.name"
 							:title="item.name"

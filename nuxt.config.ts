@@ -98,16 +98,12 @@ export default defineNuxtConfig({
         minify: true,
         prerender: {
             failOnError: true,
+            crawlLinks: true,
+            routes: ["/.well-known/webfinger"],
         },
     },
     sitemap: {
-        sources: [
-            ...getRouteRenderingPaths(),
-            "/",
-            "/privacy",
-            "/contact",
-            "/.well-known/webfinger",
-        ],
+        sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
     },
     fonts: {
         defaults: {

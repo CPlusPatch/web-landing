@@ -101,7 +101,13 @@ export default defineNuxtConfig({
         },
     },
     sitemap: {
-        sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
+        sources: [
+            ...getRouteRenderingPaths(),
+            "/",
+            "/privacy",
+            "/contact",
+            "/.well-known/webfinger",
+        ],
     },
     fonts: {
         defaults: {

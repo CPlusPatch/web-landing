@@ -140,7 +140,7 @@ onMounted(async () => {
     const reader = response.body.getReader();
     const contentLength = Number(response.headers.get("Content-Length"));
     let receivedLength = 0;
-    const chunks: Uint8Array[] = [];
+    const chunks: Uint8Array<ArrayBuffer>[] = [];
 
     while (true) {
         const { done, value } = await reader.read();

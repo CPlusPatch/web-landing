@@ -33,7 +33,6 @@ export default defineNuxtConfig({
     modules: [
         "@nuxtjs/seo",
         "@vueuse/nuxt",
-        "nuxt-headlessui",
         "@nuxt/fonts",
         "@nuxt/image",
         "nuxt-security",

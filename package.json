@@ -32,9 +32,9 @@
         "typecheck": "nuxt prepare && vue-tsc -b --noEmit"
     },
     "dependencies": {
+        "@cpluspatch/desktop": "workspace:*",
         "@cpluspatch/destructor": "workspace:*",
         "@cpluspatch/emulator": "workspace:*",
-        "@cpluspatch/desktop": "workspace:*",
         "@gouvfr/dsfr": "^1.14.1",
         "@gouvminint/vue-dsfr": "^8.8.0",
         "@nuxt/content": "^3.7.0",
@@ -74,7 +74,6 @@
         "@types/bun": "^1.2.21",
         "@types/matter-js": "^0.20.0",
         "@vueuse/nuxt": "^13.9.0",
-        "nuxt-headlessui": "^1.2.1",
         "nuxt-icon": "^1.0.0-beta.7",
         "shiki": "^3.12.2",
         "vue-tsc": "^3.0.7"
@@ -90,8 +89,5 @@
         "esbuild",
         "sharp",
         "vue-demi"
-    ],
-    "patchedDependencies": {
-        "nuxt-headlessui@1.2.0": "patches/nuxt-headlessui@1.2.0.patch"
-    }
+    ]
 }

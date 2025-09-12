@@ -31,9 +31,6 @@ useServerSeoMeta({
     },
 });
 
-// Use SSR-safe IDs for Headless UI
-provideHeadlessUseId(() => useId());
-
 useHead({
     link: [
         {

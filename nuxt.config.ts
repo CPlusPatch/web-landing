@@ -63,6 +63,7 @@ export default defineNuxtConfig({
             "unsplash.com",
             "cpluspatch.com",
         ],
+        format: ["webp"],
         ipx: {
             maxAge: 60 * 60 * 24 * 365,
         },

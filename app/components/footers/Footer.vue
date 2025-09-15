@@ -71,6 +71,16 @@ const friends88x31: {
         link: "https://example.com",
         src: "/images/88x31s/nhat.jpg",
     },
+    {
+        name: "Austin Huang",
+        link: "https://austinhuang.me",
+        src: "/images/88x31s/austin.svg",
+    },
+    {
+        name: "Virkunnen",
+        link: "https://vrkknn.net",
+        src: "/images/88x31s/virkunnen.png",
+    },
 ];
 </script>
 

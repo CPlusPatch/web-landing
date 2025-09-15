@@ -2,7 +2,7 @@
     <Card as="article">
         <NuxtLink class="flex flex-col gap-4" :href="`/blog${post.path}`">
             <CardHeader v-if="post.image" class="w-full">
-                <nuxt-img format="webp" width="500" :src="post.image" alt=""
+                <nuxt-img width="500" :src="post.image" alt=""
                     class="aspect-video w-full rounded-sm object-cover sm:aspect-2/1 lg:aspect-3/2" />
             </CardHeader>
             <CardContent class="flex flex-col gap-3">

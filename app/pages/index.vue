@@ -9,19 +9,21 @@ import Stats from "~/components/landing/stats/section.vue";
 import Testimonials from "~/components/landing/testimonials/section.vue";
 import Audio from "~/components/widgets/audio.vue";
 
-useServerSeoMeta({
-    title: "Homepage",
-    ogTitle: "Homepage",
-    author: "Gaspard Wierzbinski",
-    ogImage: "/images/assets/banner-2.webp",
-    ogImageAlt: "A screenshot of VSCode open",
-    description:
-        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
-    ogDescription:
-        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
-    ogLocale: "en-US",
-    ogLocaleAlternate: ["fr-FR", "en-US"],
-});
+if (import.meta.server) {
+    useSeoMeta({
+        title: "Homepage",
+        ogTitle: "Homepage",
+        author: "Gaspard Wierzbinski",
+        ogImage: "/images/assets/banner-2.webp",
+        ogImageAlt: "A screenshot of VSCode open",
+        description:
+            "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
+        ogDescription:
+            "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
+        ogLocale: "en-US",
+        ogLocaleAlternate: ["fr-FR", "en-US"],
+    });
+}
 
 definePageMeta({
     layout: "navbar-and-footer",

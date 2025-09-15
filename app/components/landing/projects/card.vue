@@ -2,7 +2,7 @@
     <Card as="li">
         <CardHeader>
             <nuxt-img class="aspect-3/2 w-full rounded-sm object-cover border" :src="image" width="400"
-                alt="" />
+                alt="" format="webp" />
         </CardHeader>
         <CardContent class="gap-4 flex flex-col">
             <CardTitle>

@@ -189,6 +189,7 @@ const friends88x31: {
 							:src="item.src"
 							:alt="item.name"
 							:title="item.name"
+                            format="webp"
 							width="88"
 							height="33"
 							class="[image-rendering:pixelated]" />

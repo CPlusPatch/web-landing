@@ -53,7 +53,7 @@ if (import.meta.server) {
             <NuxtTime v-if="post.created_at" :datetime="new Date(Number(post.created_at))" date-style="long" time-style="short"
                 class="text-muted-foreground" locale="en-GB" />
         </div>
-        <nuxt-img v-if="post.image" :src="post.image" width="800" alt=""
+        <nuxt-img v-if="post.image" :src="post.image" width="800" alt="" format="webp"
             class="aspect-video drop-shadow-2xl my-20 w-full max-w-3xl mx-auto rounded-sm bg-muted object-cover sm:aspect-2/1 lg:aspect-3/2" />
         <ContentRenderer
             class="mx-auto max-w-3xl prose prose-invert prose-code:before:content-none prose-code:after:content-none prose-headings:scroll-mt-20 prose-img:rounded prose-img:ring-1 prose-img:ring-white/5"

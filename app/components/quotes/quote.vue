@@ -10,7 +10,7 @@
         </CardHeader>
         <CardContent class="space-y-2">
             <div class="relative border rounded">
-                <nuxt-img width="600" :src="quote.image.src" :alt="quote.image.alt || ''"
+                <nuxt-img width="600" :src="quote.image.src" :alt="quote.image.alt || ''" format="webp"
                     class="w-full max-h-96 min-h-12 object-contain rounded bg-background" />
                 <Button as="a" title="Download image" :href="quote.image.src" download class="absolute bottom-2 right-2"
                     size="icon" variant="outline">

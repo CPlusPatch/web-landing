@@ -66,6 +66,9 @@ export default defineNuxtConfig({
         format: ["webp"],
         ipx: {
             maxAge: 60 * 60 * 24 * 365,
+            sharpOptions: {
+                animated: true,
+            },
         },
     },
     security: {

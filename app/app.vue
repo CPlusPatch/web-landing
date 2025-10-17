@@ -24,14 +24,12 @@ const myOrg = defineOrganization({
 
 useSchemaOrg([me, myOrg]);
 
-if (import.meta.server) {
-    useSeoMeta({
-        author: me.name,
-        titleTemplate: (titleChunk) => {
-            return titleChunk ? `${titleChunk} · CPlusPatch` : "CPlusPatch";
-        },
-    });
-}
+useSeoMeta({
+    author: me.name,
+    titleTemplate: (titleChunk) => {
+        return titleChunk ? `${titleChunk} · CPlusPatch` : "CPlusPatch";
+    },
+});
 
 useHead({
     link: [

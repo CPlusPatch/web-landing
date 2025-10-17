@@ -3,21 +3,19 @@ import Inbox from "~/components/contact/inbox.vue";
 import Container from "~/components/containers/big.vue";
 import { Card } from "~/components/ui/card";
 
-if (import.meta.server) {
-    useSeoMeta({
-        title: "Contact",
-        ogTitle: "Contact",
-        author: "Gaspard Wierzbinski",
-        ogImage: "/images/assets/banner-2.webp",
-        ogImageAlt: "A screenshot of VSCode open",
-        description:
-            "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
-        ogDescription:
-            "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
-        ogLocale: "en-US",
-        ogLocaleAlternate: ["fr-FR", "en-US"],
-    });
-}
+useSeoMeta({
+    title: "Contact",
+    ogTitle: "Contact",
+    author: "Gaspard Wierzbinski",
+    ogImage: "/images/assets/banner-2.webp",
+    ogImageAlt: "A screenshot of VSCode open",
+    description:
+        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
+    ogDescription:
+        "I make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields",
+    ogLocale: "en-US",
+    ogLocaleAlternate: ["fr-FR", "en-US"],
+});
 
 const contactMethods = [
     {

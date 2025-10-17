@@ -30,17 +30,15 @@ useSchemaOrg([
     }),
 ]);
 
-if (import.meta.server) {
-    useSeoMeta({
-        title: post.value.title,
-        ogTitle: post.value.title,
-        author: "Jesse Wierzbinski",
-        description: post.value.description,
-        ogDescription: post.value.description,
-        ogImage: post.value.image,
-        twitterCard: "summary_large_image",
-    });
-}
+useSeoMeta({
+    title: post.value.title,
+    ogTitle: post.value.title,
+    author: "Jesse Wierzbinski",
+    description: post.value.description,
+    ogDescription: post.value.description,
+    ogImage: post.value.image,
+    twitterCard: "summary_large_image",
+});
 </script>
 
 <template>

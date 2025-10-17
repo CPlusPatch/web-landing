@@ -25,12 +25,10 @@ definePageMeta({
     layout: "navbar-and-footer",
 });
 
-if (import.meta.server) {
-    useSeoMeta({
-        title: "Quotes",
-        description: "Quotes of questionable quality. No refunds.",
-    });
-}
+useSeoMeta({
+    title: "Quotes",
+    description: "Quotes of questionable quality. No refunds.",
+});
 
 const jesse: Quote["author"] = {
     name: "Jesse",

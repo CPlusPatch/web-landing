@@ -2,7 +2,7 @@
     <div class="flex items-center justify-center w-full gap-6">
         <div class="flex flex-col items-center gap-1">
             <div
-                class="font-mono text-4xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
+                class="font-mono md:text-4xl text-2xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
                 <span>
                     {{ Math.floor( hours / 10 ) }}
                 </span>
@@ -14,7 +14,7 @@
         </div>
         <div class="flex flex-col items-center gap-1">
             <div
-                class="font-mono text-4xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
+                class="font-mono md:text-4xl text-2xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
                 <span>
                     {{ Math.floor( minutes / 10 ) }}
                 </span>
@@ -26,7 +26,7 @@
         </div>
         <div class="flex flex-col items-center gap-1">
             <div
-                class="font-mono text-4xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
+                class="font-mono md:text-4xl text-2xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
                 <span>
                     {{ Math.floor( seconds / 10 ) }}
                 </span>
@@ -38,9 +38,12 @@
         </div>
         <div class="flex flex-col items-center gap-1">
             <div
-                class="font-mono text-4xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
+                class="font-mono md:text-4xl text-2xl text-primary-foreground *:rounded-sm flex flex-row gap-1 *:bg-accent *:px-2 *:pt-2 *:pb-1 *:leading-none">
                 <span>
-                    {{ Math.floor( milliseconds / 10 ) }}
+                    {{ Math.floor( milliseconds / 100 ) }}
+                </span>
+                <span>
+                    {{ Math.floor( ( milliseconds % 100 ) / 10 ) }}
                 </span>
                 <span>
                     {{ milliseconds % 10 }}

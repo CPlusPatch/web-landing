@@ -6,7 +6,7 @@
                 <Countdown :hours="Math.floor(msUntilAvailable / 3600000)"
                     :minutes="Math.floor((msUntilAvailable % 3600000) / 60000)"
                     :seconds="Math.floor((msUntilAvailable % 60000) / 1000)"
-                    :milliseconds="Math.floor((msUntilAvailable % 1000) / 10)" />
+                    :milliseconds="Math.floor((msUntilAvailable % 1000))" />
             </div>
         </div>
     </div>

@@ -1,12 +1,12 @@
 <template>
-    <div :class="['w-dvw h-dvh', msUntilAvailable !== null ? 'bg-background' : 'bg-pink-700']">
+    <div :class="['w-dvw h-dvh', msUntil !== 0 ? 'bg-background' : 'bg-pink-700']">
         <div class="flex flex-col items-center justify-center w-full h-full text-center px-4 gap-4">
-            <h1 class="text-4xl font-bold mb-4">Lexi is {{ msUntilAvailable == null ? 'online :3' : 'offline :(' }}</h1>
-            <div v-if="msUntilAvailable !== null">
-                <Countdown :hours="Math.floor(msUntilAvailable / 3600000)"
-                    :minutes="Math.floor((msUntilAvailable % 3600000) / 60000)"
-                    :seconds="Math.floor((msUntilAvailable % 60000) / 1000)"
-                    :milliseconds="Math.floor((msUntilAvailable % 1000))" />
+            <h1 class="text-4xl font-bold mb-4">Lexi is {{ msUntil === 0 ? 'online :3' : 'offline :(' }}</h1>
+            <div v-if="msUntil !== 0">
+                <Countdown :hours="hours"
+                    :minutes="minutes"
+                    :seconds="seconds"
+                    :milliseconds="milliseconds" />
             </div>
         </div>
     </div>
@@ -16,19 +16,23 @@
 import Countdown from "~/components/widgets/countdown.vue";
 
 // 10:00 to 12:00 and 13:00 to 15:00 UTC-04:00
-const hoursUnavailable = [
+const unavailableHours = [
     { start: "14:00", end: "16:00" },
     { start: "17:00", end: "19:00" },
 ];
 const utcOffset = 0;
 
-const getMsUntilAvailable = (currentTime: number): number | null => {
-    const currentDate = new Date(currentTime);
-    const currentUTCHours = currentDate.getUTCHours();
-    const currentUTCMinutes = currentDate.getUTCMinutes();
+/**
+ * Find the next available time based on current time and unavailable periods.
+ * @param currentTime
+ * @returns Date of next available time or null if currently available
+ */
+const getNextAvailableTime = (currentTime: Date): Date | null => {
+    const currentUTCHours = currentTime.getUTCHours();
+    const currentUTCMinutes = currentTime.getUTCMinutes();
     const currentTotalMinutes = currentUTCHours * 60 + currentUTCMinutes;
 
-    for (const period of hoursUnavailable) {
+    for (const period of unavailableHours) {
         const [startHour, startMinute] = period.start
             .split(":")
             .map(Number) as [number, number];
@@ -46,18 +50,25 @@ const getMsUntilAvailable = (currentTime: number): number | null => {
             currentTotalMinutes >= startTotalMinutes &&
             currentTotalMinutes < endTotalMinutes
         ) {
-            const minutesUntilAvailable = endTotalMinutes - currentTotalMinutes;
-            return (
-                minutesUntilAvailable * 60 * 1000 -
-                (currentDate.getSeconds() * 1000 +
-                    currentDate.getMilliseconds())
+            const nextAvailable = new Date(currentTime);
+            nextAvailable.setUTCHours(
+                (endHour - utcOffset + 24) % 24,
+                endMinute,
+                0,
+                0,
             );
+            return nextAvailable;
         }
     }
 
     return null;
 };
 
-const timestamp = useTimestamp();
-const msUntilAvailable = computed(() => getMsUntilAvailable(timestamp.value));
+const nextAvailableTime = computed(() => {
+    const now = new Date();
+    return getNextAvailableTime(now);
+});
+
+const { msUntil, milliseconds, seconds, minutes, hours } =
+    useCountdown(nextAvailableTime);
 </script>

@@ -16,11 +16,35 @@
 import Countdown from "~/components/widgets/countdown.vue";
 
 // 10:00 to 12:00 and 13:00 to 15:00 UTC-04:00
-const unavailableHours = [
-    { start: "14:00", end: "16:00" },
-    { start: "17:00", end: "19:00" },
+const unavailableHours: {
+    start: [number, number];
+    end: [number, number];
+}[] = [
+    { start: [10, 0], end: [12, 0] },
+    { start: [13, 0], end: [15, 0] },
 ];
-const utcOffset = 0;
+const utcOffset = -4;
+
+/**
+ * Get the next occurrence of a specific time (hours and minutes) in UTC.
+ * @param hours
+ * @param minutes
+ * @param now
+ */
+const getNextTime = (
+    hours: number,
+    minutes: number,
+    now = new Date(),
+): Date => {
+    const nextTime = new Date(now);
+    nextTime.setUTCHours((hours - utcOffset + 24) % 24, minutes, 0, 0);
+
+    if (nextTime <= now) {
+        nextTime.setUTCDate(nextTime.getUTCDate() + 1);
+    }
+
+    return nextTime;
+};
 
 /**
  * Find the next available time based on current time and unavailable periods.
@@ -28,40 +52,29 @@ const utcOffset = 0;
  * @returns Date of next available time or null if currently available
  */
 const getNextAvailableTime = (currentTime: Date): Date | null => {
-    const currentUTCHours = currentTime.getUTCHours();
-    const currentUTCMinutes = currentTime.getUTCMinutes();
-    const currentTotalMinutes = currentUTCHours * 60 + currentUTCMinutes;
-
     for (const period of unavailableHours) {
-        const [startHour, startMinute] = period.start
-            .split(":")
-            .map(Number) as [number, number];
-        const [endHour, endMinute] = period.end.split(":").map(Number) as [
-            number,
-            number,
-        ];
+        const startTime = new Date(currentTime);
+        startTime.setUTCHours(
+            (period.start[0] - utcOffset + 24) % 24,
+            period.start[1],
+            0,
+            0,
+        );
 
-        const startTotalMinutes =
-            ((startHour - utcOffset + 24) % 24) * 60 + startMinute;
-        const endTotalMinutes =
-            ((endHour - utcOffset + 24) % 24) * 60 + endMinute;
+        const endTime = new Date(currentTime);
+        endTime.setUTCHours(
+            (period.end[0] - utcOffset + 24) % 24,
+            period.end[1],
+            0,
+            0,
+        );
 
-        if (
-            currentTotalMinutes >= startTotalMinutes &&
-            currentTotalMinutes < endTotalMinutes
-        ) {
-            const nextAvailable = new Date(currentTime);
-            nextAvailable.setUTCHours(
-                (endHour - utcOffset + 24) % 24,
-                endMinute,
-                0,
-                0,
-            );
-            return nextAvailable;
+        if (currentTime >= startTime && currentTime < endTime) {
+            return getNextTime(period.end[0], period.end[1], currentTime);
         }
     }
 
-    return null;
+    return new Date(0);
 };
 
 const nextAvailableTime = computed(() => {

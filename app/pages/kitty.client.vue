@@ -14,8 +14,9 @@
 
 <script lang="ts" setup>
 import Countdown from "~/components/widgets/countdown.vue";
+import { getTimezoneOffset } from "~/utils/timezone";
 
-// 10:00 to 12:00 and 13:00 to 15:00 UTC-04:00
+// 10:00 to 12:00 and 13:00 to 15:00 America/New_York time
 const unavailableHours: {
     start: [number, number];
     end: [number, number];
@@ -23,7 +24,8 @@ const unavailableHours: {
     { start: [10, 0], end: [12, 0] },
     { start: [13, 0], end: [15, 0] },
 ];
-const utcOffset = -4;
+const ianaTimeZone = "America/New_York";
+const offsetMinutes = getTimezoneOffset(ianaTimeZone);
 
 /**
  * Get the next occurrence of a specific time (hours and minutes) in UTC.
@@ -37,7 +39,7 @@ const getNextTime = (
     now = new Date(),
 ): Date => {
     const nextTime = new Date(now);
-    nextTime.setUTCHours((hours - utcOffset + 24) % 24, minutes, 0, 0);
+    nextTime.setUTCHours((hours - offsetMinutes / 60 + 24) % 24, minutes, 0, 0);
 
     if (nextTime <= now) {
         nextTime.setUTCDate(nextTime.getUTCDate() + 1);
@@ -55,7 +57,7 @@ const getNextAvailableTime = (currentTime: Date): Date | null => {
     for (const period of unavailableHours) {
         const startTime = new Date(currentTime);
         startTime.setUTCHours(
-            (period.start[0] - utcOffset + 24) % 24,
+            (period.start[0] - offsetMinutes / 60 + 24) % 24,
             period.start[1],
             0,
             0,
@@ -63,7 +65,7 @@ const getNextAvailableTime = (currentTime: Date): Date | null => {
 
         const endTime = new Date(currentTime);
         endTime.setUTCHours(
-            (period.end[0] - utcOffset + 24) % 24,
+            (period.end[0] - offsetMinutes / 60 + 24) % 24,
             period.end[1],
             0,
             0,

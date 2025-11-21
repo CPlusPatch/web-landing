@@ -35,6 +35,7 @@
         "@cpluspatch/desktop": "workspace:*",
         "@cpluspatch/destructor": "workspace:*",
         "@cpluspatch/emulator": "workspace:*",
+        "@cpluspatch/suika": "workspace:*",
         "@gouvfr/dsfr": "^1.14.2",
         "@gouvminint/vue-dsfr": "^8.10.1",
         "@nuxt/content": "^3.8.0",

@@ -16,7 +16,7 @@
 
 <style module>
 .container {
-	font-family: Inconsolata, var(--font-mono);
+	font-family: Inconsolata, var(--font-mono), monospace;
 	font-display: swap;
 }
 

@@ -7,6 +7,7 @@
         "@cpluspatch/desktop": "workspace:*",
         "@cpluspatch/destructor": "workspace:*",
         "@cpluspatch/emulator": "workspace:*",
+        "@cpluspatch/suika": "workspace:*",
         "@gouvfr/dsfr": "^1.14.2",
         "@gouvminint/vue-dsfr": "^8.10.1",
         "@nuxt/content": "^3.8.0",
@@ -76,6 +77,16 @@
       "dependencies": {
         "browser-dtector": "^4.1.0",
         "mitt": "^3.0.1",
+      },
+    },
+    "packages/suika": {
+      "name": "@cpluspatch/suika",
+      "version": "0.0.1",
+      "dependencies": {
+        "matter-js": "^0.20.0",
+      },
+      "devDependencies": {
+        "@types/matter-js": "^0.20.0",
       },
     },
   },
@@ -181,6 +192,8 @@
     "@cpluspatch/destructor": ["@cpluspatch/destructor@workspace:packages/destructor"],
 
     "@cpluspatch/emulator": ["@cpluspatch/emulator@workspace:packages/emulator"],
+
+    "@cpluspatch/suika": ["@cpluspatch/suika@workspace:packages/suika"],
 
     "@dxup/nuxt": ["@dxup/nuxt@0.2.1", "", { "dependencies": { "@dxup/unimport": "^0.1.1", "@nuxt/kit": "^4.2.0", "chokidar": "^4.0.3", "pathe": "^2.0.3", "tinyglobby": "^0.2.15" } }, "sha512-0RLwkep6ftN3nd4Pfcgwrz8L5D2p5Tf8DKs3pr91TYO22N8loa9y8oPLQnJDqvrT0FBMEiCyPA7C8AMl7THPPg=="],
 

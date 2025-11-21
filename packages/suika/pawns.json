@@ -1,0 +1,22 @@
+[
+    {
+        "radius": 32,
+        "spriteUrl": "https://mk.cpluspatch.com/client-assets/drop-and-fusion/normal_monos/heart_suit.png"
+    },
+    {
+        "radius": 48,
+        "spriteUrl": "https://mk.cpluspatch.com/client-assets/drop-and-fusion/normal_monos/smiling_face_with_hearts.png"
+    },
+    {
+        "radius": 60,
+        "spriteUrl": "https://mk.cpluspatch.com/client-assets/drop-and-fusion/normal_monos/grinning_squinting_face.png"
+    },
+    {
+        "radius": 72,
+        "spriteUrl": "https://mk.cpluspatch.com/client-assets/drop-and-fusion/normal_monos/smiling_face_with_sunglasses.png"
+    },
+    {
+        "radius": 88,
+        "spriteUrl": "https://mk.cpluspatch.com/client-assets/drop-and-fusion/normal_monos/face_with_open_mouth.png"
+    }
+]

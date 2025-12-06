@@ -1,7 +1,9 @@
 <template>
-    <div>
-        {{ data }}
-        <Button @click="decryptData">Decrypt</Button>
+    <div
+        class="p-4 max-w-7xl mx-auto flex items-center justify-center min-h-screen"
+    >
+        <WomanRenderer v-if="data" :items="data"/>
+        <Button v-else @click="decryptData">Decrypt</Button>
     </div>
 </template>
 
@@ -12,12 +14,23 @@ import encryptedData from "~~/public/data/data.age?raw";
 import type { Item } from "~~/types.ts";
 
 const data = ref<Item[] | null>(null);
+const passphrase = useLocalStorage<string>("woman-passphrase", "");
+
+onMounted(() => {
+    if (passphrase.value) {
+        void decryptData();
+    }
+});
 
 const decryptData = async (): Promise<void> => {
-    const passphrase = prompt("Enter passphrase to view content:") || "";
+    if (!passphrase.value) {
+        passphrase.value =
+            prompt("Enter your decryption passphrase (this will be cached):") ||
+            "";
+    }
 
     const decrypter = new Decrypter();
-    decrypter.addPassphrase(passphrase);
+    decrypter.addPassphrase(passphrase.value);
 
     const decoded = armor.decode(encryptedData);
     try {

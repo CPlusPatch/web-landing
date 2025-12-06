@@ -1,5 +1,5 @@
 <template>
-    <Desktop />
+    <Desktop/>
 </template>
 
 <script lang="ts" setup>

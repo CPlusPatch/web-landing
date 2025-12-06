@@ -1,7 +1,6 @@
 <template>
     <Button @click="memz.all()">
-        <Worm />
-        I want a virus!
+        <Worm/>I want a virus!
     </Button>
 </template>
 

@@ -1,10 +1,8 @@
 <template>
-  <div>
-    {{ data }}
-    <Button @click="decryptData">
-        Decrypt
-    </Button>
-  </div>
+    <div>
+        {{ data }}
+        <Button @click="decryptData">Decrypt</Button>
+    </div>
 </template>
 
 <script lang="ts" setup>

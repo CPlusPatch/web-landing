@@ -1,35 +1,46 @@
 <template>
     <Card as="article" class="gap-2 p-4">
         <CardHeader v-if="quote.title || quote.description">
-            <CardTitle v-if="quote.title">
-                {{ quote.title }}
-            </CardTitle>
+            <CardTitle v-if="quote.title">{{ quote.title }}</CardTitle>
             <CardDescription v-if="quote.description" class="line-clamp-3">
                 {{ quote.description }}
             </CardDescription>
         </CardHeader>
         <CardContent class="space-y-2">
             <div class="relative border rounded">
-                <nuxt-img width="600" :src="quote.image.src" :alt="quote.image.alt || ''" format="webp"
-                    class="w-full max-h-96 min-h-12 object-contain rounded bg-background" />
-                <Button as="a" title="Download image" :href="quote.image.src" download class="absolute bottom-2 right-2"
-                    size="icon" variant="outline">
-                    <Download class="size-4" />
+                <nuxt-img
+                    width="600"
+                    :src="quote.image.src"
+                    :alt="quote.image.alt || ''"
+                    format="webp"
+                    class="w-full max-h-96 min-h-12 object-contain rounded bg-background"
+                />
+                <Button
+                    as="a"
+                    title="Download image"
+                    :href="quote.image.src"
+                    download
+                    class="absolute bottom-2 right-2"
+                    size="icon"
+                    variant="outline"
+                >
+                    <Download class="size-4"/>
                 </Button>
             </div>
-            <NuxtTime :datetime="quote.date" date-style="long" locale="en-GB" class="text-xs text-muted-foreground" />
+            <NuxtTime
+                :datetime="quote.date"
+                date-style="long"
+                locale="en-GB"
+                class="text-xs text-muted-foreground"
+            />
         </CardContent>
         <div class="flex items-center gap-x-4">
             <Avatar v-if="quote.author.avatar" class="size-10">
-                <AvatarImage :src="quote.author.avatar" alt="" />
+                <AvatarImage :src="quote.author.avatar" alt=""/>
             </Avatar>
             <div>
-                <p class="text-secondary-foreground text-xs">
-                    Author
-                </p>
-                <p class="font-semibold text-sm">
-                    {{ quote.author.name }}
-                </p>
+                <p class="text-secondary-foreground text-xs">Author</p>
+                <p class="font-semibold text-sm">{{ quote.author.name }}</p>
             </div>
         </div>
     </Card>
@@ -83,6 +94,6 @@ export interface Quote {
     uris?: {
         matrix?: string;
         href?: string;
-    }
+    };
 }
 </script>

@@ -1,9 +1,23 @@
 <template>
-    <div ref="dock" class="flex items-end gap-1 p-2 bg-[#2d2d2d]/80 border rounded-3xl backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
-        <div v-for="(app, index) in apps" :key="app.id" class="relative cursor-pointer origin-bottom hover:-translate-y-1 active:scale-95 active:-translate-y-1 duration-75" :title="app.name" :style="getIconStyle(index)"
-            @click="emit('app-click', app.id)">
-            <img :src="app.icon" :alt="app.name" class="size-20 object-contain" />
-            <div v-if="app.open" class="absolute -bottom-[8%] left-1/2 transform -translate-x-1/2 size-1 bg-white/80 rounded-full shadow" />
+    <div
+        ref="dock"
+        class="flex items-end gap-1 p-2 bg-[#2d2d2d]/80 border rounded-3xl backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]"
+        @mousemove="handleMouseMove"
+        @mouseleave="handleMouseLeave"
+    >
+        <div
+            v-for="(app, index) in apps"
+            :key="app.id"
+            class="relative cursor-pointer origin-bottom hover:-translate-y-1 active:scale-95 active:-translate-y-1 duration-75"
+            :title="app.name"
+            :style="getIconStyle(index)"
+            @click="emit('app-click', app.id)"
+        >
+            <img :src="app.icon" :alt="app.name" class="size-20 object-contain">
+            <div
+                v-if="app.open"
+                class="absolute -bottom-[8%] left-1/2 transform -translate-x-1/2 size-1 bg-white/80 rounded-full shadow"
+            />
         </div>
     </div>
 </template>

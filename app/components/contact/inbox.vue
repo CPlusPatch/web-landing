@@ -1,27 +1,41 @@
 <template>
     <section class="flex flex-col gap-8">
         <div>
-            <h2 class="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
+            <h2
+                class="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl"
+            >
                 Inbox
             </h2>
-            <p class="mt-6 text-lg leading-8 text-secondary-foreground max-w-xl">
-                Go ahead, send me an anonymous message, you coward. It'll pop up on my phone.
+            <p
+                class="mt-6 text-lg leading-8 text-secondary-foreground max-w-xl"
+            >
+                Go ahead, send me an anonymous message, you coward. It'll pop up
+                on my phone.
             </p>
         </div>
         <form action="#" @submit.prevent="submit">
             <div
-                class="rounded-md border shadow-xs focus-within:outline-2 outline-primary/80 max-w-2xl">
+                class="rounded-md border shadow-xs focus-within:outline-2 outline-primary/80 max-w-2xl"
+            >
                 <Label for="title" class="sr-only">Title</Label>
-                <Input type="text" name="title" id="title"
+                <Input
+                    type="text"
+                    name="title"
+                    id="title"
                     class="bg-transparent! border-0! ring-0! h-12 font-semibold"
-                    placeholder="Title" />
+                    placeholder="Title"
+                />
                 <Label for="messageBody" class="sr-only">Message body</Label>
-                <Textarea rows="3" name="messageBody" id="messageBody"
+                <Textarea
+                    rows="3"
+                    name="messageBody"
+                    id="messageBody"
                     class="resize-none border-0! bg-transparent! ring-0!"
-                    placeholder="I like your website, consider adding more Portal 2 songs." />
+                    placeholder="I like your website, consider adding more Portal 2 songs."
+                />
                 <div class="flex items-center justify-end p-2">
                     <Button type="submit">
-                        <Send />
+                        <Send/>
                         Blaze it
                     </Button>
                 </div>

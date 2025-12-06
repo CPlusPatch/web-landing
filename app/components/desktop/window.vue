@@ -1,14 +1,18 @@
 <template>
-    <div ref="element" class="text-card-foreground bg-card/95 grid grid-rows-[auto_1fr] backdrop-blur-xl rounded-md border shadow-sm absolute" :style="{
+    <div
+        ref="element"
+        class="text-card-foreground bg-card/95 grid grid-rows-[auto_1fr] backdrop-blur-xl rounded-md border shadow-sm absolute"
+        :style="{
         width: `${width}px`,
         height: `${height}px`,
         left: `${x}px`,
         top: `${y}px`
-    }">
-        <WindowResizeHandles @resize="onResize" />
-        <Titlebar :window="window" />
+    }"
+    >
+        <WindowResizeHandles @resize="onResize"/>
+        <Titlebar :window="window"/>
         <div class="overflow-scroll">
-            <slot />
+            <slot/>
         </div>
     </div>
 </template>

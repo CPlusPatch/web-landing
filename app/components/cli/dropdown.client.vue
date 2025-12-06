@@ -5,9 +5,13 @@
         enter-to-class="transform translate-y-0"
         leave-active-class="transition duration-300 ease-out"
         leave-from-class="transform translate-y-0"
-        leave-to-class="transform -translate-y-full">
-        <div v-show="showing" class="fixed top-0 right-0 z-50 flex items-center justify-center w-full">
-            <Widget ref="widget" />
+        leave-to-class="transform -translate-y-full"
+    >
+        <div
+            v-show="showing"
+            class="fixed top-0 right-0 z-50 flex items-center justify-center w-full"
+        >
+            <Widget ref="widget"/>
         </div>
     </Transition>
 </template>

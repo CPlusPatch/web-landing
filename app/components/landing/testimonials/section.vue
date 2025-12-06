@@ -1,7 +1,7 @@
 <template>
     <section class="relative isolate">
-        <Graphics />
-        <Grid />
+        <Graphics/>
+        <Grid/>
     </section>
 </template>
 

@@ -5,6 +5,4 @@ await navigateTo("https://buy.stripe.com/9AQeY83pn39k9u8005", {
 });
 </script>
 
-<template>
-
-</template>
+<template></template>

@@ -1,21 +1,24 @@
 <template>
     <WindowVue :window="window">
-        <form class="p-1 grid grid-cols-[auto_auto_auto_1fr_auto]" @submit.prevent="onSubmit">
+        <form
+            class="p-1 grid grid-cols-[auto_auto_auto_1fr_auto]"
+            @submit.prevent="onSubmit"
+        >
             <Button variant="ghost" size="icon">
-                <ArrowLeft />
+                <ArrowLeft/>
             </Button>
             <Button variant="ghost" size="icon">
-                <ArrowRight />
+                <ArrowRight/>
             </Button>
             <Button variant="ghost" size="icon">
-                <RotateCw />
+                <RotateCw/>
             </Button>
-            <Input class="ring-0!" name="url" :default-value="currentUrl" />
+            <Input class="ring-0!" name="url" :default-value="currentUrl"/>
             <Button variant="ghost" size="icon" type="submit">
-                <Send />
+                <Send/>
             </Button>
         </form>
-        <Iframe :url="currentUrl" />
+        <Iframe :url="currentUrl"/>
     </WindowVue>
 </template>
 

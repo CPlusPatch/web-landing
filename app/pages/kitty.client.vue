@@ -1,12 +1,20 @@
 <template>
-    <div :class="['w-dvw h-dvh', msUntil !== 0 ? 'bg-background' : 'bg-pink-700']">
-        <div class="flex flex-col items-center justify-center w-full h-full text-center px-4 gap-4">
-            <h1 class="text-4xl font-bold mb-4">Lexi is {{ msUntil === 0 ? 'online :3' : 'offline :(' }}</h1>
+    <div
+        :class="['w-dvw h-dvh', msUntil !== 0 ? 'bg-background' : 'bg-pink-700']"
+    >
+        <div
+            class="flex flex-col items-center justify-center w-full h-full text-center px-4 gap-4"
+        >
+            <h1 class="text-4xl font-bold mb-4">
+                Lexi is {{ msUntil === 0 ? 'online :3' : 'offline :(' }}
+            </h1>
             <div v-if="msUntil !== 0">
-                <Countdown :hours="hours"
+                <Countdown
+                    :hours="hours"
                     :minutes="minutes"
                     :seconds="seconds"
-                    :milliseconds="milliseconds" />
+                    :milliseconds="milliseconds"
+                />
             </div>
         </div>
     </div>

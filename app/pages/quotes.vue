@@ -2,14 +2,21 @@
     <Container class="py-36 max-w-2xl!">
         <div class="relative">
             <Search
-                class="pointer-events-none absolute left-4 top-3.5 size-5 text-muted-foreground" />
+                class="pointer-events-none absolute left-4 top-3.5 size-5 text-muted-foreground"
+            />
             <Input
                 class="h-12 w-full pl-11 pr-4"
-                placeholder="Search..." v-model="filter" />
+                placeholder="Search..."
+                v-model="filter"
+            />
         </div>
 
         <div class="flex flex-col gap-8 mt-4">
-            <QuoteVue v-for="quote in quotesToRender" :key="quote.title" :quote="quote" />
+            <QuoteVue
+                v-for="quote in quotesToRender"
+                :key="quote.title"
+                :quote="quote"
+            />
         </div>
     </Container>
 </template>

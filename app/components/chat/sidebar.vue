@@ -22,32 +22,36 @@ const props = defineProps<SidebarProps>();
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton size="lg">
-                        <SmallLogo />
-                        <div class="grid flex-1 text-left text-sm leading-tight">
+                        <SmallLogo/>
+                        <div
+                            class="grid flex-1 text-left text-sm leading-tight"
+                        >
                             <span class="truncate font-semibold">Jesse AI</span>
-                            <span class="truncate text-xs">Pro Max Mode Plus Ultra</span>
+                            <span class="truncate text-xs"
+                                >Pro Max Mode Plus Ultra</span
+                            >
                         </div>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem class="mt-2">
                     <SidebarMenuButton>
-                        <SquarePen />
+                        <SquarePen/>
                         New Chat
                     </SidebarMenuButton>
                     <SidebarMenuButton>
-                        <Search />
+                        <Search/>
                         Search Chats
                     </SidebarMenuButton>
                     <SidebarMenuButton>
-                        <Images />
+                        <Images/>
                         Images
                     </SidebarMenuButton>
                 </SidebarMenuItem>
             </SidebarMenu>
         </SidebarHeader>
         <SidebarContent>
-            <SidebarChats />
+            <SidebarChats/>
         </SidebarContent>
-        <SidebarRail />
+        <SidebarRail/>
     </Sidebar>
 </template>

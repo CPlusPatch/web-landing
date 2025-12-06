@@ -30,22 +30,22 @@ definePageMeta({
 
 <template>
     <div class="flex flex-col gap-48 pb-48">
-        <Hero />
+        <Hero/>
 
-        <Philosophy />
+        <Philosophy/>
 
-        <Testimonials />
+        <Testimonials/>
 
-        <Stats />
+        <Stats/>
 
-        <Projects />
+        <Projects/>
 
-        <Languages />
+        <Languages/>
 
-        <Blog />
+        <Blog/>
 
-        <Destructor />
+        <Destructor/>
 
-        <Audio />
+        <Audio/>
     </div>
 </template>

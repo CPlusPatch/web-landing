@@ -1,45 +1,79 @@
 <template>
-    <div :class="['w-full h-full absolute pointer-events-none *:pointer-events-auto', !showResizeHandles && '*:opacity-0']">
-        <div class="absolute h-full inset-y-0 bg-purple-600 hover:cursor-e-resize" :style="{
+    <div
+        :class="['w-full h-full absolute pointer-events-none *:pointer-events-auto', !showResizeHandles && '*:opacity-0']"
+    >
+        <div
+            class="absolute h-full inset-y-0 bg-purple-600 hover:cursor-e-resize"
+            :style="{
             width: `${handleWidth}px`,
             right: `-${handleWidth / 2}px`
-        }" ref="rightHandle" />
-        <div class="absolute w-full inset-x-0 bg-purple-600 hover:cursor-s-resize" :style="{
+        }"
+            ref="rightHandle"
+        />
+        <div
+            class="absolute w-full inset-x-0 bg-purple-600 hover:cursor-s-resize"
+            :style="{
             height: `${handleWidth}px`,
             bottom: `-${handleWidth / 2}px`
-        }" ref="bottomHandle" />
-        <div class="absolute h-full inset-y-0 bg-purple-600 hover:cursor-w-resize" :style="{
+        }"
+            ref="bottomHandle"
+        />
+        <div
+            class="absolute h-full inset-y-0 bg-purple-600 hover:cursor-w-resize"
+            :style="{
             width: `${handleWidth}px`,
             left: `-${handleWidth / 2}px`
-        }" ref="leftHandle" />
-        <div class="absolute w-full inset-x-0 bg-purple-600 hover:cursor-n-resize" :style="{
+        }"
+            ref="leftHandle"
+        />
+        <div
+            class="absolute w-full inset-x-0 bg-purple-600 hover:cursor-n-resize"
+            :style="{
             height: `${handleWidth}px`,
             top: `-${handleWidth / 2}px`
-        }" ref="topHandle" />
-        <div class="absolute bg-red-600 hover:cursor-ne-resize" :style="{
+        }"
+            ref="topHandle"
+        />
+        <div
+            class="absolute bg-red-600 hover:cursor-ne-resize"
+            :style="{
             width: `${handleWidth}px`,
             height: `${handleWidth}px`,
             right: `-${handleWidth / 2}px`,
             top: `-${handleWidth / 2}px`
-        }" ref="topRightHandle" />
-        <div class="absolute bg-red-600 hover:cursor-nw-resize" :style="{
+        }"
+            ref="topRightHandle"
+        />
+        <div
+            class="absolute bg-red-600 hover:cursor-nw-resize"
+            :style="{
             width: `${handleWidth}px`,
             height: `${handleWidth}px`,
             left: `-${handleWidth / 2}px`,
             top: `-${handleWidth / 2}px`
-        }" ref="topLeftHandle" />
-        <div class="absolute bg-red-600 hover:cursor-se-resize" :style="{
+        }"
+            ref="topLeftHandle"
+        />
+        <div
+            class="absolute bg-red-600 hover:cursor-se-resize"
+            :style="{
             width: `${handleWidth}px`,
             height: `${handleWidth}px`,
             right: `-${handleWidth / 2}px`,
             bottom: `-${handleWidth / 2}px`
-        }" ref="bottomRightHandle" />
-        <div class="absolute bg-red-600 hover:cursor-sw-resize" :style="{
+        }"
+            ref="bottomRightHandle"
+        />
+        <div
+            class="absolute bg-red-600 hover:cursor-sw-resize"
+            :style="{
             width: `${handleWidth}px`,
             height: `${handleWidth}px`,
             left: `-${handleWidth / 2}px`,
             bottom: `-${handleWidth / 2}px`
-        }" ref="bottomLeftHandle" />
+        }"
+            ref="bottomLeftHandle"
+        />
     </div>
 </template>
 

@@ -43,15 +43,15 @@ useHead({
 
 <template>
     <NuxtLayout>
-        <NuxtLoadingIndicator />
-        <NuxtPage />
+        <NuxtLoadingIndicator/>
+        <NuxtPage/>
         <ClientOnly>
-            <Dropdown />
+            <Dropdown/>
         </ClientOnly>
     </NuxtLayout>
 
     <ClientOnly>
-        <Toaster position="top-right" />
+        <Toaster position="top-right"/>
     </ClientOnly>
 </template>
 

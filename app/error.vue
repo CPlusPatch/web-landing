@@ -10,6 +10,6 @@ console.log(props.error);
 
 <template>
     <NuxtLayout name="navbar-and-footer">
-        <Errors404 v-if="error.statusCode === 404" />
+        <Errors404 v-if="error.statusCode === 404"/>
     </NuxtLayout>
 </template>

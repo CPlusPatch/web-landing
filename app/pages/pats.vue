@@ -92,28 +92,47 @@ const sendForm = async (event: Event) => {
 
 <template>
     <div class="fr-container fr-mb-5w">
-        <h1 class="fr-mt-3w fr-mt-md-5w fr-mb-5w">
-            Accueil
-        </h1>
+        <h1 class="fr-mt-3w fr-mt-md-5w fr-mb-5w">Accueil</h1>
 
         <p>
-            Remplissez ce formulaire rapide afin de valider votre éligibilité à un câlin du ministère.
+            Remplissez ce formulaire rapide afin de valider votre éligibilité à
+            un câlin du ministère.
         </p>
 
-        <DsfrNotice v-if="params.sent" title="Votre demande a été envoyée" class="mb-5" />
+        <DsfrNotice
+            v-if="params.sent"
+            title="Votre demande a été envoyée"
+            class="mb-5"
+        />
 
         <form @submit.prevent="sendForm" class="space-y-5">
             <div>
-                <DsfrInput :disabled="loading" name="firstname" label="Prénom" label-visible required />
+                <DsfrInput
+                    :disabled="loading"
+                    name="firstname"
+                    label="Prénom"
+                    label-visible
+                    required
+                />
             </div>
 
             <div>
-                <DsfrInput :disabled="loading" name="lastname" label="Nom" label-visible required />
+                <DsfrInput
+                    :disabled="loading"
+                    name="lastname"
+                    label="Nom"
+                    label-visible
+                    required
+                />
             </div>
 
             <div>
-                <DsfrRadioButtonSet :disabled="loading" name="calinage" v-model="radioButtonValue"
-                    legend="Avez-vous déjà été câliné par le ministère ?" :options="[
+                <DsfrRadioButtonSet
+                    :disabled="loading"
+                    name="calinage"
+                    v-model="radioButtonValue"
+                    legend="Avez-vous déjà été câliné par le ministère ?"
+                    :options="[
                         {
                             label: 'Oui',
                             value: 'yes',
@@ -122,20 +141,34 @@ const sendForm = async (event: Event) => {
                             label: 'Non',
                             value: 'no',
                         },
-                    ]" required />
+                    ]"
+                    required
+                />
             </div>
 
             <div>
-                <DsfrCheckboxSet :disabled="loading" name="qualifiers" v-model="checkboxSexValue"
-                    legend="Lesquels de ces qualificateurs vous décrivent?" :options="cbOptions" />
+                <DsfrCheckboxSet
+                    :disabled="loading"
+                    name="qualifiers"
+                    v-model="checkboxSexValue"
+                    legend="Lesquels de ces qualificateurs vous décrivent?"
+                    :options="cbOptions"
+                />
             </div>
 
             <div>
-                <DsfrInput :disabled="loading" label="Courriel" name="address" type="email"
-                    hint="Vous pouvez aussi utiliser votre addresse Fedi." label-visible required />
+                <DsfrInput
+                    :disabled="loading"
+                    label="Courriel"
+                    name="address"
+                    type="email"
+                    hint="Vous pouvez aussi utiliser votre addresse Fedi."
+                    label-visible
+                    required
+                />
             </div>
 
-            <DsfrButton :disabled="loading" type="submit" label="Confirmer" />
+            <DsfrButton :disabled="loading" type="submit" label="Confirmer"/>
         </form>
     </div>
 </template>

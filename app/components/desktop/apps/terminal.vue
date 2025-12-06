@@ -1,6 +1,6 @@
 <template>
     <WindowVue :window="window">
-        <Widget class="!rounded-none !border-none !h-full !max-h-full" />
+        <Widget class="!rounded-none !border-none !h-full !max-h-full"/>
     </WindowVue>
 </template>
 

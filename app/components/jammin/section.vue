@@ -1,40 +1,42 @@
 <template>
-	<div v-show="started">
-		<video
-			ref="video"
-			class="size-full pointer-events-none object-cover absolute inset-0"
-			:playsinline="true" />
-		<div
-			class="flex items-center overflow-hidden justify-center z-10 absolute inset-0 p-10 text-white size-full">
-			<ul
-				:style="{
+    <div v-show="started">
+        <video
+            ref="video"
+            class="size-full pointer-events-none object-cover absolute inset-0"
+            :playsinline="true"
+        />
+        <div
+            class="flex items-center overflow-hidden justify-center z-10 absolute inset-0 p-10 text-white size-full"
+        >
+            <ul
+                :style="{
 					fontSize: `${fontSize}px`,
 				}"
-				ref="lines"
-				class="flex flex-col items-center justify-center drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] font-semibold">
-				<li v-for="line in text" :key="line" class="text-center">
-					{{ line }}
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div
-		v-show="!started"
-		class="flex items-center justify-center p-10 inset-0 absolute size-full bg-background">
-		<Card v-if="!loaded" class="items-center gap-4">
-			<Loader class="animate-spin size-8" />
-			<CardTitle>
-				{{
+                ref="lines"
+                class="flex flex-col items-center justify-center drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] font-semibold"
+            >
+                <li v-for="line in text" :key="line" class="text-center">
+                    {{ line }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        v-show="!started"
+        class="flex items-center justify-center p-10 inset-0 absolute size-full bg-background"
+    >
+        <Card v-if="!loaded" class="items-center gap-4">
+            <Loader class="animate-spin size-8"/>
+            <CardTitle>
+                {{
 					loadProgress === 1
 						? `Fetching...`
 						: `${Math.round(loadProgress * 100)}%`
 				}}
-			</CardTitle>
-		</Card>
-		<Button v-else @click="startAnimation">
-			Jam It!
-		</Button>
-	</div>
+            </CardTitle>
+        </Card>
+        <Button v-else @click="startAnimation">Jam It!</Button>
+    </div>
 </template>
 
 <script lang="ts" setup>

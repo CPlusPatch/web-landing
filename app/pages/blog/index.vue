@@ -21,5 +21,5 @@ definePageMeta({
 </script>
 
 <template>
-	<Blog class="py-32" />
+    <Blog class="py-32"/>
 </template>

@@ -1,11 +1,20 @@
 <template>
-    <div class="h-dvh w-dvw relative bg-cover bg-center bg-no-repeat overflow-hidden" :style="{
+    <div
+        class="h-dvh w-dvw relative bg-cover bg-center bg-no-repeat overflow-hidden"
+        :style="{
         backgroundImage: wallpaper ? `url(${wallpaper.href})` : 'none',
-    }">
-        <component v-for="win in windows" :key="win.id" :is="availableApps[win.appId]?.component" :window="win" @close="desktop.removeWindow(win)" />
+    }"
+    >
+        <component
+            v-for="win in windows"
+            :key="win.id"
+            :is="availableApps[win.appId]?.component"
+            :window="win"
+            @close="desktop.removeWindow(win)"
+        />
 
         <div class="absolute bottom-4 flex justify-center w-full">
-            <Dock :apps="dockApps" @app-click="openApp" />
+            <Dock :apps="dockApps" @app-click="openApp"/>
         </div>
     </div>
 </template>

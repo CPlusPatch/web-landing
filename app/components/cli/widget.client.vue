@@ -1,39 +1,41 @@
 <template>
-	<div
-		ref="container"
-		:class="[
+    <div
+        ref="container"
+        :class="[
 			'bg-black/80 backdrop-blur-xl min-h-32 text-sm max-h-[70vh] w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded-sm ring-2 ring-white/5 overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]',
 			$style.container,
-		]">
-		{{ text }}
-		<input
-			type="text"
-			ref="input"
-			class="w-full bg-transparent border-none outline-hidden ring-0! p-0 -ml-[1ch]"
-			placeholder="Type here..." />
-	</div>
+		]"
+    >
+        {{ text }}
+        <input
+            type="text"
+            ref="input"
+            class="w-full bg-transparent border-none outline-hidden ring-0! p-0 -ml-[1ch]"
+            placeholder="Type here..."
+        >
+    </div>
 </template>
 
 <style module>
 .container {
-	font-family: Inconsolata, var(--font-mono), monospace;
-	font-display: swap;
+    font-family: Inconsolata, var(--font-mono), monospace;
+    font-display: swap;
 }
 
 .container::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: repeating-linear-gradient(
-		rgba(0, 0, 0, 0.15),
-		rgba(0, 0, 0, 0.15) 1px,
-		transparent 1px,
-		transparent 2px
-	);
-	pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
 }
 </style>
 

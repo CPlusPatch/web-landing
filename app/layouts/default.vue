@@ -1,6 +1,6 @@
 <template>
     <main class="size-full min-h-dvh">
-        <slot />
+        <slot/>
     </main>
 </template>
 

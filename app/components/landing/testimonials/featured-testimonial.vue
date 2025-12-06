@@ -3,20 +3,20 @@
         <blockquote class="p-12 text-xl font-semibold leading-8 tracking-tight">
             <p>“{{ testimonial.body }}”</p>
         </blockquote>
-        <figcaption class="grid grid-cols-[auto_1fr_auto] gap-4 px-6 py-4 items-center">
+        <figcaption
+            class="grid grid-cols-[auto_1fr_auto] gap-4 px-6 py-4 items-center"
+        >
             <Avatar class="size-10">
-                <AvatarImage :src="testimonial.author.imageUrl" alt="" />
+                <AvatarImage :src="testimonial.author.imageUrl" alt=""/>
             </Avatar>
             <div>
-                <div class="font-semibold">
-                    {{ testimonial.author.name }}
-                </div>
+                <div class="font-semibold">{{ testimonial.author.name }}</div>
                 <span class="text-secondary-foreground">
                     {{ testimonial.author.title }}
                 </span>
             </div>
             <Avatar class="size-10">
-                <AvatarImage :src="testimonial.author.logoUrl" alt="" />
+                <AvatarImage :src="testimonial.author.logoUrl" alt=""/>
             </Avatar>
         </figcaption>
     </Card>

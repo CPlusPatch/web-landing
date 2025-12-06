@@ -36,11 +36,22 @@ const skipLinks = [
 </script>
 
 <template>
-    <DsfrSkipLinks :links="skipLinks" />
-    <DsfrHeader :service-title="serviceTitle" :service-description="serviceDescription" :logo-text="logoText"
-        :quick-links="quickLinks" />
+    <DsfrSkipLinks :links="skipLinks"/>
+    <DsfrHeader
+        :service-title="serviceTitle"
+        :service-description="serviceDescription"
+        :logo-text="logoText"
+        :quick-links="quickLinks"
+    />
     <main id="content" role="main" class="fr-container" tabindex="0">
-        <slot />
+        <slot/>
     </main>
-    <DsfrFooter id="footer" tabindex="0" a11y-compliance-link="/" cookies-link="/" personal-data-link="/" legal-link="/" />
+    <DsfrFooter
+        id="footer"
+        tabindex="0"
+        a11y-compliance-link="/"
+        cookies-link="/"
+        personal-data-link="/"
+        legal-link="/"
+    />
 </template>

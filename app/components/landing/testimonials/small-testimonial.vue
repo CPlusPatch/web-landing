@@ -5,12 +5,10 @@
         </blockquote>
         <figcaption class="flex items-center gap-x-4">
             <Avatar class="size-10">
-                <AvatarImage :src="testimonial.author.imageUrl" alt="" />
+                <AvatarImage :src="testimonial.author.imageUrl" alt=""/>
             </Avatar>
             <div>
-                <div class="font-semibold">
-                    {{ testimonial.author.name }}
-                </div>
+                <div class="font-semibold">{{ testimonial.author.name }}</div>
                 <div class="text-secondary-foreground">
                     {{ testimonial.author.title }}
                 </div>

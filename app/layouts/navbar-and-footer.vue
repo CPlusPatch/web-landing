@@ -1,13 +1,12 @@
 <template>
     <NuxtLayout name="default">
-        <HeadersNavbar />
+        <HeadersNavbar/>
 
-        <slot />
+        <slot/>
 
-        <FootersFooter />
+        <FootersFooter/>
     </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
-
 </script>

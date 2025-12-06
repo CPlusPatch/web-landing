@@ -1,11 +1,25 @@
 <template>
-    <div v-if="state === BrowserState.Loading" class="w-full h-full flex items-center justify-center">
-        <Loader2 class="animate-spin size-4" />
+    <div
+        v-if="state === BrowserState.Loading"
+        class="w-full h-full flex items-center justify-center"
+    >
+        <Loader2 class="animate-spin size-4"/>
     </div>
-    <div v-else-if="state === BrowserState.Error" class="w-full h-full flex items-center justify-center">
+    <div
+        v-else-if="state === BrowserState.Error"
+        class="w-full h-full flex items-center justify-center"
+    >
         <p class="text-red-500">Error loading content</p>
     </div>
-    <iframe title="Web Content" v-else-if="state === BrowserState.Loaded" ref="iframe" :srcdoc="srcdocContent" :sandbox="sandboxAttributes" class="w-full h-full border-none" v-bind="$attrs" />
+    <iframe
+        title="Web Content"
+        v-else-if="state === BrowserState.Loaded"
+        ref="iframe"
+        :srcdoc="srcdocContent"
+        :sandbox="sandboxAttributes"
+        class="w-full h-full border-none"
+        v-bind="$attrs"
+    />
 </template>
 
 <script setup lang="ts">

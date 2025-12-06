@@ -1,14 +1,16 @@
 <template>
     <section class="handle">
         <div class="handle-image" ref="gravgunimage"></div>
-        <div class="destructor-mobile-message text-secondary-foreground text-xs" ref="mobilemessage">
+        <div
+            class="destructor-mobile-message text-secondary-foreground text-xs"
+            ref="mobilemessage"
+        >
             <span class="use-mouse">Perhaps with a mouse?</span>
             <span class="use-desktop">Perhaps on a desktop browser?</span>
         </div>
     </section>
     <Teleport to="body">
-        <div class="physics-container" ref="physContainer">
-        </div>
+        <div class="physics-container" ref="physContainer"></div>
     </Teleport>
 </template>
 

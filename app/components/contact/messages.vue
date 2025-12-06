@@ -1,13 +1,26 @@
 <template>
-    <div ref="scrollContainer" v-if="messages.length > 0" class="flex flex-col gap-2 p-2 max-h-96 overflow-y-auto overflow-x-hidden">
-        <TransitionGroup enter-active-class="duration-300 ease-out transform" enter-from-class="opacity-0"
-            enter-to-class="opacity-100" leave-active-class="duration-200 ease-in transform"
-            leave-from-class="opacity-100" leave-to-class="opacity-0">
-            <Message v-for="message in messages" :key="message.id" :content="message.message"
-                :date="new Date(message.time * 1000)" />
+    <div
+        ref="scrollContainer"
+        v-if="messages.length > 0"
+        class="flex flex-col gap-2 p-2 max-h-96 overflow-y-auto overflow-x-hidden"
+    >
+        <TransitionGroup
+            enter-active-class="duration-300 ease-out transform"
+            enter-from-class="opacity-0"
+            enter-to-class="opacity-100"
+            leave-active-class="duration-200 ease-in transform"
+            leave-from-class="opacity-100"
+            leave-to-class="opacity-0"
+        >
+            <Message
+                v-for="message in messages"
+                :key="message.id"
+                :content="message.message"
+                :date="new Date(message.time * 1000)"
+            />
         </TransitionGroup>
     </div>
-    <slot v-else />
+    <slot v-else/>
 </template>
 
 <script lang="ts" setup>

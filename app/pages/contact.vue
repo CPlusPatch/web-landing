@@ -111,12 +111,12 @@ definePageMeta({
 
 <template>
     <Container class="py-40 flex flex-col gap-20">
-        <Inbox />
+        <Inbox/>
         <section>
             <Card class="max-w-2xl">
                 <Messages ntfy-id="3MFIHQw4F23Gs7dz">
                     <div class="flex flex-row gap-4 items-center">
-                        <Loader2 class="animate-spin" />
+                        <Loader2 class="animate-spin"/>
                         <CardTitle class="text-center">
                             Listening for new messages...
                         </CardTitle>
@@ -126,18 +126,34 @@ definePageMeta({
         </section>
         <section>
             <div class="mx-auto">
-                <h2 class="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
+                <h2
+                    class="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl"
+                >
                     How to contact me
                 </h2>
-                <p class="mt-6 text-lg leading-8 text-secondary-foreground max-w-xl">
+                <p
+                    class="mt-6 text-lg leading-8 text-secondary-foreground max-w-xl"
+                >
                     You can contact me through various means, such as Matrix,
                     Email or Signal.
                 </p>
             </div>
-            <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                <Card as="a" v-for="method in contactMethods" :key="method.name" :href="method.href" target="_blank"
-                    referrerpolicy="no-referrer" class="space-y-4 items-center gap-1">
-                    <component :is="method.icon" class="size-12 text-primary-foreground" />
+            <div
+                class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+            >
+                <Card
+                    as="a"
+                    v-for="method in contactMethods"
+                    :key="method.name"
+                    :href="method.href"
+                    target="_blank"
+                    referrerpolicy="no-referrer"
+                    class="space-y-4 items-center gap-1"
+                >
+                    <component
+                        :is="method.icon"
+                        class="size-12 text-primary-foreground"
+                    />
                     <span class="text-primary-foreground font-semibold">
                         {{ method.name }}
                     </span>

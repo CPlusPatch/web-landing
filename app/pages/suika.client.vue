@@ -1,6 +1,10 @@
 <template>
     <div class="h-dvh w-dvw flex items-center justify-center">
-        <div ref="gameContainer" class="h-[600px] w-[450px]" @click="addFruit"></div>
+        <div
+            ref="gameContainer"
+            class="h-[600px] w-[450px]"
+            @click="addFruit"
+        ></div>
     </div>
 </template>
 

@@ -24,9 +24,15 @@ onMounted(() => {
 
 const decryptData = async (): Promise<void> => {
     if (!passphrase.value) {
-        passphrase.value =
-            prompt("Enter your decryption passphrase (this will be cached):") ||
-            "";
+        const input = prompt(
+            "Enter your decryption passphrase (this will be cached):",
+        );
+
+        if (input === null) {
+            return;
+        }
+
+        passphrase.value = input;
     }
 
     const decrypter = new Decrypter();
@@ -38,6 +44,7 @@ const decryptData = async (): Promise<void> => {
         data.value = JSON.parse(decrypted) as Item[];
     } catch (error) {
         alert("Decryption failed. Please check your passphrase and try again.");
+        passphrase.value = ""; // Clear invalid passphrase
     }
 };
 </script>

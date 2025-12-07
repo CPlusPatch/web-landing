@@ -1,8 +1,8 @@
 <template>
     <div
-        class="p-4 max-w-7xl mx-auto flex items-center justify-center min-h-screen"
+        class="p-2 max-w-7xl mx-auto flex items-center justify-center min-h-screen"
     >
-        <WomanRenderer v-if="data" :items="data"/>
+        <WomanRenderer v-if="data" :data="data"/>
         <Button v-else @click="decryptData">Decrypt</Button>
     </div>
 </template>
@@ -11,9 +11,9 @@
 import { armor, Decrypter } from "age-encryption";
 import { Button } from "~/components/ui/button";
 import encryptedData from "~~/public/data/data.age?raw";
-import type { Item } from "~~/types.ts";
+import type { Data } from "~~/types.ts";
 
-const data = ref<Item[] | null>(null);
+const data = ref<Data | null>(null);
 const passphrase = useLocalStorage<string>("woman-passphrase", "");
 
 onMounted(() => {
@@ -41,7 +41,7 @@ const decryptData = async (): Promise<void> => {
     const decoded = armor.decode(encryptedData);
     try {
         const decrypted = await decrypter.decrypt(decoded, "text");
-        data.value = JSON.parse(decrypted) as Item[];
+        data.value = JSON.parse(decrypted) as Data;
     } catch (error) {
         alert("Decryption failed. Please check your passphrase and try again.");
         passphrase.value = ""; // Clear invalid passphrase

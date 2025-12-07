@@ -30,7 +30,7 @@ const { data } = defineProps<{
             </AlertDescription>
         </Alert>
 
-        <Card class="outline-none! overflow-x-auto">
+        <Card class="outline-none! overflow-x-auto p-4 md:p-6">
             <Table class="min-w-4xl">
                 <TableHeader>
                     <TableRow>

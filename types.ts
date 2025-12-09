@@ -9,4 +9,5 @@ export interface Part {
     triggers: string;
     emotional_distance: string;
     notes: string;
+    episodes: string;
 }

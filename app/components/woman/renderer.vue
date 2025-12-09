@@ -40,6 +40,7 @@ const { data } = defineProps<{
                         <TableHead>Triggers</TableHead>
                         <TableHead>Emotional Distance</TableHead>
                         <TableHead>Notes</TableHead>
+                        <TableHead>Episodes</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -57,6 +58,9 @@ const { data } = defineProps<{
                         </TableCell>
                         <TableCell class="whitespace-pre-wrap">
                             {{ part.notes }}
+                        </TableCell>
+                        <TableCell class="whitespace-pre-wrap">
+                            {{ part.episodes }}
                         </TableCell>
                     </TableRow>
                 </TableBody>

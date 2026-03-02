@@ -2,11 +2,7 @@
 import { Github } from "lucide-vue-next";
 
 const footerNavigation = {
-    solutions: [
-        { name: "Mastodon.de", href: "https://mastodon.de" },
-        { name: "Versia", href: "https://versia.pub" },
-    ],
-    legal: [{ name: "Privacy", href: "/privacy" }],
+    solutions: [{ name: "Versia", href: "https://versia.pub" }],
     social: [
         {
             name: "GitHub",
@@ -136,26 +132,6 @@ const friends88x31: {
                         <ul class="mt-6 space-y-4">
                             <li
                                 v-for="item in footerNavigation.solutions"
-                                :key="item.name"
-                            >
-                                <a
-                                    target="_blank"
-                                    :href="item.href"
-                                    class="text-sm leading-6 text-secondary-foreground hover:underline"
-                                    >{{ item.name }}</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-10 md:mt-0">
-                        <h3
-                            class="text-sm font-semibold leading-6 text-primary-foreground"
-                        >
-                            Legal
-                        </h3>
-                        <ul class="mt-6 space-y-4">
-                            <li
-                                v-for="item in footerNavigation.legal"
                                 :key="item.name"
                             >
                                 <a

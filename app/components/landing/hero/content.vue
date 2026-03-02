@@ -19,7 +19,7 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
                 I'm CPlusPatch
             </h1>
             <p class="mt-6 text-lg leading-8">
-                I make apps, websites, servers and dreams through FOSS and open
+                I make apps, websites and servers through FOSS and open
                 standards. I am a student in computer engineering and a
                 programmer by passion, with several years of experience in many
                 kinds of fields

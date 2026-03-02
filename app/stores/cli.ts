@@ -143,7 +143,7 @@ export const useCliStore = defineStore("cli", () => {
         const fileInodes = [
             createFileInode(
                 ["home", "jessew", "hello.txt"],
-                "Hi, I'm CPlusPatch!\n\nI make apps, websites, servers and dreams through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields.",
+                "Hi, I'm CPlusPatch!\n\nI make apps, websites and servers through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields.",
             ),
         ];
 

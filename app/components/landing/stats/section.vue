@@ -13,10 +13,10 @@
                 </p>
             </div>
             <div
-                class="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end"
+                class="mx-auto mt-16 max-w-2xl grid grid-cols-1 gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:grid-cols-3"
             >
                 <Card
-                    class="flex-col-reverse justify-between gap-x-16 gap-y-8 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start"
+                    class="flex-col-reverse justify-between gap-x-16 gap-y-8 p-8 sm:flex-row-reverse sm:items-end lg:flex-col lg:items-start"
                 >
                     <p
                         class="flex-none text-3xl font-bold tracking-tight font-mono"
@@ -36,7 +36,7 @@
                     </div>
                 </Card>
                 <Card
-                    class="flex-col-reverse justify-between gap-x-16 gap-y-8 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44"
+                    class="flex-col-reverse justify-between gap-x-16 gap-y-8 p-8 sm:flex-row-reverse sm:items-end lg:flex-col lg:items-start"
                 >
                     <p
                         class="flex-none text-3xl font-bold tracking-tight font-mono"
@@ -57,7 +57,7 @@
                     </div>
                 </Card>
                 <Card
-                    class="flex-col-reverse justify-between gap-x-16 gap-y-8 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28"
+                    class="flex-col-reverse justify-between gap-x-16 gap-y-8 p-8 sm:flex-row-reverse sm:items-end lg:flex-col lg:items-start"
                 >
                     <p
                         class="flex-none text-3xl font-bold tracking-tight font-mono"

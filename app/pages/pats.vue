@@ -168,7 +168,7 @@ const sendForm = async (event: Event) => {
                 />
             </div>
 
-            <DsfrButton :disabled="loading" type="submit" label="Confirmer"/>
+            <DsfrButton :disabled="loading" type="submit" label="Confirmer" />
         </form>
     </div>
 </template>

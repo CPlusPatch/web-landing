@@ -3,7 +3,7 @@
         v-if="state === BrowserState.Loading"
         class="w-full h-full flex items-center justify-center"
     >
-        <Loader2 class="animate-spin size-4"/>
+        <Loader2 class="animate-spin size-4" />
     </div>
     <div
         v-else-if="state === BrowserState.Error"

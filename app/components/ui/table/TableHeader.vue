@@ -9,6 +9,6 @@ const props = defineProps<{
 
 <template>
     <thead :class="cn('[&_tr]:border-b', props.class)">
-        <slot/>
+        <slot />
     </thead>
 </template>

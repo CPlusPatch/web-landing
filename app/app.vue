@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import "~/styles/index.css";
-import Dropdown from "./components/cli/dropdown.client.vue";
 import { Toaster } from "./components/ui/sonner";
 
 const me = definePerson({
@@ -43,15 +42,12 @@ useHead({
 
 <template>
     <NuxtLayout>
-        <NuxtLoadingIndicator/>
-        <NuxtPage/>
-        <ClientOnly>
-            <Dropdown/>
-        </ClientOnly>
+        <NuxtLoadingIndicator />
+        <NuxtPage />
     </NuxtLayout>
 
     <ClientOnly>
-        <Toaster position="top-right"/>
+        <Toaster position="top-right" />
     </ClientOnly>
 </template>
 

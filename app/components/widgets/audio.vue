@@ -8,7 +8,7 @@
             class="p-2 text-primary-foreground size-10"
             title="Play audio"
         >
-            <Music class="size-6 hover:animate-spin"/>
+            <Music class="size-6 hover:animate-spin" />
         </button>
         <audio
             v-else

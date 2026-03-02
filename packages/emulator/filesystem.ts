@@ -45,9 +45,7 @@ export class Inode {
         shell: Shell,
         filesystem: Filesystem,
         ...args: string[]
-    ): typeof this.contents extends InodeFunction
-        ? ReturnType<typeof this.contents>
-        : never {
+    ): void | Promise<void> {
         if (typeof this.contents === "function") {
             return this.contents(
                 {
@@ -55,7 +53,7 @@ export class Inode {
                     shell,
                 },
                 ...args,
-            ) as never;
+            );
         }
 
         throw new Error("Cannot execute this inode as JS");

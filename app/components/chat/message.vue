@@ -4,8 +4,8 @@
     >
         <div>{{ content }}</div>
         <div class="flex items-center gap-1 justify-end">
-            <NuxtTime :datetime="date" time-style="short" class="text-xs"/>
-            <CheckCheck class="size-4"/>
+            <NuxtTime :datetime="date" time-style="short" class="text-xs" />
+            <CheckCheck class="size-4" />
         </div>
     </div>
 </template>

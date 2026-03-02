@@ -85,30 +85,26 @@ const largeTestimonial = {
 <template>
     <Container class="px-0!">
         <div class="mx-auto max-w-xl text-center px-6 lg:px-8">
-            <h2
-                class="text-sm font-bold uppercase leading-8 tracking-tight text-primary"
-            >
+            <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
                 Reviews
             </h2>
-            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-                Many clients satisfied
-            </p>
         </div>
+
         <div class="sm:px-6 lg:px-8 mt-20">
-            <LargeTestimonial :testimonial="largeTestimonial"/>
+            <LargeTestimonial :testimonial="largeTestimonial" />
         </div>
 
         <div
-            class="mx-auto mt-16 sm:px-6 lg:px-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4"
+            class="mx-auto mt-16 sm:px-6 lg:px-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-6 text-sm leading-6 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4"
         >
             <FeaturedTestimonial
                 :testimonial="featuredTestimonial"
-                class="col-span-2 hidden sm:block sm:rounded-2xl xl:col-start-2 xl:row-end-1"
+                class="col-span-2 hidden sm:block xl:col-start-2 xl:row-end-1"
             />
             <div
                 v-for="(columnGroup, columnGroupIdx) in testimonials"
                 :key="columnGroupIdx"
-                class="space-y-8 xl:contents xl:space-y-0"
+                class="space-y-6 xl:contents xl:space-y-0"
             >
                 <div
                     v-for="(column, columnIdx) in columnGroup"
@@ -119,7 +115,7 @@ const largeTestimonial = {
                             columnIdx === columnGroup.length - 1)
                         ? 'xl:row-span-2'
                         : 'xl:row-start-1',
-                    'space-y-8',
+                    'space-y-6',
                 ]"
                 >
                     <SmallTestimonial

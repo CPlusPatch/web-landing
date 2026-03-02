@@ -14,16 +14,14 @@
             </p>
         </div>
         <form action="#" @submit.prevent="submit">
-            <div
-                class="rounded-md border shadow-xs focus-within:outline-2 outline-primary/80 max-w-2xl"
-            >
-                <Label for="title" class="sr-only">Title</Label>
+            <Card class="max-w-2xl p-0 gap-0">
+                <Label for="author" class="sr-only">Author</Label>
                 <Input
                     type="text"
-                    name="title"
-                    id="title"
+                    name="author"
+                    id="author"
                     class="bg-transparent! border-0! ring-0! h-12 font-semibold"
-                    placeholder="Title"
+                    placeholder="Author"
                 />
                 <Label for="messageBody" class="sr-only">Message body</Label>
                 <Textarea
@@ -34,32 +32,29 @@
                     placeholder="I like your website, consider adding more Portal 2 songs."
                 />
                 <div class="flex items-center justify-end p-2">
-                    <Button type="submit">
-                        <Send/>
-                        Blaze it
-                    </Button>
+                    <Button type="submit">Send</Button>
                 </div>
-            </div>
+            </Card>
         </form>
     </section>
 </template>
 
 <script lang="ts" setup>
-import { Send } from "lucide-vue-next";
 import { toast } from "vue-sonner";
 import { Button } from "../ui/button";
+import { Card } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 
 const submit = async (event: Event) => {
     const form = event.target as HTMLFormElement;
-    const titleElement = form.elements.namedItem("title") as HTMLInputElement;
+    const authorElement = form.elements.namedItem("author") as HTMLInputElement;
     const messageBodyElement = form.elements.namedItem(
         "messageBody",
     ) as HTMLTextAreaElement;
 
-    const title = titleElement.value;
+    const author = authorElement.value;
     const messageBody = messageBodyElement.value;
 
     if (!messageBody) {
@@ -70,7 +65,7 @@ const submit = async (event: Event) => {
         method: "PUT",
         body: messageBody,
         headers: {
-            Title: title || "New message",
+            Title: author || "Anonymous",
         },
     });
 
@@ -86,7 +81,7 @@ const submit = async (event: Event) => {
     });
 
     // Reset the form
-    titleElement.value = "";
+    authorElement.value = "";
     messageBodyElement.value = "";
 };
 </script>

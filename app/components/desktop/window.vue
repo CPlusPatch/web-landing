@@ -9,10 +9,10 @@
         top: `${y}px`
     }"
     >
-        <WindowResizeHandles @resize="onResize"/>
-        <Titlebar :window="window"/>
+        <WindowResizeHandles @resize="onResize" />
+        <Titlebar :window="window" />
         <div class="overflow-scroll">
-            <slot/>
+            <slot />
         </div>
     </div>
 </template>

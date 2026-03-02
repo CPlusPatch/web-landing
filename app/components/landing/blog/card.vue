@@ -25,7 +25,7 @@
             </CardContent>
             <CardFooter class="mt-auto flex items-center gap-2">
                 <Avatar class="size-10">
-                    <AvatarImage src="/images/avatars/jessew.png" alt=""/>
+                    <AvatarImage src="/images/avatars/jessew.png" alt="" />
                 </Avatar>
                 <div class="leading-6 flex flex-col gap-0.5">
                     <p class="font-semibold text-sm">Jesse W</p>

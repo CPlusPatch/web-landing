@@ -24,7 +24,7 @@
                     size="icon"
                     variant="outline"
                 >
-                    <Download class="size-4"/>
+                    <Download class="size-4" />
                 </Button>
             </div>
             <NuxtTime
@@ -36,7 +36,7 @@
         </CardContent>
         <div class="flex items-center gap-x-4">
             <Avatar v-if="quote.author.avatar" class="size-10">
-                <AvatarImage :src="quote.author.avatar" alt=""/>
+                <AvatarImage :src="quote.author.avatar" alt="" />
             </Avatar>
             <div>
                 <p class="text-secondary-foreground text-xs">Author</p>

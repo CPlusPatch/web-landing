@@ -10,7 +10,7 @@ import { SidebarGroup, SidebarGroupLabel } from "~/components/ui/sidebar";
             class="border-2 border-muted rounded-md grow border-dotted w-full flex items-center justify-center"
         >
             <div class="flex flex-col items-center justify-center gap-2 p-4">
-                <BookDashed class="text-muted-foreground size-8"/>
+                <BookDashed class="text-muted-foreground size-8" />
                 <span class="text-muted-foreground text-sm font-semibold"
                     >No chats yet</span
                 >

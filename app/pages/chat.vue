@@ -1,6 +1,6 @@
 <template>
     <SidebarProvider>
-        <ChatSidebar/>
+        <ChatSidebar />
         <SidebarInset class="bg-card/20 max-h-dvh overflow-hidden relative">
             <div
                 id="chat"
@@ -41,7 +41,7 @@
                             class="absolute right-2"
                             title="Send"
                         >
-                            <ArrowUp class="size-4"/>
+                            <ArrowUp class="size-4" />
                         </Button>
                     </form>
                 </div>

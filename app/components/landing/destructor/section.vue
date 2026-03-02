@@ -3,7 +3,8 @@
         <Container>
             <h2 class="sr-only">Surprise game</h2>
             <Card
-                class="h-48 md:h-72 items-center justify-center outline-none!"
+                data-phys="none"
+                class="size-72 items-center justify-center outline-none! mx-auto"
             >
                 <Button
                     v-if="!clicked"
@@ -11,15 +12,22 @@
                     size="lg"
                     variant="outline"
                 >
-                    Click to load surprise
+                    Click me
                 </Button>
-                <LazyPhysplay v-else/>
+                <Suspense v-else>
+                    <LazyPhysplay />
+
+                    <template #fallback>
+                        <Loader2 class="size-12 animate-spin" />
+                    </template>
+                </Suspense>
             </Card>
         </Container>
     </section>
 </template>
 
 <script lang="ts" setup>
+import { Loader2 } from "lucide-vue-next";
 import Container from "~/components/containers/big.vue";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";

@@ -19,14 +19,7 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu";
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from "~/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
 import { Button } from "../ui/button";
 import {
     Collapsible,
@@ -179,7 +172,7 @@ const open = ref(false);
                             @click="navigate"
                         >
                             Source Code
-                            <ExternalLink class="size-4"/>
+                            <ExternalLink class="size-4" />
                         </NavigationMenuLink>
                     </NuxtLink>
                 </NavigationMenuItem>
@@ -192,7 +185,7 @@ const open = ref(false);
                         @click="open = true"
                         aria-label="Open main menu"
                     >
-                        <Menu class="size-6"/>
+                        <Menu class="size-6" />
                     </Button>
                 </SheetTrigger>
             </NavigationMenuList>
@@ -285,7 +278,7 @@ const open = ref(false);
                                 @click="navigate"
                             >
                                 Source Code
-                                <ExternalLink class="size-4"/>
+                                <ExternalLink class="size-4" />
                             </NavigationMenuLink>
                         </NuxtLink>
                     </NavigationMenuItem>

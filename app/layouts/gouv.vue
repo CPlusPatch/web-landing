@@ -36,7 +36,7 @@ const skipLinks = [
 </script>
 
 <template>
-    <DsfrSkipLinks :links="skipLinks"/>
+    <DsfrSkipLinks :links="skipLinks" />
     <DsfrHeader
         :service-title="serviceTitle"
         :service-description="serviceDescription"
@@ -44,7 +44,7 @@ const skipLinks = [
         :quick-links="quickLinks"
     />
     <main id="content" role="main" class="fr-container" tabindex="0">
-        <slot/>
+        <slot />
     </main>
     <DsfrFooter
         id="footer"

@@ -111,12 +111,12 @@ definePageMeta({
 
 <template>
     <Container class="py-40 flex flex-col gap-20">
-        <Inbox/>
+        <Inbox />
         <section>
             <Card class="max-w-2xl">
                 <Messages ntfy-id="3MFIHQw4F23Gs7dz">
                     <div class="flex flex-row gap-4 items-center">
-                        <Loader2 class="animate-spin"/>
+                        <Loader2 class="animate-spin" />
                         <CardTitle class="text-center">
                             Listening for new messages...
                         </CardTitle>

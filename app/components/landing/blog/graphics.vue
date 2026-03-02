@@ -12,7 +12,7 @@
                 y="-1"
                 patternUnits="userSpaceOnUse"
             >
-                <path d="M.5 200V.5H200" fill="none"/>
+                <path d="M.5 200V.5H200" fill="none" />
             </pattern>
         </defs>
         <svg x="50%" y="-1" class="overflow-visible fill-gray-800/20">

@@ -167,11 +167,11 @@ const cards = [
                     <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
                         Projects
                     </h2>
-                    <p class="mt-6 text-lg leading-8 text-secondary-foreground">
+                    <p class="mt-6 text-secondary-foreground">
                         Here are some of the projects I have fully created
                         myself, all of them are open-source and free to use.
                     </p>
-                    <p class="mt-6 text-lg leading-8 text-secondary-foreground">
+                    <p class="mt-6 text-secondary-foreground">
                         Some of them are still in development, while others are
                         already in production and used by many people.
                     </p>

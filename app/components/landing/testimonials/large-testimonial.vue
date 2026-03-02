@@ -1,6 +1,6 @@
 <template>
     <Card
-        class="relative overflow-hidden px-6 py-20 shadow-xl sm:px-10 sm:py-24 md:px-12 lg:px-20 rounded-none sm:rounded-xl"
+        class="overflow-hidden backdrop-blur-lg px-6 py-20 shadow-xl sm:px-10 sm:py-24 md:px-12 lg:px-20"
     >
         <nuxt-img
             class="absolute inset-0 size-full object-cover brightness-150 saturate-0"
@@ -10,7 +10,7 @@
             format="webp"
             alt=""
         />
-        <div class="absolute inset-0 bg-background/90 mix-blend-multiply"/>
+        <div class="absolute inset-0 bg-background/90 mix-blend-multiply" />
         <div
             class="absolute -left-80 -top-56 transform-gpu blur-3xl"
             aria-hidden="true"

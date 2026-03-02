@@ -1,10 +1,8 @@
 <template>
     <NuxtLayout name="default">
-        <HeadersNavbar/>
-
-        <slot/>
-
-        <FootersFooter/>
+        <HeadersNavbar />
+        <slot />
+        <FootersFooter />
     </NuxtLayout>
 </template>
 

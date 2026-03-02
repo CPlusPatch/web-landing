@@ -85,8 +85,7 @@ const friends88x31: {
 </script>
 
 <template>
-    <footer class="bg-card z-1" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <footer class="bg-card z-1">
         <div
             class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32"
         >
@@ -116,7 +115,7 @@ const friends88x31: {
                             class="text-muted-foreground hover:text-primary-foreground"
                         >
                             <span class="sr-only">{{ item.name }}</span>
-                            <component :is="item.icon" class="size-5"/>
+                            <component :is="item.icon" class="size-5" />
                         </a>
                     </div>
                 </div>
@@ -187,8 +186,8 @@ const friends88x31: {
             </div>
             <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
                 <p class="text-xs leading-5 text-muted-foreground">
-                    &copy; {{ new Date().getFullYear() }}Gaspard Wierzbinski.
-                    Licensed under AGPLv3
+                    &copy; {{ new Date().getFullYear() }}&nbsp;Gaspard
+                    Wierzbinski. Licensed under AGPLv3
                 </p>
 
                 <div class="flex flex-row gap-2 flex-wrap justify-start mt-4">
@@ -211,13 +210,6 @@ const friends88x31: {
                         />
                     </a>
                 </div>
-            </div>
-        </div>
-        <div
-            class="px-4 py-4 text-primary-foreground text-sm block bg-linear-to-r from-pink-500 via-red-500 to-yellow-500"
-        >
-            <div class="mx-auto max-w-7xl text-center w-full">
-                A site by <strong class="font-semibold">CPlusPatch</strong>
             </div>
         </div>
     </footer>

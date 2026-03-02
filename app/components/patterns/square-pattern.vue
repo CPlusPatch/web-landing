@@ -1,23 +1,23 @@
 <template>
     <svg
-        class="absolute inset-0 -z-10 size-full stroke-primary-foreground/20 mask-[radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        class="absolute inset-0 -z-10 size-full stroke-primary-foreground/10 maesk-[radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
     >
         <defs>
             <pattern
                 id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-                width="200"
-                height="200"
+                width="100"
+                height="100"
                 x="50%"
                 y="-1"
                 patternUnits="userSpaceOnUse"
             >
-                <path d="M.5 200V.5H200" fill="none"/>
+                <path d="M.5 200V.5H200" fill="none" />
             </pattern>
         </defs>
-        <svg x="50%" y="-1" class="overflow-visible fill-secondary">
+        <svg x="50%" y="-1" class="overflow-visible fill-secondary/50">
             <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+                d="M-100 100h101v101h-101Z M600 200h101v101h-101Z M-400 800h101v101h-101Z M200 900h101v101h-101Z"
                 stroke-width="0"
             />
         </svg>

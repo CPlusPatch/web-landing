@@ -20,7 +20,7 @@ const { data } = defineProps<{
 <template>
     <div class="flex flex-col gap-4 w-full">
         <Alert variant="default" class="max-w-fit mx-auto">
-            <Info/>
+            <Info />
             <AlertTitle>This data is incomplete.</AlertTitle>
             <AlertDescription>
                 <p>

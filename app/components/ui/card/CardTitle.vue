@@ -12,6 +12,6 @@ const props = defineProps<{
         data-slot="card-title"
         :class="cn('leading-4 text-base font-semibold', props.class)"
     >
-        <slot/>
+        <slot />
     </h3>
 </template>

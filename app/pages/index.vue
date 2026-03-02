@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import Blog from "~/components/landing/blog/section.vue";
 import Destructor from "~/components/landing/destructor/section.vue";
 import Hero from "~/components/landing/hero/section.vue";
 import Languages from "~/components/landing/languages/section.vue";
-import Philosophy from "~/components/landing/philosophy/section.vue";
 import Projects from "~/components/landing/projects/section.vue";
 import Stats from "~/components/landing/stats/section.vue";
 import Testimonials from "~/components/landing/testimonials/section.vue";
+import SquarePattern from "~/components/patterns/square-pattern.vue";
 import Audio from "~/components/widgets/audio.vue";
 
 useSeoMeta({
@@ -29,23 +28,21 @@ definePageMeta({
 </script>
 
 <template>
-    <div class="flex flex-col gap-48 pb-48">
-        <Hero/>
+    <div class="flex flex-col gap-48 pb-48 relative">
+        <SquarePattern />
 
-        <Philosophy/>
+        <Hero />
 
-        <Testimonials/>
+        <Stats />
 
-        <Stats/>
+        <Languages />
 
-        <Projects/>
+        <Testimonials />
 
-        <Languages/>
+        <Projects />
 
-        <Blog/>
+        <Destructor />
 
-        <Destructor/>
-
-        <Audio/>
+        <Audio />
     </div>
 </template>

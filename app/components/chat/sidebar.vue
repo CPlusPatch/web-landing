@@ -22,7 +22,7 @@ const props = defineProps<SidebarProps>();
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton size="lg">
-                        <SmallLogo/>
+                        <SmallLogo />
                         <div
                             class="grid flex-1 text-left text-sm leading-tight"
                         >
@@ -35,23 +35,23 @@ const props = defineProps<SidebarProps>();
                 </SidebarMenuItem>
                 <SidebarMenuItem class="mt-2">
                     <SidebarMenuButton>
-                        <SquarePen/>
+                        <SquarePen />
                         New Chat
                     </SidebarMenuButton>
                     <SidebarMenuButton>
-                        <Search/>
+                        <Search />
                         Search Chats
                     </SidebarMenuButton>
                     <SidebarMenuButton>
-                        <Images/>
+                        <Images />
                         Images
                     </SidebarMenuButton>
                 </SidebarMenuItem>
             </SidebarMenu>
         </SidebarHeader>
         <SidebarContent>
-            <SidebarChats/>
+            <SidebarChats />
         </SidebarContent>
-        <SidebarRail/>
+        <SidebarRail />
     </Sidebar>
 </template>

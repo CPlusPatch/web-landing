@@ -9,24 +9,19 @@
                 :disabled="currentSlide <= 0"
                 @click="currentSlide--"
             >
-                <ChevronLeft/>
+                <ChevronLeft />
             </Button>
             <span class="mx-4 text-lg md:text-xl lg:text-2xl">
                 {{ currentSlide + 1 }}
             </span>
-            <Button
-                variant="ghost"
-                size="icon-lg"
-                :disabled="currentSlide >= slides.length - 1"
-                @click="currentSlide++"
-            >
-                <ChevronRight/>
+            <Button variant="ghost" size="icon-lg" @click="currentSlide++">
+                <ChevronRight />
             </Button>
         </div>
         <textarea
             ref="textarea"
             v-model="input"
-            class="w-full max-w-7xl max-h-full font-e bg-transparent border-0! focus:border-0! focus:ring-0! text-center text-2xl md:text-4xl lg:text-6xl leading-tight resize-none"
+            class="w-full max-w-7xl max-h-full bg-transparent border-0! focus:border-0! focus:ring-0! text-center text-2xl md:text-4xl lg:text-6xl leading-tight resize-none"
             placeholder="What's on your mind?"
         ></textarea>
     </div>

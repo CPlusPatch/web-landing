@@ -11,6 +11,6 @@ const props = defineProps<{
     <tr
         :class="cn('border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted', props.class)"
     >
-        <slot/>
+        <slot />
     </tr>
 </template>

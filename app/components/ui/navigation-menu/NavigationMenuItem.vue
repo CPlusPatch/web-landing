@@ -18,6 +18,6 @@ const delegatedProps = reactiveOmit(props, "class");
         v-bind="delegatedProps"
         :class="cn('relative', props.class)"
     >
-        <slot/>
+        <slot />
     </NavigationMenuItem>
 </template>

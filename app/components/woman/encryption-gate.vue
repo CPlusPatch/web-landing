@@ -14,7 +14,7 @@
                             <div
                                 class="flex size-8 items-center justify-center rounded-md"
                             >
-                                <LockKeyhole class="size-6"/>
+                                <LockKeyhole class="size-6" />
                             </div>
                             <h1 class="text-xl font-bold">Encrypted Content</h1>
                             <FieldDescription class="text-center max-w-xs">
@@ -36,7 +36,7 @@
                         </Field>
                         <Field>
                             <Button type="submit" :disabled="loading">
-                                <Spinner v-if="loading"/>
+                                <Spinner v-if="loading" />
                                 {{ loading ? "Decrypting..." : "Decrypt" }}
                             </Button>
                             <Button

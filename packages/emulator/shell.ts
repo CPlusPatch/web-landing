@@ -5,6 +5,8 @@ export class Shell {
     public output = mitt<{
         stdout: string;
         stderr: string;
+        deleteLines: number;
+        clear: undefined;
     }>();
 
     constructor(
@@ -45,5 +47,13 @@ export class Shell {
             return;
         }
         this.output.emit("stderr", message);
+    }
+
+    public deleteLines(count: number): void {
+        this.output.emit("deleteLines", count);
+    }
+
+    public clear(): void {
+        this.output.emit("clear");
     }
 }

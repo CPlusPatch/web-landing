@@ -1,24 +1,37 @@
 <template>
     <div
-        ref="container"
         :class="[
-			'bg-black/80 backdrop-blur-xl min-h-32 text-sm max-h-[70vh] w-screen max-w-full text-gray-100 whitespace-pre p-4 rounded-sm ring-2 ring-white/5 overflow-x-hidden overflow-y-auto [text-shadow:0_0_5px_#C8C8C8]',
-			$style.container,
-		]"
+            'grid grid-rows-[1fr_auto] h-full overflow-hidden',
+            $style.container,
+        ]"
     >
-        {{ text }}
-        <input
-            type="text"
-            ref="input"
-            class="w-full bg-transparent border-none outline-hidden ring-0! p-0 -ml-[1ch]"
-            placeholder="Type here..."
+        <!-- Scrollable output area -->
+        <div
+            ref="container"
+            class="whitespace-pre-wrap overflow-x-hidden overflow-y-auto"
         >
+            {{ cliStore.output }}
+        </div>
+        <!-- Sticky prompt at bottom -->
+        <div
+            v-show="!cliStore.isProcessing"
+            class="whitespace-pre grid grid-cols-[auto_1fr] items-center"
+        >
+            <span class="font-bold text-green-500">{{ cliStore.prompt }}</span>
+            <input
+                ref="input"
+                type="text"
+                class="bg-transparent text-sm border-none outline-hidden ring-0! p-0"
+                placeholder="Type here..."
+                @keydown="handleKeydown"
+            >
+        </div>
     </div>
 </template>
 
 <style module>
 .container {
-    font-family: Inconsolata, var(--font-mono), monospace;
+    font-family: var(--font-mono), monospace;
     font-display: swap;
 }
 
@@ -40,222 +53,64 @@
 </style>
 
 <script lang="ts" setup>
-import {
-    Filesystem,
-    Inode,
-    InodeFlags,
-    type InodeFunction,
-    Shell,
-} from "@cpluspatch/emulator";
-import {
-    cat,
-    cd,
-    echo,
-    help,
-    ls,
-    neofetch,
-    pwd,
-    touch,
-    which,
-} from "@cpluspatch/emulator/commands";
-import Uwuifier from "uwuifier";
+import { useCliStore } from "~/stores/cli";
 
-const container = useTemplateRef<HTMLDivElement>("container");
-const input = useTemplateRef<HTMLInputElement>("input");
+const container = useTemplateRef("container");
+const input = useTemplateRef("input");
+const cliStore = useCliStore();
 
-onMounted(() => {
-    useEventListener(input, "keypress", onInput, {
-        passive: true,
-    });
-});
-
-const makePrompt = (pwd: string[]) => {
-    if (pwd.length === 2 && pwd[0] === "home" && pwd[1] === "jessew") {
-        return "[jessew@website ~]$ ";
-    }
-
-    return `[jessew@website ${filesystem.formatPath(pwd)}]$ `;
-};
-
-const badapple: InodeFunction = async ({ shell }) => {
-    shell.stdout("Loading frames...");
-
-    const VERTICAL_RES = 26;
-    const FPS = 1;
-
-    // Load assets
-    const frameText = await fetch("/ascii/badapple.txt").then((res) =>
-        res.text(),
-    );
-    const audio = new Audio("/audio/bad-apple.mp3");
-    await new Promise((resolve) => {
-        audio.addEventListener("canplaythrough", resolve);
-    });
-    audio.play();
-
-    const chunkEveryNewlines = (text: string, height: number): string[] => {
-        const chunks = [];
-        const split = text.split("\n");
-
-        for (let i = 0; i < split.length; i += height) {
-            chunks.push(split.slice(i, i + height).join("\n"));
-        }
-
-        return chunks;
-    };
-
-    // Split every VERTICAL_RES lines into a frame
-    const frames = chunkEveryNewlines(frameText, VERTICAL_RES);
-
-    for (const frame of frames) {
-        shell.stdout(frame);
-
-        await nextTick();
-
-        // Scroll to the bottom
-        if (container.value) {
-            container.value.scrollTop = container.value.scrollHeight;
-        }
-
-        await new Promise((resolve) => setTimeout(resolve, 1000 / FPS));
-
-        // Remove the last frame
-        text.value = text.value.slice(0, -frame.length - 1);
-        await nextTick();
+// Scroll helper for store to use
+const scrollToBottom = (): void => {
+    if (container.value) {
+        container.value.scrollTop = container.value.scrollHeight;
     }
 };
 
-const filesystem = new Filesystem([
-    new Inode(["usr", "bin", "ls"], ls, InodeFlags.Read | InodeFlags.Execute),
-    new Inode(["usr", "bin", "cat"], cat, InodeFlags.Read | InodeFlags.Execute),
-    new Inode(["usr", "bin", "cd"], cd, InodeFlags.Read | InodeFlags.Execute),
-    new Inode(
-        ["usr", "bin", "echo"],
-        echo,
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(["usr", "bin", "pwd"], pwd, InodeFlags.Read | InodeFlags.Execute),
-    new Inode(
-        ["usr", "bin", "touch"],
-        touch,
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "neofetch"],
-        neofetch,
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "fastfetch"],
-        neofetch,
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "help"],
-        help,
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "uwu"],
-        ({ shell }) => {
-            const uwuifier = new Uwuifier();
-            applyFnToTextNodes((t) => uwuifier.uwuifySentence(t));
-            shell.stdout("UwUified text");
-        },
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "clear"],
-        () => {
-            text.value = "";
-        },
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "which"],
-        which,
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "exit"],
-        async () => {
-            window.location.href = "https://google.com";
-        },
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "vivziepop"],
-        ({ shell }) => {
-            applyFnToTextNodes((t) => swearWordify(t));
-            shell.stdout("Me if I was written by Vivziepop 🤯");
-        },
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["usr", "bin", "badapple"],
-        badapple,
-        InodeFlags.Read | InodeFlags.Execute,
-    ),
-    new Inode(
-        ["home", "jessew", "hello.txt"],
-        "Hey there! This is a file in your home directory.",
-        InodeFlags.Read | InodeFlags.Write,
-    ),
-]);
-const shell = new Shell(filesystem, ["home", "jessew"]);
+const handleKeydown = async (event: KeyboardEvent): Promise<void> => {
+    const target = event.target as HTMLInputElement;
 
-const text = ref(makePrompt(shell.cwd));
+    if (!container.value || !input.value) {
+        return;
+    }
 
-const onStdout = (message: string) => {
-    text.value += message;
+    switch (event.key) {
+        case "Enter": {
+            const value = target.value;
+            target.value = "";
+            await cliStore.parseAndExecuteCommand(value);
+            scrollToBottom();
+            target.focus();
+            break;
+        }
+        case "ArrowUp": {
+            event.preventDefault();
+            target.value = cliStore.navigateHistory("up", () => target.value);
+            // Move cursor to end
+            target.setSelectionRange(target.value.length, target.value.length);
+            break;
+        }
+        case "ArrowDown": {
+            event.preventDefault();
+            target.value = cliStore.navigateHistory("down", () => target.value);
+            target.setSelectionRange(target.value.length, target.value.length);
+            break;
+        }
+    }
 };
 
 onMounted(async () => {
-    shell.output.on("stdout", onStdout);
-    shell.output.on("stderr", onStdout);
-
-    await executeCommand("fastfetch");
+    cliStore.setScrollToBottom(scrollToBottom);
+    await cliStore.initialize();
+    await cliStore.parseAndExecuteCommand("fastfetch");
+    scrollToBottom();
 });
 
 onUnmounted(() => {
-    shell.output.off("stdout", onStdout);
-    shell.output.off("stderr", onStdout);
+    cliStore.cleanup();
 });
 
-const executeCommand = async (command: string, ...args: string[]) => {
-    text.value += `${command} ${args.join(" ")}\n`;
-    await shell.executeCommand(command, ...args);
-    await nextTick();
-    text.value += makePrompt(shell.cwd);
-};
-
-const onInput = async (e: Event) => {
-    const target = e.target as HTMLInputElement;
-    const value = target.value;
-
-    if ((e as KeyboardEvent).key === "Enter") {
-        target.value = "";
-        const command = value.trim().split(" ")[0] || "";
-        const args = value.trim().split(" ").slice(1);
-
-        await executeCommand(command, ...args);
-
-        if (container.value) {
-            container.value.scrollTop = container.value.scrollHeight;
-        }
-
-        target.focus();
-    }
-};
-
+// Expose methods for parent components
 defineExpose({
-    clear: () => {
-        text.value = "";
-    },
-    focus: () => {
-        if (input.value) {
-            input.value.focus();
-        }
-    },
+    focus: () => input.value?.focus(),
 });
 </script>

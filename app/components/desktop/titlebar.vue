@@ -13,14 +13,14 @@
                 variant="ghost"
                 size="icon"
             >
-                <Minus/>
+                <Minus />
             </Button>
             <Button
                 v-if="window.decorationFlags & WindowDecorationFlags.Maximize"
                 variant="ghost"
                 size="icon"
             >
-                <Maximize2/>
+                <Maximize2 />
             </Button>
             <Button
                 v-if="window.decorationFlags & WindowDecorationFlags.Close"
@@ -28,7 +28,7 @@
                 size="icon"
                 @click="data?.desktop.removeWindow(window)"
             >
-                <X/>
+                <X />
             </Button>
         </div>
     </div>

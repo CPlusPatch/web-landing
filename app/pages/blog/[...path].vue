@@ -46,7 +46,7 @@ useSeoMeta({
         <div class="mx-auto max-w-2xl text-center mt-40 flex flex-col gap-8">
             <h1
                 v-if="post.title"
-                class="text-4xl font-bold tracking-tight text-gray-50 sm:text-5xl"
+                class="text-4xl font-bold tracking-tight sm:text-5xl"
             >
                 {{ post.title }}
             </h1>

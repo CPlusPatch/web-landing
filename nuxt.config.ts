@@ -35,10 +35,11 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "@nuxt/fonts",
         "@nuxt/image",
-        "nuxt-security",
+        //"nuxt-security",
         "@nuxtjs/plausible",
         "@nuxt/content",
         "shadcn-nuxt",
+        "@pinia/nuxt",
     ],
     vite: {
         plugins: [tailwindcss()],
@@ -71,7 +72,7 @@ export default defineNuxtConfig({
             },
         },
     },
-    security: {
+    /* security: {
         headers: {
             contentSecurityPolicy: {
                 "img-src": ["'self'", "https:", "data:"],
@@ -86,17 +87,7 @@ export default defineNuxtConfig({
             },
         },
         rateLimiter: false,
-    },
-    routeRules: {
-        // Disable CSP on /desktop because it fucks with the browser app
-        "/desktop": {
-            security: {
-                headers: {
-                    contentSecurityPolicy: false,
-                },
-            },
-        },
-    },
+    }, */
     nitro: {
         preset: "static",
         minify: true,

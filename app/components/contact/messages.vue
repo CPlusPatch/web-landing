@@ -2,7 +2,7 @@
     <div
         ref="scrollContainer"
         v-if="messages.length > 0"
-        class="flex flex-col gap-2 p-2 max-h-96 overflow-y-auto overflow-x-hidden"
+        class="flex flex-col gap-2 max-h-96 overflow-y-auto overflow-x-hidden"
     >
         <TransitionGroup
             enter-active-class="duration-300 ease-out transform"
@@ -20,7 +20,7 @@
             />
         </TransitionGroup>
     </div>
-    <slot v-else/>
+    <slot v-else />
 </template>
 
 <script lang="ts" setup>

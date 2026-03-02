@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { Terminal } from "lucide-vue-next";
-import { toast } from "vue-sonner";
 import Container from "~/components/containers/big.vue";
 import { Button } from "~/components/ui/button";
-import Virus from "./virus.vue";
 
-defineProps<{
-    isJesse: boolean;
+const emit = defineEmits<{
+    switch: [];
 }>();
 
 const openInNewTab = (url: string) => window.open(url, "_blank");
@@ -16,8 +14,9 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
     <Container class="lg:flex *:mx-auto *:max-w-2xl">
         <div class="shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8 mt-20">
             <h1 class="mt-10 text-4xl font-bold tracking-tight sm:text-6xl">
-                {{ isJesse ? "Hii :3" : "Heya" }},<br>
-                I'm {{ !isJesse ? "CPlusPatch" : "Jesse 🏳️‍⚧️" }}
+                Heya,
+                <br>
+                I'm CPlusPatch
             </h1>
             <p class="mt-6 text-lg leading-8">
                 I make apps, websites, servers and dreams through FOSS and open
@@ -26,15 +25,12 @@ const openInNewTab = (url: string) => window.open(url, "_blank");
                 kinds of fields
             </p>
             <div class="mt-10 flex items-center gap-4">
-                <ClientOnly>
-                    <Virus/>
-                </ClientOnly>
                 <Button
                     variant="secondary"
                     class="md:flex hidden"
-                    @click="toast.info('Try pressing F12 on your keyboard.')"
+                    @click="emit('switch')"
                 >
-                    <Terminal/>
+                    <Terminal />
                     Drop me in the mainframe!
                 </Button>
             </div>

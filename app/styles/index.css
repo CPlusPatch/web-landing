@@ -6,29 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --color-dark-50: #4a4a4a;
-    --color-dark-100: #3c3c3c;
-    --color-dark-200: #323232;
-    --color-dark-300: #2d2d2d;
-    --color-dark-400: #222222;
-    --color-dark-500: #1f1f1f;
-    --color-dark-600: #1c1c1e;
-    --color-dark-700: #1b1b1b;
-    --color-dark-800: #181818;
-    --color-dark-900: #0f0f0f;
-    --color-dark-950: #080808;
-
-    --color-gray-50: #f7f7f8;
-    --color-gray-100: #ececf1;
-    --color-gray-200: #d9d9e3;
-    --color-gray-300: #c5c5d2;
-    --color-gray-400: #acacbe;
-    --color-gray-500: #8e8ea0;
-    --color-gray-600: #565869;
-    --color-gray-700: #40414f;
-    --color-gray-800: #343541;
-    --color-gray-900: #202123;
-    --color-gray-950: #050509;
+    --font-mono: "JetBrains Mono", monospace;
 
     --animate-wiggle: wiggle 0.5s ease-in-out;
 

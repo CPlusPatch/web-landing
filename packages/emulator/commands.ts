@@ -80,6 +80,10 @@ export const echo: InodeFunction = ({ shell }, ...args) => {
     shell.stdout(args.join(" "));
 };
 
+export const clear: InodeFunction = ({ shell }) => {
+    shell.clear();
+};
+
 export const touch: InodeFunction = ({ fs, shell }, path) => {
     const targetPath = fs.parsePath(path, shell.cwd);
     const name = targetPath.at(-1) || "";
@@ -123,24 +127,17 @@ export const neofetch: InodeFunction = ({ shell }) => {
    \/__/\ \ \ \/\ \ \ \     Host: JesseOS (1.2.4)
       _\ \ \ \ \ \ \ \ \    Kernel: ${detector.platform}
      /\ \_\ \ \ \_/ \_\ \   Uptime: Who knows!
-     \ \____/\ \`\___x___/   Packages: 2067 (jacman), 90 (jatpak)
+     \ \____/\ \`\___x___/   Packages: 6767 (jacman)
       \/___/  '\/__//__/    Shell: jash 0.22.1
-                            Display (${detector.name.toUpperCase()}): 1920x1080 @ 165 Hz in 16" [Built-in]
-                            DE: JNOME 48.1
-                            WM: Jutter (Wayland)
-                            WM Theme: jessew-dark
-                            Theme: Breeze [Qt], adw-gtk3-dark [GTK2/3/4]
-                            Icons: breeze-dark [Qt], Adwaita [GTK2/3/4]
-                            Font: JetBrains Mono (10pt) [Qt], Adwaita Sans (10pt) [GTK2/3/4]
-                            Cursor: Adwaita (24px)
-                            Terminal: jtty 1.4.0
-                            Terminal Font: JetBrainsMono Nerd Font (11pt)
-                            CPU: JessePU (16) @ 4.50 GHz
-                            GPU 1: Jvidia RTX 4070 Ti
-                            Memory: 9.50 GiB / 63.43 GiB (64%)
-                            Disk (/): 203.76 GiB / 223.54 GiB (91%) - btrfs
-                            Local IP (wlan0): 192.168.2.154/24
-                            Locale: en_GB.UTF-8`.replace("\\`", "`");
+                            Display (${detector.name?.toUpperCase()}): 1920x1080 @ 165 Hz in 16" [Built-in]
+                            
+Hi, I'm CPlusPatch!
+    
+I make apps, websites, servers and various pet projects through FOSS and open standards. I am a student in computer engineering and a programmer by passion, with several years of experience in many kinds of fields.
+
+This is an interactive terminal emulator with an emulated filesystem, try using the "help" command!
+
+`.replace("\\`", "`");
 
     shell.stdout(fastfetchText);
 };
@@ -156,10 +153,6 @@ export const help: InodeFunction = ({ fs, shell }) => {
     }
 
     shell.stdout("Executables detected in the filesystem:");
-    shell.stdout(
-        executables
-            .map((inode) => ` - ${fs.formatPath(inode.path)}`)
-            .join("\n"),
-    );
+    shell.stdout(executables.map((inode) => ` - ${inode.name}`).join("\n"));
     shell.stdout("Type the name of a command to execute it.");
 };

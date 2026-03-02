@@ -2,7 +2,7 @@
     <div
         class="p-2 max-w-7xl mx-auto flex items-center justify-center min-h-screen"
     >
-        <WomanRenderer v-if="data" :data="data"/>
+        <WomanRenderer v-if="data" :data="data" />
         <WomanEncryptionGate
             v-else
             :loading="decrypting"

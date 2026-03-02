@@ -26,13 +26,11 @@
         class="flex items-center justify-center p-10 inset-0 absolute size-full bg-background"
     >
         <Card v-if="!loaded" class="items-center gap-4">
-            <Loader class="animate-spin size-8"/>
+            <Loader class="animate-spin size-8" />
             <CardTitle>
-                {{
-					loadProgress === 1
+                {{ loadProgress === 1
 						? `Fetching...`
-						: `${Math.round(loadProgress * 100)}%`
-				}}
+						: `${Math.round(loadProgress * 100)}%` }}
             </CardTitle>
         </Card>
         <Button v-else @click="startAnimation">Jam It!</Button>

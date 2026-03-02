@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import SquarePattern from "~/components/patterns/square-pattern.vue";
-import { useJesse } from "~/composables/Jesse";
-import HeroBackground from "./background.vue";
+import WidgetClient from "~/components/cli/widget.client.vue";
+import { Card } from "~/components/ui/card";
 import HeroContent from "./content.vue";
 
-const isJesse = useJesse();
+const showTerminal = ref(false);
 </script>
 
 <template>
-    <section class="relative isolate pt-40 overflow-hidden">
-        <SquarePattern/>
-        <HeroBackground/>
-        <HeroContent :is-jesse="isJesse"/>
+    <section
+        class="relative h-dvh flex items-center justify-center overflow-hidden"
+    >
+        <Card
+            v-if="showTerminal"
+            class="mx-auto w-full max-w-5xl font-mono min-h-96 max-h-[70vh]"
+        >
+            <WidgetClient />
+        </Card>
+        <HeroContent v-else @switch="showTerminal = true" />
     </section>
 </template>

@@ -30,7 +30,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
         v-bind="forwarded"
         :class="cn('group/navigation-menu relative flex max-w-max flex-1 items-center justify-center', props.class)"
     >
-        <slot/>
-        <NavigationMenuViewport v-if="viewport"/>
+        <slot />
+        <NavigationMenuViewport v-if="viewport" />
     </NavigationMenuRoot>
 </template>

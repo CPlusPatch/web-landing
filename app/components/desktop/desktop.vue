@@ -14,7 +14,7 @@
         />
 
         <div class="absolute bottom-4 flex justify-center w-full">
-            <Dock :apps="dockApps" @app-click="openApp"/>
+            <Dock :apps="dockApps" @app-click="openApp" />
         </div>
     </div>
 </template>

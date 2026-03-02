@@ -10,9 +10,8 @@
                 </CardDescription>
                 <CardDescription>
                     User-generated content may not be suitable for visitors who
-                    are at <b
-                        >high risk of photosensitive epileptic seizures</b
-                    >.
+                    are at
+                    <b>high risk of photosensitive epileptic seizures</b>.
                 </CardDescription>
             </CardContent>
             <CardFooter class="gap-2">

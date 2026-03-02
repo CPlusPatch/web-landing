@@ -15,7 +15,12 @@
                 <path d="M.5 200V.5H200" fill="none" />
             </pattern>
         </defs>
-        <svg x="50%" y="-1" class="overflow-visible fill-secondary/30">
+        <svg
+            x="50%"
+            y="-1"
+            class="overflow-visible fill-secondary/30"
+            aria-hidden="true"
+        >
             <path
                 d="M-100 100h101v101h-101Z M600 200h101v101h-101Z M-400 800h101v101h-101Z M200 900h101v101h-101Z"
                 stroke-width="0"

@@ -1,7 +1,5 @@
 <template>
-    <main class="size-full min-h-dvh">
-        <slot />
-    </main>
+    <main class="size-full min-h-dvh"><slot /></main>
 </template>
 
 <style>

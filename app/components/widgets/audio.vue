@@ -3,6 +3,7 @@
         :class="['fixed right-8 bottom-8 p-4', clicked && 'left-8 sm:left-auto']"
     >
         <button
+            type="button"
             v-if="!clicked"
             @click="clicked = true"
             class="p-2 text-primary-foreground size-10"

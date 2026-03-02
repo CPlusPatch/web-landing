@@ -52,9 +52,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
                     Displays the mobile sidebar.
                 </SheetDescription>
             </SheetHeader>
-            <div class="flex h-full w-full flex-col">
-                <slot />
-            </div>
+            <div class="flex h-full w-full flex-col"><slot /></div>
         </SheetContent>
     </Sheet>
 

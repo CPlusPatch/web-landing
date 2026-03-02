@@ -1,7 +1,5 @@
 <template>
-    <section class="relative">
-        <Grid />
-    </section>
+    <section class="relative"><Grid /></section>
 </template>
 
 <script lang="ts" setup>

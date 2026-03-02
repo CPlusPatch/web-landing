@@ -29,7 +29,7 @@
             <Loader class="animate-spin size-8" />
             <CardTitle>
                 {{ loadProgress === 1
-						? `Fetching...`
+						? "Fetching..."
 						: `${Math.round(loadProgress * 100)}%` }}
             </CardTitle>
         </Card>

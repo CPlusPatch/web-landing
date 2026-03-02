@@ -18,7 +18,7 @@ const getGroup = (n: number) => {
         class="flex flex-col items-center gap-2 py-4 overflow-hidden mask-linear-[to_left,transparent_0%,black_20%,black_80%,transparent_95%]"
     >
         <div
-            v-for="group of GROUP_COUNT"
+            v-for="group in GROUP_COUNT"
             :key="group"
             :class="[
             'group relative flex gap-4 p-1',
@@ -26,7 +26,7 @@ const getGroup = (n: number) => {
         ]"
         >
             <Language
-                v-for="system of getGroup(group - 1)"
+                v-for="system in getGroup(group - 1)"
                 :key="system.name"
                 :system="system"
             />

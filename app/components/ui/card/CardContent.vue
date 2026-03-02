@@ -8,7 +8,5 @@ const props = defineProps<{
 </script>
 
 <template>
-    <div data-slot="card-content" :class="cn('', props.class)">
-        <slot />
-    </div>
+    <div data-slot="card-content" :class="cn('', props.class)"><slot /></div>
 </template>

@@ -49,9 +49,7 @@ const props = defineProps<SidebarProps>();
                 </SidebarMenuItem>
             </SidebarMenu>
         </SidebarHeader>
-        <SidebarContent>
-            <SidebarChats />
-        </SidebarContent>
+        <SidebarContent> <SidebarChats /> </SidebarContent>
         <SidebarRail />
     </Sidebar>
 </template>

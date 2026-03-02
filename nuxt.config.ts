@@ -35,7 +35,6 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "@nuxt/fonts",
         "@nuxt/image",
-        //"nuxt-security",
         "@nuxtjs/plausible",
         "@nuxt/content",
         "shadcn-nuxt",
@@ -72,22 +71,6 @@ export default defineNuxtConfig({
             },
         },
     },
-    /* security: {
-        headers: {
-            contentSecurityPolicy: {
-                "img-src": ["'self'", "https:", "data:"],
-                "script-src": [
-                    "'self'",
-                    "https:",
-                    "'unsafe-inline'",
-                    "'strict-dynamic'",
-                    "'nonce-{{nonce}}'",
-                    "'wasm-unsafe-eval'",
-                ],
-            },
-        },
-        rateLimiter: false,
-    }, */
     nitro: {
         preset: "static",
         minify: true,
@@ -98,7 +81,7 @@ export default defineNuxtConfig({
         },
     },
     sitemap: {
-        sources: [...getRouteRenderingPaths(), "/", "/privacy", "/contact"],
+        sources: [...getRouteRenderingPaths(), "/", "/contact"],
     },
     fonts: {
         defaults: {
@@ -106,7 +89,6 @@ export default defineNuxtConfig({
         },
     },
     plausible: {
-        // Prevent tracking on localhost
         ignoredHostnames: ["localhost"],
         apiHost: "https://logs.cpluspatch.com",
         autoOutboundTracking: true,

@@ -82,6 +82,11 @@ const friends88x31: {
         link: "https://n.cyrneko.eu",
         src: "/images/88x31s/nelson.png",
     },
+    {
+        name: "Abigail",
+        link: "https://thegail.site",
+        src: "/images/88x31s/gail.gif",
+    },
 ];
 </script>
 

@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { CheckCheck } from "lucide-vue-next";
+import { CheckCheck } from "@lucide/vue";
 import { cn } from "~/lib/utils";
 
 const { role, content, date } = defineProps<{

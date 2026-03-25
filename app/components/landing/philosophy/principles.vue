@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Blend, Container, ListCheck } from "lucide-vue-next";
+import { Blend, Container, ListCheck } from "@lucide/vue";
 
 const principles = [
     {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Info } from "lucide-vue-next";
+import { Info } from "@lucide/vue";
 import {
     Table,
     TableBody,
@@ -34,7 +34,7 @@ const { data } = defineProps<{
             <Table class="min-w-4xl">
                 <TableHeader>
                     <TableRow>
-                        <TableHead class="w-[100px]">Name</TableHead>
+                        <TableHead class="w-25">Name</TableHead>
                         <TableHead>Characteristics</TableHead>
                         <TableHead>Uses</TableHead>
                         <TableHead>Triggers</TableHead>

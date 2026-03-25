@@ -22,8 +22,8 @@
 </template>
 
 <script lang="ts" setup>
+import { Search } from "@lucide/vue";
 import fz from "fuzzysort";
-import { Search } from "lucide-vue-next";
 import Container from "~/components/containers/big.vue";
 import QuoteVue, { type Quote } from "~/components/quotes/quote.vue";
 import { Input } from "~/components/ui/input";

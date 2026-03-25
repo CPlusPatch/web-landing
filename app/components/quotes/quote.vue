@@ -47,7 +47,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Download } from "lucide-vue-next";
+import { Download } from "@lucide/vue";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import {

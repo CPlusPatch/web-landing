@@ -8,7 +8,7 @@ import {
     Network,
     Server,
     X,
-} from "lucide-vue-next";
+} from "@lucide/vue";
 import { NuxtLink } from "#components";
 import {
     NavigationMenu,

@@ -1,6 +1,6 @@
 <template>
     <svg
-        class="duration-200 translate-x-0 group-hover:translate-x-[4px] inline mb-0.5"
+        class="duration-200 translate-x-0 group-hover:translate-x-1 inline mb-0.5"
         width="16"
         height="16"
         viewBox="0 0 16 16"

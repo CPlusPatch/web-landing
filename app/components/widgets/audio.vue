@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Music } from "lucide-vue-next";
+import { Music } from "@lucide/vue";
 import { Card } from "../ui/card";
 
 const clicked = ref(false);

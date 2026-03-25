@@ -51,7 +51,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ArrowUp } from "lucide-vue-next";
+import { ArrowUp } from "@lucide/vue";
 import Message from "~/components/chat/message.vue";
 import ChatSidebar from "~/components/chat/sidebar.vue";
 import { Button } from "~/components/ui/button";

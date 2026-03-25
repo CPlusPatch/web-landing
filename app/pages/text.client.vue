@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ChevronLeft, ChevronRight } from "lucide-vue-next";
+import { ChevronLeft, ChevronRight } from "@lucide/vue";
 import { Button } from "~/components/ui/button";
 
 const slides = useLocalStorage<string[]>("slides", []);

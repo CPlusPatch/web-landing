@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Loader2 } from "lucide-vue-next";
+import { Loader2 } from "@lucide/vue";
 import Container from "~/components/containers/big.vue";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";

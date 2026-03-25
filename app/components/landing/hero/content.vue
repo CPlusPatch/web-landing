@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Terminal } from "lucide-vue-next";
+import { Terminal } from "@lucide/vue";
 import Container from "~/components/containers/big.vue";
 import { Button } from "~/components/ui/button";
 

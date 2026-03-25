@@ -57,7 +57,7 @@
 </template>
 
 <script lang="ts" setup>
-import { LockKeyhole } from "lucide-vue-next";
+import { LockKeyhole } from "@lucide/vue";
 import { Button } from "../ui/button";
 import {
     Field,

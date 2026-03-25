@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Laptop } from "lucide-vue-next";
+import { Laptop } from "@lucide/vue";
 import Jammin from "~/components/jammin/section.vue";
 
 const { width } = useWindowSize();

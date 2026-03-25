@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { Loader2 } from "lucide-vue-next";
+import { Loader2 } from "@lucide/vue";
 import Inbox from "~/components/contact/inbox.vue";
 import Messages from "~/components/contact/messages.vue";
 import Container from "~/components/containers/big.vue";

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BookDashed } from "lucide-vue-next";
+import { BookDashed } from "@lucide/vue";
 import { SidebarGroup, SidebarGroupLabel } from "~/components/ui/sidebar";
 </script>
 

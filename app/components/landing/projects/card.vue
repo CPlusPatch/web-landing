@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import { LinkIcon } from "lucide-vue-next";
+import { LinkIcon } from "@lucide/vue";
 import {
     Card,
     CardContent,

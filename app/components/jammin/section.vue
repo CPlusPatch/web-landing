@@ -38,8 +38,8 @@
 </template>
 
 <script lang="ts" setup>
+import { Loader } from "@lucide/vue";
 import { BrowserDetector } from "browser-dtector";
-import { Loader } from "lucide-vue-next";
 import {
     dataToText,
     fetchIpData,

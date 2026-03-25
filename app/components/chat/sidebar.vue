@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Images, Search, SquarePen } from "lucide-vue-next";
+import { Images, Search, SquarePen } from "@lucide/vue";
 import {
     Sidebar,
     SidebarContent,

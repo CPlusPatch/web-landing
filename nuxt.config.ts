@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    css: ["~/styles/index.css"],
     app: {
         head: {
             link: [

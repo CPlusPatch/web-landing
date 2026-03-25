@@ -19,7 +19,6 @@ if (!post.value) {
 useSchemaOrg([
     defineArticle({
         author: {
-            name: "Jesse Wierzbinski",
             image: "/images/avatars/jessew.png",
         },
         datePublished: post.value.created_at,
@@ -32,7 +31,6 @@ useSchemaOrg([
 
 useSeoMeta({
     title: post.value.title,
-    author: "Jesse Wierzbinski",
     description: post.value.description,
     ogImage: post.value.image,
     twitterCard: "summary_large_image",

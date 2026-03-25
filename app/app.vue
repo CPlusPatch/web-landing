@@ -1,34 +1,5 @@
 <script setup lang="ts">
-import "~/styles/index.css";
 import { Toaster } from "./components/ui/sonner";
-
-const me = definePerson({
-    name: "Gaspard Wierzbinski",
-    image: "/images/avatars/with_background.webp",
-    sameAs: [
-        "https://codeberg.org/CPlusPatch",
-        "https://github.com/CPlusPatch",
-        "mailto:contact@cpluspatch.com",
-        "https://matrix.to/#/@jesse:cpluspatch.dev",
-    ],
-    description:
-        "Young aspiring software engineer, proficient in Web technologies and computers in general",
-    url: "/",
-});
-
-const myOrg = defineOrganization({
-    name: "CPlusPatch Development",
-    logo: "/images/icons/logo.svg",
-});
-
-useSchemaOrg([me, myOrg]);
-
-useSeoMeta({
-    author: me.name,
-    titleTemplate: (titleChunk) => {
-        return titleChunk ? `${titleChunk} · CPlusPatch` : "CPlusPatch";
-    },
-});
 
 useHead({
     link: [

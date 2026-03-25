@@ -3,7 +3,6 @@ import Blog from "~/components/landing/blog/section.vue";
 
 useSeoMeta({
     title: "Blog",
-    author: "Gaspard Wierzbinski",
     ogImage: "/images/assets/banner-2.webp",
     ogImageAlt: "A screenshot of VSCode open",
     description:

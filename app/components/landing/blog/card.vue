@@ -23,27 +23,16 @@
                     {{ post.description }}
                 </CardDescription>
             </CardContent>
-            <CardFooter class="mt-auto flex items-center gap-2">
-                <Avatar class="size-10">
-                    <AvatarImage src="/images/avatars/jessew.png" alt="" />
-                </Avatar>
-                <div class="leading-6 flex flex-col gap-0.5">
-                    <p class="font-semibold text-sm">Jesse W</p>
-                    <p class="text-secondary-foreground text-xs">@CPlusPatch</p>
-                </div>
-            </CardFooter>
         </NuxtLink>
     </Card>
 </template>
 
 <script lang="ts" setup>
 import type { ContentCollectionItem } from "@nuxt/content";
-import { Avatar, AvatarImage } from "~/components/ui/avatar";
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "~/components/ui/card";

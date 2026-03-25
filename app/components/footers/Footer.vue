@@ -185,8 +185,8 @@ const friends88x31: {
             </div>
             <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
                 <p class="text-xs leading-5 text-muted-foreground">
-                    &copy; {{ new Date().getFullYear() }}&nbsp;Gaspard
-                    Wierzbinski. Licensed under AGPLv3
+                    &copy; {{ new Date().getFullYear() }}&nbsp;CPlusPatch.
+                    Licensed under AGPLv3
                 </p>
 
                 <div class="flex flex-row gap-2 flex-wrap justify-start mt-4">

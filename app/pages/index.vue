@@ -10,7 +10,6 @@ import Audio from "~/components/widgets/audio.vue";
 
 useSeoMeta({
     title: "Homepage",
-    author: "Gaspard Wierzbinski",
     ogImage: "/images/assets/banner-2.webp",
     ogImageAlt: "A screenshot of VSCode open",
     description:

@@ -7,7 +7,6 @@ import { Card, CardTitle } from "~/components/ui/card";
 
 useSeoMeta({
     title: "Contact",
-    author: "Gaspard Wierzbinski",
     ogImage: "/images/assets/banner-2.webp",
     ogImageAlt: "A screenshot of VSCode open",
     description:
